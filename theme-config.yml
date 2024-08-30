@@ -1,0 +1,34 @@
+# https://vitepress.dev/reference/default-theme-config
+nav:
+  - text: 主页
+    link: /
+  - text: 快速入门
+    link: /getting-started/
+  - text: 参考文档
+    link: /guide/
+    activeMatch: /guide/
+  - text: WriteUp
+    link: /wp/
+    activeMatch: /wp/
+    # items:
+    #   - text: '2024'
+    #     link: /wp/2024/
+
+sidebar:
+  '/guide/2024/':
+    - text: 赛事信息
+      link: /guide/2024/
+    - text: Week 1
+      collapsed: false
+      items:
+        - text: Web
+          link: /guide/2024/week1/web
+
+  '/wp/2024/':
+    - text: Week 1
+      items:
+        - text: Web
+          collapsed: false
+          items:
+            - text: Example
+              link: /wp/2024/week1/web/example

@@ -1,0 +1,11 @@
+@import "./utils/docs-link.scss";
+
+.vp-doc a:not([data-link]),
+.vp-doc a[data-link="false"] {
+    text-decoration: none;
+    color: var(--vp-c-brand-1);
+    @include underline-normal;
+    &:hover {
+        color: var(--vp-c-brand-2);
+    }
+}

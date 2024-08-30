@@ -1,0 +1,33 @@
+$underline-width: 0.07rem;
+$underline-padding-bottom: 0.05rem;
+@mixin underline-normal {
+    text-decoration: none;
+    // border-bottom: $underline-width solid currentColor;
+    // padding-bottom: $underline-padding-bottom;
+    @include underline-bg-color(currentColor, transparent);
+    @include underline-bg-width(100%, 0%);
+    @include underline-bg-posX(0%, 100%);
+}
+@mixin underline-bg-width($front, $back, $is-important: false) {
+    @if ($is-important) {
+        background-size: $front $underline-width, $back $underline-width !important;
+    } @else {
+        background-size: $front $underline-width, $back $underline-width;
+    }
+}
+@mixin underline-bg-posX($front, $back, $is-important: false) {
+    @if ($is-important) {
+        background-position: $front 100%, $back 100% !important;
+    } @else {
+        background-position: $front 100%, $back 100%;
+    }
+}
+@mixin underline-bg-color($front: currentColor, $back: transparent, $is-important: false) {
+    @if ($is-important) {
+        background-image: linear-gradient($front, $front), linear-gradient($back, $back) $is-important;
+    } @else {
+        background-image: linear-gradient($front, $front), linear-gradient($back, $back);
+    }
+    padding-bottom: $underline-width + $underline-padding-bottom;
+    background-repeat: no-repeat;
+}

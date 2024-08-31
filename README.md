@@ -28,6 +28,10 @@ Theme at [theme/](./theme/), which has path alias `@`.
 
 All the documentations are located at [docs/](./docs/), which has the path alias `@docs`.
 
+The static files are located at [public/](./public/).
+
+For static assets which might be bundled, it's recommended to put them in the `assets` directory in the `docs` directory. For example, image files.
+
 To use Vue in markdown, related components are most defined at [theme/components/docs/](./theme/components/docs/).
 
 ## License

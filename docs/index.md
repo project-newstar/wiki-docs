@@ -18,7 +18,7 @@ actions:
 
   -
     - text: 快速入门
-      link: /getting-started/
+      link: /learn/
       type: secondary
 
     - text: 参考文档

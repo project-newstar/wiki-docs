@@ -3,7 +3,7 @@ nav:
   - text: 主页
     link: /
   - text: 快速入门
-    link: /getting-started/
+    link: /learn/
   - text: 参考文档
     link: /guide/
     activeMatch: /guide/
@@ -15,6 +15,10 @@ nav:
     #     link: /wp/2024/
 
 sidebar:
+  '/learn/':
+    - text: 写在前面
+      link: /learn/
+
   '/guide/2024/':
     - text: 赛事信息
       link: /guide/2024/

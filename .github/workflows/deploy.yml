@@ -1,10 +1,10 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
-      - master
+  # push:
+  #   branches:
+  #     - main
+  #     - master
 
   # manual trigger
   workflow_dispatch:

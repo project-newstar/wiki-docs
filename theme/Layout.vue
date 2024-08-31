@@ -5,6 +5,7 @@ import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
 import LayoutIndex from "@/layouts/LayoutIndex.vue";
+import 'element-plus/theme-chalk/dark/css-vars.css';
 
 const { isDark, frontmatter } = useData();
 

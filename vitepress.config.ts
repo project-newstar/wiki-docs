@@ -19,7 +19,7 @@ export default defineConfig({
         siteTitle: 'NewStar CTF',
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/cnily03/newstar-docs' }
+            { icon: 'github', link: 'https://github.com/Cnily03/newstar-docs' }
         ],
 
         search: {
@@ -52,6 +52,16 @@ export default defineConfig({
         }
     }, themeConfig),
 
+    head: [
+        ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
+        ['link', { rel: 'manifest', href: '/site.webmanifest' }],
+        ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ec9c1e' }],
+        ['meta', { name: 'msapplication-TileColor', content: '#f0f0f0' }],
+        ['meta', { name: 'theme-color', content: '#f0f0f0' }],
+    ],
+
     sitemap: {
         hostname: 'https://ns.openctf.net'
     },
@@ -62,6 +72,7 @@ export default defineConfig({
     cacheDir: '.cache/.vite',
     vite: {
         // https://vitejs.dev/config/
+        publicDir: path.resolve(import.meta.dirname, 'public'),
         server: {
             port: 5170,
             host: '0.0.0.0',

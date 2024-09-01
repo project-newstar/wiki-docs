@@ -11,7 +11,7 @@ information: |
 
 actions:
   -
-    - text: 立 即 报 名
+    - text: 报名于 9.13 开启
       type: primary
       size: large
       click: signup

@@ -1,11 +1,11 @@
 ---
 layout: home
-title: 参考文档
+title: 赛事信息
 titleTemplate: ':title - NewStar CTF'
 
 hero:
   name: NewStar CTF
-  text: 参考文档
+  text: 赛事信息
   tagline: 赛事信息 赛题指导和建议 降低学习门槛
 
 features:

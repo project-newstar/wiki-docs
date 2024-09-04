@@ -4,7 +4,7 @@ nav:
     link: /
   - text: 快速入门
     link: /learn/
-  - text: 参考文档
+  - text: 赛事信息
     link: /guide/
     activeMatch: /guide/
   - text: WriteUp

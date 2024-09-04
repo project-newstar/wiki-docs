@@ -1,11 +1,13 @@
-@import "./utils/docs-link.scss";
+@use "./utils/docs-link.scss" as *;
 
 .vp-doc a:not([data-link]),
 .vp-doc a[data-link="false"] {
-    text-decoration: none;
-    color: var(--vp-c-brand-1);
-    @include underline-normal;
-    &:hover {
-        color: var(--vp-c-brand-2);
+    &:not(.header-anchor) {
+        text-decoration: none;
+        color: var(--vp-c-brand-1);
+        @include underline-normal;
+        &:hover {
+            color: var(--vp-c-brand-2);
+        }
     }
 }

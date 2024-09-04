@@ -4,7 +4,7 @@ nav:
     link: /
   - text: 快速入门
     link: /learn/
-  - text: 赛事信息
+  - text: 参考文档
     link: /guide/
     activeMatch: /guide/
   - text: WriteUp
@@ -18,9 +18,13 @@ sidebar:
   '/learn/':
     - text: 写在前面
       link: /learn/
+    - text: Web
+      link: /learn/web
+    - text: Reverse
+      link: /learn/reverse
 
   '/guide/2024/':
-    - text: 赛事信息
+    - text: 参考文档
       link: /guide/2024/
     - text: Week 1
       collapsed: false

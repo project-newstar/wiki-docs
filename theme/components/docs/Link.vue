@@ -42,7 +42,7 @@ const iconMap = {
 </template>
 
 <style lang="scss">
-@import "@/styles/utils/docs-link.scss";
+@use "@/styles/utils/docs-link.scss" as *;
 
 $current-color: currentColor;
 $primary-color: var(--vp-c-brand-1);

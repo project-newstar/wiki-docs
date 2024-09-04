@@ -8,16 +8,6 @@ withDefaults(
         type: "info"
     }
 );
-
-function fmtClass(theme?: string, ...append: string[]): string {
-    let classes: string[] = [];
-    if (append) classes.push(...append);
-    if (!theme) theme = "";
-    theme.split(/\s+/).forEach(t => {
-        classes.push(`link-${t}`);
-    });
-    return classes.join(" ");
-}
 </script>
 
 <template>

@@ -49,6 +49,14 @@ export default defineConfig({
 
         outline: {
             label: '本页导航'
+        },
+
+        lastUpdated: {
+            text: '最后更新于',
+            formatOptions: {
+                dateStyle: 'medium',
+                timeStyle: 'short',
+            }
         }
     }, themeConfig),
 

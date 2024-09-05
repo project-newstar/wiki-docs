@@ -1,3 +1,7 @@
+// default adjust link for vp-doc
+@use '@/styles/docs-link-adjust.scss' as *;
+@use '@/styles/custom-block.scss' as *;
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css

@@ -3,7 +3,7 @@ withDefaults(
     defineProps<{
         href?: string;
         target?: string;
-        icon?: keyof typeof iconMap;
+        icon?: string /* keyof typeof iconMap */;
         iconPos?: "left" | "right";
         /**
          * Theme of the link
@@ -21,28 +21,37 @@ withDefaults(
 );
 function fmtClass(theme?: string, ...append: string[]): string {
     let classes: string[] = [];
-    if (append) classes.push(...append);
     if (!theme) theme = "";
     theme.split(/\s+/).forEach(t => {
-        classes.push(`link-${t}`);
+        t && classes.push(`link-${t}`);
     });
+    if (append) classes.push(...append);
     return classes.join(" ");
 }
-const iconMap = {
-    external: `<svg fill="none" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" role="img" aria-labelledby="title-4744738674102027" xmlns="http://www.w3.org/2000/svg"><title id="title-4744738674102027">External link icon</title><path d="M6.75 1.75h-5v12.5h12.5v-5m0-4v-3.5h-3.5M8 8l5.5-5.5"></path></svg>`
-};
+
+// const iconMap = {
+//     external: `<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 14"><g><path d="M13.25,14H.75c-.41,0-.75-.34-.75-.75V.75C0,.34,.34,0,.75,0H5.75c.41,0,.75,.34,.75,.75s-.34,.75-.75,.75H1.5V12.5H12.5v-4.25c0-.41,.34-.75,.75-.75s.75,.34,.75,.75v5c0,.41-.34,.75-.75,.75ZM7,7.75c-.19,0-.38-.07-.53-.22-.29-.29-.29-.77,0-1.06L11.44,1.5h-1.69c-.41,0-.75-.34-.75-.75s.34-.75,.75-.75h3.5c.41,0,.75,.34,.75,.75v3.5c0,.41-.34,.75-.75,.75s-.75-.34-.75-.75v-1.69L7.53,7.53c-.15,.15-.34,.22-.53,.22Z"/></g></svg>`
+// };
 </script>
 
 <template>
-    <a :data-link="theme ? '' : 'false'" :href="href" :target="target" :class="fmtClass(theme)">
+    <a
+        :data-link="theme ? '' : 'false'"
+        :href="href"
+        :target="target"
+        :class="fmtClass(theme, icon ? `link-icon icon--docs icon-${icon}` : '')"
+        :data-icon-pos="icon ? iconPos : undefined"
+    >
         <template v-if="text">{{ text }}</template>
         <template v-else><slot /></template>
-        <span class="link-icon" :data-icon-pos="iconPos" v-html="iconMap[icon]" v-if="icon"></span>
+        <!-- <span class="link-icon" :data-icon-pos="iconPos" v-html="iconMap[icon]" v-if="icon"></span> -->
     </a>
 </template>
 
 <style lang="scss">
-@use "@/styles/utils/docs-link.scss" as *;
+@use "@/styles/utils/docs-link-app.scss" as link;
+@use "@/assets/fonts/package.scss" as font;
+@use "@/assets/fonts/docs/map.scss" as docs-map;
 
 $current-color: currentColor;
 $primary-color: var(--vp-c-brand-1);
@@ -55,11 +64,7 @@ $primary-hover-color: var(--vp-c-brand-2);
 // no underline
 .link-plain,
 .link-plain[data-link] {
-    text-decoration: none;
-    color: $current-color;
-    &:hover {
-        color: $primary-hover-color;
-    }
+    @include link.plain($current-color, $primary-hover-color);
 }
 
 // underline
@@ -69,78 +74,27 @@ $primary-hover-color: var(--vp-c-brand-2);
     // always underline
     &:not(.link-always):not(.link-hover):not(.link-blink),
     &.link-always {
-        text-decoration: none;
-        @include underline-bg-color(currentColor, transparent);
-        @include underline-bg-width(100%, 0%);
-        @include underline-bg-posX(0%, 100%);
-        &:hover {
-            color: $primary-hover-color;
-        }
+        @include link.underline($current-color, $primary-hover-color);
     }
     &.link-hover {
-        text-decoration: none;
-        transition: color ease-in-out 0.25s, background-size ease-in-out 0.25s;
-        @include underline-bg-color(currentColor, transparent);
-        @include underline-bg-width(0%, 100%);
-        @include underline-bg-posX(100%, 0%);
-        &:hover,
-        &:active {
-            @include underline-bg-width(100%, 0%);
-            @include underline-bg-posX(0%, 100%);
-        }
+        @include link.underline-hover($current-color, $primary-hover-color);
     }
     &.link-blink {
-        text-decoration: none;
-        transition: color ease-in-out 0.25s, background-color ease-in-out 0.25s;
-        @include underline-bg-color(currentColor, transparent);
-        @include underline-bg-width(100%, 0%);
-        @include underline-bg-posX(0%, 100%);
-        &:hover,
-        &:active {
-            animation: underline-blink 0.5s ease-in-out;
-        }
-    }
-    @keyframes underline-blink {
-        0% {
-            @include underline-bg-width(100%, 0%);
-            @include underline-bg-posX(100%, 0%);
-        }
-        50% {
-            @include underline-bg-width(0%, 100%);
-            @include underline-bg-posX(100%, 0%);
-        }
-        51% {
-            @include underline-bg-width(0%, 100%);
-            @include underline-bg-posX(0%, 100%);
-        }
-        100% {
-            @include underline-bg-width(100%, 0%);
-            @include underline-bg-posX(0%, 100%);
-        }
+        @include link.underline-blink($current-color, $primary-hover-color);
     }
 }
 
 .link-color,
 .link-color[data-link] {
-    color: $primary-color;
+    color: $primary-color !important;
 }
 
 // icon
 .link-icon,
 .link-icon[data-link] {
-    display: inline-block;
-    vertical-align: middle;
-    user-select: none;
-    &[data-icon-pos="left"] {
-        margin-left: 0.1rem;
-        margin-right: 0.25rem;
-    }
-    &[data-icon-pos="right"] {
-        margin-left: 0.25rem;
-        margin-right: 0.1rem;
-    }
-    & > svg {
-        height: 0.8rem;
-    }
+    @include link.icon-position("docs", "vp-docs");
+    @include font.register-font("docs", "vp-docs");
+    // @include font.apply-font("docs", "vp-docs");
+    @include link.generate-position-map(docs-map.$map);
 }
 </style>

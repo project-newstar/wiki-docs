@@ -48,7 +48,8 @@ export default defineConfig({
         },
 
         outline: {
-            label: '本页导航'
+            label: '本页导航',
+            level: [2, 3]
         },
 
         lastUpdated: {
@@ -72,6 +73,10 @@ export default defineConfig({
 
     sitemap: {
         hostname: 'https://ns.openctf.net'
+    },
+
+    markdown: {
+        math: true,
     },
 
     srcDir: 'docs',

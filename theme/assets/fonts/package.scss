@@ -6,7 +6,7 @@ $font-family: "vp-example";
         font-family: $family;
         src: url("./#{$name}/font.eot?inpve4");
         src: url("./#{$name}/font.eot?inpve4#iefix") format("embedded-opentype"),
-            url("./#{$name}/font.ttf?inpve4") format("truetype"), url("fonts/font.woff?inpve4") format("woff"),
+            url("./#{$name}/font.ttf?inpve4") format("truetype"), url("./#{$name}/font.woff?inpve4") format("woff"),
             url("./#{$name}/font.svg?inpve4#icomoon") format("svg");
         font-weight: normal;
         font-style: normal;

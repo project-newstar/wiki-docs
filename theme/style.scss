@@ -9,10 +9,24 @@
 
 :root {
   --index-logo: url('@/assets/images/ns_blue.svg');
+
+  --vp-c-text-1: rgb(60, 60, 60);
+
+  .desc-text {
+    --vp-c-text-1: rgb(145, 145, 145);
+    color: var(--vp-c-text-1);
+  }
 }
 
 .dark {
   --index-logo: url('@/assets/images/ns_orange.svg');
+
+  --vp-c-text-1: rgb(235, 235, 235);
+
+  .desc-text {
+    --vp-c-text-1: rgb(165, 165, 165);
+    color: var(--vp-c-text-1);
+  }
 }
 
 /**

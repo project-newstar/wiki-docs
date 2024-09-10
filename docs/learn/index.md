@@ -7,7 +7,6 @@ import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'
 import { ElTag } from 'element-plus'
 import 'element-plus/es/components/tag/style/css'
-
 </script>
 
 # 快速入门

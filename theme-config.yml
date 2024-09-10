@@ -22,6 +22,8 @@ sidebar:
       link: /learn/web
     - text: Reverse
       link: /learn/reverse
+    - text: Crypto
+      link: /learn/crypto
 
   '/guide/2024/':
     - text: 参考文档

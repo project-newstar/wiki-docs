@@ -4,7 +4,7 @@
 .vp-doc a:not([data-link]),
 .vp-doc a[data-link="false"] {
     &:not(.header-anchor) {
-        @include link.underline_blink(currentColor, var(--vp-c-brand-2));
+        @include link.underline_blink(currentColor, var(--vp-c-brand-1));
         &[href*="://"]
         {
             @include link.icon_with_name("docs", "vp-docs", docs-map.$map, "external", "right");

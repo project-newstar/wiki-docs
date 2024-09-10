@@ -1,11 +1,8 @@
 ---
 titleTemplate: ':title | 快速入门 - NewStar CTF'
 ---
-<script setup>
-import Link from '@/components/docs/Link.vue'
-</script>
 
-# Reverse
+# 逆向工程
 
 逆向工程通常是在没有源代码的情况下对软件进行分析，相对于正向的代码编程来说，逻辑通常是反过来的，需要有好的代码分析和反向思维能力。
 
@@ -13,10 +10,10 @@ import Link from '@/components/docs/Link.vue'
 
 C 语言是逆向工程的基础，务必重点学习以下内容。
 
-1. 流程控制: if、switch、goto、break
-2. 指针操作: 引用，解引用，取地址，数组与指针转化
-3. 数据类型: 熟记 char、int、int64 等类型大小
-4. 可逆运算: 异或运算、算数运算、移位与循环移位运算
+1. 流程控制：if、switch、goto、break
+2. 指针操作：引用，解引用，取地址，数组与指针转化
+3. 数据类型：熟记 char、int、int64 等类型大小
+4. 可逆运算：异或运算、算数运算、移位与循环移位运算
 
 ## 0x02. 学习常见加密
 
@@ -24,11 +21,11 @@ C 语言是逆向工程的基础，务必重点学习以下内容。
 
 1. TEA 系列加密: TEA、XTEA、XXTEA
 2. RC4 加密
-3. AES/DES加密
-4. 16进制编码
-5. Base64编码
+3. AES/DES 加密
+4. 16 进制编码
+5. Base64 编码
 
-加密特征识别可参阅：<Link icon="external" theme="underline blink" href="https://pangbai.work/IT/re/ctf_encode/">常见加密算法特征识别</Link>
+加密特征识别可参阅：[常见加密算法特征识别](https://pangbai.work/IT/re/ctf_encode/)
 
 常见加密不是一成不变的模板，死记硬背不可能通杀，请务必读懂加密过程和大致原理。
 

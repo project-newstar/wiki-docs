@@ -23,12 +23,12 @@ CTF 是一种比赛形式，你会得到一个题面<span class='desc-text'>（�
 
 如果你此前从未接触过 CTF，你可能需要先了解其形式，即通过一些在线靶场或新生赛的低门槛题目进行适应。下面的一些公益新生赛事或平台或许会对你有所帮助：
 
-- <ElTag type="primary" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
-- <ElTag type="primary" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
-- <ElTag type="info" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
-- <ElTag type="info" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
-- <ElTag type="info" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>
-- <ElTag type="info" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.nssctf.cn">NSSCTF</Link>
+- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
+- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
+- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
+- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
+- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>
+- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.nssctf.cn">NSSCTF</Link>
 
 随后，你应当选定一个方向，作为你主攻方向。例如，对网络感兴趣、有基础的同学可能更适合 Web 方向，而对程序运行底层逻辑、二进制感兴趣的可能更适合逆向（Reverse）和 Pwn，等等。
 

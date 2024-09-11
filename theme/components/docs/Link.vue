@@ -39,7 +39,7 @@ function fmtClass(theme?: string, ...append: string[]): string {
         :data-link="theme ? '' : 'false'"
         :href="href"
         :target="target"
-        :class="fmtClass(theme, icon ? `link-icon icon--docs icon-${icon}` : '')"
+        :class="fmtClass(theme, icon ? `link-icon icon-${icon}` : '')"
         :data-icon-pos="icon ? iconPos : undefined"
     >
         <template v-if="text">{{ text }}</template>
@@ -49,7 +49,7 @@ function fmtClass(theme?: string, ...append: string[]): string {
 </template>
 
 <style lang="scss">
-@use "@/styles/utils/docs-link-app.scss" as link;
+@use "@/styles/utils/docs-link.scss" as link;
 @use "@/assets/fonts/package.scss" as font;
 @use "@/assets/fonts/docs/map.scss" as docs-map;
 
@@ -64,7 +64,7 @@ $primary-hover-color: var(--vp-c-brand-2);
 // no underline
 .link-plain,
 .link-plain[data-link] {
-    @include link.plain($current-color, $primary-hover-color);
+    @include link.plain($current-color, $primary-color);
 }
 
 // underline
@@ -74,19 +74,22 @@ $primary-hover-color: var(--vp-c-brand-2);
     // always underline
     &:not(.link-always):not(.link-hover):not(.link-blink),
     &.link-always {
-        @include link.underline($current-color, $primary-hover-color);
+        @include link.underline($current-color, $primary-color);
     }
     &.link-hover {
-        @include link.underline-hover($current-color, $primary-hover-color);
+        @include link.underline-hover($current-color, $primary-color);
     }
     &.link-blink {
-        @include link.underline-blink($current-color, $primary-hover-color);
+        @include link.underline-blink($current-color, $primary-color);
     }
 }
 
 .link-color,
 .link-color[data-link] {
     color: $primary-color !important;
+    &:hover {
+        color: $primary-hover-color !important;
+    }
 }
 
 // icon

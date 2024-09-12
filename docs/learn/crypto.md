@@ -22,7 +22,7 @@ import 'element-plus/es/components/tooltip/style/css'
 
 密码有清晰的路线学习：
 
-![现代密码学](/assets/images/crypto-instruction.png)
+![现代密码学](/assets/images/learn/crypto-instruction.png)
 
 并且有干脆的做题反馈，就跟数学题一样，会就是会，不会就是不会。
 
@@ -215,7 +215,7 @@ $$
 
   因此解密的关键是在得到 $p$ 和 $q$.
 
-  ![解密原理](/assets/images/crypto-decrypt-schematic.png)
+  ![解密原理](/assets/images/learn/crypto-decrypt-schematic.png)
 
 - **难破解的原理**
 

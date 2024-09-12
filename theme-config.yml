@@ -18,12 +18,20 @@ sidebar:
   '/learn/':
     - text: 写在前面
       link: /learn/
-    - text: Web
-      link: /learn/web
-    - text: Reverse
-      link: /learn/reverse
-    - text: Crypto
-      link: /learn/crypto
+    - text: 各方向入门介绍
+      items:
+      - text: Web 网络攻防
+        link: /learn/web
+      - text: Crypto 密码学
+        link: /learn/crypto
+      - text: Reverse 逆向工程
+        link: /learn/reverse
+      - text: Pwn 二进制安全
+        link: /learn/pwn
+      - text: Misc 杂项
+        link: /learn/misc
+    - text: Q&A
+      link: /learn/qa
 
   '/guide/2024/':
     - text: 赛事信息

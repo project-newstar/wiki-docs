@@ -13,7 +13,7 @@ information: |
 
 actions:
   -
-    - text: 报名于 9.13 开启
+    - text: 报名参赛
       type: primary
       size: large
       click: signup

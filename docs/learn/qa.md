@@ -7,6 +7,8 @@ import QACard from '@/components/docs/QACard.vue'
 
 # Q&A
 
+---
+
 <QACard>
 <template v-slot:question>
 刚入门，我该怎么学？

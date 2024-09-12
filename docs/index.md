@@ -8,7 +8,6 @@ titleTemplate: ':title'
 information: |
   <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2024</span>
   2024.9.30 - 2024.11.3
-  赛事QQ群：1169651901
 
 
 actions:

@@ -3,6 +3,8 @@
 @use '@/styles/custom-block.scss' as *;
 @use '@/styles/kbd.scss' as *;
 
+@use '@/tweak.scss' as *;
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css

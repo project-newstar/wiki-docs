@@ -5,6 +5,7 @@ aside: false
 ---
 <script setup>
 import Link from '@/components/docs/Link.vue'
+import Text from '@/components/docs/NonTextDetectable.vue'
 </script>
 
 # NewStar CTF 2024 × 春秋杯
@@ -23,7 +24,7 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 
 比赛采用网络安全靶场赛的形式<span class='desc-text'>（传统 Jeopardy 解题模式）</span>，动态计分。赛题涵盖 Web、Crypto、Pwn、Reverse、Misc 五大方向，题目的考察范围亦在传统的基础上增加了一些近年来新的构想和思路，做到与时俱进、不断创新。比赛期待各位选手的光临，诚邀任何有兴趣的同学参与。
 
-## 赛事时间<span class='desc-text' style="font-size: 18px; font-weight: 500;">（GMT+0800 中国标准时间）</span>
+## 赛事时间<Text class='desc-text' fontSize='18px' fontWeight='500' content='（GMT+0800 中国标准时间）' />
 
 <strong>公开赛道：</strong>2024 年 9 月 30 日 09:00 - 2024 年 11 月 3 日 21:00
 
@@ -70,7 +71,7 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 
 ## 组织方式
 
-### 主办方<span class='desc-text' style="font-size: 16px; font-weight: 500;">（以下排名不分先后）</span>
+### 主办方<Text class='desc-text' fontSize='16px' fontWeight='500' content='（以下排名不分先后）' />
 
 - 西安工业大学 XATUSec
 - 中国矿业大学 BXS 战队
@@ -86,7 +87,7 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 - 太原理工大学 UKFC 战队
 - 中国人民警察大学 SeeU-Sec
 
-### 协办单位<span class='desc-text' style="font-size: 16px; font-weight: 500;">（以下排名不分先后）</span>
+### 协办单位<Text class='desc-text' fontSize='16px' fontWeight='500' content='（以下排名不分先后）' />
 
 - 中国矿业大学计算机学院科学技术协会
 - 东北大学秦皇岛分校计算机与通信工程学院

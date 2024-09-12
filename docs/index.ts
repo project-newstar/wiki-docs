@@ -6,7 +6,7 @@ export function signup() {
     if (nowtime.getTime() < opentime.getTime()) {
         ElMessage({
             message: '公开赛道报名通道于 9.13 10:00 开放',
-            type: 'warning'
+            type: 'warning',
         })
     } else {
         let year = opentime.getFullYear();

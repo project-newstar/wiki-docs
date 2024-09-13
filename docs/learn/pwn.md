@@ -38,6 +38,22 @@ Pwn 需要的不仅是基本的 C语言、汇编语言以及逆向功底，还�
 - ROPgadget
 - one_gadget
 
+::: info
+下载传送门：[IDA Pro 8.3](https://down.52pojie.cn/Tools/Disassemblers/IDA_Pro_v8.3_Portable.zip)
+:::
+
+对于 Pwn 环境搭建，可参考文章：[Pwn 22.04 环境搭建保姆级教程](https://blog.csdn.net/j284886202/article/details/134931709)。
+
+除此之外还建议在 Ubuntu 装个趁手的代码编辑器，如 [VSCode](https://visualstudio.microsoft.com/).
+
+::: tip
+由于国内网络环境，使用 Pip 等包管理工具时可能遇到下载缓慢、无法下载等情况，可自行网络搜索配置镜像源。
+
+如 Pip 镜像配置可参照 [清华大学软件源 PyPI](https://mirror.tuna.tsinghua.edu.cn/help/pypi/).
+
+:::
+
+
 ## 0x02. 前期 Pwn 的基本学习路线
 
 首先前置知识有基础的 C 语言、汇编、ELF 程序的加载运行知识
@@ -85,24 +101,8 @@ Pwn 知识：
 - 栈迁移
 - one_gadget
 
-## 0x03. Pwn 环境搭建
 
-::: info
-下载传送门：[IDA Pro 8.3](https://down.52pojie.cn/Tools/Disassemblers/IDA_Pro_v8.3_Portable.zip)
-:::
-
-对于 Pwn 环境搭建，可参考文章：[Pwn 22.04 环境搭建保姆级教程](https://blog.csdn.net/j284886202/article/details/134931709)。
-
-除此之外还建议在 Ubuntu 装个趁手的代码编辑器，如 [VSCode](https://visualstudio.microsoft.com/).
-
-::: tip
-由于国内网络环境，使用 Pip 等包管理工具时可能遇到下载缓慢、无法下载等情况，可自行网络搜索配置镜像源。
-
-如 Pip 镜像配置可参照 [清华大学软件源 PyPI](https://mirror.tuna.tsinghua.edu.cn/help/pypi/).
-
-:::
-
-## 0x04. Pwn 基础
+## 0x03. Pwn 基础
 
 ### x64 汇编部分
 
@@ -123,10 +123,10 @@ Pwn 知识：
 
 #### 数据类型
 
-- <ElTag type="info" size="small">1 字节</ElTag> `Byte`
-- <ElTag type="info" size="small">2 字节</ElTag> `Word`
-- <ElTag type="info" size="small">3 字节</ElTag> `DWORD`
-- <ElTag type="info" size="small">4 字节</ElTag> `QWORD`
+- <ElTag type="info" size="small">1 字节</ElTag> `BYTE`
+- <ElTag type="info" size="small">2 字节</ElTag> `WORD`
+- <ElTag type="info" size="small">4 字节</ElTag> `DWORD`
+- <ElTag type="info" size="small">8 字节</ElTag> `QWORD`
 
 #### 基础汇编语句
 
@@ -162,7 +162,7 @@ IDA中，按下 <kbd>⇧Shift</kbd><kbd>F7</kbd> 即可查看
 - `.data` 段：存储已经赋初值的全局变量，可读可写
 - `.rodata` 段：存储全局常量，比如常量字符串等，仅仅可读
 
-## 0x05. Pwn 题目解题示例
+## 0x04. Pwn 题目解题示例
 
 我们以一个 ret2backdoor 的题目为例子。
 

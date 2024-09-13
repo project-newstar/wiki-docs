@@ -5,7 +5,7 @@ import { ElCard } from "element-plus";
 
 <template>
     <p>
-        <ElCard class="qa-card">
+        <ElCard class="qa-card" shadow="never">
             <template #header>
                 <div class="card-header"><span class="front-text">Q</span><slot name="question" /></div>
             </template>

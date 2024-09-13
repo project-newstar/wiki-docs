@@ -113,11 +113,11 @@ Pwn 知识：
 例如，`r` 开头的为 64 位寄存器（看作 `unsigned long long`），如
 
 - `rax` `rbx` `rcx` `rdx` `rdi` `rsi` `rsp` `rbp` `rip`
-- `r8` `r9` `r10` `r11` `r12` `r13` `r14` `r15`.
+- `r8` `r9` `r10` `r11` `r12` `r13` `r14` `r15`
 
 例如，`e` 开头的是 32 位寄存器（看作 `unsigned int`），如
 
-- `eax` `ebx` `ecx` `edx` `edi` `esi` `esp` `ebp` `eip`.
+- `eax` `ebx` `ecx` `edx` `edi` `esi` `esp` `ebp` `eip`
 
 其中 `eax` 是 `rax` 的低 4 字节，其它的以此类推。
 

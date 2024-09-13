@@ -23,7 +23,7 @@ import QACard from '@/components/docs/QACard.vue'
 基础学不会怎么办？
 </template>
 <template v-slot:answer>
-可以问学长学姐<span class='desc-text'>（禁止问正在进行的赛题思路）</span>，也可以比赛时在实践中学习，可能更容易教会。
+可以问学长学姐<span class='desc-text'>（禁止问正在进行的赛题思路）</span>，也可以比赛时在实践中学习，可能更容易领悟。
 </template>
 </QACard>
 
@@ -32,7 +32,7 @@ import QACard from '@/components/docs/QACard.vue'
 好难啊……
 </template>
 <template v-slot:answer>
-刚开始是最难的，因为要爬上门槛，后面就是缓坡了。自己尝试无果要善于问搜索引擎、学长学姐。
+刚开始是最难的，因为要爬上门槛，后面就是缓坡了。自己尝试无果要善于寻求搜索引擎、前辈的帮助。
 </template>
 </QACard>
 

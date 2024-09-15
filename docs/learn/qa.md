@@ -23,7 +23,7 @@ import QACard from '@/components/docs/QACard.vue'
 基础学不会怎么办？
 </template>
 <template v-slot:answer>
-可以问学长学姐<span class='desc-text'>（禁止问正在进行的赛题思路）</span>，也可以比赛时在实践中学习，可能更容易领悟。
+可以问学长学姐<span data-desc>（禁止问正在进行的赛题思路）</span>，也可以比赛时在实践中学习，可能更容易领悟。
 </template>
 </QACard>
 
@@ -56,7 +56,7 @@ import QACard from '@/components/docs/QACard.vue'
 - Reverse：逆向工程，对软件破解感兴趣的同学可以尝试
 - Pwn: 二进制安全，有程序设计基础，需要对汇编、程序运行底层感兴趣
 - Web：涵盖网络攻防、渗透测试等，有前后端经验的同学更容易入门
-- Misc：比较杂，各种奇技淫巧，门槛低但偏脑洞，有点好玩<span class='desc-text'>（还可能会夹带游戏、番剧等私货）</span>
+- Misc：比较杂，各种奇技淫巧，门槛低但偏脑洞，有点好玩<span data-desc>（还可能会夹带游戏、番剧等私货）</span>
 
 </template>
 </QACard>

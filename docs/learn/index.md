@@ -9,7 +9,7 @@ import { ElTag } from 'element-plus'
 import 'element-plus/es/components/tag/style/css'
 </script>
 
-# 快速入门
+# 写在前面
 
 如果你曾经从未接触过 CTF，或者对该赛事还不是很熟悉，这份文档可能会帮助到你。
 

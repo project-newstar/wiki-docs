@@ -19,6 +19,8 @@ sidebar:
   '/learn/':
     - text: 写在前面
       link: /learn/
+    - text: 开始
+      link: /learn/start
     - text: 各方向入门介绍
       items:
       - text: Web 网络攻防

@@ -45,7 +45,7 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 
 对于 Pwn 环境搭建，可参考文章：[Pwn 22.04 环境搭建保姆级教程](https://blog.csdn.net/j284886202/article/details/134931709)。
 
-除此之外还建议在 Ubuntu 装个趁手的代码编辑器，如 [VSCode](https://visualstudio.microsoft.com/).
+除此之外还建议在 Ubuntu 装个趁手的代码编辑器，如 [VSCode](https://code.visualstudio.com/).
 
 ::: tip
 由于国内网络环境，使用 Pip 等包管理工具时可能遇到下载缓慢、无法下载等情况，可自行网络搜索配置镜像源。
@@ -154,7 +154,7 @@ pop  rax             ; 将栈顶的值 pop 到 rax 寄存器里面。
 
 ELF 文件每个部分都是分段的。
 
-IDA中，按下 <kbd>⇧Shift</kbd><kbd>F7</kbd> 即可查看
+IDA中，按下 <kbd>⇧ Shift</kbd><kbd>F7</kbd> 即可查看
 
 几个比较重要的段（Section）的作用：
 

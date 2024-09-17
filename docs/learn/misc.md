@@ -22,6 +22,7 @@ import 'element-plus/es/components/tag/style/css'
 安全领域不止 Web、逆向等方向，Misc 涵盖了剩下的一些部分，同时也对一些强分类方向的细枝末节进行考察，像是对安全领域的碎片进行整理，因此称为「杂项（Miscellaneous）」。常见的 Misc 题型包括：编码、隐写、流量分析、压缩包分析、AI、取证、社会工程学、区块链、沙箱逃逸等等。
 
 ## 学习 Misc 的第一步
+
 Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一些知识点往往并不是很高深（至少入门是如此），请放心地搜索并学习它。
 
 在 Misc 的道路上走得远些对其它方向是有些帮助的，你可能会享受那种使用奇技淫巧解决问题的快感，当然，更多的时间则是在与出题人对脑洞。
@@ -41,7 +42,7 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 ## 常见题型及工具
 
 ::: info
-下面括号中所罗列的工具只是一隅，更多可参考 [CTFtools Wiki](https://github.com/ProbiusOfficial/CTFtools-wiki?tab=readme-ov-file#--misc--%E6%9D%82%E9%A1%B9).
+下面括号中所罗列的工具只是一隅，且只给出正版链接，更多可参考 [CTFtools Wiki](https://github.com/ProbiusOfficial/CTFtools-wiki?tab=readme-ov-file#--misc--%E6%9D%82%E9%A1%B9).
 :::
 
 ### 编码

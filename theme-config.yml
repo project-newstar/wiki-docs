@@ -21,6 +21,7 @@ sidebar:
       link: /learn/
     - text: 开始
       link: /learn/start
+
     - text: 各方向入门介绍
       items:
       - text: Web 网络攻防
@@ -33,6 +34,18 @@ sidebar:
         link: /learn/pwn
       - text: Misc 杂项
         link: /learn/misc
+
+    - text: 参考教程
+      items:
+      - text: VSCode Python 环境配置
+        link: /learn/vscode-python
+      - text: 获取 Linux 发行版
+        link: /learn/get-linux
+      - text: 切换软件源
+        link: /learn/change-software-source
+      - text: Pwn 环境配置
+        link: /learn/configure-pwn
+
     - text: Q&A
       link: /learn/qa
 

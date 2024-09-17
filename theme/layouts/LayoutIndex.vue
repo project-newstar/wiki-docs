@@ -63,7 +63,7 @@ function fmtActionsArray(actions: any) {
             </div>
         </IndexContent>
 
-        <!-- <VPFooter /> -->
+        <VPFooter class="layout-index-footer" />
         <slot name="layout-bottom" />
     </div>
 </template>
@@ -118,5 +118,13 @@ function fmtActionsArray(actions: any) {
 .content-doc {
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+.layout-index-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
 }
 </style>

@@ -2,9 +2,19 @@
 import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
 import { useData } from 'vitepress';
 import { useSidebar } from 'vitepress/theme';
+import { onMounted } from 'vue';
 
 const { page, frontmatter } = useData()
 const { hasSidebar } = useSidebar()
+
+onMounted(() => {
+  const layoutIndex = document.querySelector('.layout-index') as HTMLElement | null
+  const layoutIndexFooter = document.querySelector('.layout-index-footer')
+  if(layoutIndex && layoutIndexFooter) {
+    let height = layoutIndexFooter.clientHeight
+    layoutIndex.style.setProperty('--index-footer-height', `${height}px`)
+  }
+})
 </script>
 
 <template>
@@ -13,6 +23,7 @@ const { hasSidebar } = useSidebar()
     id="VPContent"
     :class="{
       'has-sidebar': hasSidebar,
+      'layout-index': frontmatter.layout === 'index',
     }"
   >
     <slot name="not-found" v-if="page.isNotFound"><NotFound /></slot>
@@ -22,7 +33,16 @@ const { hasSidebar } = useSidebar()
   </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+.layout-index {
+  --index-footer-height: 0px;
+}
+.layout-index .layout-center {
+  padding-bottom: var(--index-footer-height);
+}
+</style>
+
+<style lang="scss" scoped>
 .VPContent {
   flex-grow: 1;
   flex-shrink: 0;
@@ -42,7 +62,7 @@ const { hasSidebar } = useSidebar()
 @media (min-width: 960px) {
   .VPContent {
     padding-top: var(--vp-nav-height);
-    min-height: 100vh;
+    min-height: calc(100vh);
   }
 
   .VPContent.has-sidebar {

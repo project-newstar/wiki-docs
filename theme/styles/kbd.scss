@@ -8,8 +8,8 @@ kbd {
     // color: var(--vp-code-color);
     color: currentColor;
     font-size: var(--vp-code-font-size);
-    font-weight:500;
-    font-family: inherit;
+    font-weight: 500;
+    // font-family: inherit;
     transition: color 0.25s, background-color 0.5s;
     $border-radius: 4px;
     -moz-border-radius: $border-radius;

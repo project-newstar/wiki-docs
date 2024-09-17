@@ -281,7 +281,7 @@ RSA 中涉及到我们之前没有或者说不太重视的一些数学知识点�
 
   因为 $n = p \times q$ 也可以看成 $n = k_2 p$，而一般 $k_1 \ne k_2$，所以就可以得到 $p$.
 
-  ::: tip
+  ::: info
   具体情况可参见 [羊城杯 2021 Bigrsa 共享素数](https://www.cnblogs.com/Clair-is-com/p/16470121.html)。
   :::
 

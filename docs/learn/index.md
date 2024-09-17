@@ -9,13 +9,13 @@ import { ElTag } from 'element-plus'
 import 'element-plus/es/components/tag/style/css'
 </script>
 
-# 快速入门
+# 写在前面
 
 如果你曾经从未接触过 CTF，或者对该赛事还不是很熟悉，这份文档可能会帮助到你。
 
 ## 什么是 CTF
 
-CTF 是一种比赛形式，你会得到一个题面<span class='desc-text'>（可能是一段话、一个压缩包、一张图片、一个网站、一个链接、一份源码、一个程序等）</span>，你需要根据题面，通过各种手法找到或得到诸如 `flag{xxx}` 的内容，这便是此题的答案。
+CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。比赛中，选手会得到一个题面<span data-desc>（可能是一段话、一个压缩包、一张图片、一个网站、一个链接、一份源码、一个程序等）</span>，选手需要根据题面，通过各种手法找到或得到诸如 `flag{xxx}` 的内容，这便是此题的答案。
 
 ## 走出洞穴的第一步
 
@@ -24,7 +24,7 @@ CTF 是一种比赛形式，你会得到一个题面<span class='desc-text'>（�
 如果你此前从未接触过 CTF，你可能需要先了解其形式，即通过一些在线靶场或新生赛的低门槛题目进行适应。下面的一些公益新生赛事或平台或许会对你有所帮助：
 
 - <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
-- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
+- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>

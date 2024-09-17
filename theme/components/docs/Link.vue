@@ -54,8 +54,10 @@ function fmtClass(theme?: string, ...append: string[]): string {
 @use "@/assets/fonts/docs/map.scss" as docs-map;
 
 $current-color: currentColor;
-$primary-color: var(--vp-c-brand-1);
-$primary-hover-color: var(--vp-c-brand-2);
+// $primary-color: var(--vp-c-brand-1);
+$primary-color: var(--docs-link-color);
+// $primary-hover-color: var(--vp-c-brand-2);
+$primary-hover-color: var(--docs-link-hover-color);
 
 [data-link] {
     display: inline !important;
@@ -71,16 +73,16 @@ $primary-hover-color: var(--vp-c-brand-2);
 .link-underline,
 .link-underline[data-link] {
     color: $current-color;
-    // always underline
+
     &:not(.link-always):not(.link-hover):not(.link-blink),
     &.link-always {
-        @include link.underline($current-color, $primary-color);
+        @include link.underline("always", $current-color, $primary-color);
     }
     &.link-hover {
-        @include link.underline-hover($current-color, $primary-color);
+        @include link.underline("hover", $current-color, $primary-color);
     }
     &.link-blink {
-        @include link.underline-blink($current-color, $primary-color);
+        @include link.underline("blink", $current-color, $primary-color);
     }
 }
 

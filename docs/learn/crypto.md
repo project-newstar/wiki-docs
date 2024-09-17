@@ -32,18 +32,18 @@ import 'element-plus/es/components/tooltip/style/css'
 
 你需要准备以下工具：
 
-- PC<span class='desc-text'>（一般不限操作系统）</span>
+- PC<span data-desc>（一般不限操作系统）</span>
 - Python <ElTag type="primary" size="small">编程语言和环境</ElTag>
-- yafu <ElTag type="primary" size="small">软件</ElTag>
+- yafu <ElTag type="primary" size="small">软件程序</ElTag>
 - 一款笔记软件或网站
-- 草稿纸和笔<span class='desc-text'>（随电脑携带的，经常需要演算关系式）</span>
+- 草稿纸和笔<span data-desc>（随电脑携带的，经常需要演算关系式）</span>
 - <Link icon="external" theme="underline hover" href="https://factordb.com/">大数分解 factordb</Link> <ElTag type="primary" size="small">网站</ElTag>
 
-一些帮助性较大的网站：
+其它一些帮助性较大的网站：
 
-- <Link icon="external" theme="underline hover" href="https://www.nssctf.cn/explore/workshop/">探索商城 | NSSCTF</Link>
+- <Link icon="external" theme="underline hover" href="https://www.nssctf.cn/explore/workshop/">NSSCTF 探索商城</Link>
 - <Link icon="external" theme="underline hover" href="https://ctf-wiki.org/">CTF Wiki</Link>
-- <Link icon="external" theme="underline hover" href="https://oi-wiki.org/">OI Wiki</Link><span class='desc-text'>（包含一些更深的数学知识）</span>
+- <Link icon="external" theme="underline hover" href="https://oi-wiki.org/">OI Wiki</Link><span data-desc>（包含一些更深的数学知识）</span>
 
 除此之外，在学习的途中还会遇到很多有意思的工具或网站。
 
@@ -74,7 +74,7 @@ pip install gmpy2
 - 函数的使用
 - Python 中各种进制的格式头
 
-你可以通过解释如下代码片段中高亮行的含义来检验自己的学习情况<span class='desc-text'>（下面的代码整体无实际意义）</span>：
+你可以通过解释如下代码片段中高亮行的含义来检验自己的学习情况<span data-desc>（下面的代码整体无实际意义）</span>：
 
 ```python:line-numbers
 from Crypto.Util.number import * # [!code highlight]
@@ -103,8 +103,8 @@ x = c % p // 2 # [!code highlight]
 你需要了解下面这些知识点：
 
 - 理解模运算
-- 逆元计算的运用<span class='desc-text'>（暂时不要求理解）</span>
-- RSA 公钥加密算法<span class='desc-text'>（可参考文章：[RSA 入门 | DexterJie'Blog](https://dexterjie.github.io/2024/07/15/非对称加密/RSA/)）</span>
+- 逆元计算的运用<span data-desc>（暂时不要求理解）</span>
+- RSA 公钥加密算法<span data-desc>（可参考文章：[RSA 入门](https://dexterjie.github.io/2024/07/15/非对称加密/RSA/)）</span>
 - 理解海纳百川的 $k$ 和无所不能的公因数
 
 ## 开始学习
@@ -143,11 +143,11 @@ x = c % p // 2 # [!code highlight]
 </ElCollapse>
 
 ::: tip 撰稿人注
-讲讲我个人学习 Python 的经历：我一开始就买了本 Python 的入门书籍开始啃，啃到后面 for 循环就开始做题了。一开始也不会做题，就看别人的 WriteUp（看看别人的思路，抄作业，但这是个好的行为，大伙开始都是看过来的），WriteUp 里一般都会有 Python 代码，就跟着打在自己的电脑上（建议不要直接复制粘贴），遇到不会的就上网搜索，一边学密码学，一边练编程技术。
+讲讲我个人学习 Python 的经历：我一开始就买了本 Python 的入门书籍开始「啃」，啃到后面 for 循环就开始做题了。一开始也不会做题，就看别人的 WriteUp（看看别人的思路，抄作业，但这是个好的行为，大伙开始都是看过来的），WriteUp 里一般都会有 Python 代码，就跟着打在自己的电脑上（建议不要直接复制粘贴），遇到不会的就上网搜索，一边学密码学，一边练编程技术。
 :::
 
 ::: tip 编者注
-我具有其它程序语言的基础，对 Python 也只随便看了一些基本的语法（运算、循环）之后就上手了。刚开始做题很艰难，几乎写每一行功能性代码都要网上去搜索（诸如用什么库、函数），经历过大约半个月的持续边做题边编程、看 WriteUp、赛后与前辈交流，Python 能力也见长了。遇到不会的立即学习并应用，慢慢地也就无师自通了。
+编者具有其它程序语言的基础，对 Python 也只随便看了一些基本的语法（运算、循环）之后便上手密码学了。刚开始做题很艰难，几乎写每一行功能性代码都要网上去搜索（诸如用什么库、函数），经历过大约半个月的持续边做题边编程、看 WriteUp、赛后与前辈交流，Python 能力也见长了。遇到不会的立即学习并应用，慢慢地也就无师自通了。
 :::
 
 ### （二）了解 RSA 算法（公钥加密算法）
@@ -178,15 +178,15 @@ RSA算法中有以下公式
 
 1. 加密公式
 
-$$ c = m^{e} \pmod n $$
+$$ c \equiv m^{e} \pmod n $$
 
 2. 解密公式
 
-$$ m = c^{d} \pmod n $$
+$$ m \equiv c^{d} \pmod n $$
 
 3. $e$ 和 $d$ 的关系式
 
-$$ d = e^{-1} \pmod{\varphi} $$
+$$ d \equiv e^{-1} \pmod{\varphi} $$
 
 4. $p$ 和 $q$ 是素数的情况下，$n$ 的欧拉函数
 
@@ -199,8 +199,10 @@ $$ n = p \times q $$
 1. 大小关系
 
 $$
+\begin{array}{c}
 m^e < n \\
 n \approx \varphi
+\end{array}
 $$
 
 ::: tip
@@ -273,14 +275,14 @@ RSA 中涉及到我们之前没有或者说不太重视的一些数学知识点�
 
   答：$k \times n$，其中 $k$ 是任意整数，例如 $12 \pmod 5 = 12 - 2 \times 5$，其中 $k=2$.
 
-  我们之后会遇到一部分的数学推导题，题目会给出有关 $p$ 和 $q$ 的关系式。草稿纸上推理处理完关系式后，经常能得到一个有关 $p$ 或者 $q$ 的式子 $a = b \pmod p$，此时我们只需要将这个式子转化一下
+  我们之后会遇到一部分的数学推导题，题目会给出有关 $p$ 和 $q$ 的关系式。草稿纸上推理处理完关系式后，经常能得到一个有关 $p$ 或者 $q$ 的式子 $a \equiv b \pmod p$，此时我们只需要将这个式子转化一下
   $$a = b + k_1 p \Rightarrow k_1 p = a - b$$
   然后求 $a-b$ 和 $n$ 的公因数就可以得到 $p$ 了。
 
   因为 $n = p \times q$ 也可以看成 $n = k_2 p$，而一般 $k_1 \ne k_2$，所以就可以得到 $p$.
 
-  ::: tip
-  具体情况可参见 [羊城杯 2021 Bigrsa](https://www.cnblogs.com/Clair-is-com/p/16470121.html) 共享素数。
+  ::: info
+  具体情况可参见 [羊城杯 2021 Bigrsa 共享素数](https://www.cnblogs.com/Clair-is-com/p/16470121.html)。
   :::
 
 #### 5. 计算机基础
@@ -290,7 +292,7 @@ RSA 中涉及到我们之前没有或者说不太重视的一些数学知识点�
   这看起来有点不可思议，文字和数字怎么联系在一起。但计算机上就可以，计算机底层是一堆二进制，只有 `0` 和 `1` 。要想在屏幕上展现文字，就需要**编码**。编码将数字按照一定的法则转换成对应的文字，常见的编码如 [ASCII 编码](https://www.runoob.com/w3cnote/ascii.html)。
 
   通过一些编码方式，我们就能把想保护传输的信息转换成整数并一一对应，再通过 RSA 算法加密计算得到密文 $c$.
-  $$ c = m^{e} \pmod n $$
+  $$ c \equiv m^{e} \pmod n $$
 
 #### 6. 代码实现
 

@@ -40,3 +40,4 @@ C 语言是逆向工程的基础，务必重点学习以下内容。
 3. Jeb: 面相安卓逆向的利器，有 Java 代码反混淆功能
 4. Pyinstxtractor: 解包 Python 编写的 exe 文件
 5. Uncompyle6: 反编译 Python 大部分版本字节码（pyc 文件）
+6. Xdbg: 动调神器

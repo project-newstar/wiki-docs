@@ -4,10 +4,11 @@
 
 @mixin plain($color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
     text-decoration: none;
-    color: $color !important;
+    color: $color;
     font-weight: inherit;
+
     &:hover {
-        color: $hover !important;
+        color: $hover;
     }
 }
 
@@ -27,6 +28,7 @@
     @include underline-bg-color(currentColor, transparent);
     @include underline-bg-width(0%, 100%);
     @include underline-bg-posX(100%, 0%);
+
     &:hover,
     &:active {
         @include underline-bg-width(100%, 0%);
@@ -42,6 +44,7 @@
     @include underline-bg-color(currentColor, transparent);
     @include underline-bg-width(100%, 0%);
     @include underline-bg-posX(0%, 100%);
+
     &:hover,
     &:active {
         animation: underline-blink 0.5s ease-in-out;
@@ -52,14 +55,17 @@
             @include underline-bg-width(100%, 0%);
             @include underline-bg-posX(100%, 0%);
         }
+
         50% {
             @include underline-bg-width(0%, 100%);
             @include underline-bg-posX(100%, 0%);
         }
+
         51% {
             @include underline-bg-width(0%, 100%);
             @include underline-bg-posX(0%, 100%);
         }
+
         100% {
             @include underline-bg-width(100%, 0%);
             @include underline-bg-posX(0%, 100%);
@@ -68,11 +74,15 @@
 }
 
 @mixin underline($style: "always", $color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    @if $style == "always" {
+    @if $style =="always" {
         @include underline_always($color, $hover);
-    } @else if $style == "hover" {
+    }
+
+    @else if $style =="hover" {
         @include underline_hover($color, $hover);
-    } @else if $style == "blink" {
+    }
+
+    @else if $style =="blink" {
         @include underline_blink($color, $hover);
     }
 }
@@ -93,16 +103,19 @@
 }
 
 @mixin icon_with_name($name, $family, $icon_map, $icon: "", $position: "right") {
-    @if $icon != "" and map-has-key($icon_map, $icon) {
+    @if $icon !="" and map-has-key($icon_map, $icon) {
         &::after {
             content: map-get($icon_map, $icon);
-            @if $position == "right" {
+
+            @if $position =="right" {
                 margin-left: 0.25rem;
                 margin-right: 0.1rem;
                 @include _inject_icon_style($name, $family);
                 @include font.register-font($name, $family);
                 @include font.inject-font($family);
-            } @else if $position == "left" {
+            }
+
+            @else if $position =="left" {
                 margin-left: 0.1rem;
                 margin-right: 0.25rem;
                 @include _inject_icon_style($name, $family);
@@ -123,6 +136,7 @@
         @include font.register-font($name, $family);
         @include font.inject-font($family);
     }
+
     &[data-icon-pos="right"]::after {
         width: unset !important;
         height: unset !important;
@@ -139,6 +153,7 @@
         &.icon-#{$key}[data-icon-pos="right"]::after {
             content: $value;
         }
+
         &.icon-#{$key}[data-icon-pos="left"]::before {
             content: $value;
         }

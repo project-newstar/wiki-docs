@@ -1,0 +1,23 @@
+:root {
+    // --el-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif; // default
+    --el-font-family: var(--vp-font-family-base);
+
+    --yq-font-family-base: 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Noto Color Emoji', 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB',
+        'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    // --yq-font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+    // --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; // default
+    // --vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; // default
+    --vp-font-family-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+
+    &:where(:lang(zh)) {
+
+        // --vp-font-family-base: "Punctuation SC", "Inter", ui-sans-serif, system-ui, "PingFang SC", "Noto Sans CJK SC",
+        //   "Noto Sans SC", "Heiti SC", "Microsoft YaHei", "DengXian", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        //   "Segoe UI Symbol", "Noto Color Emoji"; // default
+        .vp-doc {
+            --vp-font-family-base: var(--yq-font-family-base);
+            font-family: var(--yq-font-family-base);
+        }
+    }
+}

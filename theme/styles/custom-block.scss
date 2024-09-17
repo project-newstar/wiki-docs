@@ -13,11 +13,18 @@
             font-size: 16px;
         }
     }
+    @mixin code-color($color, $background) {
+        code {
+            color: $color;
+            background-color: $background;
+        }
+    }
     &.tip {
         @include basic-block;
         background-color: var(--block-bg-tip);
         border-left: 5px solid var(--block-tip);
         @include paragraph;
+        @include code-color(var(--block-tip), var(--block-bg-tip));
     }
 
     &.info {
@@ -25,6 +32,7 @@
         background-color: var(--block-bg-info);
         border-left: 5px solid var(--block-info);
         @include paragraph;
+        @include code-color(var(--block-info), var(--block-bg-info));
     }
 
     &.warning {
@@ -32,6 +40,7 @@
         background-color: var(--block-bg-warning);
         border-left: 5px solid var(--block-warning);
         @include paragraph;
+        @include code-color(var(--block-warning), var(--block-bg-warning));
     }
 
     &.danger {
@@ -39,6 +48,7 @@
         background-color: var(--block-bg-danger);
         border-left: 5px solid var(--block-danger);
         @include paragraph;
+        @include code-color(var(--block-danger), var(--block-bg-danger));
     }
 }
 

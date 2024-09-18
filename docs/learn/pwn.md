@@ -31,7 +31,7 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 
 ## 0x01. Pwn 环境搭建
 
-请先确保你具备 Ubuntu<span data-desc>（建议用近几年的 Ubuntu，比如 22.04 LTS, 24.04 LTS）</span> 操作系统。随后可以准备以下软件或工具：
+请先确保你具备 Ubuntu<span data-desc>（建议用近几年的 Ubuntu，比如 22.04 LTS、24.04 LTS）</span> 操作系统。随后可以准备以下软件或工具：
 
 - IDA/Ghidra
 - pwntools
@@ -53,7 +53,6 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 如 Pip 镜像配置可参照 [清华大学软件源 PyPI](https://mirror.tuna.tsinghua.edu.cn/help/pypi/).
 
 :::
-
 
 ## 0x02. 前期 Pwn 的基本学习路线
 
@@ -101,7 +100,6 @@ Pwn 知识：
 - 伪随机数漏洞
 - 栈迁移
 - one_gadget
-
 
 ## 0x03. Pwn 基础
 
@@ -239,7 +237,7 @@ gdb.attach(p)
 p.interactive()
 ```
 
-我们要往 `buf` 写入的东西就是 16 个随便的字符 + 8 字节的 rbp_old + 8字节的函数返回地址，即 `b'a'*0x10+p64(0) + p64(0x4011BD)`.
+我们要往 `buf` 写入的东西就是「16 个随便的字符」+「8 字节的 rbp_old」+「8字节的函数返回地址」，即 `b'a'*0x10 + p64(0) + p64(0x4011BD)`.
 
 这样我们就能更改 `rbp_old` 的数值为 0，更改函数的返回地址到 `0x4011BD`.
 
@@ -281,7 +279,7 @@ p.interactive()
 
 ![system - 本地利用](/assets/images/learn/pwn-run-exp-local_system.png)
 
-但是程序卡在了system函数的内部的一条命令:
+但是程序卡在了 system 函数的内部的一条命令:
 
 ```asm
 0x7e3aee45842b <do_system+363>    movaps xmmword ptr [rsp + 0x50], xmm0

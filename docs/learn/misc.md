@@ -75,7 +75,7 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 
 ### 隐写
 
-隐写术是一种将秘密信息隐藏在普通数据中的技术。 在CTF竞赛中，Misc类别通常涉及到各种隐写技巧，包括但不限于文本、图像和音频隐写。
+隐写术是一种将秘密信息隐藏在普通数据中的技术。 在 CTF 竞赛中，Misc 类别通常涉及到各种隐写技巧，包括但不限于文本、图像和音频隐写。
 隐写的种类有很多种，细化的方式也多种多样，例如：
 
 - 图片隐写<span data-desc>（[ImageMagick](https://github.com/ImageMagick/ImageMagick)）</span>
@@ -142,7 +142,7 @@ Misc 中的取证往往有以下常见的考点：
 - 注册表分析<span data-desc>（WRR、RegRipper）</span>
 - 磁盘分析<span data-desc>（FTK-Imager）</span>
 - 数据库取证<span data-desc>（Sqlcipher、PslistEditor）</span>
-- 配置文件分析<span data-desc>（XShell、MobaXterm等）</span>
+- 配置文件分析<span data-desc>（XShell、MobaXterm 等）</span>
 
 ::: tip
 

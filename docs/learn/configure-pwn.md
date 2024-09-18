@@ -118,7 +118,7 @@ source /path/to/pwngdb/gdbinit.py # 将路径替换为你的 pwndbg/gdbinit.py �
 
 安装完后，运行 `gdb` 查看是否安装成功。
 
-## ROPgadget
+## 安装 ROPgadget
 
 ROPgadget 是一个用于搜索二进制文件中可用 ROP（返回导向编程） 链的工具，帮助漏洞利用时构建rop链以执行恶意代码。
 

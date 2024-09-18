@@ -14,11 +14,11 @@ titleTemplate: ':title | 快速入门 - NewStar CTF'
 
 ::: code-group
 
-<<< @/assets/code/ubuntu-software-source/24.04-lts.sh{2-16 bash} [Ubuntu 24.04 LTS]
+<<< @/assets/code/ubuntu-software-source/24.04-lts.sh{2-16 bash} [24.04 LTS]
 
-<<< @/assets/code/ubuntu-software-source/23.10-lts.sh{2-16 bash} [Ubuntu 23.10 LTS]
+<<< @/assets/code/ubuntu-software-source/23.10-lts.sh{2-16 bash} [23.10 LTS]
 
-<<< @/assets/code/ubuntu-software-source/22.04-lts.sh{2-16 bash} [Ubuntu 22.04 LTS]
+<<< @/assets/code/ubuntu-software-source/22.04-lts.sh{2-16 bash} [22.04 LTS]
 
 :::
 

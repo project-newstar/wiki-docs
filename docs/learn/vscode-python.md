@@ -35,7 +35,7 @@ print("Hello, World!")
 记得保存文件（快捷键 <kbd>^ Ctrl</kbd><kbd>S</kbd>）。VSCode 标签页上若显示圆点，则表示该文件已更改但未保存。可以在设置中搜索 `Auto Save`，选择自动保存的模式。
 :::
 
-点击文件右上角的运行 <kbd>▷</kbd> 按钮，可在 VSCode 内置终端中看到输出。
+点击编辑器右上角的运行 <kbd>▷</kbd> 按钮，可在 VSCode 内置终端中看到输出。
 
 ::: tip
 VSCode 中有许多命令，按下 <kbd>F1</kbd> 或者 <kbd>^ Ctrl</kbd><kbd>⇧ Shift</kbd><kbd>P</kbd>，可以调出命令输入框<span data-desc>（以 `>` 开头表示命令，否则表示搜索文件）</span>。

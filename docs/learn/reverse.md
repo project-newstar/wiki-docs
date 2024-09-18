@@ -10,20 +10,20 @@ titleTemplate: ':title | 快速入门 - NewStar CTF'
 
 C 语言是逆向工程的基础，务必重点学习以下内容。
 
-1. 流程控制：if、switch、goto、break
-2. 指针操作：引用，解引用，取地址，数组与指针转化
-3. 数据类型：熟记 char、int、int64 等类型大小
-4. 可逆运算：异或运算、算数运算、移位与循环移位运算
+- 流程控制：if、switch、goto、break
+- 指针操作：引用，解引用，取地址，数组与指针转化
+- 数据类型：熟记 char、int、int64 等类型大小
+- 可逆运算：异或运算、算数运算、移位与循环移位运算
 
 ## 0x02. 学习常见加密
 
-加密是逆向工程对抗的核心,务必熟记加密算法原理和特征,这样在面对混淆和魔改加密时才能游刃有余。
+加密是逆向工程对抗的核心，务必熟记加密算法原理和特征，这样在面对混淆和魔改加密时才能游刃有余。
 
-1. TEA 系列加密: TEA、XTEA、XXTEA
-2. RC4 加密
-3. AES/DES 加密
-4. 16 进制编码
-5. Base64 编码
+- TEA 系列加密: TEA、XTEA、XXTEA
+- RC4 加密
+- AES/DES 加密
+- 16 进制编码
+- Base64 编码
 
 加密特征识别可参阅：[常见加密算法特征识别](https://pangbai.work/IT/re/ctf_encode/)
 
@@ -35,9 +35,9 @@ C 语言是逆向工程的基础，务必重点学习以下内容。
 
 ## 0x04. 逆向工具的使用
 
-1. IDA: 二进制方向工具，90%的题都会用到，务必熟悉使用
-2. Jadx-gui: Java 代码反编译工具，安卓软件和 Java 程序都会用到。
-3. Jeb: 面相安卓逆向的利器，有 Java 代码反混淆功能
-4. Pyinstxtractor: 解包 Python 编写的 exe 文件
-5. Uncompyle6: 反编译 Python 大部分版本字节码（pyc 文件）
-6. Xdbg: 动调神器
+- IDA: 二进制方向工具，90% 的题都会用到，务必熟悉使用
+- Jadx-gui: Java 代码反编译工具，安卓软件和 Java 程序都会用到。
+- Jeb: 面相安卓逆向的利器，有 Java 代码反混淆功能
+- Pyinstxtractor: 解包 Python 编写的 exe 文件
+- Uncompyle6: 反编译 Python 大部分版本字节码（pyc 文件）
+- Xdbg: 动调神器

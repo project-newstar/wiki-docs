@@ -9,7 +9,7 @@ titleTemplate: ':title | 快速入门 - NewStar CTF'
 ## 下载和安装 VMware Workstation Pro
 
 ::: tip
-VMware Workstation 公司被收购后，VMWare 官网已经不再提供 VMware WorkStation 软件下载链接，点击下载会重定向到 VMware 现在的母公司 Broadcom 的页面，所以我们直接去 Broadcom 的官网下载就好。
+VMware Workstation 公司被收购后，VMware 官网已经不再提供 VMware WorkStation 软件下载链接，点击下载会重定向到 VMware 现在的母公司 Broadcom 的页面，所以我们直接去 Broadcom 的官网下载就好。
 :::
 
 首先我们需要注册一个 Broadcom 的账号：[注册链接](https://profile.broadcom.com/web/registration)。

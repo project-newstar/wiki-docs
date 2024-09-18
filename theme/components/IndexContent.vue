@@ -11,7 +11,7 @@ onMounted(() => {
   const layoutIndex = document.querySelector('.layout-index') as HTMLElement | null
   const layoutIndexFooter = document.querySelector('.layout-index-footer')
   if(layoutIndex && layoutIndexFooter) {
-    let height = layoutIndexFooter.clientHeight
+    let height = Math.ceil(layoutIndexFooter.clientHeight)
     layoutIndex.style.setProperty('--index-footer-height', `${height}px`)
   }
 })
@@ -38,12 +38,13 @@ onMounted(() => {
   --index-footer-height: 0px;
 }
 .layout-index .layout-center {
-  padding-bottom: var(--index-footer-height);
+  // padding-bottom: var(--index-footer-height);
+  height: calc(100vh - var(--vp-nav-height) - var(--index-footer-height)) !important;
 }
 </style>
 
 <style lang="scss" scoped>
-.VPContent {
+.VPContent.layout-index {
   flex-grow: 1;
   flex-shrink: 0;
   margin: var(--vp-layout-top-height, 0px) auto 0;
@@ -52,7 +53,8 @@ onMounted(() => {
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
-  min-height: calc(100vh - var(--vp-nav-height));
+  min-height: calc(100vh - var(--vp-nav-height) - var(--index-footer-height));
+  height: auto;
 }
 
 .VPContent.has-sidebar {

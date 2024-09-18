@@ -121,10 +121,10 @@ function fmtActionsArray(actions: any) {
 }
 
 .layout-index-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
     border: none;
 }
 </style>

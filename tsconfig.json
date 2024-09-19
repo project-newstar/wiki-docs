@@ -33,7 +33,8 @@
     }
   },
   "include": [
-    "theme/**/*.ts", "theme/**/*.tsx", "theme/**/*.vue", ".vitepress/**/*", "vitepress.config.ts",
-    "docs/**/*.ts",
+    ".vitepress/**/*", "vitepress.config.ts",
+    "theme/**/*.ts", "theme/**/*.tsx", "theme/**/*.vue",
+    "docs/**/*.ts", "docs/**/*.tsx", "docs/**/*.vue",
   ],
 }

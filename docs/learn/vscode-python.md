@@ -27,7 +27,7 @@ titleTemplate: ':title | 快速入门 - NewStar CTF'
 
 用 VSCode 打开一个文件夹，随便创建一个 Python 文件（以 `.py` 后缀，会自动识别为 Python 文件），输入以下代码：
 
-```python
+```Python
 print("Hello, World!")
 ```
 

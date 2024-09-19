@@ -131,7 +131,7 @@ Pwn 知识：
 
 以下是 Intel 格式汇编语句的例子：
 
-```asm
+```ASM
 mov rax, 1           ; 将 rax 的值赋值为 1
 mov rax, rdi         ; 将 rdi 存储的值赋值给 rax
 mov rax, [0x404000]  ; 将 0x404000 存储的内容复制到 rax 里面
@@ -140,7 +140,7 @@ mov [rdx], rax       ; 将 rax 的值存储到 rdx 存储的指针指向的地�
 
 除此之外比较类似的还有 `add` `sub` 等指令。
 
-```asm
+```ASM
 lea  rax, [rdx+0x10] ; 将 rdx+0x10 指针赋值给 rax
 push rax             ; 将 rax 的值 push 到栈上面。
 pop  rax             ; 将栈顶的值 pop 到 rax 寄存器里面。
@@ -224,7 +224,7 @@ chmod +x ./pwn
 
 之后我们开始写利用脚本（Exploit）。创建 `exp.py` 文件，首先写上最基本的框架：
 
-```python
+```Python
 from pwn import *
 
 context.log_level='debug'
@@ -243,7 +243,7 @@ p.interactive()
 
 然后我们使用 `send` 函数与程序进行交互。
 
-```python
+```Python
 from pwn import *
 
 context.log_level='debug'
@@ -281,7 +281,7 @@ p.interactive()
 
 但是程序卡在了 system 函数的内部的一条命令:
 
-```asm
+```ASM
 0x7e3aee45842b <do_system+363>    movaps xmmword ptr [rsp + 0x50], xmm0
 ```
 
@@ -291,7 +291,7 @@ p.interactive()
 
 修改一下地址就能拿到 shell 了
 
-```python
+```Python
 from pwn import *
 
 context.log_level='debug'
@@ -310,7 +310,7 @@ p.interactive()
 
 之后注释掉 `process` 函数与 `gdb.attach` 函数，换 `remote` 函数打远程靶机即可：
 
-```python
+```Python
 p = remote('hacker.akyuu.space', 6000)
 ```
 

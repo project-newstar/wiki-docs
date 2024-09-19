@@ -4,21 +4,25 @@
         margin: 20px 0;
         border-radius: 4px;
     }
+
     @mixin paragraph {
         p {
             font-size: 14px;
             margin: 0.5rem 0 !important;
         }
+
         p.custom-block-title {
             font-size: 16px;
         }
     }
+
     @mixin code-color($color, $background) {
         code {
             color: $color;
             background-color: $background;
         }
     }
+
     &.tip {
         @include basic-block;
         background-color: var(--block-bg-tip);
@@ -49,6 +53,12 @@
         border-left: 5px solid var(--block-danger);
         @include paragraph;
         @include code-color(var(--block-danger), var(--block-bg-danger));
+    }
+}
+
+.vp-doc .custom-block {
+    li + li {
+        margin-top: 2px;
     }
 }
 

@@ -48,7 +48,7 @@ function fmtClass(theme?: string, ...append: string[]): string {
     </a>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @use "@/styles/utils/docs-link.scss" as link;
 @use "@/assets/fonts/package.scss" as font;
 @use "@/assets/fonts/docs/map.scss" as docs-map;

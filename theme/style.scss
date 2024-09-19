@@ -16,6 +16,11 @@
   .desc-text, [data-desc] {
     --vp-c-text-1: rgb(145, 145, 145);
     color: var(--vp-c-text-1);
+    --code-color-desc: #7b91d8;
+    code {
+      color: var(--code-color-desc);
+      background-color: var(--vp-c-gray-soft);
+    }
   }
 }
 
@@ -27,6 +32,11 @@
   .desc-text, [data-desc] {
     --vp-c-text-1: rgb(165, 165, 165);
     color: var(--vp-c-text-1);
+    --code-color-desc: #7c85a3;
+    code {
+      color: var(--code-color-desc);
+      background-color: var(--vp-c-gray-soft);
+    }
   }
 }
 

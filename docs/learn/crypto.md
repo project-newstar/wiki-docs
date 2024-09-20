@@ -200,7 +200,7 @@ $$ n = p \times q $$
 
 $$
 \begin{array}{c}
-m^e < n \\
+m < n \\
 n \approx \varphi
 \end{array}
 $$

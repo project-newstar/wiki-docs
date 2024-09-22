@@ -9,12 +9,12 @@ titleTemplate: ':title | 快速入门 - NewStar CTF'
 ## 获取 IDE
 
 ::: tip
-一般只获取一个 IDE 即可，Pycharm 是专为 Python 开发的 IDE，VSCode 是通用的 IDE，可用于多种语言。
+一般只获取一个 IDE 即可，PyCharm 是专为 Python 开发的 IDE，VSCode 是通用的 IDE，可用于多种语言。
 :::
 
 点击左下角菜单按钮，搜索 Software，进入 Ubuntu 软件商店。
 
-若需安装 VSCode，则搜索「VSCode」下载即可。若需安装 Pycharm，搜索「Pycharm」，下载 Community 版本。
+若需安装 VSCode，则搜索「VSCode」下载即可。若需安装 PyCharm，搜索「PyCharm」，下载 Community 版本。
 
 ## 配置 root 密码
 

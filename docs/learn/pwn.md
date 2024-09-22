@@ -12,12 +12,9 @@ import 'element-plus/es/components/tag/style/css'
 
 ## 0xFF. Pwn 是干什么的？好吃🐎？
 
-<Container type='tip'>
-Pwn 是一个黑客语法的俚语词，是指攻破设备或者系统。发音类似「砰」，对黑客而言，这就是成功实施黑客攻击的声音——「砰」的一声，被「黑」的电脑或手机就被你操纵了。
-<div style="display: inline-block; width: 100%; text-align: right;">——百度百科</div>
-</Container>
+Pwn 是由 own 引申而来的，它表示玩家处于胜利的优势。在黑客语法的俚语中，Pwn 是指攻破设备或者系统，发音类似「砰」。对黑客而言，利用一些漏洞成功实施黑客攻击，获取到服务器的权限并操纵，那么，This server just got pwned！
 
-Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还有程序运行相关的知识。
+Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还有程序运行相关的知识。因此，你也可以选择先在逆向（Reverse）方向深造，当有一定了解后再来学习 Pwn 便会轻便许多。
 
 ## 0x00. 解决 Pwn 题目的基本流程
 
@@ -43,7 +40,7 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 下载传送门：[IDA Pro 8.3](https://down.52pojie.cn/Tools/Disassemblers/IDA_Pro_v8.3_Portable.zip)
 :::
 
-对于 Pwn 环境搭建，可参考文章：[Pwn 22.04 环境搭建保姆级教程](https://blog.csdn.net/j284886202/article/details/134931709)。
+对于 Pwn 环境搭建，可参考 [Pwn 环境搭建](/learn/configure-pwn)，或 [Pwn 22.04 环境搭建保姆级教程](https://blog.csdn.net/j284886202/article/details/134931709)。
 
 除此之外还建议在 Ubuntu 装个趁手的代码编辑器，如 [VSCode](https://code.visualstudio.com/).
 
@@ -58,35 +55,39 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 
 首先前置知识有基础的 C 语言、汇编、ELF 程序的加载运行知识。
 
-前置 C 语言知识：
+**前置 C 语言知识：**
 
 - 程序结构、基础语法
-- 数据类型、变量、常量 以及 变量作用域
-- 运算符
+- 数据类型、变量、常量以及变量作用域
 - `if` `switch` 分支语句、`for` `while` `do while` 循环
 - 函数和变量生命周期
-- 数组与指针、函数指针
-- 字符串
-- 结构体
+- 数组、字符串、结构体
+- 指针、函数指针
+- 指针的运算、解指针操作，以及与数组、字符串等常见类型的关系
+- 基本类型<span data-desc>（如 `int` `long long` `char` 和指针等）</span>的类型大小
 - 输入输出
 - 文件读写
 - 强制类型转换
+- 一个字段在结构体中的偏移
+- 常见不安全函数的特性<span data-desc>（如 `scanf` `gets` `read` `memcpy` 等）</span>
+- 堆栈<span data-desc>（指的是程序运行中的堆和栈）</span>等底层数据结构
 
-前置汇编知识：
+**前置汇编知识：**
 
 - 寄存器
-- x64 汇编基础语法
+- x86_64 汇编的阅读和简单的编写
+- 其他架构<span data-desc>（如 Arm、Risc-v）</span>汇编的阅读能力
 - 内存寻址
 - 函数调用以及栈帧变化
 - 中断
 
-ELF 相关知识：
+**ELF 相关知识：**
 
 - ELF 文件的结构：ELF每个段的作用、保护等
 - 程序的加载、动态链接、静态链接
-- ELF 程序的保护（Canary、PIE、RELRO、NX）
+- ELF 程序的保护<span data-desc>（如 Canary、PIE、RELRO、NX）</span>
 
-Pwn 知识：
+**Pwn 知识：**
 
 - ret2text/ret2backdoor
 - 整数溢出
@@ -103,7 +104,7 @@ Pwn 知识：
 
 ## 0x03. Pwn 基础
 
-### x64 汇编部分
+### x86_64 汇编部分
 
 #### 寄存器
 

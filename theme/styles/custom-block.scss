@@ -54,6 +54,14 @@
         @include paragraph;
         @include code-color(var(--block-danger), var(--block-bg-danger));
     }
+
+    &.quote {
+        @include basic-block;
+        background-color: var(--block-bg-quote);
+        border-left: 5px solid var(--block-quote);
+        @include paragraph;
+        @include code-color(var(--block-quote), var(--block-bg-quote));
+    }
 }
 
 .vp-doc .custom-block {
@@ -67,10 +75,12 @@
     --block-info: #409eff;
     --block-warning: #e6a23c;
     --block-danger: #f56c6c;
+    --block-quote: #747d8c;
     --block-bg-tip: #{rgba(#67c23a, 0.1)};
     --block-bg-info: #{rgba(#409eff, 0.1)};
     --block-bg-warning: #{rgba(#e6a23c, 0.1)};
     --block-bg-danger: #{rgba(#f56c6c, 0.1)};
+    --block-bg-quote: #{rgba(#747d8c, 0.1)};
 }
 
 .dark {
@@ -78,8 +88,10 @@
     --block-info: #409eff;
     --block-warning: #e6a23c;
     --block-danger: #f56c6c;
+    --block-quote: #747d8c;
     --block-bg-tip: #{rgba(#67c23a, 0.1)};
     --block-bg-info: #{rgba(#409eff, 0.1)};
     --block-bg-warning: #{rgba(#e6a23c, 0.1)};
     --block-bg-danger: #{rgba(#f56c6c, 0.1)};
+    --block-bg-quote: #{rgba(#747d8c, 0.1)};
 }

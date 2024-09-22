@@ -7,22 +7,43 @@ import { ElCard } from "element-plus";
     <p>
         <ElCard class="qa-card" shadow="never">
             <template #header>
-                <div class="card-header"><span class="front-text">Q</span><slot name="question" /></div>
+                <div class="qa-question"><slot name="question" /></div>
             </template>
-            <span class="front-text">A</span><slot name="answer" />
+            <div class="qa-answer"><slot name="answer" /></div>
         </ElCard>
     </p>
 </template>
+
+<style lang="scss">
+.qa-card {
+    p,
+    ul {
+        margin-bottom: 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+</style>
 
 <style lang="scss" scoped>
 .qa-card {
     --el-card-padding: 15px;
 }
-.front-text {
+.qa-question::before,
+.qa-answer::before {
     font-size: 1.5em;
     font-weight: bold;
     float: left;
     margin-right: 10px;
     line-height: 1;
+}
+
+.qa-question::before {
+    content: "Q";
+}
+
+.qa-answer::before {
+    content: "A";
 }
 </style>

@@ -54,11 +54,10 @@ sidebar:
   '/guide/2024/':
     - text: 赛事信息
       link: /guide/2024/
-    - text: Week 1
-      collapsed: false
+    - text: 解题参考
       items:
-        - text: Web
-          link: /guide/2024/week1/web
+        - text: Week 1
+          link: /guide/2024/week1
 
   '/wp/2024/':
     - text: Week 1

@@ -4,3 +4,7 @@
 .el-message__content {
     line-height: 1.5;
 }
+
+.vp-doc :not(pre) > code {
+    line-height: 1;
+}

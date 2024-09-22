@@ -14,7 +14,26 @@ import QACard from '@/components/docs/QACard.vue'
 刚入门，我该怎么学？
 </template>
 <template v-slot:answer>
-先看看入门低门槛题目熟悉一下，然后选择一个自己喜欢的方向，随后细看这个方向需要的一些基础。大多数仅作了解即可，题目遇到了再细看。
+
+先看看入门低门槛题目<span data-desc>（参见 [写在前面](/learn/)）</span>熟悉一下，然后选择一个自己喜欢的方向，随后细看这个方向需要的一些基础。大多数仅作了解即可，题目遇到了再细看。
+</template>
+</QACard>
+
+<QACard>
+<template v-slot:question>
+不是计算机或信息（网络）安全的专业，可以学吗？
+</template>
+<template v-slot:answer>
+可以的。难度是会有一点的。但安全的领域很广泛，其中涉及的知识也并不只有计算机相关专业能发挥优势，并且对于大多数计算机专业的同学来说，CTF 也是比较新的形式。
+</template>
+</QACard>
+
+<QACard>
+<template v-slot:question>
+很吃专业能力吗？
+</template>
+<template v-slot:answer>
+是，但又不完全是。专业能力是必要的，但不是唯一的，大多数人都是从零基础逐渐培养的。且诸如密码学、信息搜集、社会工程学等，解题和应急响应时需要的技巧和心理素质等，这些能力有时比专业知识更重要，它们无法从网络和教材中习得，只能在长期实践中逐渐培养。
 </template>
 </QACard>
 
@@ -50,6 +69,7 @@ import QACard from '@/components/docs/QACard.vue'
 怎么选方向？
 </template>
 <template v-slot:answer>
+
 看自己喜好。下面这些建议可供参考：
 
 - Crypto：密码学，对数学感兴趣、有 OI/ACM 基础的同学相对容易入门

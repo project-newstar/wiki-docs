@@ -36,7 +36,7 @@ export default defineConfig({
 
         footer: {
             copyright: 'Copyright © NewStar CTF',
-            // message: `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">浙 ICP 备 2023000643 号 - 1</a>`,
+            message: `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">浙ICP备2023000643号-8</a>`,
         },
 
         returnToTopLabel: '返回顶部',

@@ -12,10 +12,11 @@ information: |
 
 actions:
   -
-    - text: 报名参赛
-      type: primary
-      size: large
-      click: signup
+    - usevue: true
+    # - text: 报名参赛
+    #   type: primary
+    #   size: large
+    #   click: signup
 
   -
     - text: 快速入门

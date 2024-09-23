@@ -13,6 +13,8 @@ import { useSidebar } from "vitepress/theme";
 import { VPButton } from "vitepress/theme";
 import IndexButton from "@/components/IndexButton.vue";
 
+import IndexAction from "@docs/index.vue";
+
 // const { isOpen: isSidebarOpen, open: openSidebar, close: closeSidebar } = useSidebar();
 
 // const route = useRoute();
@@ -28,10 +30,10 @@ const heroImageSlotExists = computed(() => !!slots["home-hero-image"]);
 provide("hero-image-slot-exists", heroImageSlotExists);
 
 function fmtActionsArray(actions: any) {
-    if(!actions) return [];
-    if(!Array.isArray(actions)) actions = [actions];
-    if(actions.length === 0) return [];
-    if(!Array.isArray(actions[0])) actions = [actions];
+    if (!actions) return [];
+    if (!Array.isArray(actions)) actions = [actions];
+    if (actions.length === 0) return [];
+    if (!Array.isArray(actions[0])) actions = [actions];
     return actions;
 }
 </script>
@@ -50,12 +52,22 @@ function fmtActionsArray(actions: any) {
             <div class="layout-center">
                 <div class="grid-box">
                     <div class="content-logo"></div>
-                    <div class="content-description">
+                    <div class="content-information">
                         <p v-for="line of frontmatter.information.split(/\r?\n/)" v-html="line"></p>
                     </div>
                     <div class="content-action">
                         <span class="action-line" v-for="a of fmtActionsArray(frontmatter.actions)">
-                            <IndexButton v-for="b of a" :text="b.text" :link="b.link" :type="b.type" :size="b.size" :click="b.click" />
+                            <span v-for="b of a">
+                                <IndexAction v-if="b.usevue" />
+                                <IndexButton
+                                    v-else
+                                    :text="b.text"
+                                    :link="b.link"
+                                    :type="b.type"
+                                    :size="b.size"
+                                    :click="b.click"
+                                />
+                            </span>
                         </span>
                     </div>
                     <Content class="content-doc" />
@@ -91,11 +103,11 @@ function fmtActionsArray(actions: any) {
     background-position: center;
 }
 
-.content-description {
+.content-information {
     font-size: 1.3rem;
     font-weight: 300;
     p {
-        margin: .5rem 0;
+        margin: 0.5rem 0;
     }
 }
 
@@ -121,10 +133,10 @@ function fmtActionsArray(actions: any) {
 }
 
 .layout-index-footer {
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     width: 100%;
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
     border: none;
 }
 </style>

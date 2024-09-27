@@ -57,7 +57,7 @@ sudo dnf install -y nmap-ncat
 
 ### Windows
 
-Windows 系统中没有 `nc` 工具。但是你可以下载 `ncat` 工具，它是 `nc` 的一个重写，功能更强大。访问 [nmap 下载页面](https://nmap.org/.html)，选择 Windows 版本并下载，然后安装时选择安装 `ncat`。
+Windows 系统中没有 `nc` 工具。但是你可以下载 `ncat` 工具，它是 `nc` 的一个重写，功能更强大。访问 [nmap 下载页面](https://nmap.org/download.html)，选择 Windows 版本并下载，然后安装时选择安装 `ncat`。
 
 你也可以下载 `nc` 的独立版本<span data-desc>（请见 [netcat for Win32/Win64](https://eternallybored.org/misc/netcat/)）</span>，解压后将 `nc.exe` 所在目录添加到 `PATH` 环境变量中。
 

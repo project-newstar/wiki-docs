@@ -75,6 +75,21 @@ Level 6 有什么用，还不是被神之右手所打败
 
 你可以尝试自己搭建环境来熟悉 MySQL 和 SQL 语句。
 
+### headach3
+
+HTTP响应头是什么？https://developer.mozilla.org/zh-CN/docs/Glossary/Response_header
+
+如何查看HTTP响应头？F12
+
+### 智械危机
+
+- https://zh.wikipedia.org/wiki/Robots.txt
+- 先学会阅读简单php代码，包括函数定义、调用、变量定义、循环。
+- 怎么接收HTTP POST参数？
+- base64怎么编码和解码？https://base64.us/
+- md5是什么，怎么计算md5值？
+- 简单的linux命令，ls、cat、cd ...
+
 ## Misc
 
 ### WhereIsFlag
@@ -87,6 +102,8 @@ Level 6 有什么用，还不是被神之右手所打败
 
 建议您先了解一下 LSB、隐写等概念和原理，并熟悉 StegSolve 工具的使用。
 
+StegSolve下载地址：https://github.com/Giotino/stegsolve
+
 ### 兑换码
 
 本题考查 PNG 文件的字节码知识，你可以通过自行查阅 PNG 的二进制格式（如文件头、IHDR、宽、高、数据块等）来了解 PNG 文件的构成。
@@ -95,17 +112,18 @@ Level 6 有什么用，还不是被神之右手所打败
 
 ### ez_debug
 
-本题考查 IDA 或 x64dbg 的动态调试使用。
+- 学会使用ida进行动态调试
+- 或者使用x64dbg进行调试：https://github.com/x64dbg/x64dbg
 
 ### begin
 
-你需要学会使用 IDA 进行字符串搜索，根据字符串定位关键代码的位置。
+- 你需要学会使用 IDA 进行字符串搜索，根据字符串定位关键代码的位置。
 
-下面列举一些 IDA 的常用快捷键：
+- 下面列举一些 IDA 的常用快捷键：
 
-- <kbd>F5</kbd> 查看反编译之后的 C 语言代码
-- <kbd>⇧ Shift</kbd><kbd>F12</kbd> 查看程序中的所有字符串
-- 点击变量或者函数名，按下 <kbd>X</kbd>，可以看到这些变量或者函数被谁引用
+  - <kbd>F5</kbd> 查看反编译之后的 C 语言代码
+  - <kbd>⇧ Shift</kbd><kbd>F12</kbd> 查看程序中的所有字符串
+  - 点击变量或者函数名，按下 <kbd>X</kbd>，可以看到这些变量或者函数被谁引用
 
 ### Simple_encryption
 

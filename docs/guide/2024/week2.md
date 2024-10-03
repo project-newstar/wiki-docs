@@ -80,6 +80,11 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 这篇文章总结了一些常见的 SQL 注入：[SQL注入绕过过滤总结](https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/)。
 
+### PangBai 过家家（2）
+
+了解 Git 是什么，以及它的常见命令。
+互联网上有很多 `.git` `.svn` `.DS_Store` 等的泄露工具，但所支持的功能参差不齐。对于泄露 `.git` 的工具，有些不能泄露出提交历史、Stash、标签等。
+
 ## Misc
 
 ### 字里行间的秘密

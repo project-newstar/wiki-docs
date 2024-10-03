@@ -166,15 +166,15 @@ IDA中，按下 <kbd>⇧ Shift</kbd><kbd>F7</kbd> 即可查看
 
 我们以一个 ret2backdoor 的题目为例子。
 
-### 题目相关
+### 题目内容
+
+[附件下载](https://cdn.openicu.net/attachment/ns-learn/pwn.302dfe7937adcda6.zip)
 
 靶机连接：
 
 ```bash
 nc 120.53.240.208 6000
 ```
-
-[附件下载](https://pan.baidu.com/share/init?surl=4UhjLx2rNt6kpbWpkIiadw&pwd=669a)
 
 ### 题目分析以及解题
 

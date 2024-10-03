@@ -30,7 +30,7 @@ Pwn 需要的不仅是基本的 C 语言、汇编语言以及逆向功底，还�
 
 请先确保你具备 Ubuntu<span data-desc>（建议用近几年的 Ubuntu，比如 22.04 LTS、24.04 LTS）</span> 操作系统。随后可以准备以下软件或工具：
 
-- IDA/Ghidra
+- IDA/Ghidra<span data-desc>（IDA 为 Windows 平台下的工具）</span>
 - pwntools
 - gdb 及其插件
 - ROPgadget
@@ -312,7 +312,7 @@ p.interactive()
 之后注释掉 `process` 函数与 `gdb.attach` 函数，换 `remote` 函数打远程靶机即可：
 
 ```Python
-p = remote('hacker.akyuu.space', 6000)
+p = remote('120.53.240.208', 6000)
 ```
 
 ![远程利用后门成功](/assets/images/learn/pwn-run-exp-remote_success.png)

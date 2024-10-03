@@ -38,7 +38,7 @@ import Container from '@/components/docs/Container.vue'
 这题考查的是 HTTP 报文的内容，你可能需要先了解这些内容：
 
 - 什么是 Method、Header、请求体、响应体、状态码
-- Cookie 是什么？他有什么作用和特性？
+- Cookie 是什么？它有什么作用和特性？
 - User-Agent 的作用是什么？格式又是怎样的？
 
 Header 中有各种各样的 Content-Type，每一种 Content-Type 所要求的请求体的格式可能是不一样的，你也需要了解其不同。

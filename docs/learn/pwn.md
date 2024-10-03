@@ -171,10 +171,10 @@ IDA中，按下 <kbd>⇧ Shift</kbd><kbd>F7</kbd> 即可查看
 靶机连接：
 
 ```bash
-nc hacker.akyuu.space 6000
+nc 120.53.240.208 6000
 ```
 
-[附件下载](https://platform.akyuu.space/training/0.zip)
+[附件下载](https://pan.baidu.com/share/init?surl=4UhjLx2rNt6kpbWpkIiadw&pwd=669a)
 
 ### 题目分析以及解题
 

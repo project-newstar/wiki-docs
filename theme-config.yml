@@ -77,6 +77,19 @@ sidebar:
               link: /wp/2024/week1/web/pangbai1
             - text: 谢谢皮蛋
               link: /wp/2024/week1/web/xiexiepidan
+        - text: Reverse
+          collapsed: true
+          items:
+            - text: ez_debug
+              link: /wp/2024/week1/reverse/ez-debug
+            - text: begin
+              link: /wp/2024/week1/reverse/begin
+            - text: Simple_encryption 
+              link: /wp/2024/week1/reverse/simple-encryption
+            - text: ezAndroidStudy
+              link: /wp/2024/week1/reverse/ezandroidstudy
+            - text: base64
+              link: /wp/2024/week1/reverse/base64
         - text: Crypto
           collapsed: true
           items:

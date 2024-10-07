@@ -65,7 +65,7 @@ sidebar:
     - text: Week 1
       items:
         - text: Web
-          collapsed: false
+          collapsed: true
           items:
             - text: headach3
               link: /wp/2024/week1/web/headach3
@@ -77,8 +77,30 @@ sidebar:
               link: /wp/2024/week1/web/pangbai1
             - text: 谢谢皮蛋
               link: /wp/2024/week1/web/xiexiepidan
+        - text: Crypto
+          collapsed: true
+          items:
+            - text: xor
+              link: /wp/2024/week1/crypto/xor
+            - text: Base
+              link: /wp/2024/week1/crypto/base
+            - text: Strange King
+              link: /wp/2024/week1/crypto/strange-king
+            - text: 一眼秒了
+              link: /wp/2024/week1/crypto/yiyanmiaole
+        - text: Pwn
+          collapsed: true
+          items:
+            - text: Real Login
+              link: /wp/2024/week1/pwn/real-login
+            - text: Game
+              link: /wp/2024/week1/pwn/game
+            - text: Overwrite
+              link: /wp/2024/week1/pwn/overwrite
+            - text: Gdb
+              link: /wp/2024/week1/pwn/gdb
         - text: Misc
-          collapsed: false
+          collapsed: true
           items:
             - text: Labyrinth
               link: /wp/2024/week1/misc/labyrinth
@@ -92,14 +114,3 @@ sidebar:
               link: /wp/2024/week1/misc/pleasingmusic
             - text: 兑换码
               link: /wp/2024/week1/misc/duihuanma
-        - text: Crypto
-          collapsed: false
-          items:
-            - text: xor
-              link: /wp/2024/week1/crypto/xor
-            - text: Base
-              link: /wp/2024/week1/crypto/base
-            - text: Strange King
-              link: /wp/2024/week1/crypto/strange-king
-            - text: 一眼秒了
-              link: /wp/2024/week1/crypto/yiyanmiaole

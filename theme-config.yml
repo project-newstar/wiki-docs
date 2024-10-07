@@ -92,3 +92,14 @@ sidebar:
               link: /wp/2024/week1/misc/pleasingmusic
             - text: 兑换码
               link: /wp/2024/week1/misc/duihuanma
+        - text: Crypto
+          collapsed: false
+          items:
+            - text: xor
+              link: /wp/2024/week1/crypto/xor
+            - text: Base
+              link: /wp/2024/week1/crypto/base
+            - text: Strange King
+              link: /wp/2024/week1/crypto/strange-king
+            - text: 一眼秒了
+              link: /wp/2024/week1/crypto/yiyanmiaole

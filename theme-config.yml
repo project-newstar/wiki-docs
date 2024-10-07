@@ -69,3 +69,18 @@ sidebar:
           items:
             - text: Example
               link: /wp/2024/week1/web/example
+        - text: Misc
+          collapsed: false
+          items:
+            - text: Labyrinth
+              link: /wp/2024/week1/misc/labyrinth
+            - text: decompress（校内赛道）
+              link: /wp/2024/week1/misc/decompress
+            - text: decompress（公开赛道）
+              link: /wp/2024/week1/misc/decompress-public
+            - text: WhereIsFlag
+              link: /wp/2024/week1/misc/whereisflag
+            - text: pleasingMusic
+              link: /wp/2024/week1/misc/pleasingmusic
+            - text: 兑换码
+              link: /wp/2024/week1/misc/duihuanma

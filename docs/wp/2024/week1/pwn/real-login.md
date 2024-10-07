@@ -1,6 +1,5 @@
 ---
-title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
 # Real login
@@ -24,6 +23,6 @@ unsigned __int64 func()
 
 password内容为"NewStar!!!"
 
-![这里理应有配图](/assets/images/wp/2024/week1/pwn/real-login_1.png)
+![这里理应有配图](/assets/images/wp/2024/week1/real-login_1.png)
 
 所以nc连上后输入"NewStar!!!"即可

@@ -1,6 +1,5 @@
 ---
-title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
 # Labyirinth
@@ -18,4 +17,4 @@ titleTemplate: ':title - NewStar CTF 2024'
 简介里说了LSB，可以得知为最低有效位隐写  
 使用StegSolve工具，查看RGB任一0通道得到二维码，扫描得到flag
 
-![这里应当有图片](/assets/images/wp/2024/week1/misc/labyrinth_1.png)
+![这里应当有图片](/assets/images/wp/2024/week1/labyrinth_1.png)

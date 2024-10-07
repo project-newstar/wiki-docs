@@ -1,6 +1,5 @@
 ---
-title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
 # Simple_encryption
@@ -46,7 +45,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 然后对输入每一位进行变换，其中当索引值是3的倍数时输入值就减31，当索引值除3余1时，输入值加41，索引值除3余2时，输入值与0x55进行异或。  
 最后将变换之后的输入值与密文buffer数组进行比较。我们点进去Buffer数组，然后可以按下shift+E即可提取数据。
 
-![此处图片预警！](/assets/images/wp/2024/week1/reverse/simple-encryption_1.png)
+![此处图片预警！](/assets/images/wp/2024/week1/simple-encryption_1.png)
 
 我们接下来就可以写出逆向脚本。
 

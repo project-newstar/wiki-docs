@@ -13,11 +13,11 @@ titleTemplate: ':title - NewStar CTF 2024'
 
 第一关界面如下
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_1.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_1.png)
 
 下方文字给出了提示「Header」。打开浏览器的开发者工具，在「网络」（Network）选项卡中找到网页的初始请求，查看响应标头，有一个 Location 字段
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_2.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_2.png)
 
 访问这个路径，进入下一关。
 
@@ -40,7 +40,7 @@ POST 的查询类型有很多种，通过 HTTP 报文中的 `Content-Type` 指�
 我们可以用任意方式，那么我们选择用`application/x-www-form-urlencoded`发送个`say=hello`的请求包即可。  
 使用浏览器的HackBar插件：
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_3.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_3.png)
 
 > 注意：如果使用 HackBar 插件，请在 Modify Header 一栏中删除 Cookie 字段（删除后会自动采用浏览器当前的 Cookie），或者请手动更新该字段。因为 Cookie 携带着关卡信息，如果不更新该值，将永远停留在同一关。
 
@@ -86,7 +86,7 @@ say=%E7%8E%9B%E5%8D%A1%E5%B7%B4%E5%8D%A1%E9%98%BF%E5%8D%A1%E5%93%87%E5%8D%A1%E7%
 
 如果使用 Hackbar，配置如下：
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_4.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_4.png)
 
 ## 第五关
 
@@ -167,11 +167,11 @@ Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZXZlbCI6Nn0.SlKAeN5yYDF9Y
 其中提到了 JWT 和 `Pe2K7kxo8NMIkaeN`，这个数字和字母组成内容推测应当是 JWT 的密钥。JWT 是一个轻量级的认证规范，允许在用户和服务器之间传递安全可靠的信息，但这是基于签名密钥没有泄露的情况下。可以通过 JWT.IO <https://jwt.io> 网站进行在线签名和验证（JWT 并不对数据进行加密，而仅仅是签名，不同的数据对应的羡签名不一样，因此在没有密钥的情况下，你可以查看里面的数据，但修改它则会导致服务器验签失败，从而拒绝你的进一步请求）。  
 将我们当前的 Cookie 粘贴入网站：
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_5.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_5.png)
 
 Payload，即 JWT 存放的数据，指明了当前的 Level 为`6`，我们需要更改它，将它改为`0`即可。可见左下角显示「Invalid Signautre」，即验签失败，粘贴入签名密钥之后，复制左侧 Encoded 的内容，回到靶机界面应用该 token 值修改 Cookie，再次刷新网页，即到达最终页面。
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/web/pangbai1_6.png)
+![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_6.png)
 
 > 修改 Level 为`0`而不是`7`，是本题的一个彩蛋。本关卡不断提示「一方通行」，而「一方通行」作为动画番剧《魔法禁书目录》《某科学的超电磁炮》中的人物，是能够稳定晋升为 Level 6 的强者，却被 Level 0 的「上条当麻」多次击败。但即使不了解该内容，也可以通过多次尝试找到 Level 0，做安全需要反常人的思维，这应当作为一种习惯。
 

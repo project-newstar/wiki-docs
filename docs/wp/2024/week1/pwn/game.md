@@ -1,6 +1,5 @@
 ---
-title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
 # Game

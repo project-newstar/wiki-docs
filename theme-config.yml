@@ -67,5 +67,13 @@ sidebar:
         - text: Web
           collapsed: false
           items:
-            - text: Example
-              link: /wp/2024/week1/web/example
+            - text: headach3
+              link: /wp/2024/week1/web/headach3
+            - text: 智械危机
+              link: /wp/2024/week1/web/zhixieweiji
+            - text: 会赢吗？
+              link: /wp/2024/week1/web/huiyingma
+            - text: PangBai 过家家（1）
+              link: /wp/2024/week1/web/pangbai1
+            - text: 谢谢皮蛋
+              link: /wp/2024/week1/web/xiexiepidan

@@ -1,8 +1,16 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # PangBai 过家家（1）
+
+<Container type='info'>
+
+本题已开源，详见：[cnily03-hive/PangBai-HTTP](https://github.com/cnily03-hive/PangBai-HTTP)
+</Container>
 
 ## 序章
 
@@ -40,7 +48,7 @@ POST 的查询类型有很多种，通过 HTTP 报文中的 `Content-Type` 指�
 | application/json | Body 给出一个 JSON 格式的数据，服务端会解析它。 |
 | multipart/form-data | 表单字段，一般用于有文件等复杂类型的场景。 |
 
-我们可以用任意方式，那么我们选择用`application/x-www-form-urlencoded`发送个`say=hello`的请求包即可。
+我们可以用任意方式，那么我们选择用 `application/x-www-form-urlencoded` 发送个 `say=hello` 的请求包即可。
 
 使用浏览器的 HackBar 插件：
 
@@ -64,7 +72,7 @@ say=hello
 
 ## 第四关
 
-来到这一关后由于 302 跳转可能会变成 GET 请求，再次用 POST 请求（携带新 Cookie）访问，得到提示「Agent」和`Papa`，应当想到考查的是 HTTP 请求头中的 `User-Agent` Header. 题目的要求比较严格，`User-Agent` 必须按照标准格式填写（参见 [User-Agent - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)），因此需携带任意版本号发送一个 POST 请求：
+来到这一关后由于 302 跳转可能会变成 GET 请求，再次用 POST 请求（携带新 Cookie）访问，得到提示「Agent」和 `Papa`，应当想到考查的是 HTTP 请求头中的 `User-Agent` Header. 题目的要求比较严格，`User-Agent` 必须按照标准格式填写（参见 [User-Agent - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)），因此需携带任意版本号发送一个 POST 请求：
 
 ```HTTP
 POST /?ask=miao HTTP/1.1
@@ -77,7 +85,7 @@ Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZXZlbCI6M30.hc4vKSnI5KZxN
 say=hello
 ```
 
-此时提示需要将`say` 字段改成「玛卡巴卡阿卡哇卡米卡玛卡呣」（不包含引号对`「」`），中文需要转义（HackBar 会自动处理中文的转义）。因此最终的报文为：
+此时提示需要将 `say` 字段改成「玛卡巴卡阿卡哇卡米卡玛卡呣」（不包含引号对 `「」`），中文需要转义（HackBar 会自动处理中文的转义）。因此最终的报文为：
 
 ```HTTP
 POST /?ask=miao HTTP/1.1
@@ -102,13 +110,13 @@ say=%E7%8E%9B%E5%8D%A1%E5%B7%B4%E5%8D%A1%E9%98%BF%E5%8D%A1%E5%93%87%E5%8D%A1%E7%
 
 这是要求我们使用 PATCH 方法发送一个 ZIP 文件。
 
-这一关是相对较难的一关，浏览器插件并不支持发送 PATCH 包和自定义文件，必须通过一些发包工具或者写代码来发送该内容。PATCH 包的格式与 POST 无异，使用 `Content-Type: multipart/form-data`发包即可，注意该 Header 的值后面需要加一个`boundary` 表示界定符。例如`Content-Type: multipart/form-data; boundary=abc`，那么在 Body 中，以 `--abc` 表示一个查询字段的开始，当所有查询字段结束后，用 `--abc--` 表示结束。
+这一关是相对较难的一关，浏览器插件并不支持发送 PATCH 包和自定义文件，必须通过一些发包工具或者写代码来发送该内容。PATCH 包的格式与 POST 无异，使用 `Content-Type: multipart/form-data` 发包即可，注意该 Header 的值后面需要加一个 `boundary` 表示界定符。例如`Content-Type: multipart/form-data; boundary=abc`，那么在 Body 中，以 `--abc` 表示一个查询字段的开始，当所有查询字段结束后，用 `--abc--` 表示结束。
 
 ::: info 关于 multipart/form-data
-这个 Content-Type 下的 Body 字段不需要进行转义，每一个查询内容以一个空行区分元信息和数据（就和 HTTP 报文区分标头和 Body 的那样），如果数据中包含`boundary`界定符的相关内容，可能引起误解，那么可以通过修改 `boundary` 以规避碰撞情况（因此浏览器发送 `mulipart/form-data` 的表单时，`boundary` 往往有很长的 `--` 并且包含一些长的随机字符串。
+这个 Content-Type 下的 Body 字段不需要进行转义，每一个查询内容以一个空行区分元信息和数据（就和 HTTP 报文区分标头和 Body 的那样），如果数据中包含 `boundary` 界定符的相关内容，可能引起误解，那么可以通过修改 `boundary` 以规避碰撞情况（因此浏览器发送 `mulipart/form-data` 的表单时，`boundary` 往往有很长的 `--` 并且包含一些长的随机字符串。
 :::
 
-本题只检查文件名后缀是否为 `.zip` 因此如此发包即可：
+本题只检查文件名后缀是否为 `.zip`. 因此如此发包即可：
 
 ```HTTP
 PATCH /?ask=miao HTTP/1.1
@@ -143,7 +151,7 @@ Date: Fri, 27 Sep 2024 19:28:30 GMT
 
 ## 第六关
 
-本题提示内容指出了 `localhost`，意在表明需要让服务器认为这是一个来自本地的请求。可以通过设 `Host` `X-Real-IP` `X-Forwarded-For` `Referer` 等标头欺骗服务器。
+本题提示内容指出了 `localhost`，意在表明需要让服务器认为这是一个来自本地的请求。可以通过设置 `Host` `X-Real-IP` `X-Forwarded-For` `Referer` 等标头欺骗服务器。
 
 以下任意一种请求都是可以的。
 

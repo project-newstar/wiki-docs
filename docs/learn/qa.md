@@ -57,7 +57,7 @@ import QACard from '@/components/docs/QACard.vue'
 
 <QACard>
 <template v-slot:question>
-新生赛一般考察什么？
+新生赛一般考查什么？
 </template>
 <template v-slot:answer>
 新生赛一般考常见的基础性知识点，不同方向不一样，一直会有新东西出现，要注意如何高效搜索。

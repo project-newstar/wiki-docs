@@ -12,11 +12,14 @@
   --index-logo: url('@/assets/images/ns_blue.svg');
 
   --vp-c-text-1: rgb(60, 60, 60);
+  --code-color-desc: #7b91d8;
 
-  .desc-text, [data-desc] {
-    --vp-c-text-1: rgb(145, 145, 145);
-    color: var(--vp-c-text-1);
-    --code-color-desc: #7b91d8;
+  .desc-text,
+  [data-desc],
+  blockquote {
+    --vp-c-text-2: rgb(145, 145, 145);
+    color: var(--vp-c-text-2);
+
     code {
       color: var(--code-color-desc);
       background-color: var(--vp-c-gray-soft);
@@ -28,11 +31,14 @@
   --index-logo: url('@/assets/images/ns_orange.svg');
 
   --vp-c-text-1: rgb(235, 235, 235);
+  --code-color-desc: #7c85a3;
 
-  .desc-text, [data-desc] {
-    --vp-c-text-1: rgb(165, 165, 165);
-    color: var(--vp-c-text-1);
-    --code-color-desc: #7c85a3;
+  .desc-text,
+  [data-desc],
+  blockquote {
+    --vp-c-text-2: rgb(165, 165, 165);
+    color: var(--vp-c-text-2);
+
     code {
       color: var(--code-color-desc);
       background-color: var(--vp-c-gray-soft);

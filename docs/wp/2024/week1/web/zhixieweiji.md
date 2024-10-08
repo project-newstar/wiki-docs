@@ -1,6 +1,9 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # 智械危机
 
@@ -70,11 +73,14 @@ print(f"[+] Flag: {response.text}")
 
 EXP 使用了 `requests` 库负责请求后门 shell，也可以用任何一款能够发出 POST 请求的工具完成这一操作，如 HackBar、BurpSuite 等。
 
-请各位新生**打好编程基础，不要浮躁**，部分新生私聊的问题我完全无法理解。这题的代码逻辑哪怕只懂一点英语也该看懂了，变量名称我都没做混淆。GPT可能会胡编，但是完全可以给你提取出足够的关键词用于搜索。
+<Container type="quote" title="出题人的胡诌">
 
-这题的出法**不鼓励**手搓！！！先编码再逆序，执行一个指令都费劲，flag 位置没赌对就得再搓一遍。只要脚本写好，这题完全可以得到一个简洁的交互式 shell：
+请各位选手**打好编程基础，不要浮躁**。这题的代码逻辑应该懂一点英语就能够看懂了，变量名称也没做混淆。AI 可能会胡编，但是完全可以给你提取出足够的**关键词**用于搜索。
+</Container>
 
-![这里理应是配图](/assets/images/wp/2024/week1/zhixieweiji_1.png)
+这题的出法**不鼓励**手搓！！！先编码再逆序，执行一个指令都费劲，flag 位置没猜对就得再搓一遍。只要脚本写好，这题完全可以得到一个简洁的交互式 shell：
+
+![交互式 Shell 示意图](/assets/images/wp/2024/week1/zhixieweiji_1.png)
 
 附代码：
 

@@ -50,7 +50,7 @@ __int64 __fastcall main(int a1, char **a2, char **a3)
 
 所以我们选择动调查看加密后的内容
 
-键入 `gdb ./gdb` 并运行，先运行程序，用 `b *$rebase(0x1836)` 下断点
+键入 `gdb ./gdb` 并运行，先运行程序，用 `b *$rebase(0x1836)` 下断点（断在call 加密函数处）
 
 ![GDB 界面](/assets/images/wp/2024/week1/gdb_1.png)
 

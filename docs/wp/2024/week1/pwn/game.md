@@ -9,12 +9,12 @@ import Container from '@/components/docs/Container.vue'
 
 <Container type='tip'>
 
-本题主要考察 `pwntools` 库中 `recv` 和 `send` 的使用
+本题主要考查 `pwntools` 库中 `recv` 和 `send` 的使用
 </Container>
 
 ## 解法一
 
-在 5s 时间内，只能输入小于等于 10 的数，使这些数字相加大于 999.
+在 5 秒时间内，只能输入小于等于 10 的数，使这些数字相加大于 999.
 
 所以手动输入就不可能了（当然也可以搞个宏什么的？）。
 

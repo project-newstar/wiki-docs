@@ -20,6 +20,12 @@ Files will be generated in the `dist` directory at the root of the project.
 
 ## Development
 
+To start the development server, run the following command.
+
+```shell
+pnpm run docs:dev
+```
+
 VitePress configuration is located at [vitepress.config.ts](./vitepress.config.ts).
 
 Theme configuration is located at [theme-config.yml](./theme-config.yml). It's mostly nav and sitebar configuration. For other theme configurations, it's recommended to modify [vitepress.config.ts](./vitepress.config.ts) with type hints.

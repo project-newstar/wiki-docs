@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # Simple_encryption
 
-将程序拖入ida并按下F5得到主要代码
+将程序拖入 IDA 并按下 <kbd>F5</kbd> 得到主要代码
 
 ```c
 int __cdecl main(int argc, const char **argv, const char **envp)
@@ -41,17 +41,19 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 }
 ```
 
-主要逻辑非常简单，首先输入len个字符，len点击去可以看到是30.  
-然后对输入每一位进行变换，其中当索引值是3的倍数时输入值就减31，当索引值除3余1时，输入值加41，索引值除3余2时，输入值与0x55进行异或。  
-最后将变换之后的输入值与密文buffer数组进行比较。我们点进去Buffer数组，然后可以按下shift+E即可提取数据。
+主要逻辑非常简单，首先输入 `len` 个字符，`len` 点击去可以看到是 30.
 
-![此处图片预警！](/assets/images/wp/2024/week1/simple-encryption_1.png)
+然后对输入每一位进行变换，其中当索引值是 3 的倍数时输入值就减 31，当索引值除 3 余 1 时，输入值加 41，索引值除 3 余 2 时，输入值与 0x55 进行异或。
+
+最后将变换之后的输入值与密文 Buffer 数组进行比较。我们点进去 Buffer 数组，然后可以按下 <kbd>⇧ Shift</kbd><kbd>E</kbd> 即可提取数据。
+
+![IDA 界面](/assets/images/wp/2024/week1/simple-encryption_1.png)
 
 我们接下来就可以写出逆向脚本。
 
 ```c
-//exp.c
-#include<stdio.h>
+#include <stdio.h>
+
 unsigned char buffer[]={0x47,0x95,0x34,0x48,0xa4,0x1c,0x35,0x88,0x64,0x16,0x88,0x07,0x14,0x6a,0x39,0x12,0xa2,0x0a,0x37,0x5c,0x07,0x5a,0x56,0x60,0x12,0x76,0x25,0x12,0x8e,0x28};
 int main(){
     int len=30;
@@ -70,5 +72,5 @@ int main(){
 
     return 0;
 }
-//flag{IT_15_R3Al1y_V3Ry-51Mp1e}
+// flag{IT_15_R3Al1y_V3Ry-51Mp1e}
 ```

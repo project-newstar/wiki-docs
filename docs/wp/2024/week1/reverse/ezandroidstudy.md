@@ -9,7 +9,7 @@ import Container from '@/components/docs/Container.vue'
 
 <Container type='tip'>
 
-本题主要考察对 APK 基本结构的掌握
+本题主要考查对 APK 基本结构的掌握
 </Container>
 
 ## 第一部分
@@ -22,7 +22,7 @@ import Container from '@/components/docs/Container.vue'
 
 ## 第二部分
 
-`resources.arsc/res/value/string.xml` 打开搜索 flag2 即可
+打开 `resources.arsc/res/value/string.xml` 搜索 flag2 即可
 
 ![旁白酱可爱捏嘿嘿(～o￣3￣)～](/assets/images/wp/2024/week1/ezandroidstudy_2.png)
 

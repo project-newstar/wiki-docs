@@ -18,7 +18,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![IDA 界面 1](/assets/images/wp/2024/week1/base64_2.png)
 
-双击就可以转到对应的 IDA View。
+双击就可以转到对应的 IDA View.
 
 ![IDA 界面 2](/assets/images/wp/2024/week1/base64_3.png)
 

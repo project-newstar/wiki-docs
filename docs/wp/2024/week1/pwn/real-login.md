@@ -2,9 +2,9 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Real login
+# Real Login
 
-很明显，输入的内容和全局变量password一致，就能进入win函数getshell
+使用 IDA 反编译。很明显，输入的内容和全局变量 `password` 一致，就能进入 `win` 函数获取 Shell.
 
 ```cpp
 unsigned __int64 func()
@@ -21,8 +21,8 @@ unsigned __int64 func()
 }
 ```
 
-password内容为"NewStar!!!"
+`password` 内容为 `NewStar!!!`
 
-![这里理应有配图](/assets/images/wp/2024/week1/real-login_1.png)
+![password 内容](/assets/images/wp/2024/week1/real-login_1.png)
 
-所以nc连上后输入"NewStar!!!"即可
+所以 nc 连上后输入 `NewStar!!!` 即可

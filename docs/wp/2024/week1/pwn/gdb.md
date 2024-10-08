@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # Gdb
 
-先拖入ida分析
+先拖入 IDA 分析：
 
 ```c
 __int64 __fastcall main(int a1, char **a2, char **a3)
@@ -44,23 +44,29 @@ __int64 __fastcall main(int a1, char **a2, char **a3)
 }
 ```
 
-可以看到程序逻辑是对一串字符串执行了加密操作，然后需要我们输入加密后的内容  
-对于加密函数，可以发现完全看不懂（其实我是故意的🥰）  
-所以我们选择动调查看加密后的内容  
-使用`gdb ./gdb`，先运行程序，用`b *$rebase(0x1836)`下断点
+可以看到程序逻辑是对一串字符串执行了加密操作，然后需要我们输入加密后的内容
 
-![此处应有图片](/assets/images/wp/2024/week1/gdb_1.png)
+对于加密函数，可以发现完全看不懂<span data-desc>（其实我是故意的🥰）</span>
 
-运行到加密函数处，可以发现，rdi寄存器存的是要加密的内容，rsi存的是加密的key  
-先复制下要加密内容的地址  
-`0x7fffffffd717`  
-然后使用`ni`指令步进  
-此时字符串已经完成了加密，我们使用`tel 0x7fffffffd717`指令查看字符串的内容  
+所以我们选择动调查看加密后的内容
 
-![此处应有图片](/assets/images/wp/2024/week1/gdb_2.png)
+键入 `gdb ./gdb` 并运行，先运行程序，用 `b *$rebase(0x1836)` 下断点
 
-`b'\x5d\x1d\x43\x55\x53\x45\x57\x45'`
-这便是加密后的内容，使用python脚本发送即可
+![GDB 界面](/assets/images/wp/2024/week1/gdb_1.png)
+
+运行到加密函数处，可以发现，rdi 寄存器存的是要加密的内容，rsi 存的是加密的 key
+
+先复制下要加密内容的地址
+
+- `0x7fffffffd717`
+
+然后使用 `ni` 指令步进
+
+此时字符串已经完成了加密，我们使用 `tel 0x7fffffffd717` 指令查看字符串的内容
+
+![字符串的内容](/assets/images/wp/2024/week1/gdb_2.png)
+
+`b'\x5d\x1d\x43\x55\x53\x45\x57\x45'` 便是加密后的内容，使用 Python 脚本发送即可
 
 ```python
 #!/usr/bin/env python3

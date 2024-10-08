@@ -64,45 +64,8 @@ sidebar:
   '/wp/2024/':
     - text: Week 1
       items:
-        - text: Web
-          collapsed: true
-          items:
-            - text: headach3
-              link: /wp/2024/week1/web/headach3
-            - text: 智械危机
-              link: /wp/2024/week1/web/zhixieweiji
-            - text: 会赢吗？
-              link: /wp/2024/week1/web/huiyingma
-            - text: PangBai 过家家（1）
-              link: /wp/2024/week1/web/pangbai1
-            - text: 谢谢皮蛋
-              link: /wp/2024/week1/web/xiexiepidan
-        - text: Reverse
-          collapsed: true
-          items:
-            - text: ez_debug
-              link: /wp/2024/week1/reverse/ez-debug
-            - text: begin
-              link: /wp/2024/week1/reverse/begin
-            - text: Simple_encryption
-              link: /wp/2024/week1/reverse/simple-encryption
-            - text: ezAndroidStudy
-              link: /wp/2024/week1/reverse/ezandroidstudy
-            - text: base64
-              link: /wp/2024/week1/reverse/base64
-        - text: Crypto
-          collapsed: true
-          items:
-            - text: xor
-              link: /wp/2024/week1/crypto/xor
-            - text: Base
-              link: /wp/2024/week1/crypto/base
-            - text: Strange King
-              link: /wp/2024/week1/crypto/strange-king
-            - text: 一眼秒了
-              link: /wp/2024/week1/crypto/yiyanmiaole
         - text: Pwn
-          collapsed: true
+          collapsed: false
           items:
             - text: Real Login
               link: /wp/2024/week1/pwn/real-login
@@ -112,18 +75,53 @@ sidebar:
               link: /wp/2024/week1/pwn/overwrite
             - text: Gdb
               link: /wp/2024/week1/pwn/gdb
-        - text: Misc
-          collapsed: true
+        - text: Reverse
+          collapsed: false
           items:
-            - text: Labyrinth
-              link: /wp/2024/week1/misc/labyrinth
-            - text: decompress（校内赛道）
+            - text: begin
+              link: /wp/2024/week1/reverse/begin
+            - text: base64
+              link: /wp/2024/week1/reverse/base64
+            - text: ezAndroidStudy
+              link: /wp/2024/week1/reverse/ezandroidstudy
+            - text: Simple_encryption
+              link: /wp/2024/week1/reverse/simple-encryption
+            - text: ez_debug
+              link: /wp/2024/week1/reverse/ez-debug
+        - text: Web
+          collapsed: false
+          items:
+            - text: headach3
+              link: /wp/2024/week1/web/headach3
+            - text: 会赢吗？
+              link: /wp/2024/week1/web/huiyingma
+            - text: 智械危机
+              link: /wp/2024/week1/web/zhixieweiji
+            - text: PangBai 过家家（1）
+              link: /wp/2024/week1/web/pangbai1
+            - text: 谢谢皮蛋
+              link: /wp/2024/week1/web/xiexiepidan
+        - text: Crypto
+          collapsed: false
+          items:
+            - text: xor
+              link: /wp/2024/week1/crypto/xor
+            - text: Base
+              link: /wp/2024/week1/crypto/base
+            - text: 一眼秒了
+              link: /wp/2024/week1/crypto/yiyanmiaole
+            - text: Strange King
+              link: /wp/2024/week1/crypto/strange-king
+        - text: Misc
+          collapsed: false
+          items:
+            - text: decompress
               link: /wp/2024/week1/misc/decompress
-            - text: decompress（公开赛道）
-              link: /wp/2024/week1/misc/decompress-public
             - text: WhereIsFlag
               link: /wp/2024/week1/misc/whereisflag
             - text: pleasingMusic
               link: /wp/2024/week1/misc/pleasingmusic
+            - text: Labyrinth
+              link: /wp/2024/week1/misc/labyrinth
             - text: 兑换码
               link: /wp/2024/week1/misc/duihuanma

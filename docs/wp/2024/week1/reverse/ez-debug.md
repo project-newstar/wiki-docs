@@ -4,20 +4,22 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # ez_debug
 
-第一种解法，使用ida  
-步入main函数，发现给的decrypt提示
+## 解法一：使用 IDA
 
-![小情侣真该死啊](/assets/images/wp/2024/week1/ez-debug_1.png)
+步入 `main` 函数，发现给的 decrypt 提示
 
-步入you函数，在循环处下断点
+![IDA 界面 1](/assets/images/wp/2024/week1/ez-debug_1.png)
 
-![小情侣真该死啊](/assets/images/wp/2024/week1/ez-debug_2.png)
+步入 you 函数，在循环处下断点
 
-f9开始调试，然后f8单步，循环结束点击v5
+![IDA 界面 2](/assets/images/wp/2024/week1/ez-debug_2.png)
 
-![小情侣真该死啊](/assets/images/wp/2024/week1/ez-debug_3.png)
+按下 <kbd>F9</kbd> 开始调试，然后按下 <kbd>F8</kbd> 单步，循环结束点击 `v5`
 
-第二种使用xdbg调试  
-拖入xdbg64，搜索字符串，发现decrypt flag，下断点，f9即可
+![IDA 界面 3](/assets/images/wp/2024/week1/ez-debug_3.png)
 
-![小情侣真该死啊](/assets/images/wp/2024/week1/ez-debug_4.png)
+## 解法二：使用 xdbg
+
+拖入 xdbg64，搜索字符串，发现 decrypt flag，下断点，按下 <kbd>F9</kbd> 即可
+
+![xdbg 界面](/assets/images/wp/2024/week1/ez-debug_4.png)

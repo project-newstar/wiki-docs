@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # Overwrite
 
-IDA反编译查看源代码
+IDA 反编译查看源代码
 
 ```c
 unsigned __int64 func()
@@ -34,7 +34,8 @@ unsigned __int64 func()
 }
 ```
 
-在这个函数中，我们可以输入一个数值 `nbytes`，然后读取相应长度的数据到 `nbytes_4` 中。如果 `nptr` 中的字符串被转换为数字且大于 `114514`，程序会打印 `flag`，否则会输出钱包空的信息。  
+在这个函数中，我们可以输入一个数值 `nbytes`，然后读取相应长度的数据到 `nbytes_4` 中。如果 `nptr` 中的字符串被转换为数字且大于 `114514`，程序会打印 `flag`，否则会输出钱包空的信息。
+
 漏洞分析：
 
 1. `nptr` 和 `nbytes_4` 之间的偏移是 0x30。如果输入大于 0x30 的正整数，程序将会通过 `exit()` 退出。

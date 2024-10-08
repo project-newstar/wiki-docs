@@ -1,6 +1,5 @@
 ---
-title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
 # PangBai 过家家（1）
@@ -13,11 +12,11 @@ titleTemplate: ':title - NewStar CTF 2024'
 
 第一关界面如下
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_1.png)
+![第一关界面](/assets/images/wp/2024/week1/pangbai1_1.png)
 
 下方文字给出了提示「Header」。打开浏览器的开发者工具，在「网络」（Network）选项卡中找到网页的初始请求，查看响应标头，有一个 Location 字段
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_2.png)
+![第一关开发者工具网络选项卡界面](/assets/images/wp/2024/week1/pangbai1_2.png)
 
 访问这个路径，进入下一关。
 
@@ -27,8 +26,10 @@ titleTemplate: ':title - NewStar CTF 2024'
 
 ## 第三关
 
-第三关给出的提示为：用另一种方法（Method）打声招呼（`say=hello`）吧 ~  
-我们在浏览器地址栏输入网址，默认的方法就是 GET，常见的方法还有 POST，在一些表单提交等界面会使用它，在 HTTP 请求报文中就是最开始的那个单词。因此本关用 POST 请求发一个 `say=hello` 的查询即可。  
+第三关给出的提示为：用另一种方法（Method）打声招呼（`say=hello`）吧 ~
+
+我们在浏览器地址栏输入网址，默认的方法就是 GET，常见的方法还有 POST，在一些表单提交等界面会使用它，在 HTTP 请求报文中就是最开始的那个单词。因此本关用 POST 请求发一个 `say=hello` 的查询即可。
+
 POST 的查询类型有很多种，通过 HTTP 报文中的 `Content-Type` 指定，以告诉服务端用何种方式解析报文 Body 的内容。
 
 | Content-Type | 描述 |
@@ -37,10 +38,11 @@ POST 的查询类型有很多种，通过 HTTP 报文中的 `Content-Type` 指�
 | application/json | Body 给出一个 JSON 格式的数据，服务端会解析它。 |
 | multipart/form-data | 表单字段，一般用于有文件等复杂类型的场景。 |
 
-我们可以用任意方式，那么我们选择用`application/x-www-form-urlencoded`发送个`say=hello`的请求包即可。  
+我们可以用任意方式，那么我们选择用`application/x-www-form-urlencoded`发送个`say=hello`的请求包即可。
+
 使用浏览器的HackBar插件：
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_3.png)
+![第三关](/assets/images/wp/2024/week1/pangbai1_3.png)
 
 > 注意：如果使用 HackBar 插件，请在 Modify Header 一栏中删除 Cookie 字段（删除后会自动采用浏览器当前的 Cookie），或者请手动更新该字段。因为 Cookie 携带着关卡信息，如果不更新该值，将永远停留在同一关。
 
@@ -58,7 +60,7 @@ say=hello
 
 ## 第四关
 
-来到这一关后由于 302 跳转可能会变成 GET 请求，再次用 POST 请求（携带新 Cookie）访问，得到提示「Agent」和`Papa`，应当想到考查的是 HTTP 请求头中的 `User-Agent` Header. 题目的要求比较严格，`User-Agent` 必须按照标准格式填写（参见 <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent>），因此需携带任意版本号发送一个 POST 请求：
+来到这一关后由于 302 跳转可能会变成 GET 请求，再次用 POST 请求（携带新 Cookie）访问，得到提示「Agent」和`Papa`，应当想到考查的是 HTTP 请求头中的 `User-Agent` Header. 题目的要求比较严格，`User-Agent` 必须按照标准格式填写（参见 [User-Agent - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent)），因此需携带任意版本号发送一个 POST 请求：
 
 ```HTTP
 POST /?ask=miao HTTP/1.1
@@ -86,12 +88,16 @@ say=%E7%8E%9B%E5%8D%A1%E5%B7%B4%E5%8D%A1%E9%98%BF%E5%8D%A1%E5%93%87%E5%8D%A1%E7%
 
 如果使用 Hackbar，配置如下：
 
-![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_4.png)
+![第四关](/assets/images/wp/2024/week1/pangbai1_4.png)
 
 ## 第五关
 
-由于 302 跳转的缘故变成了 GET 请求，我们再用 POST 请求（携带新 Cookie）访问，得到的提示为：或许可以尝试用修改（PATCH）的方法提交一个补丁包（`name="file"; filename="*.zip"`）试试。  
-这是要求我们使用 PATCH 方法发送一个 ZIP 文件。  
+由于 302 跳转的缘故变成了 GET 请求，我们再用 POST 请求（携带新 Cookie）访问，得到的提示为：
+
+> 或许可以尝试用修改（PATCH）的方法提交一个补丁包（`name="file"; filename="*.zip"`）试试。
+
+这是要求我们使用 PATCH 方法发送一个 ZIP 文件。
+
 这一关是相对较难的一关，浏览器插件并不支持发送 PATCH 包和自定义文件，必须通过一些发包工具或者写代码来发送该内容。PATCH 包的格式与 POST 无异，使用 `Content-Type: multipart/form-data`发包即可，注意该 Header 的值后面需要加一个`boundary` 表示界定符。例如`Content-Type: multipart/form-data; boundary=abc`，那么在 Body 中，以`--abc`表示一个查询字段的开始，当所有查询字段结束后，用`--abc--`表示结束。
 
 > 这个 Content-Type 下的 Body 字段不需要进行转义，每一个查询内容以一个空行区分元信息和数据（就和 HTTP 报文区分标头和 Body 的那样），如果数据中包含`boundary`界定符的相关内容，可能引起误解，那么可以通过修改`boundary`以规避碰撞情况（因此浏览器发送`mulipart/form-data`的表单时，`boundary`往往有很长的`--` 并且包含一些长的随机字符串。
@@ -131,7 +137,8 @@ Date: Fri, 27 Sep 2024 19:28:30 GMT
 
 ## 第六关
 
-本题提示内容指出了`localhost`，意在表明需要让服务器认为这是一个来自本地的请求。可以通过设`Host`、`X-Real-IP`、`X-Forwarded-For`、`Referer`等标头欺骗服务器。  
+本题提示内容指出了`localhost`，意在表明需要让服务器认为这是一个来自本地的请求。可以通过设`Host`、`X-Real-IP`、`X-Forwarded-For`、`Referer`等标头欺骗服务器。
+
 以下任意一种请求都是可以的。
 
 ```HTTP
@@ -164,7 +171,8 @@ Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsZXZlbCI6Nn0.SlKAeN5yYDF9Y
 > 「像■■■■验体■■不可能■■■■ JWT 这种■■ Pe2K7kxo8NMIkaeN ■■■密钥，除非■■■■■走，难道■■■■■■吗？！」
 > 「......」
 
-其中提到了 JWT 和 `Pe2K7kxo8NMIkaeN`，这个数字和字母组成内容推测应当是 JWT 的密钥。JWT 是一个轻量级的认证规范，允许在用户和服务器之间传递安全可靠的信息，但这是基于签名密钥没有泄露的情况下。可以通过 JWT.IO <https://jwt.io> 网站进行在线签名和验证（JWT 并不对数据进行加密，而仅仅是签名，不同的数据对应的羡签名不一样，因此在没有密钥的情况下，你可以查看里面的数据，但修改它则会导致服务器验签失败，从而拒绝你的进一步请求）。  
+其中提到了 JWT 和 `Pe2K7kxo8NMIkaeN`，这个数字和字母组成内容推测应当是 JWT 的密钥。JWT 是一个轻量级的认证规范，允许在用户和服务器之间传递安全可靠的信息，但这是基于签名密钥没有泄露的情况下。可以通过 JWT.IO <https://jwt.io> 网站进行在线签名和验证（JWT 并不对数据进行加密，而仅仅是签名，不同的数据对应的羡签名不一样，因此在没有密钥的情况下，你可以查看里面的数据，但修改它则会导致服务器验签失败，从而拒绝你的进一步请求）。
+
 将我们当前的 Cookie 粘贴入网站：
 
 ![cnily真的好可爱](/assets/images/wp/2024/week1/pangbai1_5.png)

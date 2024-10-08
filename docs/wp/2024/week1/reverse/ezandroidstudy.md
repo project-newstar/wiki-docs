@@ -1,15 +1,22 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # ezAndroidStudy
 
-本题主要考察对 apk 基本结构的掌握
+<Container type='tip'>
+
+本题主要考察对 APK 基本结构的掌握
+</Container>
 
 ## 第一部分
 
-查看 `AndroidManifest.xml` 可以发现 activity 只有 Homo 和 MainActivity
-我们 Jadx 打开 `work.pangbai.ezandroidstudy.Homo` 就可以获得 flag1
+查看 `AndroidManifest.xml` 可以发现 activity 只有 `Homo` 和 `MainActivity`
+
+我们用 Jadx 打开 `work.pangbai.ezandroidstudy.Homo` 就可以获得 flag1
 
 ![旁白酱可爱捏嘿嘿(～o￣3￣)～](/assets/images/wp/2024/week1/ezandroidstudy_1.png)
 
@@ -33,7 +40,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ## 第五部分
 
-IDA64 打开 lib/x86_64/libezandroidstudy.so，找到以"Java"开始的函数，按f5即可
+IDA64 打开 `lib/x86_64/libezandroidstudy.so`，找到以 Java 开始的函数，按 <kbd>F5</kbd> 即可
 
 ![旁白酱可爱捏嘿嘿(～o￣3￣)～](/assets/images/wp/2024/week1/ezandroidstudy_5.png)
 

@@ -44,7 +44,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 <Container type='tip'>
 
-题目考察对python"一切皆对象"的理解。
+题目考察对 python "一切皆对象"的理解。
 
 </Container>
 
@@ -76,7 +76,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ### Include Me
 
-这题主要考察远程文件包含漏洞，php伪协议，理解什么是转换流是本题的关键，同时还需了解一下 base64编码 的格式以及 url解码和编码时的保留字符和非保留字符
+这题主要考察远程文件包含漏洞，php 伪协议，理解什么是转换流是本题的关键，同时还需了解一下 base64 编码 的格式以及 url 解码和编码时的保留字符和非保留字符
 
 ### blindsql1
 

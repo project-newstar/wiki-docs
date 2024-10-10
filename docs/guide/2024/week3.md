@@ -114,3 +114,15 @@ import Container from '@/components/docs/Container.vue'
 ### 不用谢喵
 
 更加明确的考点指向，参见：[Block cipher mode of operation | Wikipedia](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation).
+
+## Misc
+
+### ez_jail
+
+misc 有一大考点，就是考察各种边边角角的奇技淫巧，本题就考察了 C++ 的一些知识。还算是一道比较有开放性的题目，解法不唯一（其实是出题欠考虑了）。在以下网站你有可能找到可以完成这道题的奇技淫巧：
+
+- 知乎
+- StackOverflow
+- Github
+
+其实只有 src 内的 ``server.py`` 是主要代码，其余大部分都是与 docker 镜像构建有关，各位同学也可以借此机会学习一下如何在本地构建 docker 镜像然后运行，起到一个在本地调试的效果。

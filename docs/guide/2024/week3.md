@@ -124,6 +124,8 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ## Crypto
 
+### 不用谢喵
+
 <Container type='tip'>
 
 [更加明确的考点指向](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)

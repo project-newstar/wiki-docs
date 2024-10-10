@@ -8,6 +8,8 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 # Week 3
 
+本周题目逐渐增加难度，希望大家好好学习题目的考查内容。与此同时，下周的题目会更有难度，希望大家继续深入学习，为后面的题目做好准备。
+
 ## Pwn
 
 ### One Last B1te

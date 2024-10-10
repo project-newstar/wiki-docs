@@ -54,55 +54,6 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 可以利用一些在线工具辅助解答：[Online x86 / x64 Assembler and Disassembler](https://defuse.ca/online-x86-assembler.htm#disassembly).
 
-## Web
-
-### 你能在一秒内打出八句英文吗
-
-考查对 Web 自动化脚本的撰写，可以了解下 Python 的 `Requests` 和 `BeautifulSoup` 库，以及 HTTP 会话控制。
-
-### 复读机
-
-<Container type='tip'>
-
-本题考查 Python 中 Flask 框架中，`render_template` 等函数导致的模板渲染注入（SSTI）的利用。
-</Container>
-
-对于 Python SSTI，一个简单的例子是，当你输入 `{{ '{'+'{ 3+4 }'+'}' }}`，它将输出了 `7`. 那么，通过精心构造 `{{ '{'+'{ }'+'}' }}` 中的表达式，可以实现任意命令执行。
-
-<Container type='quote'>
-
-在编辑这一段的时候直接写 `{{ '\u0060{'+'{ 3+4 }'+'}\u0060' }}`，导致 Vue 直接渲染了结果 `7`，可以说是现场复现了模板注入了。
-</Container>
-
-### 谢谢皮蛋 plus
-
-还是 SQL 注入题，在 Week 1 的基础上增加了一点过滤。选手需要测试过滤了哪些字符，并尝试绕过。
-
-这篇文章总结了一些常见的 SQL 注入：[SQL注入绕过过滤总结](https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/)。
-
-### PangBai 过家家（2）
-
-了解 Git 是什么，以及它的常见命令。
-互联网上有很多 `.git` `.svn` `.DS_Store` 等的泄露工具，但所支持的功能参差不齐。对于泄露 `.git` 的工具，有些不能泄露出提交历史、Stash、标签等。
-
-## Misc
-
-### 字里行间的秘密
-
-考查一般的文字隐写形式，可自行搜索相关文字隐写的考点与考查方式。
-
-### 热心助人的小明同学<Text class='desc-text' fontSize='16px' fontWeight='500' content='（内存取证入门）' />
-
-内存取证本质就是解析内存获取计算机某个时间节点的状态信息<span data-desc>（如进程、文件、注册表、浏览记录等）</span>。
-
-我们通常在 CTF 中遇到的内存取证题基本给了一个 `.raw` 文件，需要我们使用工具去解析<span data-desc>（工具用得熟练就赢了）</span>。
-
-对于初学者来说，建议使用 Volatility 作为内存取证的入门工具，你需要做的就是想办法安装这个软件，搜索使用方法，根据题目的指引「一把梭」。
-
-对于针对老旧系统的镜像取证，通常使用 Volatility 2，这也是用的比较多的版本；面对一些新系统的内存镜像可以尝试使用 Volatility 3，这个软件的具体用法，可以尝试使用 `-h` 命令行选项摸索，或自行上网了解。
-
-当然，你也可以借助一些第三方取证工具。在某些题目下，使用一些第三方工具可能会有意想不到的效果。<span data-desc>不过 Week 2 暂时不需要就是了，很简单的。</span>
-
 ## Reverse
 
 ### Dirty_flowers
@@ -140,3 +91,52 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 ### UPX
 
 选手需要了解 UPX 以及它的加密算法。
+
+## Web
+
+### 你能在一秒内打出八句英文吗
+
+考查对 Web 自动化脚本的撰写，可以了解下 Python 的 `Requests` 和 `BeautifulSoup` 库，以及 HTTP 会话控制。
+
+### 复读机
+
+<Container type='tip'>
+
+本题考查 Python 中 Flask 框架中，`render_template` 等函数导致的模板渲染注入（SSTI）的利用。
+</Container>
+
+对于 Python SSTI，一个简单的例子是，当你输入 `{{ '{'+'{ 3+4 }'+'}' }}`，它将输出了 `7`. 那么，通过精心构造 `{{ '{'+'{ }'+'}' }}` 中的表达式，可以实现任意命令执行。
+
+<Container type='quote'>
+
+在编辑这一段的时候直接写 `{{ '\u0060{'+'{ 3+4 }'+'}\u0060' }}`，导致 Vue 直接渲染了结果 `7`，可以说是现场复现了模板注入了。
+</Container>
+
+### 谢谢皮蛋 plus
+
+还是 SQL 注入题，在 Week 1 的基础上增加了一点过滤。选手需要测试过滤了哪些字符，并尝试绕过。
+
+这篇文章总结了一些常见的 SQL 注入：[SQL 注入绕过过滤总结](https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/)。
+
+### PangBai 过家家（2）
+
+了解 Git 是什么，以及它的常见命令。
+互联网上有很多 `.git` `.svn` `.DS_Store` 等的泄露工具，但所支持的功能参差不齐。对于泄露 `.git` 的工具，有些不能泄露出提交历史、Stash、标签等。
+
+## Misc
+
+### 字里行间的秘密
+
+考查一般的文字隐写形式，可自行搜索相关文字隐写的考点与考查方式。
+
+### 热心助人的小明同学<Text class='desc-text' fontSize='16px' fontWeight='500' content='（内存取证入门）' />
+
+内存取证本质就是解析内存获取计算机某个时间节点的状态信息<span data-desc>（如进程、文件、注册表、浏览记录等）</span>。
+
+我们通常在 CTF 中遇到的内存取证题基本给了一个 `.raw` 文件，需要我们使用工具去解析<span data-desc>（工具用得熟练就赢了）</span>。
+
+对于初学者来说，建议使用 Volatility 作为内存取证的入门工具，你需要做的就是想办法安装这个软件，搜索使用方法，根据题目的指引「一把梭」。
+
+对于针对老旧系统的镜像取证，通常使用 Volatility 2，这也是用的比较多的版本；面对一些新系统的内存镜像可以尝试使用 Volatility 3，这个软件的具体用法，可以尝试使用 `-h` 命令行选项摸索，或自行上网了解。
+
+当然，你也可以借助一些第三方取证工具。在某些题目下，使用一些第三方工具可能会有意想不到的效果。<span data-desc>不过 Week 2 暂时不需要就是了，很简单的。</span>

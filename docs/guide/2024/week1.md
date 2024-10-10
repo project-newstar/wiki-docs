@@ -17,6 +17,38 @@ import Container from '@/components/docs/Container.vue'
 
 对于快速入门和解题样例，可以阅读 [Pwn 二进制安全 - 快速入门](/learn/pwn)。
 
+## Reverse
+
+### ez_debug
+
+本题考查 IDA 或 x64dbg 的动态调试使用。
+
+### begin
+
+你需要学会使用 IDA 进行字符串搜索，根据字符串定位关键代码的位置。
+
+下面列举一些 IDA 的常用快捷键：
+
+- <kbd>F5</kbd> 查看反编译之后的 C 语言代码
+- <kbd>⇧ Shift</kbd><kbd>F12</kbd> 查看程序中的所有字符串
+- 点击变量或者函数名，按下 <kbd>X</kbd>，可以看到这些变量或者函数被谁引用
+
+### Simple_encryption
+
+题目将你的输入进行了加密，你只能看见加密后的结果和加密算法。你需要根据加密结果和加密算法解出原始内容。
+
+异或运算的逆向：符号 `^` 表示的就是异或运算（数学中采用符号 $\oplus$）。异或运算是可逆的，即若 $a \oplus b = c$，则 $c \oplus b = a$.
+
+本题仅考查加减运算和异或运算的逆向。所谓运算的逆向，即类似数学中通过 $y = f(x)$，求 $x = f^{-1}(y)$ 的过程（或已知 $y$，求 $x$ 的过程）。
+
+### ezAndroidStudy
+
+本题主要考查对 APK 基本结构的掌握。
+
+关于 APK 文件，可以使用反编译工具 jadx 打开。
+
+`AndroidManifest.xml` 文件往往包含很多关键信息，如 `MainActivity`<span data-desc>（`MainActivity` 类似于 C 语言中的 `main` 方法，是整个程序的入口）。</span>
+
 ## Web
 
 ### Pangbai 过家家（1）
@@ -90,35 +122,3 @@ Level 6 有什么用，还不是被神之右手所打败
 ### 兑换码
 
 本题考查 PNG 文件的字节码知识，你可以通过自行查阅 PNG 的二进制格式（如文件头、IHDR、宽、高、数据块等）来了解 PNG 文件的构成。
-
-## Reverse
-
-### ez_debug
-
-本题考查 IDA 或 x64dbg 的动态调试使用。
-
-### begin
-
-你需要学会使用 IDA 进行字符串搜索，根据字符串定位关键代码的位置。
-
-下面列举一些 IDA 的常用快捷键：
-
-- <kbd>F5</kbd> 查看反编译之后的 C 语言代码
-- <kbd>⇧ Shift</kbd><kbd>F12</kbd> 查看程序中的所有字符串
-- 点击变量或者函数名，按下 <kbd>X</kbd>，可以看到这些变量或者函数被谁引用
-
-### Simple_encryption
-
-题目将你的输入进行了加密，你只能看见加密后的结果和加密算法。你需要根据加密结果和加密算法解出原始内容。
-
-异或运算的逆向：符号 `^` 表示的就是异或运算（数学中采用符号 $\oplus$）。异或运算是可逆的，即若 $a \oplus b = c$，则 $c \oplus b = a$.
-
-本题仅考查加减运算和异或运算的逆向。所谓运算的逆向，即类似数学中通过 $y = f(x)$，求 $x = f^{-1}(y)$ 的过程（或已知 $y$，求 $x$ 的过程）。
-
-### ezAndroidStudy
-
-本题主要考查对 APK 基本结构的掌握。
-
-关于 APK 文件，可以使用反编译工具 jadx 打开。
-
-`AndroidManifest.xml` 文件往往包含很多关键信息，如 `MainActivity`<span data-desc>（`MainActivity` 类似于 C 语言中的 `main` 方法，是整个程序的入口）。</span>

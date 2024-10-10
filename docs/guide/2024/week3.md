@@ -24,7 +24,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 除此之外，如果没有思路的话建议多动态调试看看，注意 ``call close`` 函数时寄存器的状态。
 
-如果你苦恼于elf中没有好用的 ``gadget`` ，不妨看看别的可执行段中的 ``gadget`` 。
+如果你苦恼于 elf 中没有好用的 ``gadget`` ，不妨看看别的可执行段中的 ``gadget`` 。
 
 如果你苦恼于 ``gadget`` 没法设置 ``rdx`` 寄存器，不妨看看别的 ``gadget`` ，能设置 ``rdx`` 寄存器的 ``gadget`` 不只有 ``pop rdx;ret;``
 
@@ -52,7 +52,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 理解什么是内建函数 ``__builtins__``,``eval()`` 函数的进阶用法，什么是命名空间,以及常用的命令执行的函数对解开这题至关重要。
 
-推荐去python官方文档了解 ``eval()`` 函数：
+推荐去 python 官方文档了解 ``eval()`` 函数：
 
 [Built-in Functions](https://docs.python.org/3/library/functions.html#eval)
 
@@ -72,11 +72,11 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 - 理解密钥复杂度与安全性之间的相关性。
 - 写脚本是很重要的基本功。
-- 对SSRF漏洞有一个基本认识。
+- 对 SSRF 漏洞有一个基本认识。
 
 ### Include Me
 
-这题主要考察远程文件包含漏洞，php 伪协议，理解什么是转换流是本题的关键，同时还需了解一下 base64 编码 的格式以及 url 解码和编码时的保留字符和非保留字符
+这题主要考察远程文件包含漏洞，php伪协议，理解什么是转换流是本题的关键，同时还需了解一下 base64编码 的格式以及 url解码 和编码时的保留字符和非保留字符
 
 ### blindsql1
 
@@ -103,3 +103,27 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 关于安卓，了解一下 ``JNI`` 的静态注册和动态注册。
 
 加密的算法不难，主要就是识别出 java 层和 so 层分别起到什么作用，它们是怎么进行交互的。
+
+### SecretOfKawaii
+
+<Container type='tip'>
+
+``Jeb`` 解控制流混淆, so 层普通压缩壳用 ``upx`` 解。
+
+</Container>
+
+解密涉及到端序转化，建议查找相关资料，理解后再做题，同时还需要有点补码的知识呢。加密算法在CTF比赛还是比较常见的。
+
+### 011vm
+
+``ollvm`` 混淆需要使用 ``d810`` 去除，但可能还面临着部分控制流难以去除的问题，最好结合动调做题。
+
+本题只有常见加密，细心观察逻辑即可解出。
+
+## Crypto
+
+<Container type='tip'>
+
+[更加明确的考点指向](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)
+
+</Container>

@@ -17,11 +17,11 @@ import Container from '@/components/docs/Container.vue'
 
 程序中提供了任意地址写的机会，但是我们已知的只有 ELF 地址。
 
-那一个字节写到哪里好呢? ELF 中可写的段只有 `0x404000` 开始的段，仔细规划规划那一个字节写在哪里，写什么吧 ~
+那一个字节写到哪里好呢？ ELF 中可写的段只有 `0x404000` 开始的段，仔细规划规划那一个字节写在哪里，写什么吧 ~
 
 除此之外，如果没有思路的话建议多动态调试看看，注意 `call close` 函数时寄存器的状态。
 
-如果你苦恼于 ELF 中没有好用的 `gadget` ，不妨看看别的可执行段中的 `gadget` 。
+如果你苦恼于 ELF 中没有好用的 `gadget` ，不妨看看别的可执行段中的 `gadget`.
 
 如果你苦恼于 `gadget` 没法设置 `rdx` 寄存器，不妨看看别的 `gadget` ，能设置 `rdx` 寄存器的 `gadget` 不只有 `pop rdx; ret;`.
 
@@ -29,21 +29,21 @@ import Container from '@/components/docs/Container.vue'
 
 ### SMc_math
 
-`SMC` ，即 `Self Modifying Code` ，动态代码加密技术，指通过修改代码或数据，阻止别人直接静态分析，然后在动态运行程序时对代码进行解密，达到程序正常运行的效果。
+SMC，即 Self Modifying Code，动态代码加密技术，指通过修改代码或数据，阻止别人直接静态分析，然后在动态运行程序时对代码进行解密，达到程序正常运行的效果。
 
-`SMC` 的一般破解方法是，通过动态调试，在代码解密完之后下断点并查看解密之后的代码。
+SMC 的一般破解方法是，通过动态调试，在代码解密完之后下断点并查看解密之后的代码。
 
-`Z3` 是由微软开发的一个高性能定理证明器，用于解决逻辑约束、符号执行、模型检测等问题。`Python` 版本的 `Z3` 提供了接口，可以方便地在 Python 中使用 `Z3` 求解逻辑问题，特别是在 `SMT(Satisfiability Modulo Theories)`求解方面。
+Z3 是由微软开发的一个高性能定理证明器，用于解决逻辑约束、符号执行、模型检测等问题。Python 版本的 Z3 提供了接口，可以方便地在 Python 中使用 Z3 求解逻辑问题，特别是在 SMT（Satisfiability Modulo Theories）求解方面。
 
 ### flowering_shrubs
 
-`IDAPython` 是一个将 Python 集成到 `IDA Pro（Interactive DisAssembler` 中的插件。它允许你使用 Python 脚本来自动化逆向工程任务，从而提高分析效率。
+`IDAPython` 是一个将 Python 集成到 `IDA Pro (Interactive DisAssembler)` 中的插件。它允许你使用 Python 脚本来自动化逆向工程任务，从而提高分析效率。
 
 如果你在使用 ida 过程中发现了许多同样的混淆，你可以编写 `idapython` 脚本来批量去除。
 
 ### simpleAndroid
 
-关于安卓，了解一下 `JNI` 的静态注册和动态注册。
+关于安卓，了解一下 JNI 的静态注册和动态注册。
 
 加密的算法不难，主要就是识别出 java 层和 so 层分别起到什么作用，它们是怎么进行交互的。
 
@@ -55,7 +55,7 @@ import Container from '@/components/docs/Container.vue'
 
 ### 011vm
 
-`ollvm` 混淆需要使用 `d810` 去除，但可能还面临着部分控制流难以去除的问题，最好结合动调做题。
+ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难以去除的问题，最好结合动调做题。
 
 本题只有常见加密，细心观察逻辑即可解出。
 

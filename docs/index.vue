@@ -13,12 +13,12 @@ import { signup, participate } from "./index";
             </template>
             <div style="text-align: center">
                 <ElButtonGroup class="group">
-                    <ElButton style="width: 100%" @click="signup()">立即报名</ElButton>
+                    <ElButton class="action-btn" style="width: 100%" @click="signup()">立即报名</ElButton>
                 </ElButtonGroup>
                 <ElButtonGroup class="group">
                     <div class="group-label"><label>参赛</label></div>
-                    <ElButton @click="participate('external')">公开赛道</ElButton>
-                    <ElButton @click="participate('internal')">校内赛道</ElButton>
+                    <ElButton class="action-btn" @click="participate('external')">公开赛道</ElButton>
+                    <ElButton class="action-btn" @click="participate('internal')">校内赛道</ElButton>
                 </ElButtonGroup>
             </div>
         </ElPopover>
@@ -86,6 +86,17 @@ import { signup, participate } from "./index";
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;
+}
+
+.action-btn {
+    position: relative;
+    z-index: 10;
+    &:hover {
+        z-index: 11;
+    }
+    &:active {
+        z-index: 12;
+    }
 }
 
 .no-top-border {

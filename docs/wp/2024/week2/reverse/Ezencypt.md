@@ -1,8 +1,11 @@
-## Ezencypt
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# Ezencypt
 
 打开MainActivity查看Onclick逻辑，Enc enc = new Enc(tx)，加密逻辑在Enc
 
-![image (33)](assets/images/wp/2024/week2/image (33).png)
+![定位到Enc](/assets/images/wp/2024/week2/ezencrypt_1.png)
 
 Enc的构造函数里进行了第一次加密，代码可以看出是ECB模式的AES，密钥是MainActivity的title。
 
@@ -10,11 +13,11 @@ doEncCheck函数进行加密数据检查，有native标签说明函数是c语言
 
 ida打开so文件，找到doEncCheck的实现
 
-![image (34)](assets/images/wp/2024/week2/image (34).png)
+![找到doEncCheck的实现](/assets/images/wp/2024/week2/ezencrypt_2.png)
 
-发现数据经过enc加密，再在循环里检验
+发现数据经过enc函数的加密，再在循环里检验
 
-![image (35)](assets/images/wp/2024/week2/image (35).png)
+![native层enc函数](/assets/images/wp/2024/week2/ezencrypt_3.png)
 
 enc里一个异或加密，一个rc4，key是xork
 
@@ -29,7 +32,7 @@ char xork[] = "meow";
 
 unsigned char sbox[257] = {0};
 
-// 初始化s表
+// 初始化s盒
 void init_sbox(char *key)
 {
     unsigned int i, j, k;
@@ -102,7 +105,4 @@ int main()
 
 so层解密后的数据拿去赛博厨子
 
-![image (36)](assets/images/wp/2024/week2/image (36).png)
-
-
-
+![赛博厨子直接梭](/assets/images/wp/2024/week2/ezencrypt_4.png)

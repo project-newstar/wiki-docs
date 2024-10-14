@@ -142,3 +142,16 @@ sidebar:
               link: /wp/2024/week2/web/pangbai2
             - text: 谢谢皮蛋 plus
               link: /wp/2024/week2/web/pidan-plus
+        - text: Reverse
+          collapsed: false
+          items:
+            - text: Pangbai泰拉记（1）
+              link: /wp/2024/week2/reverse/pangbaitaila1
+            - text: Ezencypt
+              link: /wp/2024/week2/reverse/ezencypt
+            - text: UPX
+              link: /wp/2024/week2/reverse/upx
+            - text: Ptrace
+              link: /wp/2024/week2/reverse/ptrace
+            - text: Dirty_flowers
+              link: /wp/2024/week2/reverse/dirty-flowers

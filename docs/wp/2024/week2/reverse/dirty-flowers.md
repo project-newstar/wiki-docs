@@ -1,4 +1,7 @@
-## Dirty_flowers
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# Dirty_flowers
 
 考察内容是花指令，但是事实上新生在week2就学过汇编还是不敢奢望，因此实际考察内容是学习怎么nop改汇编指令。
 
@@ -8,33 +11,32 @@
 
 在此不对这段的花指令再进行解释，自己模拟一遍栈帧操作即可理解。
 
-
+![花指令](/assets/images/wp/2024/week2/dirty-flowers_1.png)
 
 将从push eax到pop eax这一段全部nop掉。
 
-
+![nop](/assets/images/wp/2024/week2/dirty-flowers_2.png)
 
 然后在函数头位置按下U加P。再按下F5，即可正确反编译。
 
-
+![反编译结果](/assets/images/wp/2024/week2/dirty-flowers_3.png)
 
 稍微分析一下，将几个函数重命名一下。
 
 重命名方法：在函数名位置处按下n，进行重命名。
 
-
+![重命名](/assets/images/wp/2024/week2/dirty-flowers_4.png)
 
 基本思路就是先判断长度是否是36，再进行加密，最后比较。
 
 点进check函数可以找到密文，但是点进加密函数却发现IDA再次飘红。
 
-
+![飘红](/assets/images/wp/2024/week2/dirty-flowers_5.png)
 
 可以很容易发现加密函数里面的花指令与主函数的花指令完全一样。因此再操作一遍即可。
 
-
-
-
+![nop](/assets/images/wp/2024/week2/dirty-flowers_6.png)
+![反编译结果](/assets/images/wp/2024/week2/dirty-flowers_7.png)
 
 加密函数非常简单。
 

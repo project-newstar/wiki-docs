@@ -1,3 +1,6 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # just one and more than two
 
 很常见的RSA板子题。在一般的RSA中，我们有

@@ -1,3 +1,6 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # Since you konw something
 
 - 题目

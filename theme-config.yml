@@ -155,3 +155,14 @@ sidebar:
               link: /wp/2024/week2/reverse/ptrace
             - text: Dirty_flowers
               link: /wp/2024/week2/reverse/dirty-flowers
+        - text: Crypto
+          collapsed: false
+          items:
+            - text: 这是几次方？ 疑惑！
+              link: /wp/2024/week2/crypto/jicifang
+            - text: Since you konw something
+              link: /wp/2024/week2/crypto/since-you-know-something
+            - text: just one and more than two
+              link: /wp/2024/week2/crypto/just-one-and-more-than-two
+            - text: 茶里茶气
+              link: /wp/2024/week2/crypto/chalichaqi

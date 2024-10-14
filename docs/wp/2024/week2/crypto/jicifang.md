@@ -1,4 +1,7 @@
-# 这是几次方？ 疑惑！
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# 这是几次方？ 疑惑
 
 - 描述
 
@@ -37,7 +40,7 @@ hint = 1257881935680203467979289197575430696029704351667429090144181120064967928
 
 解析：结合题目描述，在网上搜索并用ai解读描述
 
-![image (27)](assets/images/wp/2024/week2/image (27).png)
+![用ai解读](/assets/images/wp/2024/week2/jicifang_1.png)
 
 在python中异或先计算两边，再进行异或操作
 
@@ -59,4 +62,4 @@ print(long_to_bytes(m).decode())
 
 - flag
 
-flag{yihuo_yuan_lai_xian_ji_suan_liang_bian_de2333}
+`flag{yihuo_yuan_lai_xian_ji_suan_liang_bian_de2333}`

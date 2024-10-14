@@ -1,3 +1,6 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # 茶里茶气
 
 简单的TEA(Tiny Encryption Algorithm)加密算法

@@ -179,3 +179,18 @@ sidebar:
               link: /wp/2024/week2/pwn/ez-game
             - text: My_GBC!!!!!
               link: /wp/2024/week2/pwn/my-gbc
+        - text: Misc
+          collapsed: false
+          items:
+            - text: wireshark_checkin
+              link: /wp/2024/week2/misc/wireshark-checkin
+            - text: wireshark_secret
+              link: /wp/2024/week2/misc/wireshark-secret
+            - text: 你也玩原神吗?
+              link: /wp/2024/week2/misc/genshin
+            - text: 字里行间的秘密
+              link: /wp/2024/week2/misc/zilihangjian
+            - text: 热心助人的小明同学
+              link: /wp/2024/week2/misc/xiaoming1
+            - text: 用溯流仪见证伏特台风
+              link: /wp/2024/week2/misc/futetaifeng

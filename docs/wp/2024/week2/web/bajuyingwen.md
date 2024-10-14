@@ -1,10 +1,11 @@
-## 你能在八秒内打出八句英文吗
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# 你能在一秒内打出八句英文吗
 
 经典脚本题，思路：先获取页面中需要输入的英文文本，再提交你获得的的文本。
 
 这里推荐模拟post请求，直接来看exp:
-
-``
 
 ```Python
 import requests

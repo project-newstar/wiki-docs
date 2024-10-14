@@ -127,3 +127,18 @@ sidebar:
               link: /wp/2024/week1/misc/labyrinth
             - text: 兑换码
               link: /wp/2024/week1/misc/duihuanma
+    - text: Week 2
+      items:
+        - text: Web
+          collapsed: false
+          items:
+            - text: 你能在一秒内打出八句英文吗
+              link: /wp/2024/week2/web/bajuyingwen
+            - text: 遗失的拉链
+              link: /wp/2024/week2/web/yishidelalian
+            - text: 复读机
+              link: /wp/2024/week2/web/fuduji
+            - text: PangBai 过家家（2）
+              link: /wp/2024/week2/web/pangbai2
+            - text: 谢谢皮蛋 plus
+              link: /wp/2024/week2/web/pidan-plus

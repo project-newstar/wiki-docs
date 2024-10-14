@@ -1,3 +1,6 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # Bad Asm
 
 程序过滤syscall / sysenter / int 0x80的汇编指令的机器码。

@@ -1,6 +1,9 @@
-# **Inverted World**
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# Inverted World
 
-## **题目分析**
+## 题目分析
 
 checksec之后发现未开启pie，开启了canary。
 
@@ -30,7 +33,7 @@ _read实现的是和正常read相反方向进行输入，我们这里输入的�
 
 关于canary：因为是反向输入的，只要不多写东西就不会修改到canary，自然就不用故意绕过canary。
 
-## **Exp**
+## Exp
 
 ```Python
 from pwn import*

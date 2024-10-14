@@ -1,4 +1,7 @@
-# My_GBC!!!!!
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
+# My_GBC\!\!\!\!\!
 
 先将程序拖入ida分析
 
@@ -43,7 +46,7 @@ __int64 __fastcall encrypt(__int64 a1, char a2, int a3)
 
 运行程序后发现，栈溢出时，rdx寄存器值为1，而程序中能利用的函数read，write的三参都是长度，这对我们利用十分不利，因此我们选择ret2csu
 
-
+![ret2csu](/assets/images/wp/2024/week2/my-gbc_1.png)
 
 这是csu的代码片段，第一段代码能将r12, r13, r14分别mov到rdi, rsi, rdx，这样我们便能控制rdx，即控制函数的三参，并且后面还有call [r15+rbx*8]，能控制程序的走向；第二段代码则是一长串的pop，配合上述代码，即可达到ROP，控制程序流程
 

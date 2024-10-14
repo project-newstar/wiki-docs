@@ -1,12 +1,15 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # ez_game
 
-![image (23)](assets/images/wp/2024/week2/image (23).png)
+![func函数](/assets/images/wp/2024/week2/ez-game_1.png)
 
 明显的栈溢出且没有后门函数
 
 再checksec一下，没有开启pie
 
-![image (24)](assets/images/wp/2024/week2/image (24).png)
+![checksec的结果](/assets/images/wp/2024/week2/ez-game_2.png)
 
 直接打ret2libc（但是得进行栈对齐）
 

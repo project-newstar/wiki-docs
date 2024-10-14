@@ -166,3 +166,16 @@ sidebar:
               link: /wp/2024/week2/crypto/just-one-and-more-than-two
             - text: 茶里茶气
               link: /wp/2024/week2/crypto/chalichaqi
+        - text: Pwn
+          collapsed: false
+          items:
+            - text: EZ_fmt
+              link: /wp/2024/week2/pwn/ez-fmt
+            - text: Inverted World
+              link: /wp/2024/week2/pwn/inverted-world
+            - text: Bad Asm
+              link: /wp/2024/week2/pwn/bad-asm
+            - text: ez_game
+              link: /wp/2024/week2/pwn/ez-game
+            - text: My_GBC!!!!!
+              link: /wp/2024/week2/pwn/my-gbc

@@ -1,12 +1,15 @@
+---
+titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+---
 # EZ_fmt
 
-![image (25)](assets/images/wp/2024/week2/image (25).png)
+![vuln函数](/assets/images/wp/2024/week2/ez-fmt_1.png)
 
 很经典的格式化字符串
 
 首先确定offset为8
 
-![image (26)](assets/images/wp/2024/week2/image (26).png)
+![确定偏移](/assets/images/wp/2024/week2/ez-fmt_2.png)
 
 根据程序
 

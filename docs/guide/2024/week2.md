@@ -14,7 +14,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ### ez_game
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查的是 ret2libc 的知识点。
 </Container>
@@ -40,7 +40,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ### Bad Asm
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查 shellcode 编写能力。
 </Container>
@@ -77,7 +77,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ### Ptrace
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查对于调试器原理的理解，侧重对 ptrace 的了解。
 </Container>
@@ -100,7 +100,7 @@ import Text from '@/components/docs/NonTextDetectable.vue'
 
 ### 复读机
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查 Python 中 Flask 框架中，`render_template` 等函数导致的模板渲染注入（SSTI）的利用。
 </Container>

@@ -1,6 +1,7 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # 谢谢皮蛋 plus
 
 同样还是联合注入，意在考察空格和 `and` 的绕过，为了避免直接使用报错注入得到 flag，将报错注入 ban 了
@@ -13,11 +14,11 @@ preg_match_all("/ |extractvalue|updataxml|and/i",$id)
 
 ![注意引号的闭合种类](/assets/images/wp/2024/week2/pidan-plus_1.png)
 
-双引号中带有单引号也可以执行成功，属于mysql的一种特性，可以自行尝试一下
+双引号中带有单引号也可以执行成功，属于 MySQL 的一种特性，可以自行尝试一下
 
 ![双引号中带有单引号也可以执行成功](/assets/images/wp/2024/week2/pidan-plus_2.png)
 
-and使用&&替换，空格使用/**/替换，其他就是一样的操作了
+`and` 使用 `&&` 替换，空格使用 `/**/` 替换，其他就是一样的操作了
 
 查询当前数据库
 

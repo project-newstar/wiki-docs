@@ -1,21 +1,26 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # PangBai 过家家（2）
 
 题目所给出的提示是文件泄露（其实用 dirsearch 等扫描工具也可以扫描到 .git 目录）。
 
 ![任务一](/assets/images/wp/2024/week2/pangbai2_1.png)
 
-使用 GitHacker <https://github.com/WangYihang/GitHacker> 工具从 .git 文件夹中泄露文件到本地。
+使用 [GitHacker](https://github.com/WangYihang/GitHacker) 工具从 .git 文件夹中泄露文件到本地。
 
-GitHacker工具可快速使用 pip 安装：
+![使用githacker](/assets/images/wp/2024/week2/pangbai2_2.png)
+
+:::info 关于 GitHacker
+
+GitHacker 工具可快速使用 pip 安装：
 
 ```bash
 pip install githacker
 ```
 
-![使用githacker](/assets/images/wp/2024/week2/pangbai2_2.png)
+:::
 
 随后进入 output 文件夹，可以看到恢复的网站源码：
 
@@ -33,7 +38,7 @@ pip install githacker
 git stash list
 ```
 
-![git stash输出信息](/assets/images/wp/2024/week2/pangbai2_5.png)
+![git stash 输出信息](/assets/images/wp/2024/week2/pangbai2_5.png)
 
 可以看到 Stash 中含有后门（实际上在 GitHacker 泄漏时就有 stash 的输出信息）
 
@@ -114,7 +119,7 @@ $_GET['NewStar_CTF.2024'] !== 'Welcome' && preg_match('/^Welcome$/', $_GET['NewS
 
 如果加 `D` 修饰符，就不匹配换行符：
 
-```Python
+```python
 preg_match('/^Welcome$/D',"Welcome\n")
 ```
 
@@ -122,4 +127,4 @@ preg_match('/^Welcome$/D',"Welcome\n")
 
 但如果直接传参 `NewStar_CTF.2024=Welcome%0A` 会发现并没有用。这是由 `NewStar_CTF.2024` 中的特殊字符 `.` 引起的，PHP 默认会将其解析为 `NewStar_CTF_2024`. 在 PHP 7 中，可以使用 `[` 字符的非正确替换漏洞。当传入的参数名中出现 `[` 且之后没有 `]` 时，PHP 会将 `[` 替换为 `_`，但此之后就不会继续替换后面的特殊字符了因此，GET 传参 `NewStar[CTF.2024=Welcome%0a` 即可，随后传入 `call_user_func` 的参数即可。
 
-![获取到flag](/assets/images/wp/2024/week2/pangbai2_8.png)
+![获取到 flag](/assets/images/wp/2024/week2/pangbai2_8.png)

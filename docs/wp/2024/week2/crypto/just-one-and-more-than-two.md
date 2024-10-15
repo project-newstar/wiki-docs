@@ -1,27 +1,28 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # just one and more than two
 
 很常见的RSA板子题。在一般的RSA中，我们有
 
-$$\phi(n)= \phi(p)*\phi(q)=(p-1)(q-1)$$
+$$\varphi(n)= \varphi(p)*\varphi(q)=(p-1)(q-1)$$
 
-如果你不知道，那就再回去温习一下week1中对于RSA的相关知识
+如果你不知道，那就再回去温习一下 Week 1 中对于 RSA 的相关知识
 
-针对just one的情况：
+针对 just one 的情况：
 
-$$\phi(n)=\phi(p)=p-1$$
+$$\varphi(n)=\varphi(p)=p-1$$
 
-针对more than two的情况
+针对 more than two 的情况
 
-$$\phi(n)=\phi(p)*\phi(q)*\phi(r)=(p-1)(q-1)(r-1)$$
+$$\varphi(n)=\varphi(p)*\varphi(q)*\varphi(r)=(p-1)(q-1)(r-1)$$
 
-其他和普通rsa一样解即可
+其他和普通 RSA 一样解即可
 
 实际上还会有其他情况，只要大家对欧拉函数有足够的了解，这类问题一定可以迎刃而解的
 
-```Python
+```python
 from Crypto.Util.number import *
 p=11867061353246233251584761575576071264056514705066766922825303434965272105673287382545586304271607224747442087588050625742380204503331976589883604074235133
 q=11873178589368883675890917699819207736397010385081364225879431054112944129299850257938753554259645705535337054802699202512825107090843889676443867510412393
@@ -39,5 +40,5 @@ d2 = inverse(e, phi_2)
 m2 = pow(c2, d2, p*q*r)
 
 print(long_to_bytes(m1)+long_to_bytes(m2))
-#b'flag{Y0u_re4lly_kn0w_Euler_4nd_N3xt_Eu1er_is_Y0u!}'
+# b'flag{Y0u_re4lly_kn0w_Euler_4nd_N3xt_Eu1er_is_Y0u!}'
 ```

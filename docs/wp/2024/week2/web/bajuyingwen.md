@@ -1,13 +1,14 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # 你能在一秒内打出八句英文吗
 
 经典脚本题，思路：先获取页面中需要输入的英文文本，再提交你获得的的文本。
 
-这里推荐模拟post请求，直接来看exp:
+这里推荐模拟 POST 请求，直接来看 EXP：
 
-```Python
+```python
 import requests
 from bs4 import BeautifulSoup
 
@@ -30,6 +31,6 @@ else:
     print(f"{response.status_code}")
 ```
 
-requests库可以很方便的进行会话控制，BeautifulSoup可以帮你快速定位文本位置。剩下就是post请求+打印回显。
+`requests` 库可以很方便的进行会话控制，`BeautifulSoup` 可以帮你快速定位文本位置。剩下就是 POST 请求 + 打印回显。
 
-当然，解法很多，你也可以使用Selenium库模拟浏览器操作，又或者装一些浏览器插件凭手速把文本直接复制过去再提交，随你喜欢。
+当然，解法很多，你也可以使用 `Selenium` 等库模拟浏览器操作，又或者装一些浏览器插件凭手速把文本直接复制过去再提交，随你喜欢。

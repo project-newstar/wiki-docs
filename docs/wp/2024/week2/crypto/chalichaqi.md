@@ -1,17 +1,18 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # 茶里茶气
 
-简单的TEA(Tiny Encryption Algorithm)加密算法
+简单的 TEA（Tiny Encryption Algorithm）加密算法
 
 只需要逆推一下过程，然后把字符串拼接在一起转成字符即可
 
-对于`v2`这个变量，先进行正推得到最终值，再倒退进行解密（数量级不大，使用乘法和加法都可以）
+对于 `v2` 这个变量，先进行正推得到最终值，再倒退进行解密<span data-desc>（数量级不大，使用乘法和加法都可以）</span>
 
 注意每一步都要取模
 
-```Python
+```python
 v2 = 0
 derta = 462861781278454071588539315363
 v3 = 489552116384728571199414424951
@@ -37,7 +38,6 @@ flag = ""
 for i in range(0,len(a),2):
     flag += chr(int(a[i]+a[i+1],16))
 
-print( flag )
+print(flag)
+# flag{f14gg9_te2_1i_7ea_7}
 ```
-
-flag:`flag{f14gg9_te2_1i_7ea_7}`

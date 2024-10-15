@@ -58,11 +58,11 @@ git stash list
 
 - `git stash`
 
-保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行 `git status` 命令，就会发现当前是一个干净的工作区，没有任何改动。使用 `git stash save ``'一些信息``'` 可以添加一些注释。
+  保存当前工作进度，会把暂存区和工作区的改动保存起来。执行完这个命令后，在运行 `git status` 命令，就会发现当前是一个干净的工作区，没有任何改动。使用 `git stash save '一些信息'` 可以添加一些注释。
 
-- `git stash pop [–index] [stash_id]`
+- `git stash pop [-index] [stash_id]`
 
-从 Stash 中释放内容，默认为恢复最新的内容到工作区。
+  从 Stash 中释放内容，默认为恢复最新的内容到工作区。
 
 :::
 
@@ -120,7 +120,7 @@ $_GET['NewStar_CTF.2024'] !== 'Welcome' && preg_match('/^Welcome$/', $_GET['NewS
 如果加 `D` 修饰符，就不匹配换行符：
 
 ```python
-preg_match('/^Welcome$/D',"Welcome\n")
+preg_match('/^Welcome$/D', "Welcome\n")
 ```
 
 :::

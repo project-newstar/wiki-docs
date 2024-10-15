@@ -3,6 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 import path from 'path'
 import fs from 'node:fs'
 import YAML from 'yaml'
+import svgLoader from 'vite-svg-loader'
 
 import ElementPlus from 'unplugin-element-plus/vite'
 
@@ -98,6 +99,7 @@ export default defineConfig({
             }
         },
         plugins: [
+            svgLoader(),
             // auto import style
             ElementPlus({
                 format: 'esm',

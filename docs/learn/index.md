@@ -23,10 +23,9 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 
 如果你此前从未接触过 CTF，你可能需要先了解其形式，即通过一些在线靶场或新生赛的低门槛题目进行适应。下面的一些公益新生赛事或平台或许会对你有所帮助：
 
-- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
+- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
 - <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
 - <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://0xgame.exp10it.cn/">南邮 0xGame</Link>
-- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://shc.tf/">SHCTF</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>

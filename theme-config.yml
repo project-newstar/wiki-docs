@@ -67,7 +67,7 @@ sidebar:
     - text: Week 1
       items:
         - text: Pwn
-          collapsed: false
+          collapsed: true
           items:
             - text: Real Login
               link: /wp/2024/week1/pwn/real-login
@@ -78,7 +78,7 @@ sidebar:
             - text: Gdb
               link: /wp/2024/week1/pwn/gdb
         - text: Reverse
-          collapsed: false
+          collapsed: true
           items:
             - text: begin
               link: /wp/2024/week1/reverse/begin
@@ -91,7 +91,7 @@ sidebar:
             - text: ez_debug
               link: /wp/2024/week1/reverse/ez-debug
         - text: Web
-          collapsed: false
+          collapsed: true
           items:
             - text: headach3
               link: /wp/2024/week1/web/headach3
@@ -104,7 +104,7 @@ sidebar:
             - text: 谢谢皮蛋
               link: /wp/2024/week1/web/xiexiepidan
         - text: Crypto
-          collapsed: false
+          collapsed: true
           items:
             - text: xor
               link: /wp/2024/week1/crypto/xor
@@ -115,7 +115,7 @@ sidebar:
             - text: Strange King
               link: /wp/2024/week1/crypto/strange-king
         - text: Misc
-          collapsed: false
+          collapsed: true
           items:
             - text: decompress
               link: /wp/2024/week1/misc/decompress
@@ -127,3 +127,70 @@ sidebar:
               link: /wp/2024/week1/misc/labyrinth
             - text: 兑换码
               link: /wp/2024/week1/misc/duihuanma
+    - text: Week 2
+      items:
+        - text: Pwn
+          collapsed: false
+          items:
+            - text: EZ_fmt
+              link: /wp/2024/week2/pwn/ez-fmt
+            - text: Inverted World
+              link: /wp/2024/week2/pwn/inverted-world
+            - text: Bad Asm
+              link: /wp/2024/week2/pwn/bad-asm
+            - text: ez_game
+              link: /wp/2024/week2/pwn/ez-game
+            - text: My_GBC!!!!!
+              link: /wp/2024/week2/pwn/my-gbc
+        - text: Reverse
+          collapsed: false
+          items:
+            - text: Pangbai 泰拉记（1）
+              link: /wp/2024/week2/reverse/pangbai-terra1
+            - text: Ezencypt
+              link: /wp/2024/week2/reverse/ezencypt
+            - text: UPX
+              link: /wp/2024/week2/reverse/upx
+            - text: Ptrace
+              link: /wp/2024/week2/reverse/ptrace
+            - text: Dirty_flowers
+              link: /wp/2024/week2/reverse/dirty-flowers
+        - text: Web
+          collapsed: false
+          items:
+            - text: 你能在一秒内打出八句英文吗
+              link: /wp/2024/week2/web/bajuyingwen
+            - text: 遗失的拉链
+              link: /wp/2024/week2/web/yishidelalian
+            - text: 复读机
+              link: /wp/2024/week2/web/fuduji
+            - text: PangBai 过家家（2）
+              link: /wp/2024/week2/web/pangbai2
+            - text: 谢谢皮蛋 plus
+              link: /wp/2024/week2/web/pidan-plus
+        - text: Crypto
+          collapsed: false
+          items:
+            - text: 这是几次方？ 疑惑！
+              link: /wp/2024/week2/crypto/jicifang
+            - text: Since you konw something
+              link: /wp/2024/week2/crypto/since-you-know-something
+            - text: just one and more than two
+              link: /wp/2024/week2/crypto/just-one-and-more-than-two
+            - text: 茶里茶气
+              link: /wp/2024/week2/crypto/chalichaqi
+        - text: Misc
+          collapsed: false
+          items:
+            - text: wireshark_checkin
+              link: /wp/2024/week2/misc/wireshark-checkin
+            - text: wireshark_secret
+              link: /wp/2024/week2/misc/wireshark-secret
+            - text: 你也玩原神吗？
+              link: /wp/2024/week2/misc/genshin
+            - text: 字里行间的秘密
+              link: /wp/2024/week2/misc/zilihangjian
+            - text: 热心助人的小明同学
+              link: /wp/2024/week2/misc/xiaoming1
+            - text: 用溯流仪见证伏特台风
+              link: /wp/2024/week2/misc/futetaifeng

@@ -76,7 +76,7 @@ pip install gmpy2
 
 你可以通过解释如下代码片段中高亮行的含义来检验自己的学习情况<span data-desc>（下面的代码整体无实际意义）</span>：
 
-```Python:line-numbers
+```python:line-numbers
 from Crypto.Util.number import * # [!code highlight]
 import gmpy2
 
@@ -300,7 +300,7 @@ RSA 中涉及到我们之前没有或者说不太重视的一些数学知识点�
 
 ::: code-group
 
-```Python:line-numbers [RSA 加密脚本]
+```python:line-numbers [RSA 加密脚本]
 # 导入 Crypto.Util.number 模块中的所有函数
 from Crypto.Util.number import *
 # 导入 gmpy2 模块，用于高性能的数学运算
@@ -344,7 +344,7 @@ print(f'q = {q}')
 # q = 64236351092062515945998729497153532140067861836088195242257976217499252460697
 ```
 
-```Python:line-numbers [RSA 解密脚本]
+```python:line-numbers [RSA 解密脚本]
 # 导入 Crypto.Util.number 模块中的所有函数，用于处理数字和字节之间的转换等
 from Crypto.Util.number import *
 

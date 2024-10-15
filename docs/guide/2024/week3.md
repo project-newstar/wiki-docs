@@ -7,7 +7,7 @@ import Container from '@/components/docs/Container.vue'
 
 # Week 3
 
-从本周开始，题目将逐渐增加难度，并注重知识点的考察，希望大家好好学习相关内容。若仍有相关问题，请参考[快速入门](/learn/)。
+从本周开始，题目将逐渐增加难度，并注重知识点的考查，希望大家好好学习相关内容。若仍有相关问题，请参考[快速入门](/learn/)。
 
 ## Pwn
 
@@ -63,7 +63,7 @@ ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难�
 
 ### 臭皮的计算机
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查 Python 的命令执行和输入过滤绕过。
 </Container>
@@ -72,7 +72,7 @@ ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难�
 
 ### 臭皮踩踩背
 
-<Container type='tip'>
+<Container type='info'>
 
 本题考查对 Python 中「一切皆对象」的理解。
 </Container>
@@ -90,9 +90,9 @@ ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难�
 
 ### 这照片是你吗
 
-<Container type='tip'>
+<Container type='info'>
 
-本题考查常见的漏洞：路径穿越漏洞，并且考查 Python 的代码审计。
+本题考查常见的漏洞——路径穿越漏洞，并且考查 Python 的代码审计。
 </Container>
 
 解题需要：
@@ -107,7 +107,7 @@ ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难�
 
 ### blindsql1
 
-与前几周的题一样，考察 SQL 注入的相关知识。可继续参考文章：[SQL 注入绕过过滤总结](https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/)。
+与前几周的题一样，考查 SQL 注入的相关知识。可继续参考文章：[SQL 注入绕过过滤总结](https://yang1k.github.io/post/sql%E6%B3%A8%E5%85%A5%E7%BB%95%E8%BF%87%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/)。
 
 ## Crypto
 
@@ -119,13 +119,13 @@ ollvm 混淆需要使用 d810 去除，但可能还面临着部分控制流难�
 
 ### ez_jail
 
-Misc 有一大考点，就是考察各种边边角角的奇技淫巧，本题就考察了 C++ 的一些知识，还算是一道比较有开放性的题目，解法并不唯一。在以下网站你有可能找到可以完成这道题的奇技淫巧：
+Misc 有一大考点，就是考查各种边边角角的奇技淫巧，本题就考查了 C++ 的一些知识，还算是一道比较有开放性的题目，解法并不唯一。在以下网站你有可能找到可以完成这道题的奇技淫巧：
 
 - 知乎
 - StackOverflow
 - Github
 
-<Container type='info'>
+<Container type='tip'>
 
 其实只有 src 内的 `server.py` 是主要代码，其余大部分都是与 Docker 镜像构建有关。感兴趣的同学也可以借此机会学习一下如何在本地构建 Docker 镜像然后运行。
 </Container>

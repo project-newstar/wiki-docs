@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # 谢谢皮蛋 plus
 
-同样还是联合注入，意在考察空格和 `and` 的绕过，为了避免直接使用报错注入得到 flag，将报错注入 ban 了
+同样还是联合注入，意在考查空格和 `and` 的绕过，为了避免直接使用报错注入得到 flag，将报错注入 ban 了
 
 ```php
 preg_match_all("/ |extractvalue|updataxml|and/i",$id)

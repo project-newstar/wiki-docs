@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # Dirty_flowers
 
-考察内容是花指令，但是事实上新生在 week2 就学过汇编还是不敢奢望，因此实际考察内容是学习怎么用 `nop` 改汇编指令。
+考查内容是花指令，但是事实上新生在 week2 就学过汇编还是不敢奢望，因此实际考查内容是学习怎么用 `nop` 改汇编指令。
 
 按下 <kbd>⇧ Shift</kbd><kbd>F12</kbd> 查找字符串就可以发现提示。
 

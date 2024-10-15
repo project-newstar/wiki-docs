@@ -225,7 +225,7 @@ chmod +x ./pwn
 
 之后我们开始写利用脚本（Exploit）。创建 `exp.py` 文件，首先写上最基本的框架：
 
-```Python
+```python
 from pwn import *
 
 context.log_level='debug'
@@ -244,7 +244,7 @@ p.interactive()
 
 然后我们使用 `send` 函数与程序进行交互。
 
-```Python
+```python
 from pwn import *
 
 context.log_level='debug'
@@ -292,7 +292,7 @@ p.interactive()
 
 修改一下地址就能拿到 shell 了
 
-```Python
+```python
 from pwn import *
 
 context.log_level='debug'
@@ -311,7 +311,7 @@ p.interactive()
 
 之后注释掉 `process` 函数与 `gdb.attach` 函数，换 `remote` 函数打远程靶机即可：
 
-```Python
+```python
 p = remote('120.53.240.208', 6000)
 ```
 

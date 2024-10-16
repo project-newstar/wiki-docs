@@ -4,15 +4,15 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # drink_tea
 
-逆向的第一步永远都是先用DIE查看文件基本信息，发现无壳，文件为64位，用ida64打开
+逆向的第一步永远都是先用 DIE 查看文件基本信息，发现无壳，文件为64位，用 ida64 打开
 
 ![DIE](/assets/images/wp/2024/week2/drink_tea_1.png)
 
-主函数的逻辑很简单，就是先判读输入字符串的长度是否为32，然后再和key进入一个加密函数
+主函数的逻辑很简单，就是先判读输入字符串的长度是否为32，然后再和 key 进入一个加密函数
 
 ![主函数](/assets/images/wp/2024/week2/drink_tea_2.png)
 
-而这个加密就是大名鼎鼎的TEA算法，以后我们几乎会在所有比赛看到这个算法以及它的变形
+而这个加密就是大名鼎鼎的 TEA 算法，以后我们几乎会在所有比赛看到这个算法以及它的变形
 
 ![TEA](/assets/images/wp/2024/week2/drink_tea_3.png)
 

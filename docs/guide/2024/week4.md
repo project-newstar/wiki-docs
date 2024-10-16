@@ -9,6 +9,34 @@ import Container from '@/components/docs/Container.vue'
 
 本周题目难度已经很大了，希望大家不要焦躁，好好学习考查内容。
 
+## Pwn
+
+### Sign in
+
+本题是个小游戏，程序逻辑很简单，拿够分就行。
+
+但是胜负确实随机的🤔，有没有什么办法能让我输了不掉分呢🤔.
+
+### MAZE_Rust
+
+本题有后门🤓.
+
+### MakeHero
+
+本题有两次任意写的机会，想想看使用 `open("/proc/self/mem")`、lseek、write 实现任意写和用 `*addr=byte` 有什么不同。
+
+## Reverse
+
+### MazE
+
+推荐一篇有关 Linux 下 pipe 通信的文章：[Linux下进程间通信方式—— pipe（管道）](https://www.cnblogs.com/wuyepeng/p/9747557.html).
+
+如果你已经找到了迷宫地图，但是苦于迷宫过大，那可以去学习一下[搜索算法](https://blog.csdn.net/qq_40258761/article/details/88678093)。
+
+### easygui
+
+关于 Windows 消息循环 的一篇文章：[深入理解 Windows 消息机制](https://blog.csdn.net/liulianglin/article/details/14449577)
+
 ## Web
 
 ### ezcmsss
@@ -22,7 +50,7 @@ import Container from '@/components/docs/Container.vue'
 
 遇到没思路的题，可以先找几个常见的路径测试一下，如 `/robots.txt` `/upload` 等，或者看看有没有源码泄露。
 
-### 臭皮踩踩背
+### ezpollute
 
 <Container type='info'>
 
@@ -111,18 +139,6 @@ import Container from '@/components/docs/Container.vue'
 ::: tip
 推荐选手通过源码自行开启 Docker 环境，并先在本地打通题目。
 :::
-
-## Reverse
-
-### MazE
-
-推荐一篇有关 Linux 下 pipe 通信的文章：[Linux下进程间通信方式—— pipe（管道）](https://www.cnblogs.com/wuyepeng/p/9747557.html).
-
-如果你已经找到了迷宫地图，但是苦于迷宫过大，那可以去学习一下[搜索算法](https://blog.csdn.net/qq_40258761/article/details/88678093)。
-
-### easygui
-
-关于 Windows 消息循环 的一篇文章：[深入理解 Windows 消息机制](https://blog.csdn.net/liulianglin/article/details/14449577)
 
 ## Crypto
 

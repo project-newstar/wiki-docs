@@ -8,7 +8,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![DIE](/assets/images/wp/2024/week2/drink_tea_1.png)
 
-主函数的逻辑很简单，就是先判读输入字符串的长度是否为32，然后再和 key 进入一个加密函数
+主函数的逻辑很简单，就是先判读输入字符串的长度是否为 32 ，然后再和 key 进入一个加密函数
 
 ![主函数](/assets/images/wp/2024/week2/drink_tea_2.png)
 
@@ -16,7 +16,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![TEA](/assets/images/wp/2024/week2/drink_tea_3.png)
 
-解密脚本
+解密脚本：
 
 ```c
 #include <stdio.h>
@@ -28,7 +28,7 @@ void decrypt (uint32_t* v, uint32_t* k) {
     uint32_t delta=2654435769;   
     uint32_t sum = (32)*delta;                  
     uint32_t k0=k[0], k1=k[1], k2=k[2], k3=k[3];  
-    for (i=0; i<32; i++) {                        //解密时将加密算法的顺序倒过来，+=变为-=
+    for (i=0; i<32; i++) {                        //解密时将加密算法的顺序倒过来，+= 变为 -=
         v1 -= ((v0<<4) + k2) ^ (v0 + sum) ^ ((v0>>5) + k3);
         v0 -= ((v1<<4) + k0) ^ (v1 + sum) ^ ((v1>>5) + k1);
         sum -= delta;
@@ -44,8 +44,8 @@ int main()
     unsigned char a;
     uint32_t *v = (uint32_t*)cipher;
     uint32_t *k = (uint32_t *)keys;
-    // v为要加密的数据是n个32位无符号整数
-    // k为加密解密密钥，为4个32位无符号整数，即密钥长度为128位
+    // v 为要加密的数据是 n 个 32 位无符号整数
+    // k 为加密解密密钥，为 4 个 32 位无符号整数，即密钥长度为 128 位
 
     for(int i=0;i<8;i+=2)
     {

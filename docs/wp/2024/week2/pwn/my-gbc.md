@@ -49,9 +49,9 @@ __int64 __fastcall encrypt(__int64 a1, char a2, int a3)
 
 ![ret2csu](/assets/images/wp/2024/week2/my-gbc_1.png)
 
-这是 csu 的代码片段，第一段代码能将 `r12` `r13` `r14`分别 mov 到 `rdi` `rsi` `rdx`，这样我们便能控制 `rdx`，即控制函数的三参，并且后面还有 `call [r15+rbx*8]`，能控制程序的走向；第二段代码则是一长串的 `pop`，配合上述代码，即可达到 ROP，控制程序流程
+这是 csu 的代码片段，第一段代码能将 `r12` `r13` `r14` 分别 mov 到 `rdi` `rsi` `rdx`，这样我们便能控制 `rdx`，即控制函数的三参，并且后面还有 `call [r15+rbx*8]`，能控制程序的走向；第二段代码则是一长串的 `pop`，配合上述代码，即可达到 ROP，控制程序流程
 
-需要注意的是，call 后面有 `add rbx, 1;` `cmp rbp, rbx;` `jnz` ...，我们需要控制 `rbx = 0` `rbp = 1`
+需要注意的是，`call` 后面有 `add rbx, 1;` `cmp rbp, rbx;` `jnz` ...，我们需要控制 `rbx = 0` `rbp = 1`
 
 对于加密函数，异或和左移都是可逆运算，我们只需对我们输入的内容先右移后异或 `0x5A` 即可
 

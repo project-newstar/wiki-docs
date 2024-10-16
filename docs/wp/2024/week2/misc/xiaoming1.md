@@ -18,7 +18,7 @@ import Container from '@/components/docs/Container.vue'
 
 >小明的邻居小红忘记了电脑的登录密码，好像设置的还挺复杂的， 现在小红手里只有一个内存镜像（为什么她会有这个？），小明为了帮助邻居就找到了精通电脑的你……
 
-拿到手的是一个叫 `image.raw` 的文件，由题可知是内存镜像
+拿到手的是一个叫 `image.raw` 的文件，由题可知是内存镜像。
 
 ## 不像预期的预期解：使用 Volatility 2 一把梭
 
@@ -26,7 +26,7 @@ import Container from '@/components/docs/Container.vue'
 
 如果新人在安装过程中出现了一些问题，也没有 Kali 虚拟机，可以先尝试 Windows 下的 Volatility 2 单文件版，当然大家也可以选择其他第三方取证软件，这里不多说了，因为一些第三方软件能一把梭。
 
-这里以 Volatility 2 为例，在使用 Volatility 2 进行取证时，首先分析镜像确定镜像的来源操作系统版本，为进行下面操作做准备
+这里以 Volatility 2 为例，在使用 Volatility 2 进行取证时，首先分析镜像确定镜像的来源操作系统版本，为进行下面操作做准备。
 
 ```bash
 vol.py -f image.raw imageinfo

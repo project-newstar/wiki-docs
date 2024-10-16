@@ -109,7 +109,7 @@ if ($_POST['papa'] !== 'TfflxoU0ry7c') {
 
 后面的考点是 PHP 中关于非法参数名传参问题。我们重点关注下面这个表达式：
 
-```PHP
+```php
 $_GET['NewStar_CTF.2024'] !== 'Welcome' && preg_match('/^Welcome$/', $_GET['NewStar_CTF.2024'])
 ```
 
@@ -119,7 +119,7 @@ $_GET['NewStar_CTF.2024'] !== 'Welcome' && preg_match('/^Welcome$/', $_GET['NewS
 
 如果加 `D` 修饰符，就不匹配换行符：
 
-```python
+```php
 preg_match('/^Welcome$/D', "Welcome\n")
 ```
 

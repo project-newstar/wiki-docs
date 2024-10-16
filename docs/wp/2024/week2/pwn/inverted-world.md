@@ -30,7 +30,7 @@ int __fastcall main(int argc, const char **argv, const char **envp)
 
 `_read` 实现的是和正常 `read` 相反方向进行输入，我们这里输入的长度 `0x512` 明显大于 255，可以写到低地址的栈帧的东西，我们劫持位于低地址的 `_read` 函数的返回地址到 backdoor 中间的部分（因为劫持到开头过不了检测）。
 
-反向输入 `sh` 即可执行 `system("sh")` 拿到shell.
+反向输入 `sh` 即可执行 `system("sh")` 拿到 shell.
 
 :::info 关于 Canary
 因为是反向输入的，只要不多写东西就不会修改到 Canary，自然就不用故意绕过 Canary.

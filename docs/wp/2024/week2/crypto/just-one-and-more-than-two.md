@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # just one and more than two
 
-很常见的RSA板子题。在一般的RSA中，我们有
+很常见的 RSA 板子题。在一般的 RSA 中，我们有
 
 $$\varphi(n)= \varphi(p)*\varphi(q)=(p-1)(q-1)$$
 
@@ -14,7 +14,7 @@ $$\varphi(n)= \varphi(p)*\varphi(q)=(p-1)(q-1)$$
 
 $$\varphi(n)=\varphi(p)=p-1$$
 
-针对 more than two 的情况
+针对 more than two 的情况：
 
 $$\varphi(n)=\varphi(p)*\varphi(q)*\varphi(r)=(p-1)(q-1)(r-1)$$
 

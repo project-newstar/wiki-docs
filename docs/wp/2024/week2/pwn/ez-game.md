@@ -14,9 +14,8 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 直接打 ret2libc<span data-desc>（但是得进行栈对齐）</span>
 
-1.先通过 puts 泄露出 puts 地址，通过 puts 地址与 libc 基地址的偏移得到 libc 基地址，并返回 `main` 函数进行第二次溢出，实现 getshell
-
-2.构建 `system("/bin/sh")` 取 shell
+1. 先通过 puts 泄露出 puts 地址，通过 puts 地址与 libc 基地址的偏移得到 libc 基地址，并返回 `main` 函数进行第二次溢出，实现 getshell
+2. 构建 `system("/bin/sh")` 取 shell
 
 :::tip 提示
 可以用 ret 地址进行栈对齐

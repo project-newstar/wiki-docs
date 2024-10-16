@@ -43,7 +43,7 @@ int main()
 {
     unsigned char a;
     uint32_t *v = (uint32_t*)cipher;
-    uint32_t *k = (uint32_t *)keys;
+    uint32_t *k = (uint32_t*)keys;
     // v 为要加密的数据是 n 个 32 位无符号整数
     // k 为加密解密密钥，为 4 个 32 位无符号整数，即密钥长度为 128 位
 

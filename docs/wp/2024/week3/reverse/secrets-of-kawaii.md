@@ -1,23 +1,24 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # SecertsOfKawaii
 
-程序在java层有混淆，用jeb可以简单去除，也可以通过断点调试弄清代码执行流程
+程序在 Java 层有混淆，用 Jeb 可以简单去除，也可以通过断点调试弄清代码执行流程
 
-![JEB](/assets/images/wp/2024/week3/secrets-of-kawaii_1.png)
+![Jeb](/assets/images/wp/2024/week3/secrets-of-kawaii_1.png)
 
-Java层只有一个rc4，key是rc4k4y，加密后base64一下传到so层，值在so层检查
+Java 层只有一个 RC4，`key`是 `rc4k4y`，加密后 Base64 一下传到 so 层，值在 so 层检查
 
-ida打开发现有upx的字符串，猜测是upx壳
+IDA 打开发现有 upx 的字符串，猜测是 upx 壳
 
-![upx脱壳](/assets/images/wp/2024/week3/secrets-of-kawaii_2.png)
+![upx 脱壳](/assets/images/wp/2024/week3/secrets-of-kawaii_2.png)
 
 脱壳后
 
 ![脱壳后](/assets/images/wp/2024/week3/secrets-of-kawaii_3.png)
 
-一个xxtea，密钥是`meow~meow~tea~~~`
+一个 xxtea，密钥是 `meow~meow~tea~~~`
 
 ![xxtea](/assets/images/wp/2024/week3/secrets-of-kawaii_4.png)
 
@@ -159,27 +160,27 @@ int main()
 {
     // upx -d 解包libmeow1.so，加密只有一个xxtea，但是被魔改过，对照网上的代码修改可以解密
     // 密文为64位数组，熟悉数据处理的话，直接指针传参就行了
-   long long secrets[6] =
-        {
-            6866935238662214623LL,
-            3247821795433987330LL,
-            -3346872833356453065LL,
-            1628153154909259154LL,
-            -346581578535637655LL,
-            3322447116203995091LL};
-    // 不同编译器long的大小可能不同，用long long表示64位数据
-    // 为什么是12？12代表有12段32位数据（也就是6个long long类型数据)，负数时进行解密操作所以传-12
-    
+   long long secrets[6] = {
+        6866935238662214623LL,
+        3247821795433987330LL,
+        -3346872833356453065LL,
+        1628153154909259154LL,
+        -346581578535637655LL,
+        3322447116203995091LL
+    };
+    // 不同编译器 long 的大小可能不同，用 long long 表示 64 位数据
+    // 为什么是 12？12 代表有 12 段 32 位数据（也就是6个long long类型数据)，负数时进行解密操作所以传 -12
+
     btea((unsigned int *)secrets, -12, ( unsigned int *)"meow~meow~tea~~~");
 
     char *flag;
-    // 解base64
+    // 解 base64
     decodeBase64((char *)secrets, strlen((char *)secrets), &flag);
-   
-    // 解rc4
+
+    // 解 rc4
     rc4("rc4k4y", (char *)flag);
 
-    // 这里为了方便理解这么些，想方便可以直接puts(flag);
+    // 这里为了方便理解这么些，想方便可以直接 puts(flag);
     char *tmp = (char *)flag;
     for (size_t i = 0; i < 48; i++)
     {

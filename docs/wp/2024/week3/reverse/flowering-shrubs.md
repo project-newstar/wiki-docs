@@ -1,13 +1,14 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # flowering-shrubs
 
-使用IDA可以看到程序完全无法分析。
+使用 IDA 可以看到程序完全无法分析。
 
 再仔细看汇编可以发现，题目似乎在随机位置处添加了同一个花指令。
 
-因此我们要使用idapython自动去除花指令。
+因此我们要使用 IDAPython 自动去除花指令。
 
 ```python
 # remove_flower.py
@@ -33,23 +34,23 @@ for i in range(startaddr,endaddr):       # 添加函数定义
         idaapi.add_func(i)
 ```
 
-lis列表中的内容就是花指令的全部内容。
+`lis` 列表中的内容就是花指令的全部内容。
 
-在ida中 file->script file 选择该py文件即可。
+在 IDA 中选择 **File » Script file**，选择该 Python 文件即可。
 
-或者在file->script command中将上面的代码粘贴进来。
+或者在 **File » Script command** 中将上面的代码粘贴进来。
 
-之后再按下F5即可看到清晰的伪代码。
+之后再按下 <kbd>F5</kbd> 即可看到清晰的伪代码。
 
-部分函数我进行了重命名。在函数名位置处按下N即可重命名。
+部分函数我进行了重命名。在函数名位置处按下 <kbd>N</kbd> 即可重命名。
 
 ![去花指令后反编译](/assets/images/wp/2024/week3/flowering-shrubs_1.png)
 
-关键内容就是encrypt函数。
+关键内容就是 `encrypt` 函数。
 
-![encrypt函数](/assets/images/wp/2024/week3/flowering-shrubs_2.png)
+![encrypt 函数](/assets/images/wp/2024/week3/flowering-shrubs_2.png)
 
-这里是用了递归，一共40个字节，每四个字节为1组，一共10组，通过get_next_rand函数得到下一组加密字节。仔细分析一下即可写出脚本。
+这里是用了递归，一共 40 个字节，每四个字节为 1 组，一共 10 组，通过 `get_next_rand` 函数得到下一组加密字节。仔细分析一下即可写出脚本。
 
 ```python
 #solve.py

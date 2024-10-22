@@ -3,9 +3,9 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 # One Last B1te
 
-先查保护和沙箱
+先查保护和沙箱：
 
-```plaintext
+```asm
 [*] '/home/?????/PWN/NewStar2024-test/hackgot/pwn'
     Arch:       amd64-64-little
     RELRO:      Partial RELRO
@@ -30,7 +30,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
  0009: 0x06 0x00 0x00 0x00000000  return KILL
 ```
 
-没有PIE，没有canary，Partial RELRO，意味着存在延迟绑定+got表可写。
+没有 PIE，没有 anary，Partial RELRO，意味着存在延迟绑定 + GOT 表可写。
 
 ```c
 int __fastcall main(int argc, const char **argv, const char **envp)
@@ -52,21 +52,21 @@ int __fastcall main(int argc, const char **argv, const char **envp)
 
 有一次任意地址写的机会。
 
-程序在新版Ubuntu24下编译，优化掉了csu，此时我们很难利用elf的gadget来ROP。
+程序在新版 Ubuntu 24 下编译，优化掉了 CSU，此时我们很难利用 ELF 的 gadget 来 ROP.
 
-我们想办法泄露libc地址或者ld地址然后利用libc/ld中的gadget来ROP，执行open+read+write来输出flag文件内容。
+我们想办法泄露 libc 地址或者 ld 地址然后利用 libc/ld 中的 gadget 来 ROP，执行 open + read + write 来输出 flag 文件内容。
 
-程序中只有`write`函数可以进行输出，我们可以利用一个字节任意地址写的机会，把`close`函数的got表的数值改为`write`函数的plt表的地址（因为存在延迟绑定，`close`在第一次调用之前指向的是plt中的表项，我们很容易利用修改最低一个字节的方法来使其指向`write`函数的plt表）
+程序中只有 `write` 函数可以进行输出，我们可以利用一个字节任意地址写的机会，把 `close` 函数的 GOT 表的数值改为`write`函数的 PLT 表的地址（因为存在延迟绑定，`close` 在第一次调用之前指向的是 PLT 中的表项，我们很容易利用修改最低一个字节的方法来使其指向 `write` 函数的 PLT 表）。
 
-之后由于`close(1)`设置第一个参数为1，同时`read(0, v5, 0x110uLL);`会残留第2、3个参数，我们修改`close`的got表之后相当于执行`write(1,v5,0x110uLL);`，就可以泄露栈上的内容，正好能泄露libc地址，之后利用栈溢出再次启动main函数栈溢出ROP即可。
+之后由于 `close(1)` 设置第一个参数为 1，同时 `read(0, v5, 0x110uLL);` 会残留第 2、3 个参数，我们修改 `close` 的 GOT 表之后相当于执行 `write(1,v5,0x110uLL);`，就可以泄露栈上的内容，正好能泄露 libc 地址，之后利用栈溢出再次启动 `main` 函数栈溢出 ROP 即可。
 
-由于glibc2.39版本不容易控制rdx寄存器，我们可以使用pop_rax + xchg eax,edx的方法来设置rdx寄存器的数值。
+由于 glibc 2.39 版本不容易控制 rdx 寄存器，我们可以使用 `pop rax` + `xchg eax, edx` 的方法来设置 rdx 寄存器的数值。
 
 ```python
 # sudo sysctl -w kernel.randomize_va_space=0
 # gcc pwn.c -o pwn -masm=intel -no-pie -fno-stack-protector -l seccomp
 from pwn import*
-from Crypto.Util.number import long_to_bytes,bytes_to_long
+from Crypto.Util.number import long_to_bytes, bytes_to_long
 
 context.log_level='debug'
 context(arch='amd64',os='linux')

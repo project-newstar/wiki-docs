@@ -1,24 +1,25 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
-# 没e这能玩？
 
-先解一个三元一次方程，解出p,q,r
+# 没 e 这能玩？
 
-```plaintext
-p = 3*h1-h2
-r = (9*h1-h3)//3
-q = h1-p-r
-n = p*q*r
-```
-
-然后解 $hint\equiv a\_big\_prime^e\mod 2^{512 }$ 得到 $e$
+先解一个三元一次方程，解出 $p, q, r$
 
 ```python
-e = sympy.discrete_log(2**512,hint,a_big_prime)
+p = 3 * h1 - h2
+r = (9 * h1 - h3) // 3
+q = h1 - p - r
+n = p * q * r
 ```
 
-最后常规 $RSA$ 步骤得到 $flag$
+然后解 $\mathrm{hint}\equiv \mathrm{a\_big\_prime}^e \pmod 2^{512}$ 得到 $e$
+
+```python
+e = sympy.discrete_log(2**512, hint, a_big_prime)
+```
+
+最后常规 RSA 步骤得到 flag.
 
 ```python
 from Crypto.Util.number import *
@@ -32,16 +33,16 @@ c = 9992384576336958753908683121485782068740851803287298640315027691607469393703
 a_big_prime = 10340528340717085562564282159472606844701680435801531596688324657589080212070472855731542530063656135954245247693866580524183340161718349111409099098622379
 hint = 1117823254118009923270987314972815939020676918543320218102525712576467969401820234222225849595448982263008967497960941694470967789623418862506421153355571
 
-p = 3*h1-h2
-r = (9*h1-h3)//3
-q = h1-p-r
-n = p*q*r
+p = 3 * h1 - h2
+r = (9 * h1 - h3) // 3
+q = h1 - p - r
+n = p * q * r
 
-e = sympy.discrete_log(2**512,hint,a_big_prime)
+e = sympy.discrete_log(2**512, hint, a_big_prime)
 
-d = gmpy2.invert( e , (p-1)*(q-1)*(r-1) )
-m = pow( c , d , n )
-print( long_to_bytes(m))
+d = gmpy2.invert(e, (p-1)*(q-1)*(r-1))
+m = pow(c , d , n)
+print(long_to_bytes(m))
+
+# flag{th1s_2s_A_rea119_f34ggg}
 ```
-
-flag:`flag{th1s_2s_A_rea119_f34ggg}`

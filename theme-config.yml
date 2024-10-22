@@ -64,6 +64,8 @@ sidebar:
           link: /guide/2024/week3
         - text: Week 4
           link: /guide/2024/week4
+        - text: Week 5
+          link: /guide/2024/week5
 
   '/wp/2024/':
     - text: Week 1
@@ -246,12 +248,10 @@ sidebar:
         - text: Crypto
           collapsed: false
           items:
-            - text: 没e这能玩？
+            - text: 没 e 这能玩？
               link: /wp/2024/week3/crypto/noenoplay
-            - text: 故事新编1
-              link: /wp/2024/week3/crypto/gushixinbian1
-            - text: 故事新编2
-              link: /wp/2024/week3/crypto/gushixinbian2
+            - text: 故事新编
+              link: /wp/2024/week3/crypto/gushixinbian
             - text: 不用谢喵
               link: /wp/2024/week3/crypto/buyongxiemiao
             - text: 两个黄鹂鸣翠柳
@@ -261,9 +261,9 @@ sidebar:
           items:
             - text: OSINT-MASTER
               link: /wp/2024/week3/misc/osint-master
-            - text: BGM坏了吗？
+            - text: BGM 坏了吗？
               link: /wp/2024/week3/misc/bgm-broken
             - text: AmazingGame
               link: /wp/2024/week3/misc/amazinggame
             - text: ez_jail
-              link: /wp/2024/week3/misc/ez-jail
+              link: /wp/2024/week3/misc/ez_jail

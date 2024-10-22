@@ -1,11 +1,12 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # Easy_Shellcode
 
-将程序拖入ida分析，发现程序有一个名为`sandbox`的函数，通过`seccomp-tools dump ./pwn`，可得出程序的沙箱规则
+将程序拖入 IDA 分析，发现程序有一个名为 `sandbox` 的函数，通过 `seccomp-tools dump ./pwn`，可得出程序的沙箱规则
 
-```plaintext
+```asm
  line  CODE  JT   JF      K
 =================================
  0000: 0x20 0x00 0x00 0x00000004  A = arch
@@ -53,7 +54,7 @@ void sandbox() {
             BPF_JUMP(BPF_JMP + BPF_JEQ, __NR_open, 0, 1),  // open
             BPF_STMT(BPF_RET + BPF_K, SECCOMP_RET_KILL),
             BPF_JUMP(BPF_JMP + BPF_JEQ, __NR_openat, 0, 1),  // openat
-            BPF_STMT(BPF_RET + BPF_K, SECCOMP_RET_ALLOW),   
+            BPF_STMT(BPF_RET + BPF_K, SECCOMP_RET_ALLOW),
             BPF_JUMP(BPF_JMP + BPF_JEQ, __NR_openat2, 0, 1),  // openat2
             BPF_STMT(BPF_RET + BPF_K, SECCOMP_RET_KILL),
             BPF_JUMP(BPF_JMP + BPF_JEQ, __NR_read, 0, 1),  // read
@@ -81,22 +82,18 @@ void sandbox() {
 }
 ```
 
-可以发现，程序禁用了`execve`和`execveat`，不能直接get shell，需要通过orw(open read write)来得到flag
+可以发现，程序禁用了 `execve` 和 `execveat`，不能直接 get shell，需要通过 ORW<span data-desc>（open read write）</span>来得到 flag
 
-同时，程序也禁用了常规的`open`、`read`、`write`，需要我们找到他们的替代品
+同时，程序也禁用了常规的 `open` `read` `write`，需要我们找到他们的替代品
 
-对于`open`，我们可以选择使用`openat`或者`openat2`（本题已禁用）
+- 对于 `open`，我们可以选择使用 `openat` 或者 `openat2`<span data-desc>（本题已禁用）</span>
+- 对于 `read`，我们可以选择使用 `readv`、`preadv`、`preadv2`<span data-desc>（本题可用）</span>，`pread64` 或者 `mmap`<span data-desc>（本题可用）</span>
+- 对于 `write`，我们可以选择使用 `writev`<span data-desc>（本题可用）</span>，`sendfile`<span data-desc>（本题可用，且能省略`read`）</span>等
 
-对于`read`，我们可以选择使用`readv`，`preadv`，`preadv2`（本题可用），`pread64`或者`mmap`（本题可用）
+注意在使用 shellcraft 时需恢复 `rsp` 寄存器
 
-对于`write`，我们可以选择使用`writev`（本题可用），`sendfile`（本题可用，且能省略`read`）等
-
-注意在使用shellcraft时需恢复rsp寄存器
-
-:::tip
-
-<https://blog.csdn.net/qq_54218833/article/details/134205383>，有关沙箱orw的学习资料
-
+::: tip
+有关沙箱 ORW 的学习资料可参见该文章：[seccomp 学习（2）](https://blog.csdn.net/qq_54218833/article/details/134205383)
 :::
 
 ```python

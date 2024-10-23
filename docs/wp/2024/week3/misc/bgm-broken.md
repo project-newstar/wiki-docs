@@ -22,4 +22,4 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![dtmf](/assets/images/wp/2024/week3/bgm-broken_5.png)
 
-包上 `flag{}` 即可。
+包上 `flag{}` 即可

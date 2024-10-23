@@ -48,7 +48,7 @@ except Exception as e:
 再此之前，我们来学习一下[参考文档](/guide/2024/week3.html#臭皮踩踩背)中的内建函数 `__builtins__`，还有 `globals` 到底是什么，再了解的 `eval()` 的原理，逃离这个上下文。
 
 ::: warning 注意
-下面的代码块中，除特别说明外，若代码快中存在 `>>>` 开头，则表示该代码块是在自己的 Python 环境中作为测试执行的<span data-desc>（直接命令行运行 `python`）</span>，否则，则是 nc 后发送给题目的内容。
+下面的代码块中，除特别说明外，若代码块中存在 `>>>` 开头，则表示该代码块是在自己的 Python 环境中作为测试执行的<span data-desc>（直接命令行运行 `python`）</span>，否则，则是 nc 后发送给题目的内容。
 :::
 
 ## globals 和 builtins
@@ -131,7 +131,7 @@ TypeError: 'NoneType' object is not subscriptable
 
 因此，报错的原因便是，我们在 `inp` 中的 `eval` 并没有指定 `globals`，因此 Python 会将**当前调用处的上下文的 `globals`** 作为第二个参数，即使设定了第二个参数但没有指定 `__builtins__`，Python 也会自动注入**当前上下文**中的 `builtins`（也就是未指定则继承）。但当前上下文中的 `builtins` 是 `None`，因此会报错。
 
-绕过也很简单，显示指定即可：
+绕过也很简单，显式指定即可：
 
 ```python
 >>> inp='''f.__globals__['__builtins__'].eval('print(1)', { "__builtins__": f.__globals__['__builtins__'] })''' # [!code highlight]
@@ -151,8 +151,8 @@ globals()               <- f.__globals__
   └─ ...
     # In `eval(inp, {"__builtins__": None, "f": f})`
     globals()
-      ├── __builtins__  <- None
-      ├── f
+      ├─ __builtins__   <- None
+      ├─ f
       └─ ...
       # Though `f` was from top globals, and you can reach top builtins by `f.__globals__['__builtins__']`
       # the context is still at this level when you run `eval()` AKA `f.__globals__['__builtins__'].eval()`

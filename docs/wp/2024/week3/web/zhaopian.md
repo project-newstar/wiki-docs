@@ -26,7 +26,7 @@ import Container from '@/components/docs/Container.vue'
 
 <Container type="info">
 
-路径穿越常用用 `../`，意为当前文件夹的上一层。
+路径穿越常用 `../`，意为当前文件夹的上一层。
 </Container>
 
 本题将静态文件存储在了 `./static` 中，主程序在 `static` 外，那么使用 `GET /../app.py` 就可以拿到源码了。

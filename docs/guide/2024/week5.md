@@ -25,6 +25,18 @@ import Container from '@/components/docs/Container.vue'
 
 没有输出，可以看看侧信道。
 
+### EldenRing
+
+可以先学习 `strcmp` 的绕过，和基础的堆知识。
+
+推荐 [hack1s.fun](https://hack1s.fun) 的《从零开始的 Linux 堆利用》系列文章进行学习，本题建议的学习路线如下：
+
+- **1 House of Force:** 学习基础及调试命令
+- **2/3 FastBin Dup:** 学习 FastBin 的利用
+- **8 Off-By-One:** 学习 Off-By-One 的利用
+
+另外，对于本题具体的漏洞，可能需要注意涉及 Base64 的部分。
+
 ## Reverse
 
 ### Pangbai 泰拉记（2）

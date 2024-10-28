@@ -294,37 +294,39 @@ sidebar:
             - text: PlzDebugMe
               link: /wp/2024/week4/reverse/plzdebugme
         - text: Web
-          collapsed: true
+          collapsed: false
           items:
-            - text: 臭皮的计算器
-              link: /wp/2024/week3/web/jisuanqi
-            - text: 臭皮踩踩背
-              link: /wp/2024/week3/web/caicaibei
-            - text: 这照片是你吗
-              link: /wp/2024/week3/web/zhaopian
-            - text: Include_Me
-              link: /wp/2024/week3/web/include-me
-            - text: blindsql1
-              link: /wp/2024/week3/web/blindsql1
+            - text: blindsql2
+              link: /wp/2024/week4/web/blindsql2
+            - text: Ezpollute
+              link: /wp/2024/week4/web/ezpollute
+            - text: Ezcmsss
+              link: /wp/2024/week4/web/ezcmsss
+            - text: Chocolate
+              link: /wp/2024/week4/web/chocolate
+            - text: 隐藏的密码
+              link: /wp/2024/week4/web/hidden-password
+            - text: PangBai 过家家（4）
+              link: /wp/2024/week4/web/pangbai4
         - text: Crypto
-          collapsed: true
+          collapsed: false
           items:
-            - text: 没 e 这能玩？
-              link: /wp/2024/week3/crypto/noenoplay
-            - text: 故事新编
-              link: /wp/2024/week3/crypto/gushixinbian
-            - text: 不用谢喵
-              link: /wp/2024/week3/crypto/buyongxiemiao
-            - text: 两个黄鹂鸣翠柳
-              link: /wp/2024/week3/crypto/lianggehuangli
+            - text: 圣石匕首
+              link: /wp/2024/week4/crypto/shengshibishou
+            - text: 欧拉欧拉！！
+              link: /wp/2024/week4/crypto/euler
+            - text: 俱以我之名
+              link: /wp/2024/week4/crypto/wiener
         - text: Misc
-          collapsed: true
+          collapsed: false
           items:
-            - text: OSINT-MASTER
-              link: /wp/2024/week3/misc/osint-master
-            - text: BGM 坏了吗？
-              link: /wp/2024/week3/misc/bgm-broken
-            - text: AmazingGame
-              link: /wp/2024/week3/misc/amazinggame
-            - text: ez_jail
-              link: /wp/2024/week3/misc/ez_jail
+            - text: 擅长音游的小明同学
+              link: /wp/2024/week4/misc/xiaoming2
+            - text: 擅长加密的小明同学
+              link: /wp/2024/week4/misc/xiaoming3
+            - text: ezblockchain
+              link: /wp/2024/week4/misc/ezblockchain
+            - text: 扫码领取flag
+              link: /wp/2024/week4/misc/saoma
+            - text: Alt
+              link: /wp/2024/week4/misc/alt

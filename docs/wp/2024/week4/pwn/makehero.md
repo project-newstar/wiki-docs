@@ -6,7 +6,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ## 逆向分析
 
-固定步骤，拖入IDA分析
+固定步骤，拖入 IDA 分析
 
 ```c
 void __fastcall __noreturn main(__int64 a1, char **a2, char **a3)
@@ -88,29 +88,29 @@ int __fastcall sub_1369(__off_t a1, char a2)
 }
 ```
 
-可知，程序实现了通过/proc/self/mem实现了任意地址的改写
+可知，程序实现了通过 `/proc/self/mem` 实现了任意地址的改写
 
 :::tip
-程序是通过open("/proc/self/mem")的方式实现改写，因此无视各地址段的读写权限
+程序是通过 `open("/proc/self/mem")` 的方式实现改写，因此无视各地址段的读写权限
 :::
 
 ![读入](/assets/images/wp/2024/week4/makehero_1.png)
 
-程序读入两个数字，%lx是地址，%hhx是要改的字节
+程序读入两个数字，`%lx` 是地址，`%hhx` 是要改的字节
 
 ![限制输入范围](/assets/images/wp/2024/week4/makehero_2.png)
 
-其中，程序对v6的取值做了限制
+其中，程序对 `v6` 的取值做了限制
 
-在sub_1430函数中，对这几个全局变量做了初始化
+在 `sub_1430` 函数中，对这几个全局变量做了初始化
 
 ![全局变量初始化](/assets/images/wp/2024/week4/makehero_3.png)
 
-结合gdb动调时的地址分布，我们可知，qword_4060和qword_4068是程序elf的地址，qword_4050和qword_4058是程序libc的地址
+结合 gdb 动调时的地址分布，我们可知，`qword_4060` 和 `qword_4068` 是程序 ELF `的地址，qword_4050` 和 `qword_4058` 是程序 libc 的地址
 
 ## Pwn it
 
-程序能任意写两次，第一次能改写elf，第二次能改写libc，仅有的两次机会是不足以让我们拿到flag的，我们需要通过仅有的两次机会来让我们获得“无限次”的机会
+程序能任意写两次，第一次能改写 ELF，第二次能改写 libc，仅有的两次机会是不足以让我们拿到 flag 的，我们需要通过仅有的两次机会来让我们获得「无限次」的机会
 
 分析发现，程序的退出点在这里
 
@@ -120,11 +120,11 @@ int __fastcall sub_1369(__off_t a1, char a2)
 
 ![修改跳转条件](/assets/images/wp/2024/week4/makehero_5.png)
 
-我们或许可以通过改jnz为其他条件跳转来实现一直执行，也可以让v5--变为v5++来实现“无限次”任意写
+我们或许可以通过改 jnz 为其他条件跳转来实现一直执行，也可以让 `v5--` 变为 `v5++` 来实现「无限次」任意写
 
 ![修改v5](/assets/images/wp/2024/week4/makehero_6.png)
 
-在这，我选择修改--为++，就是将8D 50 FF改为8D 50 01
+在这，我选择修改 `--` 为 `++` ，就是将 `8D 50 FF` 改为 `8D 50 01`
 
 ![修改v5](/assets/images/wp/2024/week4/makehero_7.png)
 

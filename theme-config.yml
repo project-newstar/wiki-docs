@@ -205,7 +205,7 @@ sidebar:
     - text: Week 3
       items:
         - text: Pwn
-          collapsed: false
+          collapsed: true
           items:
             - text: 不思議なscanf
               link: /wp/2024/week3/pwn/scanf
@@ -216,7 +216,7 @@ sidebar:
             - text: Easy_Shellcode
               link: /wp/2024/week3/pwn/easy-shellcode
         - text: Reverse
-          collapsed: false
+          collapsed: true
           items:
             - text: 011vm
               link: /wp/2024/week3/reverse/011vm
@@ -233,7 +233,7 @@ sidebar:
             - text: 取啥名好呢
               link: /wp/2024/week3/reverse/qushaming
         - text: Web
-          collapsed: false
+          collapsed: true
           items:
             - text: 臭皮的计算器
               link: /wp/2024/week3/web/jisuanqi
@@ -246,7 +246,7 @@ sidebar:
             - text: blindsql1
               link: /wp/2024/week3/web/blindsql1
         - text: Crypto
-          collapsed: false
+          collapsed: true
           items:
             - text: 没 e 这能玩？
               link: /wp/2024/week3/crypto/noenoplay
@@ -257,7 +257,68 @@ sidebar:
             - text: 两个黄鹂鸣翠柳
               link: /wp/2024/week3/crypto/lianggehuangli
         - text: Misc
+          collapsed: true
+          items:
+            - text: OSINT-MASTER
+              link: /wp/2024/week3/misc/osint-master
+            - text: BGM 坏了吗？
+              link: /wp/2024/week3/misc/bgm-broken
+            - text: AmazingGame
+              link: /wp/2024/week3/misc/amazinggame
+            - text: ez_jail
+              link: /wp/2024/week3/misc/ez_jail
+    - text: Week 4
+      items:
+        - text: Pwn
           collapsed: false
+          items:
+            - text: Reread
+              link: /wp/2024/week4/pwn/reread
+            - text: Maze_Rust
+              link: /wp/2024/week4/pwn/maze-rust
+            - text: MakeHero
+              link: /wp/2024/week4/pwn/makehero
+            - text: Sign in
+              link: /wp/2024/week4/pwn/signin
+        - text: Reverse
+          collapsed: false
+          items:
+            - text: 洞OVO
+              link: /wp/2024/week4/reverse/dongovo
+            - text: EZRUST
+              link: /wp/2024/week4/reverse/ezrust
+            - text: easygui
+              link: /wp/2024/week4/reverse/easygui
+            - text: MazE
+              link: /wp/2024/week4/reverse/maze
+            - text: PlzDebugMe
+              link: /wp/2024/week4/reverse/plzdebugme
+        - text: Web
+          collapsed: true
+          items:
+            - text: 臭皮的计算器
+              link: /wp/2024/week3/web/jisuanqi
+            - text: 臭皮踩踩背
+              link: /wp/2024/week3/web/caicaibei
+            - text: 这照片是你吗
+              link: /wp/2024/week3/web/zhaopian
+            - text: Include_Me
+              link: /wp/2024/week3/web/include-me
+            - text: blindsql1
+              link: /wp/2024/week3/web/blindsql1
+        - text: Crypto
+          collapsed: true
+          items:
+            - text: 没 e 这能玩？
+              link: /wp/2024/week3/crypto/noenoplay
+            - text: 故事新编
+              link: /wp/2024/week3/crypto/gushixinbian
+            - text: 不用谢喵
+              link: /wp/2024/week3/crypto/buyongxiemiao
+            - text: 两个黄鹂鸣翠柳
+              link: /wp/2024/week3/crypto/lianggehuangli
+        - text: Misc
+          collapsed: true
           items:
             - text: OSINT-MASTER
               link: /wp/2024/week3/misc/osint-master

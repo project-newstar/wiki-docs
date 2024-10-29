@@ -124,7 +124,7 @@ int __fastcall sub_1369(__off_t a1, char a2)
 
 ![修改v5](/assets/images/wp/2024/week4/makehero_6.png)
 
-在这，我选择修改 `--` 为 `++` ，就是将 `8D 50 FF` 改为 `8D 50 01`
+在这，我选择修改 `--` 为 `++`，就是将 `8D 50 FF` 改为 `8D 50 01`
 
 ![修改v5](/assets/images/wp/2024/week4/makehero_7.png)
 

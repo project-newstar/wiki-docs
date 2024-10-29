@@ -1,43 +1,29 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
-# 洞OVO
+# 洞 OVO
 
-拟定难度:中等
+首先根据题目信息直接搜索 给定版本的 WinRAR，一搜就有。
 
-题目描述: 妹妹掉进洞里了，作为哥哥的你快来找找吧(开放性题目，做法很多)
+确定漏洞为 WinRAR version 6.22 - Remote Code Execution via ZIP archive (CVE-2023-38831).
 
-出题人:Ajarbox
+找点参考文章学一学：
 
-考点：信息检索 bindiff 简单代码审计
+- [WinRAR 代码执行漏洞（CVE-2023-38831）的原理分析](https://www.cnblogs.com/GoodFish-/p/17715977.html)
+- [WinRAR（CVE-2023-38831）漏洞原理](https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458544969&idx=1&sn=473822d99738dc8c20cf0c7df866adea)
 
-flag：
-
-`flag{00000001400EF508}`
-
-WP:
-
-预期做法:首先根据题目信息直接进行google winrar给了版本 一搜就有。
-
-确定漏洞为WinRAR version 6.22 - Remote Code Execution via ZIP archive(**CVE-2023-38831)
-
-找点参考文章学一学
-
-<https://www.cnblogs.com/GoodFish-/p/17715977.html#/>
-
-<https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&mid=2458544969&idx=1&sn=473822d99738dc8c20cf0c7df866adea&chksm=b18d5bc386fad2d597b3b73e9bbd6d243e83e0191527db7cf84f277ac8c455b590956d5da778&scene=27#/>
-
-通过文章阅读了解主要流程：
-
-获取点击的文件→释放到临时目录→执行
+通过文章阅读了解主要流程：<strong>获取点击的文件 → 释放到临时目录 → 执行</strong>。
 
 那么题目要求找的函数段大概率就是释放到临时目录这一段。
 
-网上的文章一般来说都是给的这一段
+网上的文章一般来说都是给的这一段：
 
 ```c
-//0x140089948
+// 0x140089948
 char __fastcall compare(WCHAR *click_name, WCHAR *deFileName, int a3)
 
   ...
@@ -67,12 +53,15 @@ char __fastcall compare(WCHAR *click_name, WCHAR *deFileName, int a3)
 }
 ```
 
-题目当然没有这么简单，不过离答案也很接近了，向上溯源，再结合使用bindiff，得到sub_1400EF508
+题目当然没有这么简单，不过离答案也很接近了，向上溯源，再结合使用 bindiff，得到 `sub_1400EF508`.
 
-流程如下
+流程如下：
 
-sub_1400EF508->sub_140009290->sub_14000A650->sub_1400D6070->0x1400D6478->0x1400D3474->0x1400CEBF4->0x140077054->0x140089948
+> `sub_1400EF508` -> `sub_140009290` -> `sub_14000A650` -> `sub_1400D6070` -> `0x1400D6478` -> `0x1400D3474` -> `0x1400CEBF4` -> `0x140077054` -> `0x140089948`
+
+<Container type='quote'>
 
 预期做法难度可能较大，不过本题还有其他解法。
 
-Ps.可疑函数并不多，锁定范围爆破提交一下基本就easy结束了。偷鸡做法：因为修复之处增加了3条汇编 所以把所有新旧对比改了三条汇编的地方 全交一遍估计也能成。
+**PS:** 可疑函数并不多，锁定范围爆破提交一下基本就 easy 结束了。偷鸡做法：因为修复之处增加了 3 条汇编 所以把所有新旧对比改了 3 条汇编的地方 全交一遍估计也能成。
+</Container>

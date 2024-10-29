@@ -1,5 +1,6 @@
 @use '@/styles/custom-block.scss' as *;
 @use '@/styles/kbd.scss' as *;
+@use '@/styles/utils/scroll.scss' as scroll;
 
 @use '@/tweak.scss' as *;
 
@@ -27,6 +28,10 @@
   }
 }
 
+* {
+    @include scroll.scroll(rgb(185, 185, 185), rgb(160, 160, 160));
+}
+
 .dark {
   --index-logo: url('@/assets/images/ns_orange.svg');
 
@@ -43,6 +48,10 @@
       color: var(--code-color-desc);
       background-color: var(--vp-c-gray-soft);
     }
+  }
+
+  * {
+      @include scroll.scroll(rgb(95, 95, 95), rgb(120, 120, 120));
   }
 }
 

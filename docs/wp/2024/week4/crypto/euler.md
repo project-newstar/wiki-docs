@@ -1,30 +1,37 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # 欧拉欧拉！！
 
-p和q的生成方式独特，其中有
+$p$ 和 $q$ 的生成方式独特，其中有
 
-$q = x+i$
+$$
+q = x + i
+$$
 
-通过`x = (1 << bits) - 1 ^ p`这行代码了解到，在二进制中p是和512个1异或得到x
+通过 `x = (1 << bits) - 1 ^ p` 这行代码了解到，在二进制中，$p$ 和 512 个 1 异或得到 $x$
 
-则
-$p+x=2^{512}$
+则 $p+x=2^{512}$
 
-（举例说明一下）不懂的同学可以了解一下二进制加法
+<Container type='tip'>
 
-```plaintext
-a = 1001
-b = a ^ 1111
-b = 0110
+<span data-desc>（举例说明一下）</span>不懂的同学可以了解一下二进制加法
+
+```python
+a = 0b1001
+b = a ^ 0b1111 = 0b0110
 a + b = 1111
 ```
 
-推导得到$p+q=2^{512}+i$
+</Container>
 
-phi分解：$phi = (p-1)·(q-1)=n-(p+q)+1$
+推导得到 $p+q=2^{512}+i$
+
+$\varphi$ 分解：$\varphi = (p-1)(q-1)=n-(p+q)+1$
 
 ```python
 from Crypto.Util.number import *

@@ -275,7 +275,7 @@ sidebar:
             - text: Reread
               link: /wp/2024/week4/pwn/reread
             - text: Maze_Rust
-              link: /wp/2024/week4/pwn/maze-rust
+              link: /wp/2024/week4/pwn/maze_rust
             - text: MakeHero
               link: /wp/2024/week4/pwn/makehero
             - text: Sign in
@@ -283,7 +283,7 @@ sidebar:
         - text: Reverse
           collapsed: false
           items:
-            - text: 洞OVO
+            - text: 洞 OVO
               link: /wp/2024/week4/reverse/dongovo
             - text: EZRUST
               link: /wp/2024/week4/reverse/ezrust
@@ -326,7 +326,7 @@ sidebar:
               link: /wp/2024/week4/misc/xiaoming3
             - text: ezblockchain
               link: /wp/2024/week4/misc/ezblockchain
-            - text: 扫码领取flag
+            - text: 扫码领取 flag
               link: /wp/2024/week4/misc/saoma
             - text: Alt
               link: /wp/2024/week4/misc/alt

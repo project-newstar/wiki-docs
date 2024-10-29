@@ -22,7 +22,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 然后继续关注 `father` 中的 `ptrace`，`ptrace` 是用于进程跟踪的，它提供了父进程可以观察和控制其子进程执行的能力，并允许父进程检查和替换子进程的内核镜像(包括寄存器)的值。而这里查看子进程，可以发现使用`ptrace(PTRACE_TRACEME, 0, 0, 0);`，它就是允许父进程对自身进行调试的语句，然后在父进程中，使用 `PTRACE_POKEDATA` 对数据进行修改，然后使用 `PTRACE_CONT` 让子进程继续执行。因此我们关注的就是父进程对于子进程的什么数据进行了修改。
 
-查看语句 `ptrace(PTRACE_POKEDATA, addr, addr, 3);`，它就是对于 `addr` 所指向的地址修行了数据修改，更改为了 `3`，由此点进去发现 `addr` 指向的就是 `0x60004040` 位置的数据 。
+查看语句 `ptrace(PTRACE_POKEDATA, addr, addr, 3);`，它就是对于 `addr` 所指向的地址修行了数据修改，更改为了 `3`，由此点进去发现 `addr` 指向的就是 `0x60004040` 位置的数据。
 
 ![addr 的内容](/assets/images/wp/2024/week2/ptrace_4.png)
 

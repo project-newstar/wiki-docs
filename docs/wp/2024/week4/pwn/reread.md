@@ -8,11 +8,9 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![查看沙箱](/assets/images/wp/2024/week4/reread_1.png)
 
-可以看到除了只允许open read write dup2四个系统调用外，还增添了一个额外条件
+可以看到除了只允许 open、read、write、dup2 四个系统调用外，还增添了一个额外条件，那就是执行 `read` 系统调用时，第一个参数必须是 `0`
 
-那就是执行read系统调用时，第一个参数必须是0
-
-查看主要函数vuln，直接一个栈溢出贴脸，但是溢出的长度很短，算上rbp的话其实只能覆盖范围地址这一个地方
+查看主要函数 `vuln`，直接一个栈溢出贴脸，但是溢出的长度很短，算上 `rbp` 的话其实只能覆盖范围地址这一个地方
 
 ```c
 int vuln()
@@ -27,11 +25,11 @@ int vuln()
 
 那该怎么办呢
 
-我们来仔细看一下汇编，通过gdb动态调试可以知道，其实是`lea rsi,[rbp]`
+我们来仔细看一下汇编，通过 gdb 动态调试可以知道，其实是 `lea rsi,[rbp]`
 
-然在前面的栈溢出中我们可以控制rbp，如果把返回地址覆盖成4013ac，那我们就可以向任意地址写入0x50字节
+然在前面的栈溢出中我们可以控制 rbp，如果把返回地址覆盖成 `4013AC`，那我们就可以向任意地址写入 `0x50` 字节
 
-同时第二次读入的时候，rbp又是可控的，程序也会执行leave ret，如此，便构成了一次巧妙的栈迁移
+同时第二次读入的时候，`rbp` 又是可控的，程序也会执行 `leave ret`，如此，便构成了一次巧妙的栈迁移
 
 ```asm
 .text:00000000004013AC                 lea     rax, [rbp+buf]
@@ -46,11 +44,11 @@ int vuln()
 .text:00000000004013D0                 retn
 ```
 
-至于上文sandbox中设置的syscall_read的一参必须为0的问题，可以使用dup2系统调用
+至于上文 `sandbox` 中设置的 `syscall_read` 的一参必须为 `0` 的问题，可以使用 dup2 系统调用
 
-具体用法为dup2(fd,new_fd)，可以看作new_fd是fd的一个拷贝，同时会close(fd)
+具体用法为 `dup2(fd,new_fd)`，可以看作 `new_fd` 是 `fd` 的一个拷贝，同时会 `close(fd)`
 
-所以，exp如下
+所以，EXP 如下
 
 ```python
 from pwn import *

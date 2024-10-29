@@ -62,7 +62,7 @@ vol.py -f image.raw --profile=Win7SP1x86_23418 filescan | grep Desktop | grep Us
 
 ![filescan](/assets/images/wp/2024/week2/xiaoming1_3.png)
 
-发现有可疑文件，`Diary.txt` 和 `Autologon.exe` ，使用相关命令提取 `Diary.txt`：
+发现有可疑文件，`Diary.txt` 和 `Autologon.exe`，使用相关命令提取 `Diary.txt`：
 
 ```bash
 vol.py -f image.raw --profile=Win7SP1x86_23418 dumpfiles -Q 0x00000000f554bf80 --dump-dir=./
@@ -85,7 +85,7 @@ so it would be nice if I could log in automatically
 
 LSA Secrets 是一个注册表位置，存了很多重要的东西，只有 SYSTEM 帐户可以访问 LSA Secrets 注册表位置，在 `HKEY_LOCAL_MACHINE\SECURITY\Policy\Secrets`.
 
-`lsass.exe` 负责访问和管理 LSA Secrets，当系统需要进行身份验证或访问存储的安全信息时，lsass 进程会从注册表中检索 LSA Secrets，并解密这些信息来完成任务，存密码的叫 DefaultPassword ，也是我们要看的。
+`lsass.exe` 负责访问和管理 LSA Secrets，当系统需要进行身份验证或访问存储的安全信息时，lsass 进程会从注册表中检索 LSA Secrets，并解密这些信息来完成任务，存密码的叫 DefaultPassword，也是我们要看的。
 
 有人试过 mimikatz 的插件和 lsass.exe dump，不过这两种方式似乎是通过 wdigest<span data-desc><s>（我其实云了好像是使用的系统不再会自动打开这个所以使用这种方法看不见东西）</s></span>，而且 mimikatz 工具渗透的话很不错，好像取证不大用。
 </Container>

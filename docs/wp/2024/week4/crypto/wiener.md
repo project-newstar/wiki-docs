@@ -4,18 +4,22 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # 俱以我之名
 
-参考文档中的“我是谁”，俱以我之名是维娜的技能，所以我们可以试图搜将rsa和维娜作为关键词搜索，出题人尝试了一下，是可以搜到的，于是展开学习。
+[参考文档](/guide/2024/week4.html#俱以我之名)中的「我是谁」、俱以我之名是维娜的技能，所以我们可以试图将 RSA 和「维娜」作为关键词搜索，出题人尝试了一下，是可以搜到的，于是展开学习。
 
-维纳攻击思想，原理可以参照Xenny师傅的文章学习[wiener攻击-Xenny](https://www.nssctf.cn/note/set/8)
+维纳攻击思想，原理可以参照 Xenny 师傅的文章学习：[wiener 攻击](https://www.nssctf.cn/note/set/8)。
 
-详细证明可以看维基百科<https://en.wikipedia.org/wiki/Wiener%27s_attack>
+详细证明可以看维基百科：[Wiener's attack](https://en.wikipedia.org/wiki/Wiener%27s_attack).
 
-我们可以借助连分数来分解p和q来对RSA打真伤，
+我们可以借助连分数来分解 $p$ 和 $q$ 来对 RSA 打真伤。
 
 在这里我们有
 
 $$
-Golden\_Oath = (p-114)*(p-514)*(p+114)*(p+514)*(q-1919)*(q-810)*(q+1919)*(q+810) \approx N^4\\ \frac{y}{Golden\_Oath} \approx \frac{k}{x}
+\begin{gather}
+\mathrm{Golden\_Oath} = (p-114)(p-514)(p+114)(p+514)(q-1919)(q-810)(q+1919)(q+810) \approx N^4
+\\
+\frac{y}{\mathrm{Golden\_Oath}} \approx \frac{k}{x}
+\end{gather}
 $$
 
 ```python

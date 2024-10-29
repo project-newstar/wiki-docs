@@ -4,23 +4,23 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # easygui
 
-建议新生在做这道题时了解一下windows的消息循环机制。
+建议新生在做这道题时了解一下 Windows 的消息循环机制。
 
-首先使用IDA打开程序。
+首先使用 IDA 打开程序。
 
 ![sub_140001490](/assets/images/wp/2024/week4/easygui_1.png)
 
-`sub_140001490`这个函数就是回调函数，点进即可发现主要逻辑。
+`sub_140001490` 这个函数就是回调函数，点进即可发现主要逻辑。
 
 ![反调试](/assets/images/wp/2024/week4/easygui_2.png)
 
-首先有一个反调试函数，可以让`IsDebuggerPresent`函数返回值patch成0,或者直接nop掉这个函数的调用。
+首先有一个反调试函数，可以让 `IsDebuggerPresent` 函数返回值 patch 成 `0`，或者直接 nop 掉这个函数的调用。
 
 ![主逻辑](/assets/images/wp/2024/week4/easygui_3.png)
 
 在这部分就是读取文本框的字符串，然后加密比较的环节。
 
-点进encrypt函数可以加密算法比较复杂。
+点进 `encrypt` 函数可以加密算法比较复杂。
 
 ```c
 unsigned __int64 __fastcall sub_140001000(__int64 a1, int a2, void *a3)
@@ -132,9 +132,9 @@ unsigned __int64 __fastcall sub_140001000(__int64 a1, int a2, void *a3)
 }
 ```
 
-总体的加密算法逻辑是这样的，首先对所有字符进行查表代换，之后每四个字节为一组，每组整体循环右移3位，最后使用RC4算法进行加密。
+总体的加密算法逻辑是这样的，首先对所有字符进行查表代换，之后每四个字节为一组，每组整体循环右移 3 位，最后使用 RC4 算法进行加密。
 
-在encrypt函数之后就是密文比较，由于VS的优化导致比较难提取数据，最后写出解密脚本。
+在 `encrypt` 函数之后就是密文比较，由于 VS 的优化导致比较难提取数据，最后写出解密脚本。
 
 ```c
 #include<stdio.h>
@@ -211,10 +211,10 @@ int main(){
         decrypt();
         return 0;
 }
-//flag{GU!_r3v3R5e_3nG1n3er1ng_i5_v3ry_s1mpl3}
+// flag{GU!_r3v3R5e_3nG1n3er1ng_i5_v3ry_s1mpl3}
 ```
 
-其中 subbytes_reverse函数中的table_reverse表可以由下面这段代码得到
+其中 `subbytes_reverse` 函数中的 `table_reverse` 表可以由下面这段代码得到
 
 ```python
 table = [49, 116, 84, 32, 3, 83, 120, 112, 58, 53, 101, 66, 4, 107, 31, 67, 6, 55, 0, 118, 33, 8, 11, 19, 82, 75, 47, 26, 89, 44, 86, 81, 127, 59, 14, 5, 38, 21, 37, 99, 100, 122, 60, 41, 65, 42, 18, 23, 46, 57, 87, 61, 102, 51, 68, 108, 111, 71, 22, 113, 95, 28, 20, 90, 12, 79, 1, 48, 27, 104, 15, 98, 63, 24, 105, 109, 126, 93, 106, 40, 34, 91, 85, 114, 9, 94, 2, 62, 80, 123, 70, 69, 56, 16, 72, 121, 96, 54, 97, 110, 45, 73, 124, 43, 52, 39, 17, 125, 13, 10, 119, 115, 88, 92, 76, 50, 77, 30, 36, 64, 103, 74, 78, 29, 7, 117, 25, 35]
@@ -227,6 +227,6 @@ print(table_reverse)
 '''
 ```
 
-最后的flag: `flag{GU!_r3v3R5e_3nG1n3er1ng_i5_v3ry_s1mpl3}`
+最后的 flag: `flag{GU!_r3v3R5e_3nG1n3er1ng_i5_v3ry_s1mpl3}`
 
 ![flag](/assets/images/wp/2024/week4/easygui_4.png)

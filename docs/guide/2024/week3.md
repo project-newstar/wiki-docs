@@ -21,9 +21,9 @@ import Container from '@/components/docs/Container.vue'
 
 除此之外，如果没有思路的话建议多动态调试看看，注意 `call close` 函数时寄存器的状态。
 
-如果你苦恼于 ELF 中没有好用的 `gadget` ，不妨看看别的可执行段中的 `gadget`.
+如果你苦恼于 ELF 中没有好用的 `gadget`，不妨看看别的可执行段中的 `gadget`.
 
-如果你苦恼于 `gadget` 没法设置 `rdx` 寄存器，不妨看看别的 `gadget` ，能设置 `rdx` 寄存器的 `gadget` 不只有 `pop rdx; ret;`.
+如果你苦恼于 `gadget` 没法设置 `rdx` 寄存器，不妨看看别的 `gadget`，能设置 `rdx` 寄存器的 `gadget` 不只有 `pop rdx; ret;`.
 
 ## Reverse
 

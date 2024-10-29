@@ -9,7 +9,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 拿到题目，题目含有一个 `.raw` 镜像和一个 `.vhd` 镜像，尝试挂载 vhd 镜像发现有 BitLocker 加密，看一眼简介：
 
 > 小明在学习中对各类文件加密的方式起了浓厚的兴趣，并**把自己珍贵资料和 Flag 进行了套娃式加密**。然而，他却在某天的凌晨三点选择了重装系统，本来他就记不住自己的密码，还丢失了备份密钥……
-> 据受害者回忆，**【他曾经使用画图软件把密码写了下来】**，尽管备份已经丢失，**如果能成功看到程序运行的样子**，说不定就找回密码了，但是硬盘的加密怎么办呢，哎呀~**要是有软件能直接破解就好了www**
+> 据受害者回忆，**【他曾经使用画图软件把密码写了下来】**，尽管备份已经丢失，**如果能成功看到程序运行的样子**，说不定就找回密码了，但是硬盘的加密怎么办呢，哎呀 ~ **要是有软件能直接破解就好了www**
 
 明确目标，我们围绕套娃加密分析：
 
@@ -29,7 +29,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![step4](/assets/images/wp/2024/week4/xiaoming3_4.png)
 
-一顿操作猛如虎，你就拿到了恢复密钥，这时候你就可以解锁被加密的 vhd 了，软件可以导出解密内容为 raw 格式镜像，raw 格式处理会麻烦一点，但不是不可以。这里在 “更多选项” 选择用恢复密钥解密，得到：
+一顿操作猛如虎，你就拿到了恢复密钥，这时候你就可以解锁被加密的 vhd 了，软件可以导出解密内容为 raw 格式镜像，raw 格式处理会麻烦一点，但不是不可以。这里在「更多选项」选择用恢复密钥解密，得到：
 
 ![step5](/assets/images/wp/2024/week4/xiaoming3_5.png)
 
@@ -37,7 +37,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 7z 在密码复杂的情况下基本不可能被解出密码，根据提示，我们得知小明曾经使用画图软件把密码写了下来，我们可以借助内存镜像看到程序运行的样子找回密码。
 
-在这里我们借助 volatility 和 GIMP 的力量解决问题：
+在这里我们借助 Volatility 和 GIMP 的力量解决问题：
 
 首先按照上一道取证，分析镜像后查看进程：
 
@@ -51,7 +51,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 提取出的程序对应的 dmp 文件是含有程序运行时的显示内容的，我们只需要寻找运行时图像在 dmp 文件中的位置，然后想办法让他显示出来，这里我们就可以借助 GIMP 通过调整偏移，高，宽的方式达到上面的目的。
 
-在此之前，记得改后缀为 .data，拉入 GIMP 打开，可以看到：
+在此之前，记得改后缀为 `.data`，拉入 GIMP 打开，可以看到：
 
 ![gimp](/assets/images/wp/2024/week4/xiaoming3_9.png)
 
@@ -87,4 +87,4 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 压缩包密码：`rxnifbeiyomezpplugho`
 
-解压得到 Flag：`Flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}`<span data-desc>（君は取证本当に上手）</span>
+解压得到 flag：`flag{5ZCb44Gv5Y+W6K+B5pys5b2T44Gr5LiK5omL}`<span data-desc>（君は取证本当に上手）</span>

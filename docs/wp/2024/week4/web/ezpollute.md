@@ -10,7 +10,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![Dockerfile](/assets/images/wp/2024/week4/ezpollute_1.png)
 
-审计 `index.js`， `/config` 路由下调用了 `merge` 函数， `merge` 函数意味着可能存在的原型链污染漏洞
+审计 `index.js`，`/config` 路由下调用了 `merge` 函数，`merge` 函数意味着可能存在的原型链污染漏洞
 
 ```javascript
 router.post('/config', async (ctx) => {

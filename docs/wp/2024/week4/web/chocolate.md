@@ -7,11 +7,6 @@ import Container from '@/components/docs/Container.vue'
 
 # Chocolate
 
-<Container type='danger'>
-
-让我们一起来看看出题人的 [WriteUp 原稿](https://gist.github.com/Cnily03/05a0dacd16841f42ec73f2363b594f8d/revisions?diff=split&w=#diff-0650cb44fda295efb18fd41c7e85966acce417aa4f772fdc6e628329e2b98eea)，感受跨时代「空格自由」「标点自由」「中英文混排自由」的开放排版运动的魅力吧 ~
-</Container>
-
 ## 0x00 Hint 起手
 
 首页分为四个部分<span data-desc>（可可液块、可可脂、黑可可粉、糖粉）</span>对应四个小 PHP 考点

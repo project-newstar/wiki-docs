@@ -1,0 +1,36 @@
+@mixin scroll($normal, $hover, $active: $hover) {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $normal;
+        cursor: default;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $hover;
+        cursor: default;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background-color: $active;
+        cursor: default;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-button {
+        height: 0;
+        width: 0;
+    }
+}

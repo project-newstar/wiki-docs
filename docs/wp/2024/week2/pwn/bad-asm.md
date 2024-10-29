@@ -14,7 +14,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 可以用异或先把 syscall 的机器码插入到当前 shellcode 的后面来执行 `read` 的 syscall，利用 `read` 在旧的 shellcode 后面插入 `execve("/bin/sh", 0, 0)` 的 shellcode，第二次输入的 payload 中 `0x42` 个 `a` 的作用是覆盖掉旧的 shellcode，毕竟执行过了也没用了。
 
-恢复 `rsp` 的作用是为了能够正常执行 `push` `pop` 指令，这里 `push` `pop` 指令位于 `shellcraft.sh()` 生成的 shellcode 中 。否则其生成的 shellcode 无法正常执行。
+恢复 `rsp` 的作用是为了能够正常执行 `push` `pop` 指令，这里 `push` `pop` 指令位于 `shellcraft.sh()` 生成的 shellcode 中。否则其生成的 shellcode 无法正常执行。
 
 ```python
 # sudo sysctl -w kernel.randomize_va_space=0

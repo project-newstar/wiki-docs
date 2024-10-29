@@ -63,7 +63,7 @@ except Exception as e:
 {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'x': 1}
 ```
 
-但是为什么我们能够直接调用 `open()` 函数呢？因为 。但是如果访问了 `open` 函数，如果 `globals` 中有，那就执行 `globals` 中的<span data-desc>（可能是你自己定义的，因此存在于 `globals` 空间中）</span>，否则，执行 `builtins` 中的<span data-desc>（类似 `open` `eval` `__import__` 之类的函数都是在 `builtins` 中的）</span>。
+但是为什么我们能够直接调用 `open()` 函数呢？因为。但是如果访问了 `open` 函数，如果 `globals` 中有，那就执行 `globals` 中的<span data-desc>（可能是你自己定义的，因此存在于 `globals` 空间中）</span>，否则，执行 `builtins` 中的<span data-desc>（类似 `open` `eval` `__import__` 之类的函数都是在 `builtins` 中的）</span>。
 
 我们来查看一下 `builtins` 中到底有哪些内容：
 

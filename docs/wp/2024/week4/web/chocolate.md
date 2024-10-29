@@ -109,7 +109,7 @@ cat=%4d%c9%68%ff%0e%e3%5c%20%95%72%d4%77%7b%72%15%87%d3%6f%a7%b2%1b%dc%56%b7%4a%
 dog=%4d%c9%68%ff%0e%e3%5c%20%95%72%d4%77%7b%72%15%87%d3%6f%a7%b2%1b%dc%56%b7%4a%3d%c0%78%3e%7b%95%18%af%bf%a2%02%a8%28%4b%f3%6e%8e%4b%55%b3%5f%42%75%93%d8%49%67%6d%a0%d1%d5%5d%83%60%fb%5f%07%fe%a2
 ```
 
-第二步是一个 MD5 嵌套之后的相等，也就是找到一个 `a=md5(a)`
+第二步是一个 MD5 嵌套之后的相等，也就是找到一个 `a` 使得 `a == md5(a)`<span data-desc>（弱比较）</span>
 
 可以网上找，也可以脚本爆破，这里传的是 `moew=0e215962017`
 
@@ -120,7 +120,7 @@ import hashlib
 from multiprocessing.dummy import Pool as ThreadPool
 
 # MD5 截断数值已知，求原始数据
-# 例子 substr(md5(captcha), 0, 6) = 60b7ef
+# 例子 substr(md5(captcha), 0, 6) = '60b7ef'
 def md5(s):  # 计算MD5字符串
     return hashlib.md5(str(s).encode('utf-8')).hexdigest()
 

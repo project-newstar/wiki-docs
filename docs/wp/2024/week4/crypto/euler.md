@@ -13,9 +13,11 @@ $$
 q = x + i
 $$
 
-通过 `x = (1 << bits) - 1 ^ p` 这行代码了解到，在二进制中，$p$ 和 512 个 1 异或得到 $x$
+通过 `x = (1 << bits) - 1 ^ p` 这行代码了解到，在二进制中，$p$ 和 512 个 $1$ 异或得到 $x$，则
 
-则 $p+x=2^{512}$
+$$
+p+x=2^{512}
+$$
 
 <Container type='tip'>
 
@@ -29,9 +31,19 @@ a + b = 1111
 
 </Container>
 
-推导得到 $p+q=2^{512}+i$
+推导得到
 
-$\varphi$ 分解：$\varphi = (p-1)(q-1)=n-(p+q)+1$
+$$
+p+q=2^{512}+i
+$$
+
+$\varphi$ 分解，有
+
+$$
+\varphi = (p-1)(q-1)=n-(p+q)+1
+$$
+
+EXP 如下
 
 ```python
 from Crypto.Util.number import *

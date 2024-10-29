@@ -1,15 +1,20 @@
 import { ElMessage } from 'element-plus';
 
 export function signup() {
-    let nowtime = new Date();
-    let opentime = new Date('2024-09-13 10:00:00');
-    if (nowtime.getTime() < opentime.getTime()) {
+    let nowdate = new Date();
+    let signdate = [new Date('2024-09-13 10:00:00'), new Date('2024-11-03 21:00:00')];
+    if (nowdate.getTime() < signdate[0].getTime()) {
         ElMessage({
             message: '公开赛道报名通道于 9.13 10:00 开放',
             type: 'warning',
         })
+    } else if (nowdate.getTime() > signdate[1].getTime()) {
+        ElMessage({
+            message: '报名已结束！',
+            type: 'warning',
+        })
     } else {
-        let year = opentime.getFullYear();
+        let year = signdate[0].getFullYear();
         let matchname = 'newstar';
         let origin = 'endbm.ichunqiu.com';
         let protocol = 'https:';

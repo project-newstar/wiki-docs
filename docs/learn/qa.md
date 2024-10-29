@@ -15,7 +15,7 @@ import QACard from '@/components/docs/QACard.vue'
 </template>
 <template v-slot:answer>
 
-先看看入门低门槛题目<span data-desc>（参见 [写在前面](/learn/)）</span>熟悉一下，然后选择一个自己喜欢的方向，随后细看这个方向需要的一些基础。大多数仅作了解即可，题目遇到了再细看。
+先看看入门低门槛题目<span data-desc>（参见[写在前面](/learn/)）</span>熟悉一下，然后选择一个自己喜欢的方向，随后细看这个方向需要的一些基础。大多数仅作了解即可，题目遇到了再细看。
 </template>
 </QACard>
 

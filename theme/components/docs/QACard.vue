@@ -37,6 +37,8 @@ import { ElCard } from "element-plus";
     float: left;
     margin-right: 10px;
     line-height: 1;
+    width: 20px;
+    text-align: center;
 }
 
 .qa-question::before {

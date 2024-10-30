@@ -28,10 +28,6 @@
   }
 }
 
-* {
-    @include scroll.scroll(rgb(185, 185, 185), rgb(160, 160, 160));
-}
-
 .dark {
   --index-logo: url('@/assets/images/ns_orange.svg');
 
@@ -49,9 +45,12 @@
       background-color: var(--vp-c-gray-soft);
     }
   }
+}
 
-  * {
-      @include scroll.scroll(rgb(95, 95, 95), rgb(120, 120, 120));
+:root {
+  @include scroll.scroll(rgb(185, 185, 185), rgb(160, 160, 160));
+  &.dark {
+    @include scroll.scroll(rgb(95, 95, 95), rgb(120, 120, 120));
   }
 }
 

@@ -2,17 +2,17 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: index
 
-title: NewStar CTF
+title: NewStar CTF 2024
 titleTemplate: ':title'
 
 information: |
-  <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2025</span>
-  敬请期待
+  <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2024</span>
+  2024.9.30 - 2024.11.3
 
 
 actions:
-  # -
-    # - usevue: true
+  -
+    - usevue: true
     # - text: 报名参赛
     #   type: primary
     #   size: large
@@ -23,8 +23,8 @@ actions:
       link: /learn/
       type: secondary
 
-    - text: 往届题解
-      link: /wp/
+    - text: 赛事信息
+      link: /guide/2024/
       type: secondary
 
 ---

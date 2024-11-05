@@ -25,7 +25,7 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 
 - <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
 - <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
-- <ElTag type="success" size="small">赛事</ElTag> <Link icon="external" theme="underline hover" href="https://0xgame.exp10it.cn/">南邮 0xGame</Link>
+- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://0xgame.exp10it.cn/">南邮 0xGame</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>

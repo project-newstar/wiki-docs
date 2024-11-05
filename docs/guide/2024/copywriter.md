@@ -11,7 +11,7 @@ import Container from '@/components/docs/Container.vue'
 
 <Container type='info'>
 
-以下内容为 NewStarCTF 2024 《PangBai 过家家》系列组题的题目描述。
+以下内容为 NewStarCTF 2024《PangBai 过家家》系列组题的题目描述。
 </Container>
 
 今天我去孤儿院接走了 PangBai，孤儿院的老板连手续都没让我办，可是我一抱起 PangBai，她就嚎啕大哭起来，我陷入了信任危机，于是我打开了婴幼儿护理专业必读书目《图解 HTTP》。
@@ -34,6 +34,19 @@ PangBai 是本届赛事中的一位出题人，由于其非常可爱的线上表
 
 ~~诶！我说，既然剧情都有框架了，要不……~~
 </Container>
+
+## 取证大使小明同学
+
+<Container type='info'>
+
+以下内容为 NewStarCTF 2024《擅长音游的小明同学》《擅长加密的小明同学》的题目描述。
+</Container>
+
+小明的邻居小红忘记了电脑的登录密码，好像设置的还挺复杂的，现在小红手里只有一个内存镜像<span data-desc>（为什么她会有这个？）</span>，小明为了帮助邻居就找到了精通电脑的你……
+
+小明是资深的音游玩家，有一天他游玩某知名街机音游后顺利使 rating 上 w5. 当他将成绩图上传到电脑上时，他的桌面<strong>\*直接显现\*</strong>了神秘的东西，然而没等他反应过来，他的电脑就消失不见，只剩下一个磁盘镜像（？）。这时小明脑海中有一个声音告诉他，如果他找不出来神秘的东西就会抽走他的音游底力。小明顿时慌了，想希望你帮帮他<strong>\*利用镜像启动系统\*</strong>，找到令人头疼的秘密。
+
+小明在学习中对各类文件加密的方式起了浓厚的兴趣，并把自己珍贵资料和 flag 进行了套娃式加密。然而，他却在某天的凌晨三点选择了重装系统，本来他就记不住自己的密码，还丢失了备份密钥……据受害者回忆，<strong>\*他曾经使用画图软件把密码写了下来\*</strong>，尽管备份已经丢失，如果能成功看到程序运行的样子，说不定就找回密码了，但是硬盘的加密怎么办呢，哎呀 ~ 要是有软件能直接破解就好了 www
 
 ## 校内赛道宣传病文
 
@@ -165,3 +178,13 @@ KAMIYA{9d3fbd0b-780d-4c45-a413-a32ff9f3f829}
 怎么我还卡在平台就有人拿一血了？
 
 来看[平台方的报道](https://mp.weixin.qq.com/s/OgW6TXyXHxZhQ0nBYeOh0A)。
+
+## 相关链接
+
+知乎：[如何评价 NewStarCTF 2024 网络安全新生赛？](https://www.zhihu.com/question/3040817311)
+
+微信公众号：[賽事推送 | 永信至誠 NewStarCTF 2024 火熱進行中！](https://mp.weixin.qq.com/s/A55JV8fmepkgiJ0Ag9ByNg)
+
+微信公众号：[瞬间燃爆 470 余所高校！永信至诚「数字风洞」支撑超 4400 名网安新生开展能力测评](https://mp.weixin.qq.com/s/OgW6TXyXHxZhQ0nBYeOh0A)
+
+微信公众号：[永信至诚「数字风洞」支撑大规模高校新生网安赛事丨NewStarCTF 2024 网安新星赛正式打响](https://mp.weixin.qq.com/s/sdWlt2Erq3Kr6cNT_cGf2w)

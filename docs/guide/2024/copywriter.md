@@ -35,11 +35,11 @@ PangBai 是本届赛事中的一位出题人，由于其非常可爱的线上表
 ~~诶！我说，既然剧情都有框架了，要不……~~
 </Container>
 
-## 取证大使小明同学
+## 取证大师小明同学
 
 <Container type='info'>
 
-以下内容为 NewStarCTF 2024《擅长音游的小明同学》《擅长加密的小明同学》的题目描述。
+以下内容为 NewStarCTF 2024《热心助人的小明同学》《擅长音游的小明同学》《擅长加密的小明同学》的题目描述。
 </Container>
 
 小明的邻居小红忘记了电脑的登录密码，好像设置的还挺复杂的，现在小红手里只有一个内存镜像<span data-desc>（为什么她会有这个？）</span>，小明为了帮助邻居就找到了精通电脑的你……
@@ -135,7 +135,7 @@ k('AlKV.b+R#Q6+CMn'7DXa9\L^a^QS>bV^^[RkOZK@F?n=PNBjfPBh$:@c^+Q\<Rl'J@/MOEqCO6;>4
 
 10 月 8 日凌晨，经过 Cnily03 师傅的连夜赶工，赛事播报机器人「御坂御坂」上线 shell 命令执行功能。
 
-同日 10:22，来自广东工业大学的 Phrinky 选手使用 `mount` 命令获得下列数据：
+同日 10:22，来自广东工业大学的 Phrinky 选手在校内赛道赛事群使用 `mount` 命令获得下列数据：
 
 ```plaintext {12}
 overlay on / type overlay (rw,relatime,lowerdir=/var/lib/docker/overlay2/l/ZLTTESAHLXVIK5TYQNV6QXD7CA:/var/lib/docker/overlay2/l/ENAQWB2R5FRGAQHCIXSWE4FMSN:/var/lib/docker/overlay2/l/T4RZLR7352VGTN4XDCICF2Q3GS:/var/lib/docker/overlay2/l/FFYBFH5N3JWL2YTEJZBNTNN4BR:/var/lib/docker/overlay2/l/ZXSYFXLBKFAW2LTWR5UYLOTJFB:/var/lib/docker/overlay2/l/3DE5QN6BPHBRL2EVNW7FJNXYOU:/var/lib/docker/overlay2/l/4PTWLQY2KIIWMWFPGSLMAQFUR6,upperdir=/var/lib/docker/overlay2/7112e827da33a45d4d9437636eb1bd9b665746bff8b5fa5e7e8fa56c77d15275/diff,workdir=/var/lib/docker/overlay2/7112e827da33a45d4d9437636eb1bd9b665746bff8b5fa5e7e8fa56c77d15275/work)
@@ -163,7 +163,7 @@ tmpfs on /proc/sched_debug type tmpfs (rw,nosuid,size=65536k,mode=755)
 tmpfs on /sys/firmware type tmpfs (ro,relatime)
 ```
 
-10:23:59，该选手获得使用 `cat` 命令。
+10:23:59，该选手发送命令 `cat /var/backups/this_is_your_f11llaaaggg`.
 
 10:24:00，御坂御坂回复 FLAG：
 
@@ -178,6 +178,20 @@ KAMIYA{9d3fbd0b-780d-4c45-a413-a32ff9f3f829}
 怎么我还卡在平台就有人拿一血了？
 
 来看[平台方的报道](https://mp.weixin.qq.com/s/OgW6TXyXHxZhQ0nBYeOh0A)。
+
+### 睡蕉小猴！
+
+Week 4 正值《崩坏：星穹铁道》2.6 版本「毗乃昆尼末法世记」上线。为了深入贯彻二次元无可救药的精神，Week 4 和 Week 5 的出题人名单也被「睡蕉小猴」接管了：
+
+<div style='display: grid; grid-auto-flow: column;'>
+
+<img src="/assets/images/AuthorList_NewStarCTF_2024_Week4.png" alt="NewStarCTF 2024 Week4 出题人名单">
+
+<img src="/assets/images/AuthorList_NewStarCTF_2024_Week5.png" alt="NewStarCTF 2024 Week5 出题人名单">
+
+</div>
+
+<span data-desc>（以上为仿照官方整活的同人图，仅供娱乐）</span>
 
 ## 相关链接
 

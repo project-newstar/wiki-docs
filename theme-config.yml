@@ -339,7 +339,7 @@ sidebar:
     - text: Week 5
       items:
         - text: Pwn
-          collapsed: false
+          collapsed: true
           items:
             - text: C_or_CPP
               link: /wp/2024/week5/pwn/c_or_cpp
@@ -350,7 +350,7 @@ sidebar:
             - text: EldenRing
               link: /wp/2024/week5/pwn/eldenring
         - text: Reverse
-          collapsed: false
+          collapsed: true
           items:
             - text: MY_ARM
               link: /wp/2024/week5/reverse/my_arm
@@ -365,7 +365,7 @@ sidebar:
             - text: Ohn_flutter!!!
               link: /wp/2024/week5/reverse/ohn_flutter
         - text: Web
-          collapsed: false
+          collapsed: true
           items:
             - text: PangBai 过家家（5）
               link: /wp/2024/week5/web/pangbai5
@@ -378,7 +378,7 @@ sidebar:
             - text: sqlshell
               link: /wp/2024/week5/web/sqlshell
         - text: Crypto
-          collapsed: false
+          collapsed: true
           items:
             - text: RSA? cmd5!
               link: /wp/2024/week5/crypto/rsa_cmd5
@@ -391,11 +391,11 @@ sidebar:
             - text: 格格你好棒
               link: /wp/2024/week5/crypto/gegenihaobang
         - text: Misc
-          collapsed: false
+          collapsed: true
           items:
             - text: PlzLoveMe
               link: /wp/2024/week5/misc/plzloveme
-            - text: zipmaster
+            - text: Zipmaster
               link: /wp/2024/week5/misc/zipmaster
             - text: pyjail
               link: /wp/2024/week5/misc/pyjail

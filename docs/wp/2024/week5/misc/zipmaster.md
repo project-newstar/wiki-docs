@@ -6,7 +6,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 拿到附件解压后看到是一个压缩包，是真加密。打开看一下结构
 
-![压缩包结构](/assets/images/wp/2024/week5/Zipmaster_1.png)
+![压缩包结构](/assets/images/wp/2024/week5/zipmaster_1.png)
 
 发现有四个长度仅为 3 字节大小一样的文件，使用 CRC 爆破来得到其中的内容
 
@@ -64,27 +64,27 @@ Result: this_is_key!
 
 看一下 `0721.zip` 的结构，发现有一个原始大小和压缩包外面的 `hint.zip` 完全一样的文件，同时看到压缩包使用的加密算法是 ZipCrypto，那么可以使用明文攻击来恢复解密密钥
 
-![一样的文件](/assets/images/wp/2024/week5/Zipmaster_2.png)
+![一样的文件](/assets/images/wp/2024/week5/zipmaster_2.png)
 
 使用 bkcrack 来进行明文攻击。这里要注意 `-c` 参数后面写的是破解文件中的明文文件的绝对路径，从压缩包一层开始，我们可以看到在压缩包中还有一层名为 `0721` 的文件夹，所以这里路径要写 `0721/hint.txt`
 
-![bkcrack 命令使用](/assets/images/wp/2024/week5/Zipmaster_3.png)
+![bkcrack 命令使用](/assets/images/wp/2024/week5/zipmaster_3.png)
 
 爆破出密钥之后我们直接构造一个弱密码加密的压缩包，密码是 `123456`，其中的内容和原来的 `0721.zip` 完全一样
 
-![bkcrack 构造](/assets/images/wp/2024/week5/Zipmaster_4.png)
+![bkcrack 构造](/assets/images/wp/2024/week5/zipmaster_4.png)
 
 解压 `0721.zip` 之后得到一个 `flag.zip`，这个压缩包是个压缩包炸弹，具体原理可以自行搜索，这里我们直接使用 010 Editor 打开看一下它的文件结构，发现很多 Base64 字符串
 
-![010 Editor 打开](/assets/images/wp/2024/week5/Zipmaster_5.png)
+![010 Editor 打开](/assets/images/wp/2024/week5/zipmaster_5.png)
 
 提取出来解密，得到一个新的压缩包
 
-![CyberChef 解密得到新压缩包](/assets/images/wp/2024/week5/Zipmaster_6.png)
+![CyberChef 解密得到新压缩包](/assets/images/wp/2024/week5/zipmaster_6.png)
 
 同样将 16 进制内容放到 010 Editor 中另存为一个新的压缩包，在末尾找到 hint
 
-![hint](/assets/images/wp/2024/week5/Zipmaster_7.png)
+![hint](/assets/images/wp/2024/week5/zipmaster_7.png)
 
 这里提到看不到密码，后面给的 `f4tj4oGMRuI=` 其实是密码的 Base64 加密后的字符串，但是解密之后发现密码是不可见字符<span data-desc>（密码就是它）</span>，无法直接使用它来解压压缩包，写脚本来进行解压
 

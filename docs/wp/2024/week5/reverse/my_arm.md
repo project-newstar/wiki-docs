@@ -14,7 +14,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 唯一需要注意的是有一个函数在 `main` 函数执行前执行了，覆盖了密文数组和密钥数
 
-![main 函数前执行的函数](/assets/images/wp/2024/week5/MY_ARM_1.png)
+![main 函数前执行的函数](/assets/images/wp/2024/week5/my_arm_1.png)
 
 这个函数是真正运行的，其他几个函数都是用来迷惑的。
 

@@ -48,7 +48,7 @@ SD_MP3_RC.axf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), staticall
 
 IDA32 函数列表搜索 `UART`
 
-![搜索 UART](/assets/images/wp/2024/week5/PlzLoveMe_3.png)
+![搜索 UART](/assets/images/wp/2024/week5/plzloveme_3.png)
 
 看到一个 `RxCpltCallback`，搜一下是串口回调，用于接收数据后的处理，按 <kbd>F5</kbd> 查看伪代码
 

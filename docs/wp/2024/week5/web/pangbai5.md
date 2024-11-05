@@ -1,8 +1,16 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+<script setup>
+import Container from '@/components/docs/Container.vue'
+</script>
 
 # PangBai 过家家（5）
+
+<Container type="info">
+
+本题已开源，关于题目源码和 EXP，详见：[cnily03-hive/PangBai-XSS](https://github.com/cnily03-hive/PangBai-XSS)
+</Container>
 
 这是一题 XSS 题。XSS 题目的典型就是有一个 Bot，flag 通常就在这个 Bot 的 Cookie 里面。
 

@@ -133,7 +133,7 @@ s^e \equiv (hm_1^{d})^e \equiv hm_1^{d \cdot e} \equiv hm_1^{1+k \cdot \varphi} 
 \end{gather}
 $$
 
-那么再结合题目名字和描述，去 [cmd5.com](cmd5.com) 找 `hm1` 的结果:
+那么再结合题目名字和描述，去 [cmd5.com](https://cmd5.com) 找 `hm1` 的结果:
 
 ![CMD5 网站](/assets/images/wp/2024/week5/rsa_cmd5_1.png)
 

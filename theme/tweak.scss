@@ -1,5 +1,6 @@
 @use '@/styles/docs-link-tweak.scss' as *;
 @use '@/styles/font-family-tweak.scss' as *;
+@use '@/styles/element-tweak.scss' as *;
 
 .el-message__content {
     line-height: 1.5;
@@ -7,4 +8,8 @@
 
 .vp-doc :not(pre) > code {
     line-height: 1;
+}
+
+mjx-container {
+    overflow-y: hidden;
 }

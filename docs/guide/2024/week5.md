@@ -124,7 +124,7 @@ XSS 的全称为「跨站脚本攻击」<span data-desc>（Cross-Site Scripting�
 
 题目描述里提供的 PDF 就是 WP 捏，上世纪的小短文，相信大家能学以致用的。
 
-整理一下题目信息，找到 PDF 中对应的解决方法，然后搜 sagemath 参考文档或者问问 GPT.
+整理一下题目信息，找到 PDF 中对应的解决方法，然后搜 SageMath 参考文档或者问问 GPT.
 
 ### 格格你好棒
 

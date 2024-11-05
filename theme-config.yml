@@ -344,7 +344,7 @@ sidebar:
             - text: Simple_Shellcode
               link: /wp/2024/week5/pwn/simple_shellcode
             - text: No Output
-              link: /wp/2024/week5/pwn/no-output
+              link: /wp/2024/week5/pwn/no_output
             - text: EldenRing
               link: /wp/2024/week5/pwn/eldenring
         - text: Reverse
@@ -355,7 +355,7 @@ sidebar:
             - text: Lock
               link: /wp/2024/week5/reverse/lock
             - text: jun...junkcode?
-              link: /wp/2024/week5/reverse/jun-junkcode
+              link: /wp/2024/week5/reverse/junkcode
             - text: PangBai 泰拉记（2）
               link: /wp/2024/week5/reverse/pangbai-terra2
             - text: PangBai 泰拉记（3）
@@ -368,21 +368,21 @@ sidebar:
             - text: PangBai 过家家（5）
               link: /wp/2024/week5/web/pangbai5
             - text: 臭皮吹泡泡
-              link: /wp/2024/week5/web/popchain
+              link: /wp/2024/week5/web/choupichuipaopao
+            - text: 臭皮的网站
+              link: /wp/2024/week5/web/choupidewangzhan
             - text: ez_redis
               link: /wp/2024/week5/web/ez_redis
-            - text: 臭皮的网站
-              link: /wp/2024/week5/web/choupiwangzhan
             - text: sqlshell
               link: /wp/2024/week5/web/sqlshell
         - text: Crypto
           collapsed: false
           items:
-            - text: RSA？cmd5！
-              link: /wp/2024/week5/crypto/rsa-cmd5
+            - text: RSA? cmd5!
+              link: /wp/2024/week5/crypto/rsa_cmd5
             - text: easy_ecc
               link: /wp/2024/week5/crypto/easy_ecc
-            - text: 没e也能玩
+            - text: 没 e 也能玩
               link: /wp/2024/week5/crypto/noe
             - text: 学以致用
               link: /wp/2024/week5/crypto/xueyizhiyong
@@ -397,5 +397,5 @@ sidebar:
               link: /wp/2024/week5/misc/zipmaster
             - text: pyjail
               link: /wp/2024/week5/misc/pyjail
-            - text: i wanna be a Rust Master
+            - text: I wanna be a Rust Master
               link: /wp/2024/week5/misc/rust-master

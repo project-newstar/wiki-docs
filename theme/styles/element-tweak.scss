@@ -1,0 +1,27 @@
+.vp-collapse.el-collapse {
+    border: none;
+    font-size: inherit;
+    color: inherit;
+
+    .el-collapse-item {
+        border-bottom: 1px solid transparent;
+        font-size: inherit;
+        color: inherit;
+        transition: border-bottom 0.3s;
+
+        &.is-active:not(.no-border) {
+            border-bottom: 1px solid var(--el-collapse-border-color);
+        }
+
+        &>* {
+            border: none;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        .el-collapse-item__content {
+            font-size: inherit;
+            color: inherit;
+        }
+    }
+}

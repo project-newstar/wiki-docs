@@ -10,6 +10,7 @@ import 'element-plus/es/components/collapse/style/css'
 import 'element-plus/es/components/collapse-item/style/css'
 import 'element-plus/es/components/tooltip/style/css'
 
+const openCollapse = []
 </script>
 
 # 密码学
@@ -115,8 +116,11 @@ x = c % p // 2 # [!code highlight]
 
 对于学习 Python，了解以下知识点即可（摘自 [Python 基础教程 | 菜鸟教程](https://www.runoob.com/python)）。
 
-<ElCollapse>
-  <ElCollapseItem title="知识点列表">
+<ElCollapse class='vp-collapse' v-model='openCollapse'>
+  <ElCollapseItem name='acknowledge-list'>
+  <template #title>
+    <strong>知识点列表</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
+  </template>
 
   - Python 基础教程
   - Python 简介
@@ -205,9 +209,10 @@ n \approx \varphi
 \end{array}
 $$
 
-::: tip
+<Container type='tip'>
+
 入门后可以尝试推导一下上面的公式，入门前只需懂得如何在 Python 中实现上面公式即可。
-:::
+</Container>
 
 #### 3. 原理
 

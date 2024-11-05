@@ -72,6 +72,8 @@ sidebar:
       link: /guide/2024/copywriter
 
   '/wp/2024/':
+    - text: 前言
+      link: /wp/2024/
     - text: Week 1
       items:
         - text: Pwn
@@ -243,7 +245,7 @@ sidebar:
               link: /wp/2024/week3/web/jisuanqi
             - text: 臭皮踩踩背
               link: /wp/2024/week3/web/caicaibei
-            - text: 这照片是你吗
+            - text: 这「照片」是你吗
               link: /wp/2024/week3/web/zhaopian
             - text: Include_Me
               link: /wp/2024/week3/web/include-me

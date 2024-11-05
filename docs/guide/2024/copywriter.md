@@ -178,3 +178,13 @@ KAMIYA{9d3fbd0b-780d-4c45-a413-a32ff9f3f829}
 怎么我还卡在平台就有人拿一血了？
 
 来看[平台方的报道](https://mp.weixin.qq.com/s/OgW6TXyXHxZhQ0nBYeOh0A)。
+
+## 相关链接
+
+知乎：[如何评价 NewStarCTF 2024 网络安全新生赛？](https://www.zhihu.com/question/3040817311)
+
+微信公众号：[賽事推送 | 永信至誠 NewStarCTF 2024 火熱進行中！](https://mp.weixin.qq.com/s/A55JV8fmepkgiJ0Ag9ByNg)
+
+微信公众号：[瞬间燃爆 470 余所高校！永信至诚「数字风洞」支撑超 4400 名网安新生开展能力测评](https://mp.weixin.qq.com/s/OgW6TXyXHxZhQ0nBYeOh0A)
+
+微信公众号：[永信至诚「数字风洞」支撑大规模高校新生网安赛事丨NewStarCTF 2024 网安新星赛正式打响](https://mp.weixin.qq.com/s/sdWlt2Erq3Kr6cNT_cGf2w)

@@ -5,7 +5,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 import Container from '@/components/docs/Container.vue'
 </script>
 
-# 这照片是你吗
+# 这「照片」是你吗
 
 查看网页源码：
 

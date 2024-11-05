@@ -274,7 +274,7 @@ sidebar:
     - text: Week 4
       items:
         - text: Pwn
-          collapsed: false
+          collapsed: true
           items:
             - text: Reread
               link: /wp/2024/week4/pwn/reread
@@ -285,7 +285,7 @@ sidebar:
             - text: Sign in
               link: /wp/2024/week4/pwn/signin
         - text: Reverse
-          collapsed: false
+          collapsed: true
           items:
             - text: 洞 OVO
               link: /wp/2024/week4/reverse/dongovo
@@ -298,7 +298,7 @@ sidebar:
             - text: PlzDebugMe
               link: /wp/2024/week4/reverse/plzdebugme
         - text: Web
-          collapsed: false
+          collapsed: true
           items:
             - text: blindsql2
               link: /wp/2024/week4/web/blindsql2
@@ -313,7 +313,7 @@ sidebar:
             - text: PangBai 过家家（4）
               link: /wp/2024/week4/web/pangbai4
         - text: Crypto
-          collapsed: false
+          collapsed: true
           items:
             - text: 圣石匕首
               link: /wp/2024/week4/crypto/shengshibishou
@@ -322,7 +322,7 @@ sidebar:
             - text: 俱以我之名
               link: /wp/2024/week4/crypto/wiener
         - text: Misc
-          collapsed: false
+          collapsed: true
           items:
             - text: 擅长音游的小明同学
               link: /wp/2024/week4/misc/xiaoming2
@@ -334,3 +334,68 @@ sidebar:
               link: /wp/2024/week4/misc/saoma
             - text: Alt
               link: /wp/2024/week4/misc/alt
+    - text: Week 5
+      items:
+        - text: Pwn
+          collapsed: false
+          items:
+            - text: C_or_CPP
+              link: /wp/2024/week5/pwn/c_or_cpp
+            - text: Simple_Shellcode
+              link: /wp/2024/week5/pwn/simple_shellcode
+            - text: No Output
+              link: /wp/2024/week5/pwn/no-output
+            - text: EldenRing
+              link: /wp/2024/week5/pwn/eldenring
+        - text: Reverse
+          collapsed: false
+          items:
+            - text: MY_ARM
+              link: /wp/2024/week5/reverse/my_arm
+            - text: Lock
+              link: /wp/2024/week5/reverse/lock
+            - text: jun...junkcode?
+              link: /wp/2024/week5/reverse/jun-junkcode
+            - text: PangBai 泰拉记（2）
+              link: /wp/2024/week5/reverse/pangbai-terra2
+            - text: PangBai 泰拉记（3）
+              link: /wp/2024/week5/reverse/pangbai-terra3
+            - text: Ohn_flutter!!!
+              link: /wp/2024/week5/reverse/ohn_flutter
+        - text: Web
+          collapsed: false
+          items:
+            - text: PangBai 过家家（5）
+              link: /wp/2024/week5/web/pangbai5
+            - text: 臭皮吹泡泡
+              link: /wp/2024/week5/web/popchain
+            - text: ez_redis
+              link: /wp/2024/week5/web/ez_redis
+            - text: 臭皮的网站
+              link: /wp/2024/week5/web/choupiwangzhan
+            - text: sqlshell
+              link: /wp/2024/week5/web/sqlshell
+        - text: Crypto
+          collapsed: false
+          items:
+            - text: RSA？cmd5！
+              link: /wp/2024/week5/crypto/rsa-cmd5
+            - text: easy_ecc
+              link: /wp/2024/week5/crypto/easy_ecc
+            - text: 没e也能玩
+              link: /wp/2024/week5/crypto/noe
+            - text: 学以致用
+              link: /wp/2024/week5/crypto/xueyizhiyong
+            - text: 格格你好棒
+              link: /wp/2024/week5/crypto/gegenihaobang
+        - text: Misc
+          collapsed: false
+          items:
+            - text: PlzLoveMe
+              link: /wp/2024/week5/misc/plzloveme
+            - text: zipmaster
+              link: /wp/2024/week5/misc/zipmaster
+            - text: pyjail
+              link: /wp/2024/week5/misc/pyjail
+            - text: i wanna be a Rust Master
+              link: /wp/2024/week5/misc/rust-master

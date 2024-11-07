@@ -10,7 +10,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 使用 [GitHacker](https://github.com/WangYihang/GitHacker) 工具从 .git 文件夹中泄露文件到本地。
 
-![使用githacker](/assets/images/wp/2024/week2/pangbai2_2.png)
+![使用 GitHacker](/assets/images/wp/2024/week2/pangbai2_2.png)
 
 :::info 关于 GitHacker
 

@@ -11,7 +11,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 输入 `{{ '{'+'{ [].__class__}'+'}' }}`，发现 bot 显示不喜欢上课,说明 `class` 被过滤了，可以使用简单的拼接绕过
 
 ```python
-{{'{'+`{[]['__cl'+'ass__']}`+'}'}}
+{{[]['__cl'+'ass__']}}
 ```
 
 得到 `list` 类

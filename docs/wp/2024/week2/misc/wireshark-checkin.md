@@ -12,7 +12,7 @@ import SVGTCPFin from '@docs/assets/images/wp/2024/TCP_fin.svg?component'
 
 ![快速找主要部分](/assets/images/wp/2024/week2/wireshark_checkin_1.png)
 
-标绿色的是http协议相关的，鼠标左键点击 `GET /reverse.c` 这个条目，看 Wireshark 界面左下角，写着一个 `Port: 7070`，这个是 HTTP 服务器的开放端口。
+标绿色的是 HTTP 协议相关的，鼠标左键点击 `GET /reverse.c` 这个条目，看 Wireshark 界面左下角，写着一个 `Port: 7070`，这个是 HTTP 服务器的开放端口。
 
 ![找到 HTTP 服务器的端口](/assets/images/wp/2024/week2/wireshark_checkin_2.png)
 

@@ -46,7 +46,7 @@ else {
 
 一个对新生来说略绕的 PHP 代码阅读，也对编写脚本、使用 WebShell 的能力进行初步的考查。
 
-`cmd` 参数是**Base64 编码后**的 `system` 命令。
+`cmd` 参数是 **Base64 编码后**的 `system` 命令。
 
 `key` 的验证逻辑：将<strong>`cmd` 参数值</strong>字符串翻转后，计算 MD5 哈希，并与 Base64 解码后的 `key` 进行比较。
 

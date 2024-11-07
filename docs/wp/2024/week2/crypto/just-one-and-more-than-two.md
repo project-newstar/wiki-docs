@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# just one and more than two
+# Just one and more than two
 
 很常见的 RSA 板子题。在一般的 RSA 中，我们有
 

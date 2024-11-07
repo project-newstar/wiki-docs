@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# My_GBC\!\!\!\!\!
+# My_GBC!!!!!
 
 先将程序拖入 IDA 分析
 

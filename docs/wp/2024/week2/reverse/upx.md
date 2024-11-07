@@ -123,15 +123,16 @@ int main(void) {
 然后进行动调，首先随便输入数据，然后程序在断点处停下（这里颜色改变了，说明断在这里了），输入 `s` 也显示我们输入的数据。
 
 ![我们的输入](/assets/images/wp/2024/week2/upx_13.png)
-![ida中看到的s内的值](/assets/images/wp/2024/week2/upx_14.png)
+
+![IDA 中看到的 s 内的值](/assets/images/wp/2024/week2/upx_14.png)
 
 然后先点击 data，找到 data 数据。然后使用 `sheift + e` 直接取出 data 的相关数据。
 
-![data数据](/assets/images/wp/2024/week2/upx_15.png)
+![data 数据](/assets/images/wp/2024/week2/upx_15.png)
 
 然后可以先找到输入 `s` 的起始地址（`0x56201B813040` 需要你自己动调时的地址），然后使用 `shift + F2` 调出 `IDAPython`脚本窗口，然后使用 python 脚本进行修改，最后点击 Run 进行执行。然后可以发现左侧的输入 `s` 数据改变了。
 
-![修改s的数据](/assets/images/wp/2024/week2/upx_16.png)
+![修改 s 的数据](/assets/images/wp/2024/week2/upx_16.png)
 
 ```python
 from ida_bytes import *
@@ -146,8 +147,9 @@ print('Done')
 
 或者可以手动 **右键 » Patching » Change byte** 进行修改。
 
-![手动修改s的数据1](/assets/images/wp/2024/week2/upx_17.png)
-![手动修改s的数据2](/assets/images/wp/2024/week2/upx_18.png)
+![手动修改 s 的数据 1](/assets/images/wp/2024/week2/upx_17.png)
+
+![手动修改 s 的数据 2](/assets/images/wp/2024/week2/upx_18.png)
 
 修改完之后，使用快捷键 <kbd>F9</kbd> 让程序直接运行，然后它会断在我们之前下的第二个断点处。
 
@@ -155,7 +157,7 @@ print('Done')
 
 这时再看我们的输入 `s`，会发现它经过 RC4 的再次加密（其实是解密，因为 RC4 是流密码，加密解密的流程一摸一样），呈现出来了 flag.
 
-![解密后的flag](/assets/images/wp/2024/week2/upx_20.png)
+![解密后的 flag](/assets/images/wp/2024/week2/upx_20.png)
 
 这里按 `a` 就可以转化为字符串的形式，这个就是最后的 flag 了。
 
@@ -167,13 +169,13 @@ print('Done')
 
 这里先找到 RC4 的加密函数处，在这个最后一步的异或处按 Tab 转化为汇编窗格形式。
 
-![RC4的加密函数](/assets/images/wp/2024/week2/upx_22.png)
+![RC4 的加密函数](/assets/images/wp/2024/week2/upx_22.png)
 
 然后在这个汇编的异或处下断点。下面展示了两种汇编代码的视图方式，可以按空格进行相互转换。
 
-![汇编的视图方式1](/assets/images/wp/2024/week2/upx_23.png)
+![汇编的视图方式 1](/assets/images/wp/2024/week2/upx_23.png)
 
-![汇编的视图方式2](/assets/images/wp/2024/week2/upx_24.png)
+![汇编的视图方式 2](/assets/images/wp/2024/week2/upx_24.png)
 
 这里不知道两个参数 `al` 和 `[rbp+var_9]` 分别代表什么，因此我们可以先直接动调，断在这里的时候再去看看数值。这里动调需要注意，因为 RC4 根据输入的字符个数进行逐个加密的，所以我们需要输入和密文长度相等的字符长度，也就是 22 个字符才可以获得完整的异或值。
 

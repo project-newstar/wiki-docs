@@ -44,4 +44,4 @@ IDA64 打开 `lib/x86_64/libezandroidstudy.so`，找到以 Java 开始的函数�
 
 ![旁白酱可爱捏嘿嘿(～o￣3￣)～](/assets/images/wp/2024/week1/ezandroidstudy_5.png)
 
-Ans: `flag{Y0u_@r4_900d_andr01d_r4V4rs4r}`
+**Ans:** `flag{Y0u_@r4_900d_andr01d_r4V4rs4r}`

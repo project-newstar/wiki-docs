@@ -4,6 +4,7 @@ titleTemplate: ':title - NewStar CTF 2024'
 aside: false
 ---
 <script setup>
+import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'
 import Text from '@/components/docs/NonTextDetectable.vue'
 </script>
@@ -25,6 +26,11 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 比赛采用网络安全靶场赛的形式<span data-desc>（传统 Jeopardy 解题模式）</span>，动态计分。赛题涵盖 Web、Crypto、Pwn、Reverse、Misc 五大方向，题目的考查范围亦在传统的基础上增加了一些近年来新的构想和思路，做到与时俱进、不断创新。比赛期待各位选手的光临，诚邀任何有兴趣的同学参与。
 
 ## 赛事时间<Text class='desc-text' fontSize='18px' fontWeight='500' content='（GMT+0800 中国标准时间）' />
+
+<Container type='info'>
+
+比赛已结束！可前往[西电 CTF 终端](https://ctf.xidian.edu.cn/training/14)查看或练习赛题。
+</Container>
 
 <strong>公开赛道：</strong>2024 年 9 月 30 日 09:00 - 2024 年 11 月 3 日 21:00
 
@@ -59,7 +65,6 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 10. 成功注册、报名，并且成功解出至少一道赛题的选手，视为有效参赛。
 
 11. 不满足校内赛道参赛资质的选手，仍可报名公开赛道。
-
 
 ## 赛事交流
 

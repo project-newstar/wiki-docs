@@ -25,6 +25,8 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
+    "types": ["vite/client"],
+
     // Aliases
     "baseUrl": ".",
     "paths": {

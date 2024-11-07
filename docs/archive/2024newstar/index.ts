@@ -1,5 +1,9 @@
 import { ElMessage } from 'element-plus';
 
+export function training() {
+    window.open('https://ctf.xidian.edu.cn/training/14');
+}
+
 export function signup() {
     let nowdate = new Date();
     let signdate = [new Date('2024-09-13 10:00:00'), new Date('2024-11-03 21:00:00')];

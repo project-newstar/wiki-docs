@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Content, useData } from "vitepress";
 import { useRoute } from "vitepress";
-import { computed, provide, useSlots, watch } from "vue";
+import { computed, provide, useSlots, watch, defineAsyncComponent, type Component, onBeforeMount, defineComponent, ref } from "vue";
 import VPBackdrop from "vitepress/dist/client/theme-default/components/VPBackdrop.vue";
 import IndexContent from "@/components/IndexContent.vue";
 import VPFooter from "vitepress/dist/client/theme-default/components/VPFooter.vue";
@@ -13,7 +13,7 @@ import { useSidebar } from "vitepress/theme";
 import { VPButton } from "vitepress/theme";
 import IndexButton from "@/components/IndexButton.vue";
 
-import IndexAction from "@docs/index.vue";
+const { frontmatter, page } = useData();
 
 // const { isOpen: isSidebarOpen, open: openSidebar, close: closeSidebar } = useSidebar();
 
@@ -21,13 +21,61 @@ import IndexAction from "@docs/index.vue";
 // watch(() => route.path, closeSidebar);
 
 // useCloseSidebarOnEscape(isSidebarOpen, closeSidebar)
-
-const { frontmatter } = useData();
-
 const slots = useSlots();
 const heroImageSlotExists = computed(() => !!slots["home-hero-image"]);
 
 provide("hero-image-slot-exists", heroImageSlotExists);
+
+const modules = import.meta.glob("../../docs/**/*.{vue,ts}");
+
+const actionVueCache = new Map<string | boolean, Component | null>();
+const scriptScope = ref<any>({});
+const initComplete = ref(false);
+onBeforeMount(async () => {
+    const dirpath = page.value.filePath.replace(/[^/]*$/, "").replace(/\/$/, "");
+    const filename = page.value.filePath.split("/").pop()!
+
+    // load vue components
+    const ActionVuePromise = (vuepath: string | boolean = false) => {
+        if (vuepath === true) vuepath = filename.replace(/\.md$/, "");
+        if (!vuepath) return null;
+        const p = new URL('http://localhost/' + `${dirpath}/${vuepath}`).pathname.replace(/^\/+/, "")
+        return modules[`../../docs/${p}.vue`]().then((m: any) => m.default) as Promise<Component>;
+    }
+
+    const promise_pools: Promise<Component>[] = []
+    fmtActionsArray(frontmatter.value.actions).map((a: any) => a.map((b: any) => {
+        if (b.usevue) {
+            let p = ActionVuePromise(b.usevue);
+            if (p) promise_pools.push(p.then((p) => actionVueCache.set(b.usevue, p)));
+            else actionVueCache.set(b.usevue, p);
+        }
+    }));
+    await Promise.all(promise_pools);
+
+    // load script
+    const s = new URL('http://localhost/' + `${dirpath}/${filename.replace(/\.md$/, "")}`).pathname.replace(/^\/+/, "")
+    scriptScope.value = await modules[`../../docs/${s}.ts`]();
+
+    initComplete.value = true;
+});
+
+
+const ActionVueAsync = (vuepath: string | boolean = false) => {
+    if (vuepath === true) vuepath = page.value.filePath.split("/").pop()!.replace(/\.md$/, "");
+    if (!vuepath) return null;
+    return defineAsyncComponent(() => {
+        const pathdir = page.value.filePath.replace(/[^/]*$/, "").replace(/\/$/, "");
+        const p = new URL('http://localhost/' + `${pathdir}/${vuepath}`).pathname.replace(/^\/+/, "")
+        return modules[`../../docs/${p}.vue`]() as Promise<Component>;
+    })
+}
+
+const ActionVueSync = (vuepath: string | boolean = false) => {
+    let got = actionVueCache.get(vuepath);
+    if (typeof got !== 'undefined') return got;
+    return null
+}
 
 function fmtActionsArray(actions: any) {
     if (!actions) return [];
@@ -50,28 +98,24 @@ function fmtActionsArray(actions: any) {
 
         <IndexContent class="layout-content">
             <div class="layout-center">
-                <div class="grid-box">
-                    <div class="content-logo"></div>
-                    <div class="content-information">
-                        <p v-for="line of frontmatter.information.split(/\r?\n/)" v-html="line"></p>
-                    </div>
-                    <div class="content-action">
-                        <span class="action-line" v-for="a of fmtActionsArray(frontmatter.actions)">
-                            <span v-for="b of a">
-                                <IndexAction v-if="b.usevue" />
-                                <IndexButton
-                                    v-else
-                                    :text="b.text"
-                                    :link="b.link"
-                                    :type="b.type"
-                                    :size="b.size"
-                                    :click="b.click"
-                                />
+                <Fragment v-if="initComplete">
+                    <div class="grid-box">
+                        <div class="content-logo"></div>
+                        <div class="content-information">
+                            <p v-for="line of frontmatter.information.split(/\r?\n/)" v-html="line"></p>
+                        </div>
+                        <div class="content-action">
+                            <span class="action-line" v-for="a of fmtActionsArray(frontmatter.actions)">
+                                <span v-for="b of a">
+                                    <component :is="ActionVueSync(b.usevue)" v-if="b.usevue" />
+                                    <IndexButton v-else :text="b.text" :link="b.link" :type="b.type" :size="b.size"
+                                        :click="scriptScope[b.click]" />
+                                </span>
                             </span>
-                        </span>
+                        </div>
+                        <Content class="content-doc" />
                     </div>
-                    <Content class="content-doc" />
-                </div>
+                </Fragment>
             </div>
         </IndexContent>
 
@@ -106,6 +150,7 @@ function fmtActionsArray(actions: any) {
 .content-information {
     font-size: 1.3rem;
     font-weight: 300;
+
     p {
         margin: 0.5rem 0;
     }

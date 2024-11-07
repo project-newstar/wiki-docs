@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Zipmaster
+# zipmaster
 
 拿到附件解压后看到是一个压缩包，是真加密。打开看一下结构
 

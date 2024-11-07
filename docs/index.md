@@ -12,7 +12,7 @@ information: |
 
 actions:
   # -
-    # - usevue: true
+    # - usevue: index
     # - text: 报名参赛
     #   type: primary
     #   size: large
@@ -23,8 +23,8 @@ actions:
       link: /learn/
       type: secondary
 
-    - text: 往届题解
-      link: /wp/
+    - text: 往届回顾
+      link: /archive/
       type: secondary
 
 ---

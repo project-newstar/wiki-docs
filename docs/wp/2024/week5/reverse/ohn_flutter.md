@@ -235,7 +235,7 @@ __int64 __usercall ohn_flutter_EditView_MyEditTextState::check_2d50c0@<X0>(
     return
 ```
 
-``check` 函数里的判断函数没办法直接查看需要动调，同时其他加密的密钥和 IV 也无法直接得到。
+`check` 函数里的判断函数没办法直接查看需要动调，同时其他加密的密钥和 IV 也无法直接得到。
 
 在 `ohn_flutter_EditView_MyEditTextState::_anon_closure_2d4f08` 函数开头下断点，然后用 IDA 单步调试在判断处拿到密文，Key 和 IV 都可以轻易拿到，XXTEA 的 Key 在那个加密的特征处（进行 `&3` 运算的附近）也可以拿到
 

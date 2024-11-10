@@ -1,6 +1,7 @@
 ---
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
+
 # One Last B1te
 
 先查保护和沙箱：

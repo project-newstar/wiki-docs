@@ -37,13 +37,13 @@ int __fastcall main(int argc, const char **argv, const char**envp)
 ![查看汇编](/assets/images/wp/2024/week3/scanf_2.png)
 
 :::tip
-`scanf` 时使用的参数 `%d`
+`scanf` 时使用的参数 `%d`：
 
 正常输入时，输入为范围在 $[-2^{31}, 2^{32}-1]$ 内的整数。
 
 如果输入范围在 $[-2^{63}, 2^{63}-1]$ 内的整数，则会截断高位读取，此范围是 `long long int` 的范围。
 
-如果输入范围在 `long long int` 范围之外，则统一将参数赋值为 $-1$（0xFFFFFFFF）
+如果输入范围在 `long long int` 范围之外，则统一将参数赋值为 $-1$（0xFFFFFFFF）。
 
 如果输入为非数字，分为下列情况：
 
@@ -52,7 +52,7 @@ int __fastcall main(int argc, const char **argv, const char**envp)
 3. 如果输入有多个且使用一个 `scanf` 语句<span data-desc>（如 `scanf("%d, %d", &a, &b)`）</span>，输入第一个非数字后，后面的所有输入均为无效，前面的输入可以赋值；
 4. 如果输入有多个且使用多个 `scanf` 语句<span data-desc>（含循环，即一个 `scanf` 中仅有一个输入）</span>，则输入非数字时，如果输入的不是 `+` 或 `-`，则后面紧跟的所有 `scanf` 均自动跳过，变为无效，不能输入。如果输入的 `+` 或 `-`，则会跳过当前输入，后面仍然可以进行输入。
 
-摘抄自：[以 Pwn 视角看待 C 函数 —— scanf](https://blog.csdn.net/qq_54218833/article/details/121308367)
+—— 摘抄自：[以 Pwn 视角看待 C 函数 —— scanf](https://blog.csdn.net/qq_54218833/article/details/121308367)
 :::
 
 这里我们需要利用 `scanf` 多次输入的特性，通过输入字符 `+` 来跳过对 Canary 的修改，进而直接修改返回地址为后门地址。

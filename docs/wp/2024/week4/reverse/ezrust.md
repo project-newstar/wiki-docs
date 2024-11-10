@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# EZRUST
+# ezrust
 
 友情建议一下，最好用 IDA 8.3 及以上分析
 

@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Include_Me
+# Include Me
 
 打开题目 5s 后会自动跳转搜索 PHP 伪协议
 

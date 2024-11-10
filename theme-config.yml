@@ -250,7 +250,7 @@ sidebar:
               link: /wp/2024/week3/web/caicaibei
             - text: 这「照片」是你吗
               link: /wp/2024/week3/web/zhaopian
-            - text: Include_Me
+            - text: Include Me
               link: /wp/2024/week3/web/include-me
             - text: blindsql1
               link: /wp/2024/week3/web/blindsql1
@@ -294,7 +294,7 @@ sidebar:
           items:
             - text: 洞 OVO
               link: /wp/2024/week4/reverse/dongovo
-            - text: EZRUST
+            - text: ezrust
               link: /wp/2024/week4/reverse/ezrust
             - text: easygui
               link: /wp/2024/week4/reverse/easygui
@@ -307,11 +307,11 @@ sidebar:
           items:
             - text: blindsql2
               link: /wp/2024/week4/web/blindsql2
-            - text: Ezpollute
+            - text: ezpollute
               link: /wp/2024/week4/web/ezpollute
-            - text: Ezcmsss
+            - text: ezcmsss
               link: /wp/2024/week4/web/ezcmsss
-            - text: Chocolate
+            - text: chocolate
               link: /wp/2024/week4/web/chocolate
             - text: 隐藏的密码
               link: /wp/2024/week4/web/hidden-password

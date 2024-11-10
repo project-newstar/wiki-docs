@@ -182,6 +182,6 @@ print(''.join(random.choices(string.ascii_letters + string.digits, k=8)))
 
 这样访问 `list` 就会触发这个恶意的 `ls`.
 
-![触发恶意的ls](/assets/images/wp/2024/week5/choupidewangzhan_6.png)
+![触发恶意的 ls](/assets/images/wp/2024/week5/choupidewangzhan_6.png)
 
 得到 flag 名字，直接读取或者继续污染一次 `ls` 即可。

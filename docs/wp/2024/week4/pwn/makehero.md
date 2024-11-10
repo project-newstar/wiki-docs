@@ -122,15 +122,15 @@ int __fastcall sub_1369(__off_t a1, char a2)
 
 我们或许可以通过改 jnz 为其他条件跳转来实现一直执行，也可以让 `v5--` 变为 `v5++` 来实现「无限次」任意写
 
-![修改v5](/assets/images/wp/2024/week4/makehero_6.png)
+![修改 v5](/assets/images/wp/2024/week4/makehero_6.png)
 
 在这，我选择修改 `--` 为 `++`，就是将 `8D 50 FF` 改为 `8D 50 01`
 
-![修改v5](/assets/images/wp/2024/week4/makehero_7.png)
+![修改 v5](/assets/images/wp/2024/week4/makehero_7.png)
 
 改完后，我们能一直任意写，剩下的就很多种解法了
 
-我选择将exit处代码改为shellcode，getshell
+我选择将 exit 处代码改为 shellcode，来 GetShell
 
 ```python
 #!/usr/bin/env python3
@@ -185,4 +185,4 @@ sl(b'bye')
 p.interactive()
 ```
 
-这题既能改elf，也能改libc，应该会有很多不一样的解法吧（
+这题既能改 ELF，也能改 libc，应该会有很多不一样的解法吧（

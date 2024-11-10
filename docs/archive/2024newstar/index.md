@@ -23,8 +23,8 @@ actions:
       link: /learn/
       type: secondary
 
-    - text: 赛事信息
-      link: /guide/2024/
+    - text: 官方题解
+      link: /wp/2024/
       type: secondary
 
 ---

@@ -152,9 +152,9 @@ Rust 编译出来的程序，其主函数在 `Maze_Rust::main` 中
 
 ![提示](/assets/images/wp/2024/week4/maze_rust_12.png)
 
-![ida反编译看代码](/assets/images/wp/2024/week4/maze_rust_13.png)
+![IDA 反编译看代码](/assets/images/wp/2024/week4/maze_rust_13.png)
 
-我们找到输入的地方，发现输入的字符串最终是v20，并且和后面的东西进行了 `cmp` 比较
+我们找到输入的地方，发现输入的字符串最终是 `v20`，并且和后面的东西进行了 `cmp` 比较
 
 ![cmp](/assets/images/wp/2024/week4/maze_rust_14.png)
 
@@ -168,9 +168,9 @@ Rust 的字符串比较用上了 xmm 寄存器，提高效率
 
 使用 <kbd>⇧ Shift</kbd><kbd>E</kbd> 提取内容
 
-![提取1](/assets/images/wp/2024/week4/maze_rust_16.png)
+![提取 1](/assets/images/wp/2024/week4/maze_rust_16.png)
 
-![提取2](/assets/images/wp/2024/week4/maze_rust_17.png)
+![提取 2](/assets/images/wp/2024/week4/maze_rust_17.png)
 
 合起来就是 `I'm the best pwner!!!`
 

@@ -7,13 +7,11 @@ import Container from '@/components/docs/Container.vue'
 
 # 擅长音游的小明同学
 
-题目简介如下：
+主要是帮助新人了解一下磁盘取证仿真的过程，为了让它符合一点 Week4 的特质还附赠了一点图片隐写，还有~~出题人活全家~~小 trick.
 
-> 主要是帮助新人了解一下磁盘取证仿真的过程，为了让他符合一点 Week4 的特质还附赠了一点图片隐写，还有~~出题人活全家~~小 trick.
->
-> 如果有强大的必应搜索能力，除了 trick 需要动脑子，其他的按网上教程其实都有，不过下面也有就是了
+如果有强大的必应搜索能力，除了 trick 需要动脑子，其他的按网上教程其实都有，不过下面也有就是了
 
-先看介绍：
+先看题目简介：
 
 >小明是资深的音游玩家，有一天他游玩某知名街机音游后顺利使 rating 上 w5
 >
@@ -137,22 +135,22 @@ FTK Imager 4.5.0.2 版本可能会出问题，建议使用 4.2.0 版本。
 
 选择 Windows7 x64 配置，一路全选推荐，其中需要注意的如下：
 
-![新建虚拟机1](/assets/images/wp/2024/week4/xiaoming2_8.png)
+![新建虚拟机 1](/assets/images/wp/2024/week4/xiaoming2_8.png)
 
-![新建虚拟机2](/assets/images/wp/2024/week4/xiaoming2_9.png)
+![新建虚拟机 2](/assets/images/wp/2024/week4/xiaoming2_9.png)
 
-![新建虚拟机3](/assets/images/wp/2024/week4/xiaoming2_10.png)
+![新建虚拟机 3](/assets/images/wp/2024/week4/xiaoming2_10.png)
 
-![新建虚拟机4](/assets/images/wp/2024/week4/xiaoming2_11.png)
+![新建虚拟机 4](/assets/images/wp/2024/week4/xiaoming2_11.png)
 
 :::tip 为什么要选择 UEFI？
 
 结合搜索引擎和对挂载硬盘的研究，不难发现除放置文件的硬盘，还有两个小硬盘，对应的就是 ESP 分区 和 MSR 分区，这些特征符合 GPT 分区格式的硬盘，不同于 MBR，因此需要选择 UEFI，这里不展开讨论，有兴趣的师傅们可以慢慢了解。
 :::
 
-![新建虚拟机5](/assets/images/wp/2024/week4/xiaoming2_12.png)
+![新建虚拟机 5](/assets/images/wp/2024/week4/xiaoming2_12.png)
 
-![新建虚拟机6](/assets/images/wp/2024/week4/xiaoming2_13.png)
+![新建虚拟机 6](/assets/images/wp/2024/week4/xiaoming2_13.png)
 
 :::warning
 这里选择要与挂载结果的显示物理磁盘的挂载位置要一致。

@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # pyjail
 
-`match case` 是 Python 3.10才有的语法，可以用来获取一个对象的属性
+`match case` 是 Python 3.10 才有的语法，可以用来获取一个对象的属性
 
 ```python
 class Dog:

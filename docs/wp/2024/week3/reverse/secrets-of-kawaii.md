@@ -34,7 +34,7 @@ typedef unsigned int uint32_t;
 
 unsigned char sbox[257] = {0};
 
-// 初始化s表
+// 初始化 s 表
 void init_sbox(char *key)
 {
     unsigned int i, j, k;
@@ -158,7 +158,7 @@ void decodeBase64(char *str, int len, char **in)
 
 int main()
 {
-    // upx -d 解包libmeow1.so，加密只有一个xxtea，但是被魔改过，对照网上的代码修改可以解密
+    // upx -d 解包 libmeow1.so，加密只有一个 xxtea，但是被魔改过，对照网上的代码修改可以解密
     // 密文为64位数组，熟悉数据处理的话，直接指针传参就行了
    long long secrets[6] = {
         6866935238662214623LL,

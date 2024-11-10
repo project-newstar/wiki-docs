@@ -4,7 +4,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 # jun...junkcode?
 
-打开题目，在这里发现了明显的花指令（jz - jnz）：
+打开题目，在这里发现了明显的花指令（`jz` - `jnz`）：
 
 ![花指令](/assets/images/wp/2024/week5/junkcode_1.png)
 

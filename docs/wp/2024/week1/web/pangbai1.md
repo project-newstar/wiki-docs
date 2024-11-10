@@ -18,11 +18,11 @@ import Container from '@/components/docs/Container.vue'
 
 ## 第一关
 
-第一关界面如下
+第一关界面如下：
 
 ![第一关界面](/assets/images/wp/2024/week1/pangbai1_1.png)
 
-下方文字给出了提示「Header」。打开浏览器的开发者工具，在「网络」（Network）选项卡中找到网页的初始请求，查看响应标头，有一个 Location 字段
+下方文字给出了提示「Header」。打开浏览器的开发者工具，在「网络」（Network）选项卡中找到网页的初始请求，查看响应标头，有一个 Location 字段。
 
 ![第一关开发者工具网络选项卡界面](/assets/images/wp/2024/week1/pangbai1_2.png)
 

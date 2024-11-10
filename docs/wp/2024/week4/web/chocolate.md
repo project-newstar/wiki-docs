@@ -5,7 +5,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 import Container from '@/components/docs/Container.vue'
 </script>
 
-# Chocolate
+# chocolate
 
 ## 0x00 Hint 起手
 

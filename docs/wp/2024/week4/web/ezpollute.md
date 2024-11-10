@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Ezpollute
+# ezpollute
 
 根据题目名称可知，这是一道 JavaScript 的原型链污染题
 

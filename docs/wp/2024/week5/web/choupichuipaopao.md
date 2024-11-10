@@ -163,4 +163,4 @@ echo base64_encode(serialize($payload));
 
 ![发包](/assets/images/wp/2024/week5/choupichuipaopao_1.png)
 
-![查看phpinfo](/assets/images/wp/2024/week5/choupichuipaopao_2.png)
+![查看 phpinfo](/assets/images/wp/2024/week5/choupichuipaopao_2.png)

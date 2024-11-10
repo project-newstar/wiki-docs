@@ -8,7 +8,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 opcode 打印还原流程图
 
-![opcode还原流程](/assets/images/wp/2024/week5/pangbai-terra2_1.png)
+![opcode 还原流程](/assets/images/wp/2024/week5/pangbai-terra2_1.png)
 
 前面有个针对表的伪随机，可以动调出，也可以这么出
 

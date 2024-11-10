@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Ez_redis
+# ez_redis
 
 考了个 Redis 命令执⾏以及其历史漏洞
 

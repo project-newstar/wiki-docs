@@ -12,7 +12,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ![运行界面](/assets/images/wp/2024/week1/base64_1.png)
 
-可以看到让你输入一个字符串，然后会判断对错。一般来说，"Enter the flag:"这个字符串会离主逻辑不远，所以我们找到这个字符串的位置就可以定位到主逻辑。
+可以看到让你输入一个字符串，然后会判断对错。一般来说，`Enter the flag:` 这个字符串会离主逻辑不远，所以我们找到这个字符串的位置就可以定位到主逻辑。
 
 在 IDA 中，按 <kbd>⇧ Shift</kbd><kbd>F12</kbd> 调出字符串界面。
 

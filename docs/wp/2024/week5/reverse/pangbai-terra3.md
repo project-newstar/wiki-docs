@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Pangbai泰拉记（3）
+# Pangbai 泰拉记（3）
 
 个人做所有逆向题思路：找判断，找密文，找密钥，找算法，写正向，写逆向
 

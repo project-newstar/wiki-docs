@@ -2,13 +2,12 @@
     // --el-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif; // default
     --el-font-family: var(--vp-font-family-base);
 
-    --yq-font-family-base: 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'PingFang SC', Roboto, 'Hiragino Sans GB',
-        'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --yq-font-family-base: 'Noto Sans', 'Chinese Quote', -apple-system, BlinkMacSystemFont, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', "PingFang SC", Roboto, "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
     // --yq-font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
     // --vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; // default
     // --vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace; // default
-    --vp-font-family-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    --vp-font-family-mono: ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Cascadia Mono' ,'Consolas', 'Liberation Mono', 'Courier New', monospace;
 
     &:where(:lang(zh)) {
 

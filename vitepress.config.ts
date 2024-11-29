@@ -35,18 +35,6 @@ export default defineConfig({
             linkText: '返回首页',
         },
 
-        head: [
-            [
-                'script',
-                { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-Q89M3V8EG8' }
-            ],
-            [
-                'script',
-                {},
-                `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q89M3V8EG8');`
-            ]
-        ],
-
         footer: {
             copyright: 'Copyright © NewStar CTF',
             message: `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">浙ICP备2023000643号-8</a>`,
@@ -83,6 +71,15 @@ export default defineConfig({
         ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#ec9c1e' }],
         ['meta', { name: 'msapplication-TileColor', content: '#f0f0f0' }],
         ['meta', { name: 'theme-color', content: '#f0f0f0' }],
+        [
+            'script',
+            { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-Q89M3V8EG8' }
+        ],
+        [
+            'script',
+            {},
+            `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q89M3V8EG8');`
+        ]
     ],
 
     sitemap: {

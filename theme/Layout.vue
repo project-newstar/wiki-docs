@@ -44,12 +44,12 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-    <Fragment v-if="DefaultLayoutList.includes(frontmatter.layout)">
+    <template v-if="DefaultLayoutList.includes(frontmatter.layout)">
         <DefaultTheme.Layout />
-    </Fragment>
-    <Fragment v-else>
+    </template>
+    <template v-else>
         <LayoutIndex v-if="frontmatter.layout === 'index'" />
-    </Fragment>
+    </template>
 </template>
 
 <style>

@@ -98,7 +98,7 @@ function fmtActionsArray(actions: any) {
 
         <IndexContent class="layout-content">
             <div class="layout-center">
-                <Fragment v-if="initComplete">
+                <template v-if="initComplete">
                     <div class="grid-box">
                         <div class="content-logo"></div>
                         <div class="content-information">
@@ -115,7 +115,7 @@ function fmtActionsArray(actions: any) {
                         </div>
                         <Content class="content-doc" />
                     </div>
-                </Fragment>
+                </template>
             </div>
         </IndexContent>
 

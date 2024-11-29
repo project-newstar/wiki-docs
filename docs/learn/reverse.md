@@ -35,9 +35,9 @@ C 语言是逆向工程的基础，务必重点学习以下内容。
 
 ## 0x04. 逆向工具的使用
 
-- IDA: 二进制方向工具，90% 的题都会用到，务必熟悉使用
-- Jadx-gui: Java 代码反编译工具，安卓软件和 Java 程序都会用到。
-- Jeb: 面相安卓逆向的利器，有 Java 代码反混淆功能
-- Pyinstxtractor: 解包 Python 编写的 exe 文件
-- Uncompyle6: 反编译 Python 大部分版本字节码（pyc 文件）
-- Xdbg: 动调神器
+- **IDA:** 二进制方向工具，90% 的题都会用到，务必熟悉使用
+- **Jadx-gui:** Java 代码反编译工具，安卓软件和 Java 程序都会用到。
+- **Jeb:** 面相安卓逆向的利器，有 Java 代码反混淆功能
+- **Pyinstxtractor:** 解包 Python 编写的 exe 文件
+- **Uncompyle6:** 反编译 Python 大部分版本字节码（PYC 文件）
+- **Xdbg:** 动调神器

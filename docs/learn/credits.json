@@ -1,0 +1,42 @@
+[
+  {
+    "section": "Web 网络攻防",
+    "contributors": ["Cnily03"]
+  },
+  {
+    "section": "Crypto 密码学",
+    "contributors": ["DexterJie"]
+  },
+  {
+    "section": "Reverse 逆向工程",
+    "contributors": ["PangBai"]
+  },
+  {
+    "section": "Pwn 二进制安全",
+    "contributors": ["0xAkyOI", "椰奶"]
+  },
+  {
+    "section": "Misc 杂项",
+    "contributors": ["w3nx1z1", "yixinBC"]
+  },
+  {
+    "section": "VSCode Python 环境配置",
+    "contributors": ["Cnily03"]
+  },
+  {
+    "section": "获取 Linux 发行版",
+    "contributors": ["yixinBC", "Leichi"]
+  },
+  {
+    "section": "切换软件源",
+    "contributors": ["Cnily03"]
+  },
+  {
+    "section": "Pwn 环境配置",
+    "contributors": ["Korey0sh1"]
+  },
+  {
+    "section": "Netcat 使用指南",
+    "contributors": ["yixinBC"]
+  }
+]

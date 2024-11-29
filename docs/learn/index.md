@@ -7,6 +7,19 @@ import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'
 import { ElTag } from 'element-plus'
 import 'element-plus/es/components/tag/style/css'
+
+const GameTime = {
+  'MoeCTF': ["西电 MoeCTF", new Date('2024-08-10T09:00:00+08:00'), new Date('2024-10-10T21:00:00+08:00'), "https://ctf.xidian.edu.cn/games/10"],
+  "BaseCTF": ["BaseCTF", new Date('2024-08-15T09:00:00+08:00'), new Date('2024-09-15T21:00:00+08:00'), "https://basectf.fun/"],
+  "0xGame": ["南邮 0xGame", new Date('2024-10-06T09:00:00+08:00'), new Date('2024-11-03T21:00:00+08:00'), "https://0xgame.exp10it.cn/"],
+}
+
+const now = new Date()
+const GameConf = Object.fromEntries(Object.entries(GameTime).map(([key, [name, start, end, link]]) => {
+  if (now < start) return [key, ['info', '赛事·未开始', name, link]]
+  if (now > end) return [key, ['info', '赛事·已结束', name, link]]
+  return [key, ['success', '赛事·进行中', name, link]]
+}))
 </script>
 
 # 写在前面
@@ -23,9 +36,14 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 
 如果你此前从未接触过 CTF，你可能需要先了解其形式，即通过一些在线靶场或新生赛的低门槛题目进行适应。下面的一些公益新生赛事或平台或许会对你有所帮助：
 
-- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.xidian.edu.cn/">西电 MoeCTF</Link>
-- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://basectf.fun/">BaseCTF</Link>
-- <ElTag type="info" size="small">赛事·已结束</ElTag> <Link icon="external" theme="underline hover" href="https://0xgame.exp10it.cn/">南邮 0xGame</Link>
+<ul>
+<template v-for='(value, key) in GameConf'>
+<li>
+  <ElTag :type="value[0]" size="small" v-text="value[1]" /> <Link icon="external" theme="underline hover" :href="value[3]" v-text="value[2]" />
+</li>
+</template>
+</ul>
+
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
 - <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>

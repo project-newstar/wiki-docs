@@ -11,11 +11,11 @@ import 'element-plus/es/components/tag/style/css'
 # Misc
 
 <Container type='tip'>
-「如果一道题不适合放在其它的方向，那么misc永远能收留它。」
+「如果一道题不适合放在其它的方向，那么 misc 永远能收留它。」
 <div style="display: inline-block; width: 100%; text-align: right;">—— yixinBC</div>
 </Container>
 <Container type='tip'>
-「每一个misc手都是一个隐藏的全栈✌。」
+「每一个 misc 手都是一个隐藏的全栈✌。」
 <div style="display: inline-block; width: 100%; text-align: right;">—— w3nx1z1</div>
 </Container>
 

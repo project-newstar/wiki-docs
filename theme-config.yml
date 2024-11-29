@@ -54,6 +54,9 @@ sidebar:
     - text: Q&A
       link: /learn/qa
 
+    - text: 贡献者
+      link: /learn/credits
+
   '/guide/2024/':
     - text: 赛事信息
       link: /guide/2024/

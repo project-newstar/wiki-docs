@@ -37,17 +37,15 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 如果你此前从未接触过 CTF，你可能需要先了解其形式，即通过一些在线靶场或新生赛的低门槛题目进行适应。下面的一些公益新生赛事或平台或许会对你有所帮助：
 
 <ul>
-<template v-for='(value, key) in GameConf'>
-<li>
-  <ElTag :type="value[0]" size="small" v-text="value[1]" /> <Link icon="external" theme="underline hover" :href="value[3]" v-text="value[2]" />
-</li>
-</template>
+  <li v-for='(value, key) in GameConf'>
+      <ElTag :type="value[0]" size="small">{{ value[1] }}</ElTag>
+      <Link icon="external" theme="underline hover" :href="value[3]" :text="value[2]" />
+  </li>
+  <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link> </li>
+  <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link> </li>
+  <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link> </li>
+  <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.nssctf.cn">NSSCTF</Link> </li>
 </ul>
-
-- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link>
-- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link>
-- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://buuoj.cn">BUUOJ</Link>
-- <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.nssctf.cn">NSSCTF</Link>
 
 随后，你应当选定一个方向，作为你主攻方向。例如，对网络感兴趣、有基础的同学可能更适合 Web 方向，而对程序运行底层逻辑、二进制感兴趣的可能更适合逆向（Reverse）和 Pwn，等等。
 

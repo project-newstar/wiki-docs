@@ -3,7 +3,11 @@ import { ref } from "vue";
 import { ElAlert } from "element-plus";
 import { asURLParamBool } from "@/scripts/utils";
 
-const sp = new URLSearchParams(window.location.search);
+const getWindow = () => {
+    try { return window } catch (_) { return globalThis }
+}
+
+const sp = new URLSearchParams((getWindow().location || {}).search);
 
 const showAlert = ref<boolean>(false);
 

@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # 扫码领取 flag

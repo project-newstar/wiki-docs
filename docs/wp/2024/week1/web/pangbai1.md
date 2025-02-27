@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -42,11 +43,11 @@ import Container from '@/components/docs/Container.vue'
 
 POST 的查询类型有很多种，通过 HTTP 报文中的 `Content-Type` 指定，以告诉服务端用何种方式解析报文 Body 的内容。
 
-| Content-Type | 描述 |
-| --- | --- |
+| Content-Type                      | 描述                                                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------ |
 | application/x-www-form-urlencoded | 和 GET 查询字段的写法一样，开头不需要 `?`，用 `&` 符号连接各查询参数，遇到特殊字符需要进行转义。 |
-| application/json | Body 给出一个 JSON 格式的数据，服务端会解析它。 |
-| multipart/form-data | 表单字段，一般用于有文件等复杂类型的场景。 |
+| application/json                  | Body 给出一个 JSON 格式的数据，服务端会解析它。                                                  |
+| multipart/form-data               | 表单字段，一般用于有文件等复杂类型的场景。                                                       |
 
 我们可以用任意方式，那么我们选择用 `application/x-www-form-urlencoded` 发送个 `say=hello` 的请求包即可。
 
@@ -195,6 +196,7 @@ PangBai 以一种难以形容的表情望着你——激动的、怀念的，却
 「像■■■■验体■■不可能■■■■ JWT 这种■■ Pe2K7kxo8NMIkaeN ■■■密钥，除非■■■■■走，难道■■■■■■吗？！」
 
 「......」
+
 </blockquote>
 
 其中提到了 JWT 和 `Pe2K7kxo8NMIkaeN`，这个数字和字母组成内容推测应当是 JWT 的密钥。JWT 是一个轻量级的认证规范，允许在用户和服务器之间传递安全可靠的信息，但这是基于签名密钥没有泄露的情况下。可以通过 [JWT.IO](https://jwt.io) 网站进行在线签名和验证（JWT 并不对数据进行加密，而仅仅是签名，不同的数据对应的羡签名不一样，因此在没有密钥的情况下，你可以查看里面的数据，但修改它则会导致服务器验签失败，从而拒绝你的进一步请求）。

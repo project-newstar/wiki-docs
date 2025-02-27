@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -78,6 +79,6 @@ void __fastcall HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 ```
 
-只有个异或 `0x1`，[CyberChef](https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'01'%7D,'Standard',false)&input=Zmh3ZExkbW53ZE9uVm1ud2RPblY) 解密后包上 `flag{}` 上交
+只有个异或 `0x1`，[CyberChef](<https://gchq.github.io/CyberChef/#recipe=XOR(%7B'option':'Hex','string':'01'%7D,'Standard',false)&input=Zmh3ZExkbW53ZE9uVm1ud2RPblY>) 解密后包上 `flag{}` 上交
 
 **Ans:** `flag{giveMeloveNoWloveNoW}`

@@ -55,7 +55,6 @@ jobs:
         with:
           path: dist
 
-
   deploy:
     name: Deploy
     runs-on: ubuntu-latest

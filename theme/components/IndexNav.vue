@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { inBrowser } from 'vitepress'
-import { computed, provide, watchEffect } from 'vue'
-import { useData } from 'vitepress'
-import { useNav } from 'vitepress/dist/client/theme-default/composables/nav.js'
-import IndexNavBar from './IndexNavBar.vue'
-import IndexNavScreen from './IndexNavScreen.vue'
+import { inBrowser } from "vitepress";
+import { computed, provide, watchEffect } from "vue";
+import { useData } from "vitepress";
+import { useNav } from "vitepress/dist/client/theme-default/composables/nav.js";
+import IndexNavBar from "./IndexNavBar.vue";
+import IndexNavScreen from "./IndexNavScreen.vue";
 
-const { isScreenOpen, closeScreen, toggleScreen } = useNav()
-const { frontmatter } = useData()
+const { isScreenOpen, closeScreen, toggleScreen } = useNav();
+const { frontmatter } = useData();
 
 const hasNavbar = computed(() => {
-  return frontmatter.value.navbar !== false
-})
+  return frontmatter.value.navbar !== false;
+});
 
-provide('close-screen', closeScreen)
+provide("close-screen", closeScreen);
 
 watchEffect(() => {
   if (inBrowser) {
-    document.documentElement.classList.toggle('hide-nav', !hasNavbar.value)
+    document.documentElement.classList.toggle("hide-nav", !hasNavbar.value);
   }
-})
+});
 </script>
 
 <template>

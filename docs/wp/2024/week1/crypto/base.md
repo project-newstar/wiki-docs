@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # Base
@@ -22,8 +22,8 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 
 这样的话我们就可以将字母数字转换为ASCII值了，举个例子，`ctf` 对应的十进制和二进制为
 
-| 字母 | 十进制 | 二进制 |
-| ---- | ------ | ------ |
+| 字母 | 十进制 | 二进制   |
+| ---- | ------ | -------- |
 | c    | 99     | 01100011 |
 | t    | 116    | 01110100 |
 | f    | 102    | 01100110 |

@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # 擅长加密的小明同学

@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # ezpollute
@@ -13,39 +13,39 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 审计 `index.js`，`/config` 路由下调用了 `merge` 函数，`merge` 函数意味着可能存在的原型链污染漏洞
 
 ```javascript
-router.post('/config', async (ctx) => {
-    jsonData = ctx.request.rawBody || "{}"
-    token = ctx.cookies.get('token')
-    if (!token) {
-        return ctx.body = {
-            code: 0,
-            msg: 'Upload Photo First',
-        }
-    }
-    const [err, userID] = decodeToken(token)
-    if (err) {
-        return ctx.body = {
-            code: 0,
-            msg: 'Invalid Token',
-        }
-    }
-    userConfig = JSON.parse(jsonData)
-    try {
-        finalConfig = clone(defaultWaterMarkConfig)
-        // 这里喵
-        merge(finalConfig, userConfig)
-        fs.writeFileSync(path.join(__dirname, 'uploads', userID, 'config.json'), JSON.stringify(finalConfig))
-        ctx.body = {
-            code: 1,
-            msg: 'Config updated successfully',
-        }
-    } catch (e) {
-        ctx.body = {
-            code: 0,
-            msg: 'Some error occurred',
-        }
-    }
-})
+router.post("/config", async (ctx) => {
+  jsonData = ctx.request.rawBody || "{}";
+  token = ctx.cookies.get("token");
+  if (!token) {
+    return (ctx.body = {
+      code: 0,
+      msg: "Upload Photo First",
+    });
+  }
+  const [err, userID] = decodeToken(token);
+  if (err) {
+    return (ctx.body = {
+      code: 0,
+      msg: "Invalid Token",
+    });
+  }
+  userConfig = JSON.parse(jsonData);
+  try {
+    finalConfig = clone(defaultWaterMarkConfig);
+    // 这里喵
+    merge(finalConfig, userConfig);
+    fs.writeFileSync(path.join(__dirname, "uploads", userID, "config.json"), JSON.stringify(finalConfig));
+    ctx.body = {
+      code: 1,
+      msg: "Config updated successfully",
+    };
+  } catch (e) {
+    ctx.body = {
+      code: 0,
+      msg: "Some error occurred",
+    };
+  }
+});
 ```
 
 `merge` 函数在 `/util/merge.js` 中，虽然过滤了 `proto`，但我们可以通过 `constructor.prototype` 来绕过限制
@@ -53,19 +53,19 @@ router.post('/config', async (ctx) => {
 ```javascript
 // /util/merge.js
 function merge(target, source) {
-    if (!isObject(target) || !isObject(source)) {
-        return target
+  if (!isObject(target) || !isObject(source)) {
+    return target;
+  }
+  for (let key in source) {
+    if (key === "__proto__") continue;
+    if (source[key] === "") continue;
+    if (isObject(source[key]) && key in target) {
+      target[key] = merge(target[key], source[key]);
+    } else {
+      target[key] = source[key];
     }
-    for (let key in source) {
-        if (key === "__proto__") continue
-        if (source[key] === "") continue
-        if (isObject(source[key]) && key in target) {
-            target[key] = merge(target[key], source[key]);
-        } else {
-            target[key] = source[key];
-        }
-    }
-    return target
+  }
+  return target;
 }
 ```
 
@@ -73,33 +73,32 @@ function merge(target, source) {
 
 ```javascript
 try {
-        await new Promise((resolve, reject) => {
+  await new Promise((resolve, reject) => {
+    // 这里喵
+    const proc = fork(PhotoProcessScript, [userDir], { silent: true });
 
-            // 这里喵
-            const proc = fork(PhotoProcessScript, [userDir], { silent: true })
+    proc.on("close", (code) => {
+      if (code === 0) {
+        resolve("success");
+      } else {
+        reject(new Error("An error occurred during execution"));
+      }
+    });
 
-            proc.on('close', (code) => {
-                if (code === 0) {
-                    resolve('success')
-                } else {
-                    reject(new Error('An error occurred during execution'))
-                }
-            })
-
-            proc.on('error', (err) => {
-                reject(new Error(`Failed to start subprocess: ${err.message}`))
-            })
-        })
-        ctx.body = {
-            code: 1,
-            msg: 'Photos processed successfully',
-        }
-    } catch (error) {
-        ctx.body = {
-            code: 0,
-            msg: 'some error occurred',
-        }
-    }
+    proc.on("error", (err) => {
+      reject(new Error(`Failed to start subprocess: ${err.message}`));
+    });
+  });
+  ctx.body = {
+    code: 1,
+    msg: "Photos processed successfully",
+  };
+} catch (error) {
+  ctx.body = {
+    code: 0,
+    msg: "some error occurred",
+  };
+}
 ```
 
 结合之前的原型链污染漏洞，我们污染 `NODE_OPTIONS` 和 `env`，在 `env` 中写入恶意代码，`fork` 在创建子进程时就会首先加载恶意代码，从而实现 RCE

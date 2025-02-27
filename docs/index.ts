@@ -1,9 +1,7 @@
-import { ElMessage } from 'element-plus';
-
 export function signup() {
-    return
+  return;
 }
 
-export function participate(channel: 'internal' | 'external') {
-    return
+export function participate(/* channel: "internal" | "external" */) {
+  return;
 }

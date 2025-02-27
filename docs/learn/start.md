@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title - NewStar CTF'
+titleTemplate: ":title - NewStar CTF"
 ---
 
 # 开始

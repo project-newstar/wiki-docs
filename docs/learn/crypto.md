@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'
@@ -122,29 +123,29 @@ x = c % p // 2 # [!code highlight]
     <strong>知识点列表</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
   </template>
 
-  - Python 基础教程
-  - Python 简介
-  - Python 环境搭建
-  - Python 中文编码
-  - Python 基础语法
-  - Python 变量类型
-  - Python 运算符
-  - Python 条件语句
-  - Python 循环语句
-  - Python While 循环语句
-  - Python for 循环语句
-  - Python 循环嵌套
-  - Python break 语句
-  - Python continue 语句
-  - Python pass 语句
-  - Python Number（数组）
-  - Python 字符串
-  - Python List（列表）
-  - Python 日期和时间
-  - Python 函数
-  - Python 模块
+- Python 基础教程
+- Python 简介
+- Python 环境搭建
+- Python 中文编码
+- Python 基础语法
+- Python 变量类型
+- Python 运算符
+- Python 条件语句
+- Python 循环语句
+- Python While 循环语句
+- Python for 循环语句
+- Python 循环嵌套
+- Python break 语句
+- Python continue 语句
+- Python pass 语句
+- Python Number（数组）
+- Python 字符串
+- Python List（列表）
+- Python 日期和时间
+- Python 函数
+- Python 模块
   </ElCollapseItem>
-</ElCollapse>
+  </ElCollapse>
 
 ::: tip 撰稿人注
 讲讲我个人学习 Python 的经历：我一开始就买了本 Python 的入门书籍开始「啃」，啃到后面 for 循环就开始做题了。一开始也不会做题，就看别人的 WriteUp（看看别人的思路，抄作业，但这是个好的行为，大伙开始都是看过来的），WriteUp 里一般都会有 Python 代码，就跟着打在自己的电脑上（建议不要直接复制粘贴），遇到不会的就上网搜索，一边学密码学，一边练编程技术。
@@ -292,12 +293,12 @@ RSA 中涉及到我们之前没有或者说不太重视的一些数学知识点�
 
 #### 5. 计算机基础
 
-  思考这样一个问题：将字符串 `我喜欢密码学` 转化为整数。
+思考这样一个问题：将字符串 `我喜欢密码学` 转化为整数。
 
-  这看起来有点不可思议，文字和数字怎么联系在一起。但计算机上就可以，计算机底层是一堆二进制，只有 `0` 和 `1`。要想在屏幕上展现文字，就需要**编码**。编码将数字按照一定的法则转换成对应的文字，常见的编码如 [ASCII 编码](https://www.runoob.com/w3cnote/ascii.html)。
+这看起来有点不可思议，文字和数字怎么联系在一起。但计算机上就可以，计算机底层是一堆二进制，只有 `0` 和 `1`。要想在屏幕上展现文字，就需要**编码**。编码将数字按照一定的法则转换成对应的文字，常见的编码如 [ASCII 编码](https://www.runoob.com/w3cnote/ascii.html)。
 
-  通过一些编码方式，我们就能把想保护传输的信息转换成整数并一一对应，再通过 RSA 算法加密计算得到密文 $c$.
-  $$ c \equiv m^{e} \pmod n $$
+通过一些编码方式，我们就能把想保护传输的信息转换成整数并一一对应，再通过 RSA 算法加密计算得到密文 $c$.
+$$ c \equiv m^{e} \pmod n $$
 
 #### 6. 代码实现
 

@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue';
-import { useData } from 'vitepress';
-import { useSidebar } from 'vitepress/theme';
-import { onMounted } from 'vue';
+import NotFound from "vitepress/dist/client/theme-default/NotFound.vue";
+import { useData } from "vitepress";
+import { useSidebar } from "vitepress/theme";
+import { onMounted } from "vue";
 
-const { page, frontmatter } = useData()
-const { hasSidebar } = useSidebar()
+const { page, frontmatter } = useData();
+const { hasSidebar } = useSidebar();
 
 onMounted(() => {
-  const layoutIndex = document.querySelector('.layout-index') as HTMLElement | null
-  const layoutIndexFooter = document.querySelector('.layout-index-footer')
-  if(layoutIndex && layoutIndexFooter) {
-    let height = Math.ceil(layoutIndexFooter.clientHeight)
-    layoutIndex.style.setProperty('--index-footer-height', `${height}px`)
+  const layoutIndex = document.querySelector(".layout-index") as HTMLElement | null;
+  const layoutIndexFooter = document.querySelector(".layout-index-footer");
+  if (layoutIndex && layoutIndexFooter) {
+    let height = Math.ceil(layoutIndexFooter.clientHeight);
+    layoutIndex.style.setProperty("--index-footer-height", `${height}px`);
   }
-})
+});
 </script>
 
 <template>
@@ -29,7 +29,6 @@ onMounted(() => {
     <slot name="not-found" v-if="page.isNotFound"><NotFound /></slot>
 
     <slot />
-
   </div>
 </template>
 

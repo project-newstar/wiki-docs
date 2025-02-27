@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -217,7 +218,7 @@ if(preg_match('/chocolate/', $food)){
 
 3. `__toString()` 函数返回值因为是 `$cat`，也就是 `???`，同样没有实际意义，但是第一次做的师傅可以简单了解这个魔术方法
 
-   :::tip 关于 __toString()
+   :::tip 关于 \_\_toString()
 
    1. 输出格式不对触发（强制类型转换时）
    2. 表达方式错误导致魔术方法触发

@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import { ElTag } from 'element-plus'

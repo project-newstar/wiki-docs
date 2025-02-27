@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
+
 <script setup>
 import NCAlert from './nc.vue'
 import Container from '@/components/docs/Container.vue'

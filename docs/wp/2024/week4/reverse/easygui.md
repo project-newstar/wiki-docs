@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # easygui
@@ -178,7 +178,7 @@ void rc4_init(unsigned char* s, unsigned char* key, int Len_k)
         s[j] = tmp;
     }
 }
-void rc4_crypt(unsigned char* Data, int Len_D, unsigned char* key, int Len_k) 
+void rc4_crypt(unsigned char* Data, int Len_D, unsigned char* key, int Len_k)
 {
     unsigned char s[256];
     rc4_init(s, key, Len_k);
@@ -196,7 +196,7 @@ void rc4_crypt(unsigned char* Data, int Len_D, unsigned char* key, int Len_k)
     }
 }
 void decrypt() {
-    unsigned char char_array[] = { 0xdf ,0xc7         ,0x4d         ,0x14         ,0xc1         ,0xec         ,0x08         ,0xe4         ,0x5f         ,0x3f         ,0x03         ,0xb4         ,0x90         ,0x4a         ,0xb9         ,0x8f         ,0x8f         ,0xfa         ,0x71         ,0x43         ,0xc7         ,0xf1         ,0x9d         ,0xdd         ,0x4f         ,0xc0         ,0x12         ,0x44         ,0x5c         ,0x9d         ,0x88         ,0x36         ,0x2d         ,0x16         ,0x1d         ,0xed         ,0xbc         ,0xef         ,0xbb         ,0x5b         ,0x9f         ,0x77         ,0xeb         ,0x58 };    
+    unsigned char char_array[] = { 0xdf ,0xc7         ,0x4d         ,0x14         ,0xc1         ,0xec         ,0x08         ,0xe4         ,0x5f         ,0x3f         ,0x03         ,0xb4         ,0x90         ,0x4a         ,0xb9         ,0x8f         ,0x8f         ,0xfa         ,0x71         ,0x43         ,0xc7         ,0xf1         ,0x9d         ,0xdd         ,0x4f         ,0xc0         ,0x12         ,0x44         ,0x5c         ,0x9d         ,0x88         ,0x36         ,0x2d         ,0x16         ,0x1d         ,0xed         ,0xbc         ,0xef         ,0xbb         ,0x5b         ,0x9f         ,0x77         ,0xeb         ,0x58 };
     unsigned char key[] = "easy_GUI";
     int keylength = 8;
         int length=strlen((const char*)char_array);

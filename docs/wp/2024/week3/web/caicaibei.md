@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import SVGGithub from '@docs/assets/icons/mdi--github.svg?component'
 </script>

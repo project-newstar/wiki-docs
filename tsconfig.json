@@ -31,12 +31,17 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["theme/*"],
-      "@docs/*": ["docs/*"],
+      "@docs/*": ["docs/*"]
     }
   },
   "include": [
-    ".vitepress/**/*", "vitepress.config.ts",
-    "theme/**/*.ts", "theme/**/*.tsx", "theme/**/*.vue",
-    "docs/**/*.ts", "docs/**/*.tsx", "docs/**/*.vue",
-  ],
+    ".vitepress/**/*",
+    "vitepress.config.ts",
+    "theme/**/*.ts",
+    "theme/**/*.tsx",
+    "theme/**/*.vue",
+    "docs/**/*.ts",
+    "docs/**/*.tsx",
+    "docs/**/*.vue"
+  ]
 }

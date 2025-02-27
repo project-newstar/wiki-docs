@@ -1,7 +1,8 @@
 ---
 # title: 故事新编
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>

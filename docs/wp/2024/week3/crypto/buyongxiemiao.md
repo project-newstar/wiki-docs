@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import AESECBCBC from '@docs/assets/images/wp/2024/BlockCipherModesofOperation.svg?component'
@@ -23,6 +24,7 @@ CBC 模式对于每个待加密的密码块在加密前会先与前一个密码�
 $$
 \mathrm{part}_1 = D(c_0) \oplus IV
 $$
+
 $$
 \mathrm{part}_2 = D(c_1) \oplus c_0
 $$

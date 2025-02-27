@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import { useScrollLock } from '@vueuse/core'
-import { inBrowser } from 'vitepress'
-import { ref } from 'vue'
-import VPNavScreenAppearance from 'vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue'
-import VPNavScreenMenu from 'vitepress/dist/client/theme-default/components/VPNavScreenMenu.vue'
-import VPNavScreenSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue'
-import VPNavScreenTranslations from 'vitepress/dist/client/theme-default/components/VPNavScreenTranslations.vue'
+import { useScrollLock } from "@vueuse/core";
+import { inBrowser } from "vitepress";
+import { ref } from "vue";
+import VPNavScreenAppearance from "vitepress/dist/client/theme-default/components/VPNavScreenAppearance.vue";
+import VPNavScreenMenu from "vitepress/dist/client/theme-default/components/VPNavScreenMenu.vue";
+import VPNavScreenSocialLinks from "vitepress/dist/client/theme-default/components/VPNavScreenSocialLinks.vue";
+import VPNavScreenTranslations from "vitepress/dist/client/theme-default/components/VPNavScreenTranslations.vue";
 
 defineProps<{
-  open: boolean
-}>()
+  open: boolean;
+}>();
 
-const screen = ref<HTMLElement | null>(null)
-const isLocked = useScrollLock(inBrowser ? document.body : null)
+const screen = ref<HTMLElement | null>(null);
+const isLocked = useScrollLock(inBrowser ? document.body : null);
 </script>
 
 <template>
-  <transition
-    name="fade"
-    @enter="isLocked = true"
-    @after-leave="isLocked = false"
-  >
+  <transition name="fade" @enter="isLocked = true" @after-leave="isLocked = false">
     <div v-if="open" class="VPNavScreen" ref="screen" id="VPNavScreen">
       <div class="container">
         <slot name="nav-screen-content-before" />

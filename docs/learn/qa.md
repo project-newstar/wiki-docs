@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
+
 <script setup>
 import QACard from '@/components/docs/QACard.vue'
 </script>

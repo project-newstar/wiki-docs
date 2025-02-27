@@ -1,39 +1,37 @@
 <script lang="ts" setup>
-import { useWindowScroll } from '@vueuse/core'
-import { ref, watchPostEffect } from 'vue'
-import { useData } from 'vitepress'
-import { useSidebar } from 'vitepress/theme'
-import VPNavBarAppearance from 'vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue'
-import IndexNavBarExtra from './IndexNavBarExtra.vue'
-import VPNavBarHamburger from 'vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue'
-import VPNavBarMenu from 'vitepress/dist/client/theme-default/components/VPNavBarMenu.vue'
-import VPNavBarSearch from 'vitepress/dist/client/theme-default/components/VPNavBarSearch.vue'
-import VPNavBarSocialLinks from 'vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue'
-import IndexNavBarTitle from './IndexNavBarTitle.vue'
-import VPNavBarTranslations from 'vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue'
+import { useWindowScroll } from "@vueuse/core";
+import { ref, watchPostEffect } from "vue";
+import { useData } from "vitepress";
+import { useSidebar } from "vitepress/theme";
+import VPNavBarAppearance from "vitepress/dist/client/theme-default/components/VPNavBarAppearance.vue";
+import IndexNavBarExtra from "./IndexNavBarExtra.vue";
+import VPNavBarHamburger from "vitepress/dist/client/theme-default/components/VPNavBarHamburger.vue";
+import VPNavBarMenu from "vitepress/dist/client/theme-default/components/VPNavBarMenu.vue";
+import VPNavBarSearch from "vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
+import VPNavBarSocialLinks from "vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+import IndexNavBarTitle from "./IndexNavBarTitle.vue";
+import VPNavBarTranslations from "vitepress/dist/client/theme-default/components/VPNavBarTranslations.vue";
 
 const props = defineProps<{
-  isScreenOpen: boolean
-}>()
+  isScreenOpen: boolean;
+}>();
 
-defineEmits<{
-  (e: 'toggle-screen'): void
-}>()
+defineEmits<(e: "toggle-screen") => void>();
 
-const { y } = useWindowScroll()
-const { hasSidebar } = useSidebar()
-const { frontmatter } = useData()
+const { y } = useWindowScroll();
+const { hasSidebar } = useSidebar();
+const { frontmatter } = useData();
 
-const classes = ref<Record<string, boolean>>({})
+const classes = ref<Record<string, boolean>>({});
 
 watchPostEffect(() => {
   classes.value = {
-    'has-sidebar': hasSidebar.value,
-    'home': ['home', 'index'].includes(frontmatter.value.layout),
-    'top': y.value === 0,
-    'screen-open': props.isScreenOpen
-  }
-})
+    "has-sidebar": hasSidebar.value,
+    home: ["home", "index"].includes(frontmatter.value.layout),
+    top: y.value === 0,
+    "screen-open": props.isScreenOpen,
+  };
+});
 </script>
 
 <template>

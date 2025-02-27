@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import SVGTCPStart from '@docs/assets/images/wp/2024/TCP_start.svg?component'
 import SVGTCPFin from '@docs/assets/images/wp/2024/TCP_fin.svg?component'

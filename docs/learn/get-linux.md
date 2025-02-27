@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
 
 # 获取 Linux 发行版

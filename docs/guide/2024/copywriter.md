@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 参考文档 - NewStar CTF 2024'
+titleTemplate: ":title | 参考文档 - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>

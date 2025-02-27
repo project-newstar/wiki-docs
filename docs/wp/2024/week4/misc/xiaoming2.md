@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -13,15 +14,15 @@ import Container from '@/components/docs/Container.vue'
 
 先看题目简介：
 
->小明是资深的音游玩家，有一天他游玩某知名街机音游后顺利使 rating 上 w5
+> 小明是资深的音游玩家，有一天他游玩某知名街机音游后顺利使 rating 上 w5
 >
->当他将成绩图上传到电脑上时，**他的桌面【直接显现】了神秘的东西**
+> 当他将成绩图上传到电脑上时，**他的桌面【直接显现】了神秘的东西**
 >
->然而没等他反应过来，他的电脑就消失不见，只**剩下一个磁盘镜像**（？）
+> 然而没等他反应过来，他的电脑就消失不见，只**剩下一个磁盘镜像**（？）
 >
->这时小明脑海中有一个声音告诉他，如果他找不出来神秘的东西就会抽走他的音游底力
+> 这时小明脑海中有一个声音告诉他，如果他找不出来神秘的东西就会抽走他的音游底力
 >
->小明顿时慌了，想希望你帮帮他<strong>【利用镜像启动系统】</strong>，找到找到令人头疼的秘密
+> 小明顿时慌了，想希望你帮帮他<strong>【利用镜像启动系统】</strong>，找到找到令人头疼的秘密
 
 首先我们能知道什么？
 

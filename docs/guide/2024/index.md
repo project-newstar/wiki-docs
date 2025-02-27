@@ -1,8 +1,9 @@
 ---
 title: 赛事信息
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ":title - NewStar CTF 2024"
 aside: false
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'

@@ -1,3 +1,3 @@
-import VitePressConfig from '../vitepress.config'
+import VitePressConfig from "../vitepress.config";
 
-export default VitePressConfig
+export default VitePressConfig;

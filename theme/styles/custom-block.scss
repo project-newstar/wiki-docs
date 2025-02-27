@@ -1,97 +1,97 @@
 .custom-block {
-    @mixin basic-block {
-        padding: 6px 16px 6px !important;
-        margin: 20px 0;
-        border-radius: 4px;
+  @mixin basic-block {
+    padding: 6px 16px 6px !important;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+
+  @mixin paragraph {
+    p {
+      font-size: 14px;
+      margin: 0.5rem 0 !important;
     }
 
-    @mixin paragraph {
-        p {
-            font-size: 14px;
-            margin: 0.5rem 0 !important;
-        }
-
-        p.custom-block-title {
-            font-size: 16px;
-        }
+    p.custom-block-title {
+      font-size: 16px;
     }
+  }
 
-    @mixin code-color($color, $background) {
-        code {
-            color: $color;
-            background-color: $background;
-        }
+  @mixin code-color($color, $background) {
+    code {
+      color: $color;
+      background-color: $background;
     }
+  }
 
-    &.tip {
-        @include basic-block;
-        background-color: var(--block-bg-tip);
-        border-left: 5px solid var(--block-tip);
-        @include paragraph;
-        @include code-color(var(--block-tip), var(--block-bg-tip));
-    }
+  &.tip {
+    @include basic-block;
+    background-color: var(--block-bg-tip);
+    border-left: 5px solid var(--block-tip);
+    @include paragraph;
+    @include code-color(var(--block-tip), var(--block-bg-tip));
+  }
 
-    &.info {
-        @include basic-block;
-        background-color: var(--block-bg-info);
-        border-left: 5px solid var(--block-info);
-        @include paragraph;
-        @include code-color(var(--block-info), var(--block-bg-info));
-    }
+  &.info {
+    @include basic-block;
+    background-color: var(--block-bg-info);
+    border-left: 5px solid var(--block-info);
+    @include paragraph;
+    @include code-color(var(--block-info), var(--block-bg-info));
+  }
 
-    &.warning {
-        @include basic-block;
-        background-color: var(--block-bg-warning);
-        border-left: 5px solid var(--block-warning);
-        @include paragraph;
-        @include code-color(var(--block-warning), var(--block-bg-warning));
-    }
+  &.warning {
+    @include basic-block;
+    background-color: var(--block-bg-warning);
+    border-left: 5px solid var(--block-warning);
+    @include paragraph;
+    @include code-color(var(--block-warning), var(--block-bg-warning));
+  }
 
-    &.danger {
-        @include basic-block;
-        background-color: var(--block-bg-danger);
-        border-left: 5px solid var(--block-danger);
-        @include paragraph;
-        @include code-color(var(--block-danger), var(--block-bg-danger));
-    }
+  &.danger {
+    @include basic-block;
+    background-color: var(--block-bg-danger);
+    border-left: 5px solid var(--block-danger);
+    @include paragraph;
+    @include code-color(var(--block-danger), var(--block-bg-danger));
+  }
 
-    &.quote {
-        @include basic-block;
-        background-color: var(--block-bg-quote);
-        border-left: 5px solid var(--block-quote);
-        @include paragraph;
-        @include code-color(var(--block-quote), var(--block-bg-quote));
-    }
+  &.quote {
+    @include basic-block;
+    background-color: var(--block-bg-quote);
+    border-left: 5px solid var(--block-quote);
+    @include paragraph;
+    @include code-color(var(--block-quote), var(--block-bg-quote));
+  }
 }
 
 .vp-doc .custom-block {
-    li + li {
-        margin-top: 2px;
-    }
+  li + li {
+    margin-top: 2px;
+  }
 }
 
 :root {
-    --block-tip: #67c23a;
-    --block-info: #409eff;
-    --block-warning: #e6a23c;
-    --block-danger: #f56c6c;
-    --block-quote: #747d8c;
-    --block-bg-tip: #{rgba(#67c23a, 0.1)};
-    --block-bg-info: #{rgba(#409eff, 0.1)};
-    --block-bg-warning: #{rgba(#e6a23c, 0.1)};
-    --block-bg-danger: #{rgba(#f56c6c, 0.1)};
-    --block-bg-quote: #{rgba(#747d8c, 0.1)};
+  --block-tip: #67c23a;
+  --block-info: #409eff;
+  --block-warning: #e6a23c;
+  --block-danger: #f56c6c;
+  --block-quote: #747d8c;
+  --block-bg-tip: #{rgba(#67c23a, 0.1)};
+  --block-bg-info: #{rgba(#409eff, 0.1)};
+  --block-bg-warning: #{rgba(#e6a23c, 0.1)};
+  --block-bg-danger: #{rgba(#f56c6c, 0.1)};
+  --block-bg-quote: #{rgba(#747d8c, 0.1)};
 }
 
 .dark {
-    --block-tip: #67c23a;
-    --block-info: #409eff;
-    --block-warning: #e6a23c;
-    --block-danger: #f56c6c;
-    --block-quote: #747d8c;
-    --block-bg-tip: #{rgba(#67c23a, 0.1)};
-    --block-bg-info: #{rgba(#409eff, 0.1)};
-    --block-bg-warning: #{rgba(#e6a23c, 0.1)};
-    --block-bg-danger: #{rgba(#f56c6c, 0.1)};
-    --block-bg-quote: #{rgba(#747d8c, 0.1)};
+  --block-tip: #67c23a;
+  --block-info: #409eff;
+  --block-warning: #e6a23c;
+  --block-danger: #f56c6c;
+  --block-quote: #747d8c;
+  --block-bg-tip: #{rgba(#67c23a, 0.1)};
+  --block-bg-info: #{rgba(#409eff, 0.1)};
+  --block-bg-warning: #{rgba(#e6a23c, 0.1)};
+  --block-bg-danger: #{rgba(#f56c6c, 0.1)};
+  --block-bg-quote: #{rgba(#747d8c, 0.1)};
 }

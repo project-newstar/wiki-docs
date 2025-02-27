@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # EldenRing
@@ -72,11 +72,11 @@ find_valid_input()
 
 之后就是一个菜单部分，主要功能是 `Two_Fingers`、`Three_Fingers`、`Age_of_the_Stars`，对应关系为
 
-|文本|含义|
-|---|---|
-|Two_Fingers|创造一个卢恩（add 堆块）|
-|Three_Fingers|毁灭一个卢恩（free 堆块）|
-|Age_of_the_Stars|菈妮给予我们的恩惠（一个白给的 libc 地址）|
+| 文本             | 含义                                       |
+| ---------------- | ------------------------------------------ |
+| Two_Fingers      | 创造一个卢恩（add 堆块）                   |
+| Three_Fingers    | 毁灭一个卢恩（free 堆块）                  |
+| Age_of_the_Stars | 菈妮给予我们的恩惠（一个白给的 libc 地址） |
 
 接下来我们寻找可能的漏洞，在 `Two_Fingers` 函数中
 

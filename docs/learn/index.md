@@ -1,7 +1,8 @@
 ---
 title: 快速入门
-titleTemplate: ':title - NewStar CTF'
+titleTemplate: ":title - NewStar CTF"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'

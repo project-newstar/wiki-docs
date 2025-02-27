@@ -1,32 +1,32 @@
 <script setup lang="ts">
 withDefaults(
-    defineProps<{
-        href?: string;
-        target?: string;
-        icon?: string /* keyof typeof iconMap */;
-        iconPos?: "left" | "right";
-        /**
-         * Theme of the link
-         * - `plain [color]`
-         * - `underline [color] [always|hover|blink]`
-         */
-        theme?: string;
-        text?: string;
-    }>(),
-    {
-        href: "",
-        target: "_blank",
-        iconPos: "right"
-    }
+  defineProps<{
+    href?: string;
+    target?: string;
+    icon?: string /* keyof typeof iconMap */;
+    iconPos?: "left" | "right";
+    /**
+     * Theme of the link
+     * - `plain [color]`
+     * - `underline [color] [always|hover|blink]`
+     */
+    theme?: string;
+    text?: string;
+  }>(),
+  {
+    href: "",
+    target: "_blank",
+    iconPos: "right",
+  }
 );
 function fmtClass(theme?: string, ...append: string[]): string {
-    let classes: string[] = [];
-    if (!theme) theme = "";
-    theme.split(/\s+/).forEach(t => {
-        t && classes.push(`link-${t}`);
-    });
-    if (append) classes.push(...append);
-    return classes.join(" ");
+  let classes: string[] = [];
+  if (!theme) theme = "";
+  theme.split(/\s+/).forEach((t) => {
+    t && classes.push(`link-${t}`);
+  });
+  if (append) classes.push(...append);
+  return classes.join(" ");
 }
 
 // const iconMap = {
@@ -35,17 +35,17 @@ function fmtClass(theme?: string, ...append: string[]): string {
 </script>
 
 <template>
-    <a
-        :data-link="theme ? '' : 'false'"
-        :href="href"
-        :target="target"
-        :class="fmtClass(theme, icon ? `link-icon icon-${icon}` : '')"
-        :data-icon-pos="icon ? iconPos : undefined"
-    >
-        <template v-if="text">{{ text }}</template>
-        <template v-else><slot /></template>
-        <!-- <span class="link-icon" :data-icon-pos="iconPos" v-html="iconMap[icon]" v-if="icon"></span> -->
-    </a>
+  <a
+    :data-link="theme ? '' : 'false'"
+    :href="href"
+    :target="target"
+    :class="fmtClass(theme, icon ? `link-icon icon-${icon}` : '')"
+    :data-icon-pos="icon ? iconPos : undefined"
+  >
+    <template v-if="text">{{ text }}</template>
+    <template v-else><slot /></template>
+    <!-- <span class="link-icon" :data-icon-pos="iconPos" v-html="iconMap[icon]" v-if="icon"></span> -->
+  </a>
 </template>
 
 <style lang="scss" scoped>
@@ -60,46 +60,46 @@ $primary-color: var(--docs-link-color);
 $primary-hover-color: var(--docs-link-hover-color);
 
 [data-link] {
-    display: inline !important;
+  display: inline !important;
 }
 
 // no underline
 .link-plain,
 .link-plain[data-link] {
-    @include link.plain($current-color, $primary-color);
+  @include link.plain($current-color, $primary-color);
 }
 
 // underline
 .link-underline,
 .link-underline[data-link] {
-    color: $current-color;
+  color: $current-color;
 
-    &:not(.link-always):not(.link-hover):not(.link-blink),
-    &.link-always {
-        @include link.underline("always", $current-color, $primary-color);
-    }
-    &.link-hover {
-        @include link.underline("hover", $current-color, $primary-color);
-    }
-    &.link-blink {
-        @include link.underline("blink", $current-color, $primary-color);
-    }
+  &:not(.link-always):not(.link-hover):not(.link-blink),
+  &.link-always {
+    @include link.underline("always", $current-color, $primary-color);
+  }
+  &.link-hover {
+    @include link.underline("hover", $current-color, $primary-color);
+  }
+  &.link-blink {
+    @include link.underline("blink", $current-color, $primary-color);
+  }
 }
 
 .link-color,
 .link-color[data-link] {
-    color: $primary-color !important;
-    &:hover {
-        color: $primary-hover-color !important;
-    }
+  color: $primary-color !important;
+  &:hover {
+    color: $primary-hover-color !important;
+  }
 }
 
 // icon
 .link-icon,
 .link-icon[data-link] {
-    @include link.icon-position("docs", "vp-docs");
-    @include font.register-font("docs", "vp-docs");
-    // @include font.apply-font("docs", "vp-docs");
-    @include link.generate-position-map(docs-map.$map);
+  @include link.icon-position("docs", "vp-docs");
+  @include font.register-font("docs", "vp-docs");
+  // @include font.apply-font("docs", "vp-docs");
+  @include link.generate-position-map(docs-map.$map);
 }
 </style>

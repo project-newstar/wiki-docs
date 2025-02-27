@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -24,12 +25,12 @@ XSS 的全称是跨站脚本攻击，存在这种攻击方式的原因是，用�
 
 ```typescript
 await page.setCookie({
-    name: 'FLAG',
-    value: process.env['FLAG'] || 'flag{test_flag}',
-    httpOnly: false,
-    path: '/',
-    domain: 'localhost:3000',
-    sameSite: 'Strict'
+  name: "FLAG",
+  value: process.env["FLAG"] || "flag{test_flag}",
+  httpOnly: false,
+  path: "/",
+  domain: "localhost:3000",
+  sameSite: "Strict",
 });
 ```
 
@@ -38,30 +39,32 @@ await page.setCookie({
 跟踪附件中的后端源码，`page.ts` 中的 `/box/:id` 路由，会渲染我们的输入：
 
 ```typescript
-router.get('/box/:id', async (ctx, next) => {
-    const letter = Memory.get(ctx.params['id'])
-    await ctx.render('letter', <TmplProps>{
-        page_title: 'PangBai 过家家 (5)',
-        sub_title: '查看信件',
-        id: ctx.params['id'],
-        hint_text: HINT_LETTERS[Math.floor(Math.random() * HINT_LETTERS.length)],
-        data: letter ? {
-            title: safe_html(letter.title),
-            content: safe_html(letter.content)
-        } : { title: TITLE_EMPTY, content: CONTENT_EMPTY },
-        error: letter ? null : '找不到该信件'
-    })
-})
+router.get("/box/:id", async (ctx, next) => {
+  const letter = Memory.get(ctx.params["id"]);
+  await ctx.render("letter", <TmplProps>{
+    page_title: "PangBai 过家家 (5)",
+    sub_title: "查看信件",
+    id: ctx.params["id"],
+    hint_text: HINT_LETTERS[Math.floor(Math.random() * HINT_LETTERS.length)],
+    data: letter
+      ? {
+          title: safe_html(letter.title),
+          content: safe_html(letter.content),
+        }
+      : { title: TITLE_EMPTY, content: CONTENT_EMPTY },
+    error: letter ? null : "找不到该信件",
+  });
+});
 ```
 
 但是输入的内容都经过了 `safe_html` 过滤
 
 ```typescript
 function safe_html(str: string) {
-    return str
-        .replace(/<.*>/igm, '')
-        .replace(/<\.*>/igm, '')
-        .replace(/<.*>.*<\/.*>/igm, '')
+  return str
+    .replace(/<.*>/gim, "")
+    .replace(/<\.*>/gim, "")
+    .replace(/<.*>.*<\/.*>/gim, "");
 }
 ```
 
@@ -74,9 +77,7 @@ function safe_html(str: string) {
 由于 `m` 的存在，匹配开始为行首，匹配结束为行尾，因此我们只需要把 `<` 和 `>` 放在不同行即可，例如：
 
 ```javascript
-<script
->alert(1)</script
->
+<script>alert(1)</script>
 ```
 
 此时我们就能执行恶意代码了。直接使用 `document.cookie` 即可获取到 Bot 的 Cookie。

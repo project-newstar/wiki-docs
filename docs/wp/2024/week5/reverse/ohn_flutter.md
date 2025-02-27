@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -372,7 +373,7 @@ puts(mm2);
 
 <Container type='tip'>
 
-上面代码中提到的 AES 解密，可参见 [CyberChef Recipe](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'12345678901234561234567890123456'%7D,%7B'option':'UTF8','string':'1234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=L29JSE95RGc2czZ5cVZkMjZBbllKNnUyWWpQY01oYXdUZTkzK0FKUEFVaXdHWk00S1d2WGpzaWIxdGNuWkhTbmdsYWFWcGJjT2FUdE5vTUNyNW9kMkE9PQ).
+上面代码中提到的 AES 解密，可参见 [CyberChef Recipe](<https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'12345678901234561234567890123456'%7D,%7B'option':'UTF8','string':'1234567890123456'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=L29JSE95RGc2czZ5cVZkMjZBbllKNnUyWWpQY01oYXdUZTkzK0FKUEFVaXdHWk00S1d2WGpzaWIxdGNuWkhTbmdsYWFWcGJjT2FUdE5vTUNyNW9kMkE9PQ>).
 </Container>
 
 **Ans:** `flag{U_@r4_F1u774r_r4_m@ster}`

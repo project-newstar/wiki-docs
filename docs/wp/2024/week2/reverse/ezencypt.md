@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # Ezencypt
@@ -94,6 +94,6 @@ int main() {
 }
 ```
 
-将 so 层解密后的数据<span data-desc>（输出）</span>用 CyberChef 进行 Base64 和 AES 解密就行了：[Recipe](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'IamEzEncryptGame'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)).
+将 so 层解密后的数据<span data-desc>（输出）</span>用 CyberChef 进行 Base64 和 AES 解密就行了：[Recipe](<https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'IamEzEncryptGame'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)>).
 
 ![CyberChef](/assets/images/wp/2024/week2/ezencrypt_4.png)

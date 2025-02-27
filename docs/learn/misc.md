@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | 快速入门 - NewStar CTF'
+titleTemplate: ":title | 快速入门 - NewStar CTF"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'
@@ -60,6 +61,7 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 编码不止以上这些，甚至会包括一些游戏或动漫作品中的编码（如提瓦特文字、魔女之旅文字等），需要通过刷题等途径自行积累。
 
 编码中常用的工具或网站如下：
+
 - <ElTag type="primary" size="small">网站</ElTag> <Link icon="external" theme="underline hover" href="https://gchq.github.io/CyberChef/">CyberChef</Link>
 - <ElTag type="primary" size="small">工具</ElTag> <Link icon="external" theme="underline hover" href="http://1o1o.xyz/">随波逐流</Link>
 - <ElTag type="primary" size="small">工具</ElTag> <Link icon="external" theme="underline hover" href="https://github.com/Leon406/ToolsFx">toolsFx</Link>
@@ -70,7 +72,7 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 集成工具和网站也不止这些，如果遇到好用的，记得收藏。
 
 ::: info
-一个使用 CyberChef 的例子：[Base 家族解密](https://gchq.github.io/CyberChef/#recipe=From_Base32('A-Z2-7%3D',true)From_Base92()From_Base45('0-9A-Z%20$%25*%2B%5C%5C-./:',true)From_Base85('!-u',true,'z')From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=SEpDRFU1MjZNNFdDU1VEVEtJVEZJM1RIRVVZVElNRFZONDVDU1NDM0pWS0dTVkpETFZTREtKWlJGVldYU1hTUkpKWlVBUlJJSUpUUzJQQ0pISjRFTTZLM0VOV0hVU0ROTkZSUzJaQjJJQkpHVzJCM0s1QUNRM0taTU5KWFNURFdHVVRUVzdKRkdKTEVTU1o3SUpIU1NQVEJLQTdYMlJSS05KNVNXWkI2TjVJRldKTERNNFhEU1hCRExBUldHS0NURVk9PT0&oenc=65001)
+一个使用 CyberChef 的例子：[Base 家族解密](<https://gchq.github.io/CyberChef/#recipe=From_Base32('A-Z2-7%3D',true)From_Base92()From_Base45('0-9A-Z%20$%25*%2B%5C%5C-./:',true)From_Base85('!-u',true,'z')From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=SEpDRFU1MjZNNFdDU1VEVEtJVEZJM1RIRVVZVElNRFZONDVDU1NDM0pWS0dTVkpETFZTREtKWlJGVldYU1hTUkpKWlVBUlJJSUpUUzJQQ0pISjRFTTZLM0VOV0hVU0ROTkZSUzJaQjJJQkpHVzJCM0s1QUNRM0taTU5KWFNURFdHVVRUVzdKRkdKTEVTU1o3SUpIU1NQVEJLQTdYMlJSS05KNVNXWkI2TjVJRldKTERNNFhEU1hCRExBUldHS0NURVk9PT0&oenc=65001>)
 :::
 
 ### 隐写
@@ -117,6 +119,7 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 - 掩码爆破
 
 ### 流量分析
+
 流量分析是Ｍisc 中重要的考点，也是 Web 安全分析、工业互联网安全中技能的重要组成部分。当黑客攻入你的计算机并被你发现后，你可能能够通过网络设备等留下的日志，查看过去发生的网络流量等情况，从而分析出黑客的行为。
 [Wireshark](https://www.wireshark.org/) 是流量分析中最重要的软件之一，你需要熟练地掌握它的使用。
 
@@ -129,7 +132,6 @@ Misc 突出的就是庞杂，涉猎内容十分广泛。但也正因如此，一
 - 蓝牙流量分析
 - TLS 加密流量分析
 - 工控流量分析
-
 
 ### 取证
 

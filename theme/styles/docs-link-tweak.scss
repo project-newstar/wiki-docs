@@ -2,22 +2,22 @@
 @use "@/assets/fonts/docs/map.scss" as docs-map;
 
 :root {
-    --docs-link-color: #117cee;
-    --docs-link-hover-color: #0a5dc7;
+  --docs-link-color: #117cee;
+  --docs-link-hover-color: #0a5dc7;
 }
 
 .dark {
-    --docs-link-color: #55bde2;
-    --docs-link-hover-color: #bdebfc;
+  --docs-link-color: #55bde2;
+  --docs-link-hover-color: #bdebfc;
 }
 
 .vp-doc a:not([data-link]),
 .vp-doc a[data-link="false"] {
-    &:not(.header-anchor) {
-        @include link.underline_blink(currentColor, var(--docs-link-color));
-        &[href*="://"]
-        {
-            @include link.icon_with_name("docs", "vp-docs", docs-map.$map, "external", "right");
-        }
+  &:not(.header-anchor) {
+    @include link.underline_blink(currentColor, var(--docs-link-color));
+    &[href*="://"]
+    {
+      @include link.icon_with_name("docs", "vp-docs", docs-map.$map, "external", "right");
     }
+  }
 }

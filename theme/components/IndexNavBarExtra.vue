@@ -1,33 +1,23 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue'
-import VPMenuLink from 'vitepress/dist/client/theme-default/components/VPMenuLink.vue'
-import VPSwitchAppearance from 'vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue'
-import VPSocialLinks from 'vitepress/dist/client/theme-default/components/VPSocialLinks.vue'
-import { useData } from 'vitepress'
-import { useLangs } from 'vitepress/dist/client/theme-default/composables/langs.js'
+import { computed } from "vue";
+import VPFlyout from "vitepress/dist/client/theme-default/components/VPFlyout.vue";
+import VPMenuLink from "vitepress/dist/client/theme-default/components/VPMenuLink.vue";
+import VPSwitchAppearance from "vitepress/dist/client/theme-default/components/VPSwitchAppearance.vue";
+import VPSocialLinks from "vitepress/dist/client/theme-default/components/VPSocialLinks.vue";
+import { useData } from "vitepress";
+import { useLangs } from "vitepress/dist/client/theme-default/composables/langs.js";
 
-const { site, theme } = useData()
-const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
+const { site, theme } = useData();
+const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 
 const hasExtraContent = computed(
-  () =>
-    (localeLinks.value.length && currentLang.value.label) ||
-    site.value.appearance ||
-    theme.value.socialLinks
-)
+  () => (localeLinks.value.length && currentLang.value.label) || site.value.appearance || theme.value.socialLinks
+);
 </script>
 
 <template>
-  <VPFlyout
-    v-if="hasExtraContent"
-    class="VPNavBarExtra"
-    label="extra navigation"
-  >
-    <div
-      v-if="localeLinks.length && currentLang.label"
-      class="group translations"
-    >
+  <VPFlyout v-if="hasExtraContent" class="VPNavBarExtra" label="extra navigation">
+    <div v-if="localeLinks.length && currentLang.label" class="group translations">
       <p class="trans-title">{{ currentLang.label }}</p>
 
       <template v-for="locale in localeLinks" :key="locale.link">
@@ -35,17 +25,10 @@ const hasExtraContent = computed(
       </template>
     </div>
 
-    <div
-      v-if="
-        site.appearance &&
-        site.appearance !== 'force-dark' &&
-        site.appearance !== 'force-auto'
-      "
-      class="group"
-    >
+    <div v-if="site.appearance && site.appearance !== 'force-dark' && site.appearance !== 'force-auto'" class="group">
       <div class="item appearance">
         <p class="label">
-          {{ theme.darkModeSwitchLabel || 'Appearance' }}
+          {{ theme.darkModeSwitchLabel || "Appearance" }}
         </p>
         <div class="appearance-action">
           <VPSwitchAppearance />

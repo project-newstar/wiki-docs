@@ -3,159 +3,157 @@
 @use "@/assets/fonts/package.scss" as font;
 
 @mixin plain($color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    text-decoration: none;
-    color: $color;
-    font-weight: inherit;
+  text-decoration: none;
+  color: $color;
+  font-weight: inherit;
 
-    &:hover {
-        color: $hover;
-    }
+  &:hover {
+    color: $hover;
+  }
 }
 
 @mixin underline_always($color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    @include plain($color, $hover);
+  @include plain($color, $hover);
 
-    @include underline-bg-color(currentColor, transparent);
-    @include underline-bg-width(100%, 0%);
-    @include underline-bg-posX(0%, 100%);
+  @include underline-bg-color(currentColor, transparent);
+  @include underline-bg-width(100%, 0%);
+  @include underline-bg-posX(0%, 100%);
 }
 
 @mixin underline_hover($color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    // @include underline_always($color, $hover);
-    @include plain($color, $hover);
+  // @include underline_always($color, $hover);
+  @include plain($color, $hover);
 
-    transition: color ease-in-out 0.25s, background-size ease-in-out 0.25s;
-    @include underline-bg-color(currentColor, transparent);
-    @include underline-bg-width(0%, 100%);
-    @include underline-bg-posX(100%, 0%);
+  transition:
+    color ease-in-out 0.25s,
+    background-size ease-in-out 0.25s;
+  @include underline-bg-color(currentColor, transparent);
+  @include underline-bg-width(0%, 100%);
+  @include underline-bg-posX(100%, 0%);
 
-    &:hover,
-    &:active {
-        @include underline-bg-width(100%, 0%);
-        @include underline-bg-posX(0%, 100%);
-    }
+  &:hover,
+  &:active {
+    @include underline-bg-width(100%, 0%);
+    @include underline-bg-posX(0%, 100%);
+  }
 }
 
 @mixin underline_blink($color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    // @include underline_always($color, $hover);
-    @include plain($color, $hover);
+  // @include underline_always($color, $hover);
+  @include plain($color, $hover);
 
-    transition: color ease-in-out 0.25s, background-color ease-in-out 0.25s;
-    @include underline-bg-color(currentColor, transparent);
-    @include underline-bg-width(100%, 0%);
-    @include underline-bg-posX(0%, 100%);
+  transition:
+    color ease-in-out 0.25s,
+    background-color ease-in-out 0.25s;
+  @include underline-bg-color(currentColor, transparent);
+  @include underline-bg-width(100%, 0%);
+  @include underline-bg-posX(0%, 100%);
 
-    &:hover,
-    &:active {
-        animation: underline-blink 0.5s ease-in-out;
+  &:hover,
+  &:active {
+    animation: underline-blink 0.5s ease-in-out;
+  }
+
+  @keyframes underline-blink {
+    0% {
+      @include underline-bg-width(100%, 0%);
+      @include underline-bg-posX(100%, 0%);
     }
 
-    @keyframes underline-blink {
-        0% {
-            @include underline-bg-width(100%, 0%);
-            @include underline-bg-posX(100%, 0%);
-        }
-
-        50% {
-            @include underline-bg-width(0%, 100%);
-            @include underline-bg-posX(100%, 0%);
-        }
-
-        51% {
-            @include underline-bg-width(0%, 100%);
-            @include underline-bg-posX(0%, 100%);
-        }
-
-        100% {
-            @include underline-bg-width(100%, 0%);
-            @include underline-bg-posX(0%, 100%);
-        }
+    50% {
+      @include underline-bg-width(0%, 100%);
+      @include underline-bg-posX(100%, 0%);
     }
+
+    51% {
+      @include underline-bg-width(0%, 100%);
+      @include underline-bg-posX(0%, 100%);
+    }
+
+    100% {
+      @include underline-bg-width(100%, 0%);
+      @include underline-bg-posX(0%, 100%);
+    }
+  }
 }
 
 @mixin underline($style: "always", $color: var(--vp-c-brand-1), $hover: var(--vp-c-brand-2)) {
-    @if $style =="always" {
-        @include underline_always($color, $hover);
-    }
-
-    @else if $style =="hover" {
-        @include underline_hover($color, $hover);
-    }
-
-    @else if $style =="blink" {
-        @include underline_blink($color, $hover);
-    }
+  @if $style == "always" {
+    @include underline_always($color, $hover);
+  } @else if $style == "hover" {
+    @include underline_hover($color, $hover);
+  } @else if $style == "blink" {
+    @include underline_blink($color, $hover);
+  }
 }
 
 /** Icons */
 
 @mixin _inject_icon_style($name, $family) {
-    display: inline;
-    color: inherit !important;
-    background: none !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    vertical-align: middle;
-    font-size: 0.85em;
+  display: inline;
+  color: inherit !important;
+  background: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  font-size: 0.85em;
 }
 
 @mixin icon_with_name($name, $family, $icon_map, $icon: "", $position: "right") {
-    @if $icon !="" and map-has-key($icon_map, $icon) {
-        &::after {
-            content: map-get($icon_map, $icon);
+  @if $icon != "" and map-has-key($icon_map, $icon) {
+    &::after {
+      content: map-get($icon_map, $icon);
 
-            @if $position =="right" {
-                margin-left: 0.25rem;
-                margin-right: 0.1rem;
-                @include _inject_icon_style($name, $family);
-                @include font.register-font($name, $family);
-                @include font.inject-font($family);
-            }
-
-            @else if $position =="left" {
-                margin-left: 0.1rem;
-                margin-right: 0.25rem;
-                @include _inject_icon_style($name, $family);
-                @include font.register-font($name, $family);
-                @include font.inject-font($family);
-            }
-        }
+      @if $position == "right" {
+        margin-left: 0.25rem;
+        margin-right: 0.1rem;
+        @include _inject_icon_style($name, $family);
+        @include font.register-font($name, $family);
+        @include font.inject-font($family);
+      } @else if $position == "left" {
+        margin-left: 0.1rem;
+        margin-right: 0.25rem;
+        @include _inject_icon_style($name, $family);
+        @include font.register-font($name, $family);
+        @include font.inject-font($family);
+      }
     }
+  }
 }
 
 @mixin icon-position($name, $family) {
-    &[data-icon-pos="left"]::before {
-        width: unset !important;
-        height: unset !important;
-        margin-left: 0.1rem !important;
-        margin-right: 0.25rem !important;
-        @include _inject_icon_style($name, $family);
-        @include font.register-font($name, $family);
-        @include font.inject-font($family);
-    }
+  &[data-icon-pos="left"]::before {
+    width: unset !important;
+    height: unset !important;
+    margin-left: 0.1rem !important;
+    margin-right: 0.25rem !important;
+    @include _inject_icon_style($name, $family);
+    @include font.register-font($name, $family);
+    @include font.inject-font($family);
+  }
 
-    &[data-icon-pos="right"]::after {
-        width: unset !important;
-        height: unset !important;
-        margin-left: 0.25rem !important;
-        margin-right: 0.1rem !important;
-        @include _inject_icon_style($name, $family);
-        @include font.register-font($name, $family);
-        @include font.inject-font($family);
-    }
+  &[data-icon-pos="right"]::after {
+    width: unset !important;
+    height: unset !important;
+    margin-left: 0.25rem !important;
+    margin-right: 0.1rem !important;
+    @include _inject_icon_style($name, $family);
+    @include font.register-font($name, $family);
+    @include font.inject-font($family);
+  }
 }
 
 @mixin generate-position-map($map: ()) {
-    @each $key, $value in $map {
-        &.icon-#{$key}[data-icon-pos="right"]::after {
-            content: $value;
-        }
-
-        &.icon-#{$key}[data-icon-pos="left"]::before {
-            content: $value;
-        }
+  @each $key, $value in $map {
+    &.icon-#{$key}[data-icon-pos="right"]::after {
+      content: $value;
     }
+
+    &.icon-#{$key}[data-icon-pos="left"]::before {
+      content: $value;
+    }
+  }
 }

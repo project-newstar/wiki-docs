@@ -1,7 +1,8 @@
 ---
 title: WriteUp
-titleTemplate: ':title - NewStar CTF 2024'
+titleTemplate: ":title - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 import Link from '@/components/docs/Link.vue'

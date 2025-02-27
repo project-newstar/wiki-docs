@@ -1,31 +1,33 @@
 @font-face {
-    font-family: "vp-docs";
-    src: url("./font.eot?inpve4");
-    src: url("./font.eot?inpve4#iefix") format("embedded-opentype"),
-        url("./font.ttf?inpve4") format("truetype"), url("./font.woff?inpve4") format("woff"),
-        url("./font.svg?inpve4#icomoon") format("svg");
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+  font-family: "vp-docs";
+  src: url("./font.eot?inpve4");
+  src:
+    url("./font.eot?inpve4#iefix") format("embedded-opentype"),
+    url("./font.ttf?inpve4") format("truetype"),
+    url("./font.woff?inpve4") format("woff"),
+    url("./font.svg?inpve4#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 .icon--docs[class^="icon-"],
 .icon--docs[class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: "vp-docs" !important;
-    speak: never;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    color: currentColor;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "vp-docs" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: currentColor;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-external:before {
-    content: "\1f517";
+  content: "\1f517";
 }

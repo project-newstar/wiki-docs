@@ -1,5 +1,5 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
 
 # PlzDebugMe
@@ -11,15 +11,15 @@ titleTemplate: ':title | WriteUp - NewStar CTF 2024'
 ![jadx 右键](/assets/images/wp/2024/week4/plzdebugme_1.png)
 
 ```javascript
-Java.perform(function(){
-let MainActivity = Java.use("work.pangbai.debugme.MainActivity");
-MainActivity["isEmu"].implementation = function () {
+Java.perform(function () {
+  let MainActivity = Java.use("work.pangbai.debugme.MainActivity");
+  MainActivity["isEmu"].implementation = function () {
     console.log(`MainActivity.isEmu is called`);
-   // let result = this["isEmu"]();
-   // console.log(`MainActivity.isEmu result=${result}`);
+    // let result = this["isEmu"]();
+    // console.log(`MainActivity.isEmu result=${result}`);
     return 0;
-};
-})
+  };
+});
 // 返回 false 去掉虚拟机检测
 ```
 
@@ -52,10 +52,10 @@ if (MainActivity$$ExternalSyntheticBackport0.m(valueOf)) {
 
 ```javascript
 MainActivity["g4tk4y"].implementation = function () {
-    console.log(`MainActivity.g4tk4y is called`);
-    let result = this["g4tk4y"]();
-    console.log(`MainActivity.g4tk4y result=${result}`);
-    return result;
+  console.log(`MainActivity.g4tk4y is called`);
+  let result = this["g4tk4y"]();
+  console.log(`MainActivity.g4tk4y result=${result}`);
+  return result;
 };
 ```
 
@@ -107,6 +107,6 @@ int main()
 // XMvFLgfEmEZFtNLkyupZSOEncBR/BVaqzil47iBYYFE=
 ```
 
-拿 key 和密文去 CyberChef 解密即可：[Recipe](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Blowfish_Decrypt(%7B'option':'UTF8','string':'jRLgC/Pi'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw')&input=WE12RkxnZkVtRVpGdE5Ma3l1cFpTT0VuY0JSL0JWYXF6aWw0N2lCWVlGRT0).
+拿 key 和密文去 CyberChef 解密即可：[Recipe](<https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Blowfish_Decrypt(%7B'option':'UTF8','string':'jRLgC/Pi'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw')&input=WE12RkxnZkVtRVpGdE5Ma3l1cFpTT0VuY0JSL0JWYXF6aWw0N2lCWVlGRT0>).
 
 **Ans:** `flag{U_@r4_r4v4r54_m@s74r}`

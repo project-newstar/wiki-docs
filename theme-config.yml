@@ -19,7 +19,7 @@ nav:
     activeMatch: /archive/
 
 sidebar:
-  '/learn/':
+  "/learn/":
     - text: 写在前面
       link: /learn/
     - text: 开始
@@ -27,29 +27,29 @@ sidebar:
 
     - text: 各方向入门介绍
       items:
-      - text: Web 网络攻防
-        link: /learn/web
-      - text: Crypto 密码学
-        link: /learn/crypto
-      - text: Reverse 逆向工程
-        link: /learn/reverse
-      - text: Pwn 二进制安全
-        link: /learn/pwn
-      - text: Misc 杂项
-        link: /learn/misc
+        - text: Web 网络攻防
+          link: /learn/web
+        - text: Crypto 密码学
+          link: /learn/crypto
+        - text: Reverse 逆向工程
+          link: /learn/reverse
+        - text: Pwn 二进制安全
+          link: /learn/pwn
+        - text: Misc 杂项
+          link: /learn/misc
 
     - text: 参考教程
       items:
-      - text: VSCode Python 环境配置
-        link: /learn/vscode-python
-      - text: 获取 Linux 发行版
-        link: /learn/get-linux
-      - text: 切换软件源
-        link: /learn/change-software-source
-      - text: Pwn 环境配置
-        link: /learn/configure-pwn
-      - text: Netcat 使用指南
-        link: /learn/nc
+        - text: VSCode Python 环境配置
+          link: /learn/vscode-python
+        - text: 获取 Linux 发行版
+          link: /learn/get-linux
+        - text: 切换软件源
+          link: /learn/change-software-source
+        - text: Pwn 环境配置
+          link: /learn/configure-pwn
+        - text: Netcat 使用指南
+          link: /learn/nc
 
     - text: Q&A
       link: /learn/qa
@@ -57,7 +57,7 @@ sidebar:
     - text: 贡献者
       link: /learn/credits
 
-  '/guide/2024/':
+  "/guide/2024/":
     - text: 赛事信息
       link: /guide/2024/
     - text: 宣传
@@ -77,7 +77,7 @@ sidebar:
     - text: 花絮文案
       link: /guide/2024/copywriter
 
-  '/wp/2024/':
+  "/wp/2024/":
     - text: 前言
       link: /wp/2024/
     - text: Week 1

@@ -1,7 +1,7 @@
 ---
 layout: home
 title: WriteUp
-titleTemplate: ':title - NewStar CTF'
+titleTemplate: ":title - NewStar CTF"
 
 hero:
   name: WriteUp

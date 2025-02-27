@@ -1,6 +1,7 @@
 ---
-titleTemplate: ':title | WriteUp - NewStar CTF 2024'
+titleTemplate: ":title | WriteUp - NewStar CTF 2024"
 ---
+
 <script setup>
 import Container from '@/components/docs/Container.vue'
 </script>
@@ -28,27 +29,29 @@ JavaScript 是现代网络开发中最重要的编程语言之一，它的历史
 
 ```html
 <script>
-    async function revealFlag(className) {
-        try {
-            const response = await fetch(`/api/flag/${className}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            if (response.ok) {
-                const data = await response.json();
-                console.log(`恭喜你！你获得了第二部分的 flag: ${data.flag}\n……\n时光荏苒，你成长了很多，也发生了一些事情。去看看吧：/${data.nextLevel}`);
-            } else {
-                console.error('请求失败，请检查输入或服务器响应。');
-            }
-        } catch (error) {
-            console.error('请求过程中出现错误:', error);
-        }
+  async function revealFlag(className) {
+    try {
+      const response = await fetch(`/api/flag/${className}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const data = await response.json();
+        console.log(
+          `恭喜你！你获得了第二部分的 flag: ${data.flag}\n……\n时光荏苒，你成长了很多，也发生了一些事情。去看看吧：/${data.nextLevel}`
+        );
+      } else {
+        console.error("请求失败，请检查输入或服务器响应。");
+      }
+    } catch (error) {
+      console.error("请求过程中出现错误:", error);
     }
+  }
 
-    // 控制台提示
-    console.log("你似乎对这门叫做4cqu1siti0n的课很好奇？那就来看看控制台吧！");
+  // 控制台提示
+  console.log("你似乎对这门叫做4cqu1siti0n的课很好奇？那就来看看控制台吧！");
 </script>
 ```
 
@@ -62,40 +65,40 @@ JavaScript 是现代网络开发中最重要的编程语言之一，它的历史
 
 ```html
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('seal_him');
-        const stateElement = document.getElementById('state');
-        const messageElement = document.getElementById('message');
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("seal_him");
+    const stateElement = document.getElementById("state");
+    const messageElement = document.getElementById("message");
 
-        form.addEventListener('submit', async function (event) {
-            event.preventDefault();
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
+      if (stateElement.textContent.trim() !== "解封") {
+        // [!code highlight]
+        messageElement.textContent = "如何是好？";
+        return;
+      }
 
-            if (stateElement.textContent.trim() !== '解封') { // [!code highlight]
-                messageElement.textContent = '如何是好？';
-                return;
-            }
-
-            try {
-                const response = await fetch('/api/flag/s34l', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ csrf_token: document.getElementById('csrf_token').value })
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    messageElement.textContent = `第三部分Flag: ${data.flag}, 你解救了五条悟！下一关: /${data.nextLevel || '无'}`;
-                } else {
-                    messageElement.textContent = '请求失败，请重试。';
-                }
-            } catch (error) {
-                messageElement.textContent = '请求过程中出现错误，请重试。';
-            }
+      try {
+        const response = await fetch("/api/flag/s34l", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ csrf_token: document.getElementById("csrf_token").value }),
         });
+
+        if (response.ok) {
+          const data = await response.json();
+          messageElement.textContent = `第三部分Flag: ${data.flag}, 你解救了五条悟！下一关: /${data.nextLevel || "无"}`;
+        } else {
+          messageElement.textContent = "请求失败，请重试。";
+        }
+      } catch (error) {
+        messageElement.textContent = "请求过程中出现错误，请重试。";
+      }
     });
+  });
 </script>
 ```
 

@@ -1,5 +1,6 @@
 ---
 titleTemplate: ":title | 参考文档 - NewStar CTF 2024"
+comments: false
 ---
 
 <script setup>

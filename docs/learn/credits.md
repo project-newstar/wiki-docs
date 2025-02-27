@@ -1,5 +1,6 @@
 ---
 titleTemplate: ":title | 快速入门 - NewStar CTF"
+comments: false
 ---
 
 <script setup>

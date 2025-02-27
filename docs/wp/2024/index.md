@@ -1,6 +1,7 @@
 ---
 title: WriteUp
 titleTemplate: ":title - NewStar CTF 2024"
+comments: false
 ---
 
 <script setup>

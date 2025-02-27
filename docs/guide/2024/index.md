@@ -2,6 +2,7 @@
 title: 赛事信息
 titleTemplate: ":title - NewStar CTF 2024"
 aside: false
+comments: false
 ---
 
 <script setup>

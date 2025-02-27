@@ -7,9 +7,11 @@ import { nextTick, provide } from "vue";
 import LayoutIndex from "@/layouts/LayoutIndex.vue";
 import "element-plus/theme-chalk/dark/css-vars.css";
 
+import Comments from "./components/Comments.vue";
+
 const { isDark, frontmatter } = useData();
 
-const DefaultLayoutList = ["home", "page", "docs", false, undefined];
+// const DefaultLayoutList = ["home", "page", "docs", false, undefined];
 
 // Theme transition
 
@@ -44,11 +46,15 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
 </script>
 
 <template>
-  <template v-if="DefaultLayoutList.includes(frontmatter.layout)">
-    <DefaultTheme.Layout />
+  <template v-if="frontmatter.layout === 'index'">
+    <LayoutIndex />
   </template>
   <template v-else>
-    <LayoutIndex v-if="frontmatter.layout === 'index'" />
+    <DefaultTheme.Layout>
+      <template #doc-after>
+        <Comments />
+      </template>
+    </DefaultTheme.Layout>
   </template>
 </template>
 

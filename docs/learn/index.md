@@ -39,8 +39,7 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 
 <ul>
   <li v-for='(value, key) in GameConf'>
-      <ElTag :type="value[0]" size="small">{{ value[1] }}</ElTag>
-      <Link icon="external" theme="underline hover" :href="value[3]" :text="value[2]" />
+      <ElTag :type="value[0]" size="small">{{ value[1] }}</ElTag> <Link icon="external" theme="underline hover" :href="value[3]" :text="value[2]" />
   </li>
   <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://www.ctfhub.com/">CTFHub</Link> </li>
   <li> <ElTag type="primary" size="small">平台</ElTag> <Link icon="external" theme="underline hover" href="https://ctf.show/">CTFSHOW</Link> </li>

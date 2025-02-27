@@ -3,6 +3,7 @@
 .idea/
 .git/
 .github/
+.cache/
 node_modules/
 build/
 dist/

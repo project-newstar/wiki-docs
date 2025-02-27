@@ -21,7 +21,7 @@ export default defineConfig({
     <Partial<DefaultTheme.Config>>{
       siteTitle: "NewStar CTF",
 
-      socialLinks: [{ icon: "github", link: "https://github.com/Cnily03/newstar-docs" }],
+      socialLinks: [{ icon: "github", link: "https://github.com/lumishell/newstar-docs" }],
 
       search: {
         provider: "local",

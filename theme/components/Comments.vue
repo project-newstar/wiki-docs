@@ -21,7 +21,7 @@ const p2k = (str: string) => {
     class="giscus comments-box"
     :key="p2k(page.filePath)"
     :data-key="p2k(page.filePath)"
-    v-if="frontmatter.comments !== false"
+    v-if="!!site.themeConfig.comments && frontmatter.comments !== false"
   >
     <Giscus
       repo="lumishell/newstar-docs"

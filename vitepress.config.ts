@@ -40,7 +40,9 @@ export default ({ mode }: { mode: string }) => {
 
         footer: {
           copyright: "Copyright © NewStar CTF",
-          message: `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">浙ICP备2023000643号-8</a>`,
+          message: env.VITE_ICP_RECORD
+            ? `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">${env.VITE_ICP_RECORD}</a>`
+            : undefined,
         },
 
         returnToTopLabel: "返回顶部",

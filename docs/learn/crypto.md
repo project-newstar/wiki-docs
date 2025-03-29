@@ -203,7 +203,7 @@ $$ \varphi = (p-1)(q-1) $$
 
 $$ n = p \times q $$
 
-1. 大小关系
+6. 大小关系
 
 $$
 \begin{array}{c}

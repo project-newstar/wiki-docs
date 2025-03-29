@@ -24,7 +24,7 @@ export default ({ mode }: { mode: string }) => {
       <Partial<DefaultTheme.Config>>{
         siteTitle: "NewStar CTF",
 
-        socialLinks: [{ icon: "github", link: "https://github.com/lumishell/newstar-docs" }],
+        socialLinks: [{ icon: "github", link: "https://github.com/lumisudo/newstar-docs" }],
 
         search: {
           provider: "local",

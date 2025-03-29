@@ -6,6 +6,8 @@ titleTemplate: ":title | 快速入门 - NewStar CTF"
 
 该教程将以 VMware Workstation Pro 为例，介绍如何在虚拟机中运行 Linux 发行版操作系统。
 
+如果你使用的是 Windows 操作系统，你可以尝试[安装 WSL](/learn/install-wsl)，它是一个更轻量级的虚拟机，适合日常开发和轻度使用。
+
 ## 下载和安装 VMware Workstation Pro
 
 ::: tip

@@ -44,14 +44,14 @@ sidebar:
           link: /learn/vscode-python
         - text: 获取 Linux 发行版
           link: /learn/get-linux
+        - text: WSL 安装教程
+          link: /learn/install-wsl
         - text: 切换软件源
           link: /learn/change-software-source
         - text: Pwn 环境配置
           link: /learn/configure-pwn
         - text: Netcat 使用指南
           link: /learn/nc
-        - text: WSL 安装教程
-          link: /learn/install-wsl
 
     - text: Q&A
       link: /learn/qa

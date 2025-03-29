@@ -66,7 +66,7 @@ CTF 全称 Capture the Flag，译为「夺旗赛」，是一种比赛形式。�
 - 必应（Bing）国际版
 - Google 搜索
 - DuckDuckGo
-- 带有联网或搜索功能的 AI（Bing Copilot、SearchGPT）
+- 带有联网或搜索功能的 AI
 
 此外，BiliBili 也是不错的选择。
 

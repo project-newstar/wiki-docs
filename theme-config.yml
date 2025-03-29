@@ -50,6 +50,8 @@ sidebar:
           link: /learn/configure-pwn
         - text: Netcat 使用指南
           link: /learn/nc
+        - text: WSL 安装教程
+          link: /learn/install-wsl
 
     - text: Q&A
       link: /learn/qa

@@ -118,34 +118,34 @@ x = c % p // 2 # [!code highlight]
 对于学习 Python，了解以下知识点即可（摘自 [Python 基础教程 | 菜鸟教程](https://www.runoob.com/python)）。
 
 <ElCollapse class='vp-collapse' v-model='openCollapse'>
-  <ElCollapseItem name='acknowledge-list'>
-  <template #title>
-    <strong>知识点列表</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
-  </template>
+<ElCollapseItem name='acknowledge-list'>
+<template #title>
+  <strong>知识点列表</strong><span data-desc v-text='openCollapse.includes("acknowledge-list") ? "（点此收起）" : "（点此展开）"'></span>
+</template>
 
-  - Python 基础教程
-  - Python 简介
-  - Python 环境搭建
-  - Python 中文编码
-  - Python 基础语法
-  - Python 变量类型
-  - Python 运算符
-  - Python 条件语句
-  - Python 循环语句
-  - Python While 循环语句
-  - Python for 循环语句
-  - Python 循环嵌套
-  - Python break 语句
-  - Python continue 语句
-  - Python pass 语句
-  - Python Number（数组）
-  - Python 字符串
-  - Python List（列表）
-  - Python 日期和时间
-  - Python 函数
-  - Python 模块
+- Python 基础教程
+- Python 简介
+- Python 环境搭建
+- Python 中文编码
+- Python 基础语法
+- Python 变量类型
+- Python 运算符
+- Python 条件语句
+- Python 循环语句
+- Python While 循环语句
+- Python for 循环语句
+- Python 循环嵌套
+- Python break 语句
+- Python continue 语句
+- Python pass 语句
+- Python Number（数组）
+- Python 字符串
+- Python List（列表）
+- Python 日期和时间
+- Python 函数
+- Python 模块
 
-  </ElCollapseItem>
+</ElCollapseItem>
 </ElCollapse>
 
 ::: tip 撰稿人注

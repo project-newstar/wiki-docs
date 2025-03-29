@@ -38,5 +38,9 @@
   {
     "section": "Netcat 使用指南",
     "contributors": ["yixinBC"]
+  },
+  {
+    "section": "WSL 安装教程",
+    "contributors": ["云梦"]
   }
 ]

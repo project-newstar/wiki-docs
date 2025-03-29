@@ -4,6 +4,11 @@ titleTemplate: ":title | 快速入门 - NewStar CTF"
 
 # 更换软件源
 
+::: info 更好的选择
+推荐前往 [MirrorZ Help](https://mirrors.help/)，查看全部的最新的镜像软件源列表和使用方法。
+
+:::
+
 本文以 Ubuntu 操作系统为例，介绍如何更换软件源。
 
 ## 更改软件源文件

@@ -84,7 +84,7 @@ url = 'http://ip:port'
 result = ''
 for i in range(1,100):
     print(f'[+] bruting at {i}')
-    for c in string.ascii_letters + string.digits + ',_-{}':
+    for c in string.printable: # 由于 flag 中可能会出现除 {}_-, 之外的字符，如 @，故使用 printable 字符表更加合适。
         time.sleep(0.01) # 限制速率，防止请求过快
 
         print('[+] trying:', c)

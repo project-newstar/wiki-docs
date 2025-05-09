@@ -24,7 +24,7 @@ const p2k = (str: string) => {
     v-if="!!site.themeConfig.comments && frontmatter.comments !== false"
   >
     <Giscus
-      repo="lumisudo/newstar-docs"
+      repo="project-newstar/wiki-docs"
       repoId="R_kgDOMqjJaA"
       category="Comments"
       categoryId="DIC_kwDOMqjJaM4CnZZo"

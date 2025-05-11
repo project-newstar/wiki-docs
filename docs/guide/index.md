@@ -12,4 +12,8 @@ features:
   - title: "NewStar CTF 2024"
     # details: '2024.9.27 - 2024.11.3'
     link: /guide/2024/
+  - title: "NewStar CTF 2023"
+    link: /guide/2023/
+  - title: "NewStar CTF 2022"
+    link: /guide/2022/
 ---

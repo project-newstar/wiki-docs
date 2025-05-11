@@ -79,6 +79,12 @@ sidebar:
     - text: 花絮文案
       link: /guide/2024/copywriter
 
+  "/guide/2023/":
+    - text: 赛事信息
+      link: /guide/2023/
+    - text: 宣传
+      link: /guide/2023/promotion
+
   "/wp/2024/":
     - text: 前言
       link: /wp/2024/

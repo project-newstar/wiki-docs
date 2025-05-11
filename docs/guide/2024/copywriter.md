@@ -1,5 +1,5 @@
 ---
-titleTemplate: ":title | 参考文档 - NewStar CTF 2024"
+titleTemplate: ":title | NewStar CTF 2024"
 ---
 
 <script setup>

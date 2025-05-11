@@ -7,7 +7,7 @@ titleTemplate: ":title"
 
 information: |
   <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2023</span>
-  2023.9.25 - 2023.10.29
+  2023.9.25 - 2023.11.5
 
 actions:
   - # - usevue: index

@@ -16,8 +16,8 @@ actions:
       size: large
       click: training
 
-  - - text: 快速入门
-      link: /learn/
+  - - text: 赛事信息
+      link: /guide/2024/
       type: secondary
 
     - text: 官方题解

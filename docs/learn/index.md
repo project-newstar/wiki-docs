@@ -10,7 +10,7 @@ import { ElTag } from 'element-plus'
 import 'element-plus/es/components/tag/style/css'
 
 const GameTime = {
-  'MoeCTF': ["西电 MoeCTF", new Date('2024-08-10T09:00:00+08:00'), new Date('2024-10-10T21:00:00+08:00'), "https://ctf.xidian.edu.cn/games/10"],
+  'MoeCTF': ["西电 MoeCTF", new Date('2025-08-09T09:00:00+08:00'), new Date('2025-10-09T17:00:00+08:00'), "https://ctf.xidian.edu.cn/games/22"],
   "BaseCTF": ["BaseCTF", new Date('2024-08-15T09:00:00+08:00'), new Date('2024-09-15T21:00:00+08:00'), "https://basectf.fun/"],
   "0xGame": ["南邮 0xGame", new Date('2024-10-06T09:00:00+08:00'), new Date('2024-11-03T21:00:00+08:00'), "https://0xgame.exp10it.cn/"],
 }

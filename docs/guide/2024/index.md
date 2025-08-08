@@ -72,7 +72,7 @@ NewStar CTF 2024 是由来自 13 所高校的战队联合发起的新生入门�
 
 公开赛道 QQ 群：1169651901<span data-desc>（①群）</span>、806733185<span data-desc>（②群）</span>
 
-校内赛道 QQ 群：994951789<span data-desc>（各校赛事群请联系选手所在院校赛事负责人）</span>
+校内赛道 QQ 群：<span data-desc>（各校赛事群请联系选手所在院校赛事负责人）</span>
 
 联系邮箱：<Link theme="plain" href="mailto:newstar@openctf.net" text="newstar@openctf.net" />
 

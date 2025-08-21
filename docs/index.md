@@ -3,7 +3,7 @@
 layout: index
 
 title: NewStar CTF
-titleTemplate: ":title"
+titleTemplate: "文档 - :title"
 
 information: |
   <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2025</span>

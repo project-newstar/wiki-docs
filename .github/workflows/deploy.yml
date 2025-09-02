@@ -8,11 +8,6 @@ on:
 
   # manual trigger
   workflow_dispatch:
-    inputs:
-      cosdelete:
-        description: 'Delete previous COS resources'
-        required: false
-        default: ''
 
 permissions:
   contents: read
@@ -43,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: lts/*
           cache: pnpm
 
       - name: Setup Pages
@@ -55,49 +50,16 @@ jobs:
       - name: Build
         run: pnpm docs:build
 
-      - name: Upload artifact web-dist
-        uses: actions/upload-artifact@v4
-        with:
-          name: web-dist
-          path: dist
+      # - name: Upload artifact web-dist
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: web-dist
+      #     path: dist
 
       - name: Upload artifact github-pages
         uses: actions/upload-pages-artifact@v4
         with:
           path: dist
-
-  deploy-qcloudcos:
-    name: Deploy (QCloud COS)
-    runs-on: ubuntu-latest
-    needs: build
-    # download the artifact
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: web-dist
-          path: dist
-
-      - name: Install coscmd
-        run: |
-          sudo pip install coscmd
-
-      - name: Deploy to Tencent COS
-        env:
-          SECRET_ID: ${{ secrets.TENCENT_SECRET_ID }}
-          SECRET_KEY: ${{ secrets.TENCENT_SECRET_KEY }}
-          BUCKET: ${{ vars.TENCENT_COS_BUCKET }}
-          REGION: ${{ vars.TENCENT_COS_REGION }}
-        run: |
-          delete_opt=''
-          input_cosdelete='${{ github.event.inputs.cosdelete }}'
-          if [ "$input_cosdelete" = "yes" ] || [ "$input_cosdelete" = "true" ] || [ "$input_cosdelete" = "1" ]; then
-            delete_opt='--delete'
-          fi
-          coscmd config -a ${SECRET_ID} -s ${SECRET_KEY} -b ${BUCKET} -r ${REGION}
-          cd ./dist
-          rm -rf .git*
-          coscmd upload -rs $delete_opt ./ / -f
 
   deploy-ghpages:
     name: Deploy (Github Pages)

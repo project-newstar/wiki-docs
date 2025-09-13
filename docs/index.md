@@ -6,8 +6,8 @@ title: NewStar CTF
 titleTemplate: "文档 - :title"
 
 information: |
-  <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2026</span>
-  敬请期待
+  <span style='font-size: 1.2em; font-weight: 600;'>NewStar CTF 2025</span>
+  2025.9.29 - 2025.11.2
 
 actions:
   - - usevue: index

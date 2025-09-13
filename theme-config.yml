@@ -59,6 +59,12 @@ sidebar:
     - text: 贡献者
       link: /learn/credits
 
+  "/guide/2025/":
+    - text: 赛事信息
+      link: /guide/2025/
+    - text: 宣传
+      link: /guide/2025/promotion
+
   "/guide/2024/":
     - text: 赛事信息
       link: /guide/2024/

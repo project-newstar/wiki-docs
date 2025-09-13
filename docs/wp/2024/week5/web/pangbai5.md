@@ -77,9 +77,7 @@ function safe_html(str: string) {
 由于 `m` 的存在，匹配开始为行首，匹配结束为行尾，因此我们只需要把 `<` 和 `>` 放在不同行即可，例如：
 
 ```javascript
-<script
->alert(1)</script
->
+<script>alert(1)</script>
 ```
 
 此时我们就能执行恶意代码了。直接使用 `document.cookie` 即可获取到 Bot 的 Cookie。

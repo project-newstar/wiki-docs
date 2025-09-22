@@ -13,15 +13,28 @@ import Container from '@/components/docs/Container.vue'
 
 这里只贴出公开赛道海报。
 
+<div style='max-width: 384px; width: 100%; margin: auto;'>
+
 <Container type='info'>
 
-<strong>画师：</strong>露星 / <strong>设计：</strong>CWB
+<strong>设计：</strong>CWB
 </Container>
-
-<div style='display: grid; grid-auto-flow: column; grid-template-columns: repeat(2, 1fr);'>
 
 <img src="/assets/images/External_NewStarCTF_2025_Poster.png" alt="[公开赛道] NewStarCTF 2025 海报">
 
-<div></div>
+</div>
+
+## 长图海报
+
+<div style='max-width: 384px; width: 100%; margin: auto;'>
+
+<Container type='info'>
+
+<strong>画师：</strong>露星
+
+<strong>设计：</strong>CWB, Cnily03
+</Container>
+
+<img src="/assets/images/NewStarCTF_2025_Poster_Long.png" alt="[公开赛道] NewStarCTF 2025 海报">
 
 </div>

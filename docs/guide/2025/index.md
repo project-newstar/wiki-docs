@@ -33,7 +33,7 @@ NewStar CTF 2025 欢迎各位选手的到来！
 
 <strong>公开赛道：</strong>2025 年 9 月 29 日 09:00 - 2025 年 11 月 2 日 18:00
 
-<strong>校内赛道：</strong>2025 年 9 月 22 日 09:00 - 2025 年 10 月 25 日 18:00
+<strong>校内赛道：</strong>2025 年 9 月 22 日 09:00 - 2025 年 10 月 26 日 18:00
 
 ## 参与对象
 
@@ -69,7 +69,7 @@ NewStar CTF 2025 欢迎各位选手的到来！
 
 ## 得分规则
 
-<strong>总分计算方式：</strong>总分 = 主方向得分 + 0.5 × 次方向得分 + 挑战题得分
+<strong>总分计算方式：</strong>总分 = 主方向得分 + 次方向得分 × 0.5 + 挑战题得分
 
 设选手所选取的主方向得分为 $n$，所选取的次方向得分 $m$，挑战题得分为 $c$，则最终的总分为 $n + m \times 0.5+c$.
 
@@ -94,7 +94,7 @@ NewStar CTF 2025 欢迎各位选手的到来！
 
 公开赛道 QQ 群：1169651901<span data-desc>（①群）</span>、806733185<span data-desc>（②群）</span>
 
-校内赛道 QQ 群：<span data-desc>（各校赛事群请联系选手所在院校或组织的赛事负责人）</span>
+校内赛道 QQ 群：1045291401<span data-desc>（各校赛事群请联系选手所在组织的赛事负责人）</span>
 
 联系邮箱：<Link theme="plain" href="mailto:newstar@openctf.net" text="newstar@openctf.net" />
 

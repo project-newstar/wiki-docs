@@ -110,7 +110,7 @@ NewStar CTF 2025 欢迎各位选手的到来！
 - 重庆邮电大学
 - 江苏海洋大学
 - 浙江理工大学
-- 澳门数据安全协会
+- 澳门网络及数据安全协会
 
 ### 出题方<Text class='desc-text' fontSize='16px' fontWeight='500' content='（具体名单将在赛后公布）' />
 

@@ -86,32 +86,18 @@ int main() {
 可以利用 `pop rdi；ret` 这样的 gadget 去控制参数，但是如果要将 `rax` 传递到其他寄存器可以找找 mov 类型的指令。
 
 
-### Web
+## Web
 ### 小E的管理系统
-#### 一：SQL注入基础
 
-**什么是 SQL？**
+<Container type='info'>
 
-SQL（Structured Query Language）是用于管理关系型数据库（如 MySQL, PostgreSQL, SQLite, SQL Server 等）的标准化语言。它允许我们执行数据查询<span data-desc>（SELECT）</span>、更新<span data-desc>（UPDATE）</span>、插入<span data-desc>（INSERT）</span>、删除<span data-desc>（DELETE）</span>等操作。 
+本题考查了对于联合注入的理解，以及渗透测试过程中的「Fuzzing」如何进行。
 
-**SQL注入的成因**
+</Container>
 
-SQL 注入的根本原因在于，应用程序将用户提供的、不可信的数据直接拼接到 SQL 查询语句中，并将其作为代码的一部分在数据库中执行。当攻击者输入的恶意数据破坏了原有 SQL 语句的语法结构，并植入了新的操作逻辑时，SQL 注入就发生了。
+**SQL 注入中的 fuzz**
 
-##### 典型注入类型
-
-- 联合查询注入<span data-desc>（UNION-based）</span>：通过UNION操作符将恶意查询的结果与正常查询的结果合并返回。
-- 报错注入<span data-desc>（Error-based）</span>：利用数据库的错误信息，从中获取敏感数据。
-- 布尔盲注<span data-desc>（Boolean-based）</span>：根据页面返回的「真」或「假」两种不同状态来逐字符推断信息。
-- 时间盲注<span data-desc>（Time-based）</span>：根据服务器响应时间的长短来判断信息的正确性。
-- 堆叠查询注入<span data-desc>（Stacked Queries）</span>：通过分号结束前一条 SQL 语句，并执行全新的恶意语句。
-
-遇到题目需要根据题目情况进行分析，例如题目有回显，可以选择联合查询注入，堆叠查询注入，报错注入等
-没有回显则需要考虑各种盲注。具体选哪个，需要根据题目 waf 过滤情况确定。
-
-#### 二：fuzz
-
-在进行SQL注入之前，首要任务是进行信息侦察，这通常被称为「Fuzzing」<span data-desc>（模糊测试）</span>。
+在进行 SQL 注入之前，首要任务是进行信息侦察，这通常被称为「Fuzzing」<span data-desc>（模糊测试）</span>。
 
 指的是，通过系统性地向目标参数提交包含特殊字符、SQL 关键词和函数的 payload，并观察应用的响应。响应的变化<span data-desc>（如页面内容不同、HTTP 状态码改变、返回错误信息）</span>是判断是否存在过滤或漏洞的关键依据。
 
@@ -131,15 +117,10 @@ SQL 注入的根本原因在于，应用程序将用户提供的、不可信的�
 
 这其中，不同相应代表不同的结果，200 代表通过并且正常响应，403 代表被过滤，500 代表没被过滤但是数据库执行时出错了。<span data-desc>（同类型题目不一定有相同的返回值，但是大致流程相同）</span>
 
-我们可以通过观察 fuzz 结果推断出题目过滤情况。
-
-#### 三：绕过
-
-确定题目过滤方式后，可以针对性的进行绕过。
+我们可以通过观察 fuzz 结果推断出题目过滤情况。确定题目过滤方式后，可以针对性的进行绕过。
 
 绕过部分可以上网搜索，参考资料 [SQL注入 | Lazzaro](https://lazzzaro.github.io/2020/05/16/web-SQL%E6%B3%A8%E5%85%A5/)。
 
-#### 最后
 根据不同注入方式，使用对应路线或编写脚本即可。
 
 推荐自动化测试与绕过工具：SQLmap。

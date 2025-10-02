@@ -9,6 +9,9 @@ import { asBool } from "./theme/scripts/utils";
 
 const themeConfig: DefaultTheme.Config = YAML.parse(fs.readFileSync("./theme-config.yml", "utf8"));
 
+const ok_then = <T, D>(test: T, data: D): D | undefined => (test ? data : undefined);
+const GONGAN_ICON = `<i class="bg-icon icon-gongan" style="display: inline-block; width: 1rem; height: 1rem; margin-right: 0.25rem; vertical-align: text-bottom;"></i>`;
+
 // https://vitepress.dev/reference/site-config
 export default ({ mode }: { mode: string }) => {
   const env = loadEnv(mode, process.cwd());
@@ -39,10 +42,19 @@ export default ({ mode }: { mode: string }) => {
         },
 
         footer: {
-          copyright: "Copyright © NewStar CTF",
-          message: env.VITE_ICP_RECORD
-            ? `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">${env.VITE_ICP_RECORD}</a>`
-            : undefined,
+          copyright: `© 2022 - ${new Date().getFullYear()} Project NewStar. All rights reserved.`,
+          beian: [
+            ok_then(
+              env.VITE_ICP_RECORD,
+              `<a href="https://beian.miit.gov.cn/" target="_blank" style="text-decoration: none;">${env.VITE_ICP_RECORD}</a>`
+            ),
+            ok_then(
+              env.VITE_GONGAN,
+              `<a href="https://beian.mps.gov.cn/#/query/webSearch?code=${env.VITE_GONGAN.replace(/[^\d]/g, "")}" target="_blank" style="text-decoration: none;">${env.VITE_GONGAN}</a>`
+            ),
+          ]
+            .filter(Boolean)
+            .join(" · "),
         },
 
         returnToTopLabel: "返回顶部",

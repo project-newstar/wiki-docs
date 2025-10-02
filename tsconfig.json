@@ -28,10 +28,9 @@
     "types": ["vite/client"],
 
     // Aliases
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["theme/*"],
-      "@docs/*": ["docs/*"]
+      "@/*": ["./theme/*"],
+      "@docs/*": ["./docs/*"]
     }
   },
   "include": [

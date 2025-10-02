@@ -22,6 +22,7 @@ import VPSkipLink from "vitepress/dist/client/theme-default/components/VPSkipLin
 import { useSidebar } from "vitepress/theme";
 import { VPButton } from "vitepress/theme";
 import IndexButton from "@/components/IndexButton.vue";
+import IndexFooter from "@/components/IndexFooter.vue";
 
 const { frontmatter, page } = useData();
 
@@ -136,7 +137,7 @@ function fmtActionsArray(actions: any) {
       </div>
     </IndexContent>
 
-    <VPFooter class="layout-index-footer" />
+    <IndexFooter class="layout-index-footer" />
     <slot name="layout-bottom" />
   </div>
 </template>

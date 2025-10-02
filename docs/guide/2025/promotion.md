@@ -13,7 +13,7 @@ import Container from '@/components/docs/Container.vue'
 
 这里只贴出公开赛道海报。
 
-<div style='max-width: 384px; width: 100%; margin: auto;'>
+<div style='max-width: 512px; width: 100%; margin: auto;'>
 
 <Container type='info'>
 
@@ -26,7 +26,7 @@ import Container from '@/components/docs/Container.vue'
 
 ## 长图海报
 
-<div style='max-width: 384px; width: 100%; margin: auto;'>
+<div style='max-width: 512px; width: 100%; margin: auto;'>
 
 <Container type='info'>
 

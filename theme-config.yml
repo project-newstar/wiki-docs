@@ -68,6 +68,8 @@ sidebar:
       items:
         - text: Week 1
           link: /guide/2025/week1
+        - text: Week 2
+          link: /guide/2025/week2
 
   "/guide/2024/":
     - text: 赛事信息

@@ -64,6 +64,10 @@ sidebar:
       link: /guide/2025/
     - text: 宣传
       link: /guide/2025/promotion
+    - text: 题解参考
+      items:
+        - text: Week 1
+          link: /guide/2025/week1
 
   "/guide/2024/":
     - text: 赛事信息

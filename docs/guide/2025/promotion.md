@@ -1,5 +1,5 @@
 ---
-titleTemplate: ":title | NewStar CTF 2024"
+titleTemplate: ":title | NewStar CTF 2025"
 comments: false
 ---
 

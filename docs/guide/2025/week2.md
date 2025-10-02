@@ -49,12 +49,12 @@ line  CODE  JT   JF      K
  0005: 0x06 0x00 0x00 0x7fff0000  return ALLOW
 ```
 
-大概就是说 ban 了 execve 系统调用（关于系统调用，师傅们应该在 syscall 题目中领略过了）
-ban 了 execve 后，system() 函数就不能使用了，如果需要得到 flag 需要其他的办法。
+大概就是说 ban 了 `execve` 系统调用（关于系统调用，师傅们应该在 syscall 题目中领略过了）
+ban 了 `execve` 后，`system()` 函数就不能使用了，如果需要得到 flag 需要其他的办法。
 
 #### ORW
 
-ORW 指的是 open，read，write 三个函数，后引申为有和这三个函数类似功能的一切函数组合。
+ORW 指的是 `open，read，write` 三个函数，后引申为有和这三个函数类似功能的一切函数组合。
 
 对 C 语言有过了解的同学，可能会知道如何在 C 语言中对文件进行读写操作。
 
@@ -81,9 +81,9 @@ int main() {
 
 #### 参数传递
 
-本题是 amd64 架构的题目，前六个参数分别用 rdi，rsi，rdx，rcx，r8，r9 这六个寄存器传递，函数返回值会储存在 rax 中。
+本题是 amd64 架构的题目，前六个参数分别用 `rdi，rsi，rdx，rcx，r8，r9` 这六个寄存器传递，函数返回值会储存在 `rax` 中。
 
-可以利用 pop rdi；ret 这样的 gadget 去控制参数，但是如果要将 rax 传递到其他寄存器可以找找 mov 类型的指令。
+可以利用 `pop rdi；ret` 这样的 gadget 去控制参数，但是如果要将 `rax` 传递到其他寄存器可以找找 mov 类型的指令。
 
 
 ### Web
@@ -97,30 +97,31 @@ SQL（Structured Query Language）是用于管理关系型数据库（如 MySQL,
 **SQL注入的成因**
 
 SQL 注入的根本原因在于，应用程序将用户提供的、不可信的数据直接拼接到 SQL 查询语句中，并将其作为代码的一部分在数据库中执行。当攻击者输入的恶意数据破坏了原有 SQL 语句的语法结构，并植入了新的操作逻辑时，SQL 注入就发生了。
+
 ##### 典型注入类型
 
 - 联合查询注入<span data-desc>（UNION-based）</span>：通过UNION操作符将恶意查询的结果与正常查询的结果合并返回。
 - 报错注入<span data-desc>（Error-based）</span>：利用数据库的错误信息，从中获取敏感数据。
-- 布尔盲注<span data-desc>（Boolean-based）</span>：根据页面返回的“真”或“假”两种不同状态来逐字符推断信息。
+- 布尔盲注<span data-desc>（Boolean-based）</span>：根据页面返回的「真」或「假」两种不同状态来逐字符推断信息。
 - 时间盲注<span data-desc>（Time-based）</span>：根据服务器响应时间的长短来判断信息的正确性。
-- 堆叠查询注入<span data-desc>（Stacked Queries）</span>：通过分号结束前一条SQL语句，并执行全新的恶意语句。
+- 堆叠查询注入<span data-desc>（Stacked Queries）</span>：通过分号结束前一条 SQL 语句，并执行全新的恶意语句。
 
 遇到题目需要根据题目情况进行分析，例如题目有回显，可以选择联合查询注入，堆叠查询注入，报错注入等
 没有回显则需要考虑各种盲注。具体选哪个，需要根据题目 waf 过滤情况确定。
----
+
 #### 二：fuzz
 
 在进行SQL注入之前，首要任务是进行信息侦察，这通常被称为「Fuzzing」<span data-desc>（模糊测试）</span>。
 
-指的是，通过系统性地向目标参数提交包含特殊字符、SQL 关键词和函数的 payload，并观察应用的响应。响应的变化<span data-desc>（如页面内容不同、HTTP状态码改变、返回错误信息）</span>是判断是否存在过滤或漏洞的关键依据。
+指的是，通过系统性地向目标参数提交包含特殊字符、SQL 关键词和函数的 payload，并观察应用的响应。响应的变化<span data-desc>（如页面内容不同、HTTP 状态码改变、返回错误信息）</span>是判断是否存在过滤或漏洞的关键依据。
 
 我们可以通过 fuzz 字典以及相应的抓包软件来进行 fuzz，接下来使用 yakit 配合字典进行，其中用到的字典会贴在文章末尾。
 
-首先识别到注入点为 id。
+首先识别到注入点为 `id`。
 
 ![注入点](/assets/images/guide/2025/week2/xiaoEdeguanlixitong_1.png)
 
-选中数字部分，插入字典，选择临时字典（用的文件就选择文件字典）。
+选中数字部分，插入字典，选择临时字典<span data-desc>（用的文件就选择文件字典）</span>。
 
 ![插入字典](/assets/images/guide/2025/week2/xiaoEdeguanlixitong_2.png)
 
@@ -130,16 +131,17 @@ SQL 注入的根本原因在于，应用程序将用户提供的、不可信的�
 
 这其中，不同相应代表不同的结果，200 代表通过并且正常响应，403 代表被过滤，500 代表没被过滤但是数据库执行时出错了。<span data-desc>（同类型题目不一定有相同的返回值，但是大致流程相同）</span>
 
-我们可以通过观察fuzz结果推断出题目过滤情况。
+我们可以通过观察 fuzz 结果推断出题目过滤情况。
 
----
 #### 三：绕过
+
 确定题目过滤方式后，可以针对性的进行绕过。
 
 绕过部分可以上网搜索，参考资料 [SQL注入 | Lazzaro](https://lazzzaro.github.io/2020/05/16/web-SQL%E6%B3%A8%E5%85%A5/)。
 
 #### 最后
 根据不同注入方式，使用对应路线或编写脚本即可。
+
 推荐自动化测试与绕过工具：SQLmap。
 
 <ElCollapse class='vp-collapse' v-model='openCollapse'>
@@ -376,7 +378,7 @@ else
 </ElCollapseItem>
 </ElCollapse>
 
-## 白帽小 K 的故事（1）
+### 白帽小 K 的故事（1）
 
 小 K 系列第一弹！
 

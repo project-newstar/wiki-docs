@@ -4,6 +4,12 @@ titleTemplate: ":title | 参考文档 - NewStar CTF 2025"
 
 <script setup>
 import Container from '@/components/docs/Container.vue'
+import Link from '@/components/docs/Link.vue'
+import { ElTag, ElCollapse, ElCollapseItem, ElTooltip } from 'element-plus'
+import 'element-plus/es/components/tag/style/css'
+import 'element-plus/es/components/collapse/style/css'
+import 'element-plus/es/components/collapse-item/style/css'
+import 'element-plus/es/components/tooltip/style/css'
 </script>
 
 # Week 3
@@ -27,6 +33,19 @@ Week3 是一场蜕变，如果你对出现的题目感到迷茫，你可以查�
 - 什么是 sigreturn 函数，srop 的原理，如何用 sigreturn 函数进行 srop。
 
 内容有点多，希望大家能多看看文章，自己动手调试。
+
+### Pwn
+
+:::info
+本题考察利用格式化字符串漏洞泄露内存
+:::
+
+相信做完 week2 的「刻在栈里的秘密」之后，你对「格式化字符串漏洞」以及「x86_64函数调用约定」有了一定的了解，在开始做这道题之前，你可以再了解一下：
+
+- <Link icon="external" theme="underline hover" href="https://ctf-wiki.org/pwn/linux/user-mode/mitigation/canary/?h=canary">Canary</Link>
+- <Link icon="external" theme="underline hover" href="https://ctf-wiki.org/pwn/linux/user-mode/fmtstr/fmtstr-exploit/">格式化字符串漏洞利用</Link>
+
+请善用你的 GDB。
 
 ## Web
 

@@ -6,6 +6,10 @@ titleTemplate: ":title | 参考文档 - NewStar CTF 2025"
 import Container from '@/components/docs/Container.vue'
 </script>
 
+# Week 3
+
+Week3 是一场蜕变，如果你对出现的题目感到迷茫，你可以查看[快速入门](/learn/)。
+
 ## Pwn
 
 ### only_read

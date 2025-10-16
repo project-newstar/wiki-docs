@@ -42,7 +42,7 @@ export default ({ mode }: { mode: string }) => {
         },
 
         footer: {
-          copyright: `© 2022 - ${new Date().getFullYear()} Project NewStar. All rights reserved.`,
+          copyright: `© 2022 - ${new Date().getFullYear()} Project NewStar`,
           beian: [
             ok_then(
               env.VITE_ICP_RECORD,

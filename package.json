@@ -19,7 +19,7 @@
     "@types/bun": "latest",
     "@types/node": "^22.15.17",
     "@vueuse/core": "^11.3.0",
-    "element-plus": "^2.11.0",
+    "element-plus": "^2.11.1",
     "markdown-it-mathjax3": "^4.3.2",
     "nodemon": "^3.1.10",
     "prettier": "3.5.2",

@@ -16,6 +16,35 @@ import 'element-plus/es/components/tooltip/style/css'
 
 本周的考点已经相当接近于主流 CTF 赛事中的常见内容。
 
+## Pwn
+
+### 复读机堂堂归来！复读机堂堂归来！
+
+<Container type='info'>
+
+本题考查利用非栈上格式化字符串漏洞泄露及覆盖内存。
+
+</Container>
+
+相信经过前两周的历练，你应该对格式化字符串漏洞利用比较熟悉了。对于常规的栈上格式化字符串漏洞，可以任意构造自己的恶意数据来实现任意地址写，但是对于非栈上变量来说，就无法直接给出目的地址的指针。此时你就需要留意栈上残留的内容，看看能不能找到可以利用的点。
+
+还是这句话：请善用你的 GDB。
+
+### stdout
+
+<Container type='info'>
+
+本题考查 `_IO_FILE` 结构体利用。
+
+</Container>
+
+在开始做这道题之前，你可以先了解一下 [FILE 结构](https://ctf-wiki.org/pwn/linux/user-mode/io-file/introduction/)。
+
+对 FILE 结构体有了大概的认知之后就可以开始思考下面这些问题:
+1. `printf` / `puts` 函数与 `vtable` 有什么关系。
+2. 什么样的 `vtable` 才是合法的。
+3. 怎么利用 `_wide_data` 来配合自己伪造的 `vtable`。
+
 ## Web
 
 ### 废弃的网站

@@ -73,7 +73,9 @@ sidebar:
         - text: Week 3
           link: /guide/2025/week3
         - text: Week 4
-          link: /guide/2025/week4        
+          link: /guide/2025/week4
+        - text: Week 5
+          link: /guide/2025/week5
 
   "/guide/2024/":
     - text: 赛事信息

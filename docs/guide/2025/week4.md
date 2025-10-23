@@ -14,7 +14,7 @@ import 'element-plus/es/components/tooltip/style/css'
 
 # Week 4
 
-能站在这里，你已经证明了你的毅力。
+能站在这里，已经证明了你的毅力。
 
 ## Pwn
 
@@ -22,13 +22,13 @@ import 'element-plus/es/components/tooltip/style/css'
 
 <Container type='info'>
 
-本题考考查了简单的堆喷概念
+本题考查简单的堆喷概念。
 
 </Container>
 
-尝试直接通过栈溢出覆盖返回地址会发现这是一个正常情况下的非法地址
+尝试直接通过栈溢出覆盖返回地址会发现这是一个正常情况下的非法地址。
 
-- 在开始做这个题之前可以简单了解一下堆喷的概念和利用方式，参考 [CVE-2025-22457](https://attackerkb.com/topics/0ybGQIkHzR/cve-2025-22457/rapid7-analysis?referrer=notificationEmail)。
+- 在开始做这个题之前可以简单了解一下堆喷的概念和利用方式，参考 [CVE-2025-22457](https://attackerkb.com/topics/0ybGQIkHzR/cve-2025-22457/rapid7-analysis?referrer=notificationEmail).
 - 在字符集受限的情况下配合对堆布局的控制使得最终落到合法的范围之内。
 - 溢出可能覆盖某个结构体成员或函数指针，而不是直接覆盖返回地址。观察目标二进制中是否有函数指针被调用的地方。
 
@@ -40,7 +40,7 @@ import 'element-plus/es/components/tooltip/style/css'
 
 为了做出此题，你需要非常熟悉函数的栈帧结构。
 
-另外 week3_calc_meow 的预期解虽与本体利用手法不同，但是都考察了你对函数栈帧的理解。我认为在尝试本道题之前，先想出 calc_meow 的预期解会对解出本题有所帮助。
+另外 Week3 题目 calc_meow 的预期解虽与本体利用手法不同，但是都考察了你对函数栈帧的理解。我认为在尝试本道题之前，先想出 calc_meow 的预期解会对解出本题有所帮助。
 
 另外，相比于前几周的 pwn 题，本题的考点较为新颖，因此直接在网络上检索到同类型的题目几乎是不太可能的。本题的难度较大，感到没有头绪是很正常的事情，切莫灰心丧气！
 
@@ -54,7 +54,7 @@ import 'element-plus/es/components/tooltip/style/css'
 
 <Container type='info'>
 
-本题考查利用格式化字符串漏洞覆盖内存
+本题考查利用格式化字符串漏洞覆盖内存。
 
 </Container>
 
@@ -87,13 +87,13 @@ import 'element-plus/es/components/tooltip/style/css'
 
 ### sqlupload
 
-在一般的 sqli 题目中，可能会出现 flag 不在数据库中的情况，这时你需要通过利用 sql 中特殊的函数来进行注入。
+在一般的 SQLi 题目中，可能会出现 flag 不在数据库中的情况，这时你需要通过利用 SQL 中特殊的函数来进行注入。
 
-在最近的羊城杯 2025 中，出现了一道题目叫 [Ezsignin](https://www.blog.st4rr.top/writeups/%E7%BE%8A%E5%9F%8E%E6%9D%AF2025Writeup.pdf)，该题利用 SQLite 中的特性，注入恶意语句到数据库中，然后使用 ATTACH 方法将恶意代码注入到 `/app/views/upload.ejs` 来进行数据库层面之外的攻击<span data-desc>（这里指 SSTI）</span>。更多细节可以参见 [SQLite Injection](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/d49faf9874bc964e855c2d2ce46764c0552fa99a/SQL%20Injection/SQLite%20Injection.md#attach-database).
+在羊城杯 2025 中，有一题 [Ezsignin](https://www.blog.st4rr.top/writeups/%E7%BE%8A%E5%9F%8E%E6%9D%AF2025Writeup.pdf)，该题利用 SQLite 中的特性，注入恶意语句到数据库中，然后使用 ATTACH 语句将恶意代码注入到 `/app/views/upload.ejs` 来进行数据库层面之外的攻击<span data-desc>（这里指 SSTI）</span>。更多细节可以参见 [SQLite Injection](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/d49faf9874bc964e855c2d2ce46764c0552fa99a/SQL%20Injection/SQLite%20Injection.md#attach-database).
 
 本题具有类似的原理，但是实践方式更简单，你需要在特定的位置注入你的恶意代码，然后想办法将其保存在可被执行的位置。
 
-本题根目录下的 flag 文件被保护了起来，你需要通过执行 `readflag` 来获得 flag。
+本题根目录下的 flag 文件被保护了起来，你需要通过执行 `readflag` 来获得 flag.
 
 ::: tip
 本题给予了完整的 Docker 环境附件，你可以在 Linux 上安装 Docker 环境来进行使用<span data-desc>（官方安装教程：[Install Docker](https://docs.docker.com/engine/install/ubuntu/)）</span>。
@@ -101,6 +101,6 @@ import 'element-plus/es/components/tooltip/style/css'
 
 ### ssti 在哪里？
 
-SSRF 的全称叫做「服务端请求伪造」<span data-desc>（Server-Side Request Forgery）</span>，漏洞的核心在于通过构造请求，可以使已被控制的服务器发送任意请求到后端内容。
+服务端请求伪造（Server-Side Request Forgery, SSRF），是指构造 Payload 让服务端去发送一个请求，由于服务端位于内网，往往能通过 SSRF 攻击内网靶标。漏洞的核心在于通过构造请求，使已被控制的服务器发送任意请求到后端内容。
 
-如果你对 SSRF 完全不了解，你可以查看 Drunkbaby 师傅总结的 [从 0 到 1 完全掌握SSRF](https://drun1baby.top/2022/05/16/从0到1完全掌握SSRF/) 来进行学习。
+如果你对 SSRF 完全不了解，你可以查看 Drunkbaby 师傅总结的 [从 0 到 1 完全掌握 SSRF](https://drun1baby.top/2022/05/16/从0到1完全掌握SSRF/) 来进行学习。

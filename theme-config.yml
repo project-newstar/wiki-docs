@@ -433,3 +433,73 @@ sidebar:
               link: /wp/2024/week5/misc/pyjail
             - text: I wanna be a Rust Master
               link: /wp/2024/week5/misc/rust-master
+
+  "/wp/2025/":
+    - text: 前言
+      link: /wp/2025/
+    - text: Week 1
+      items:
+        - text: Pwn
+          collapsed: true
+          items:
+            - text: overflow
+              link: /wp/2025/week1/pwn/overflow
+            - text: "GNU Debugger"
+              link: /wp/2025/week1/pwn/gdb_debugger
+        - text: Web
+          collapsed: true
+          items:
+            - text: multi-headach3
+              link: /wp/2025/week1/web/multi-headach3
+            - text: strange_login
+              link: /wp/2025/week1/web/strange_login
+            - text: 黑客小 W 的故事（1）
+              link: /wp/2025/week1/web/hacker-w-story-1
+            - text: 宇宙的中心是 PHP
+              link: /wp/2025/week1/web/yu-zhou-de-zhong-xin-shi-php
+            - text: 别笑，你也过不了第二关
+              link: /wp/2025/week1/web/bie-xiao-ni-ye-guo-bu-liao-di-er-guan
+            - text: 我真得控制你了
+              link: /wp/2025/week1/web/wo-zhen-dei-kong-zhi-ni-le
+        - text: Crypto
+          collapsed: true
+          items:
+            - text: 小跳蛙
+              link: /wp/2025/week1/crypto/xiaotiaowa
+            - text: 唯一表示
+              link: /wp/2025/week1/crypto/weiyibiaoshi
+            - text: 随机数之旅 1
+              link: /wp/2025/week1/crypto/suijishu1
+            - text: sagemath
+              link: /wp/2025/week1/crypto/sagemath
+        - text: Misc
+          collapsed: true
+          items:
+            - text: 前有文字，所以搜索很有用
+              link: /wp/2025/week1/misc/sousuo
+            - text: 我不要革命失败
+              link: /wp/2025/week1/misc/geming
+            - text: EZ_fence
+              link: /wp/2025/week1/misc/ez_fence
+    - text: Week 2
+      items:
+        - text: Web
+          collapsed: true
+          items:
+            - text: DD 加速器
+              link: /wp/2025/week2/web/dd-jia-su-qi
+            - text: 小E的管理系统
+              link: /wp/2025/week2/web/es-manage-system
+            - text: 搞点哦润吉吃吃 🍊
+              link: /wp/2025/week2/web/get-oranges-to-eat
+    - text: Week 3
+      items:
+        - text: Web
+          collapsed: true
+          items:
+            - text: 小E的秘密计划
+              link: /wp/2025/week3/web/es-secret-plan
+            - text: ez_chain
+              link: /wp/2025/week3/web/ez_chain
+            - text: mirror_gate
+              link: /wp/2025/week3/web/mirror_gate

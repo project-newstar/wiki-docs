@@ -32,6 +32,7 @@ import AuthorList from './AuthorList.vue'
 编辑者有：
 
 - <Link theme="underline hover" href="https://github.com/Kamiya721">KAMIYA</Link>
+- <Link theme="underline hover" href="https://github.com/nick-cjyx9">NickChenヰ</Link>
 
 出题人名单：
 

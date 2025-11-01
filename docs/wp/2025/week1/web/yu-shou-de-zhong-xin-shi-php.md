@@ -41,7 +41,7 @@ if(isset($_POST['newstar2025'])){
 
 ![php-intval](/assets/images/wp/2025/week1/center_php_2.png)
 
-可以看到，intval(\$value) 和 intval($value, 0) 的区别在于后者会根据输入字符串的格式自动匹配进制，而前者则是默认的十进制  
+可以看到，intval(\$value) 和 intval($value, 0) 的区别在于后者会根据输入字符串的格式自动匹配进制，而前者则是默认的十进制
 因此本体的绕过方式就非常明朗了，只需要传入一个其它进制的数字 47 即可，以下传参均可
 
 ```plaintext

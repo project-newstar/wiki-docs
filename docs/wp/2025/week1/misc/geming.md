@@ -20,7 +20,6 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 ![alt text](/assets/images/wp/2025/week1/geming_4.png)
 
-
 :::warning
 如果使用 windows 自带的 notepad 打开文本文档，默认缩放下会看不到下划线的，记得放大。
 :::

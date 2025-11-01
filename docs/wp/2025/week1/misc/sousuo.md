@@ -4,7 +4,6 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 # 前有文字，所以搜索很有用
 
-
 ## Track 1
 
 misc 手们必须要注意**文件名**的信息，因为这里往往都是出题人给予提示的地方。
@@ -29,7 +28,7 @@ misc 手们必须要注意**文件名**的信息，因为这里往往都是出�
 
 这一 Track 有两个文件，一个 docx，一个 txt。
 
-关键词想必就是「fxxk」和「brain」了，直接搜索一下，就能搜到 [brainfuck](https://zh.wikipedia.org/wiki/Brainfuck) 这种语言，然后就可以搜索[相应的工具](https://www.splitbrain.org/services/ook)。
+关键词想必就是「fxxk」和「brain」了，直接搜索一下，就能搜到 [brainfuck](https://baike.baidu.com/item/Brainfuck/1152785) 这种语言，然后就可以搜索[相应的工具](https://www.splitbrain.org/services/ook)。
 
 再看文本内容，`here's key`，说明这还是某个东西的 key，不是 flag 本身，总之先解密出来得到 key 为：`brainfuckisgooooood`。
 
@@ -44,7 +43,6 @@ snow.exe -p brainfuckisgooooood input.txt output.txt
 ```
 
 得到一串人人都知道的是摩斯电码的东西，cyberchef 就好了，最后得到 `0V3RC4ME_`。
-
 
 ## Track 3
 

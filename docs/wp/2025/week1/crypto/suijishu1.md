@@ -10,10 +10,11 @@ $$X_{i+1}=aX_i+b\;\;\pmod{p}$$
 
 $a,p$ 已知，同时给了连续 $5$ 个 $X_i$ ，很容易计算出以下结果。
 
- $$b=X_{i+1}-aX_{i}\;\;\pmod{p}$$
+$$b=X_{i+1}-aX_{i}\;\;\pmod{p}$$
 
 <details>
   <summary>fun fact</summary>
 
-  题目文件的名字是`random_jerni1`，`jerni`是谐音 journey .
+题目文件的名字是`random_jerni1`，`jerni`是谐音 journey.
+
 </details>

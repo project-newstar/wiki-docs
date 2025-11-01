@@ -8,9 +8,9 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 
 `n, k = crt(primes, remainders)` 这是 [sympy 库](https://docs.sympy.org/latest/index.html)的一个用于求解线性同余方程组的函数。
 
->[!TIP] （一元）线性同余方程组
->（其中 $n_1,\cdots,n_k$ 两两互质）
->$$\begin{cases}x&\equiv a_1({\mathrm{mod}}\;n_1)\\x&\equiv a_2({\mathrm{mod}}\;n_2)\\&\vdots\\x&\equiv a_k({\mathrm{mod}}\;n_k)&\end{cases}$$
+> [!TIP] （一元）线性同余方程组
+> （其中 $n_1,\cdots,n_k$ 两两互质）
+> $$\begin{cases}x&\equiv a_1({\mathrm{mod}}\;n_1)\\x&\equiv a_2({\mathrm{mod}}\;n_2)\\&\vdots\\x&\equiv a_k({\mathrm{mod}}\;n_k)&\end{cases}$$
 
 `primes` 就是要输入数组 `[n_1,...,n_k]` ，`remainders` 就是要输入数组 `[a_1,...,a_k]`。
 
@@ -21,5 +21,6 @@ titleTemplate: ":title | WriteUp - NewStar CTF 2025"
 <details>
   <summary>fun fact</summary>
 
-  题目文件的名字是 `unik_repri`，其中 `unik` 是谐音 unique ，`repri` 是取了 representation 的开头几个音节。
+题目文件的名字是 `unik_repri`，其中 `unik` 是谐音 unique ，`repri` 是取了 representation 的开头几个音节。
+
 </details>
